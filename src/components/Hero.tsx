@@ -17,15 +17,17 @@ export const Hero: React.FC<HeroProps> = ({
   onSelectTag,
 }) => {
   const quickTags = [
-    { label: '波音 747 / B747-400', query: '747' },
-    { label: '复兴号 / CR400', query: '复兴号' },
+    { label: 'ANA 宝可梦 / Pokemon', query: '宝可梦' },
+    { label: 'ANA 海龟 A380 / Honu', query: '海龟' },
+    { label: '500 TYPE EVA 初号机', query: 'EVA' },
     { label: '新干线 0系 / 0 Series', query: '新干线 0' },
-    { label: '协和式 / Concorde', query: 'Concorde' },
-    { label: 'Aviation400 (飞度)', query: 'Aviation400' },
+    { label: '新干线 E5 / 隼号', query: 'E5' },
+    { label: 'C919 国产大飞机', query: 'C919' },
+    { label: '复兴号 / CR400', query: '复兴号' },
+    { label: 'JAL 鹤丸 A350', query: '日本航空' },
+    { label: 'Aviation400', query: 'Aviation400' },
     { label: 'KATO (关水金属)', query: 'KATO' },
     { label: 'TOMIX', query: 'TOMIX' },
-    { label: '中车文创 / CRRC', query: '中车文创' },
-    { label: '长鸣火模 / Changming', query: '长鸣' },
   ];
 
   return (

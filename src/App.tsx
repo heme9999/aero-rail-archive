@@ -1,5 +1,5 @@
 import { useState, useMemo } from 'react';
-import { VEHICLES } from './data/database';
+import { VEHICLES, OPERATORS } from './data/database';
 import type { Vehicle } from './types';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
@@ -108,9 +108,15 @@ export function App() {
         return false;
       }
 
-      // 4. Country
-      if (selectedCountry !== 'all' && vehicle.countryCode !== selectedCountry) {
-        return false;
+      // 4. Country (Vehicle origin OR operating airlines/railways)
+      if (selectedCountry !== 'all') {
+        const matchesVehicleCountry = vehicle.countryCode === selectedCountry;
+        const matchesOperatorCountry = vehicle.operatorIds.some(
+          (opId) => OPERATORS[opId]?.countryCode === selectedCountry
+        );
+        if (!matchesVehicleCountry && !matchesOperatorCountry) {
+          return false;
+        }
       }
 
       // 5. Brand filter
