@@ -56,7 +56,7 @@ export function App() {
 
   // Filter vehicles
   const filteredVehicles = useMemo(() => {
-    return VEHICLES.filter((vehicle) => {
+    const filtered = VEHICLES.filter((vehicle) => {
       // 1. Search Query
       if (searchQuery.trim()) {
         const query = searchQuery.toLowerCase().trim();
@@ -130,6 +130,12 @@ export function App() {
       }
 
       return true;
+    });
+
+    // 调整排序：先飞机 (aviation)，后火车 (railway)
+    return [...filtered].sort((a, b) => {
+      if (a.category === b.category) return 0;
+      return a.category === 'aviation' ? -1 : 1;
     });
   }, [
     searchQuery,
