@@ -7336,7 +7336,7 @@ export const VEHICLES: Vehicle[] = [
       zh: '贯穿越南全境的“南北统一铁路（Reunification Express）”客运功勋机车！D19E 型“创新号（Đổi Mới）”内燃机车由中车资阳机车专为越南 1000mm 米轨研制，是越铁数量最多、出勤率最高的核心牵引动力。列车翻越著名的海云关（Hai Van Pass）依山傍海前行，一面是险峻悬崖，一面是浩瀚南海，入选世界最美火车旅行线路。',
       en: 'The backbone diesel locomotive of Vietnam\'s iconic Reunification Express linking Hanoi and Ho Chi Minh City along the dramatic Hai Van coastline.',
     },
-    heroImage: 'https://upload.wikimedia.org/wikipedia/commons/5/56/D19E-916%2C_Vietnam%2C_Binh_Thuan%2C_station_Phan_Thiet_%28Trainpix_215803%29.jpg',
+    heroImage: 'https://upload.wikimedia.org/wikipedia/commons/4/45/D19E-968_Da_Nang.jpg',
     liveries: [
       {
         id: 'vnr-d19e-tri-color',
@@ -7349,7 +7349,7 @@ export const VEHICLES: Vehicle[] = [
           zh: '前脸为醒目的热带亮黄色警示线条，车身侧面贯穿深海蓝与正红双腰线，车头嵌有金色越南铁路 VNR 飞轮徽章。',
           en: 'Distinctive tropical yellow nose with red and blue side stripes and Vietnam Railways winged logo.',
         },
-        photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/5/56/D19E-916%2C_Vietnam%2C_Binh_Thuan%2C_station_Phan_Thiet_%28Trainpix_215803%29.jpg',
+        photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/4/45/D19E-968_Da_Nang.jpg',
         scaleModels: [
           {
             id: 'cm-vnr-d19e',
@@ -7359,7 +7359,7 @@ export const VEHICLES: Vehicle[] = [
             material: { zh: '锌合金压铸底盘与工程 ABS', en: 'Diecast Metal Chassis & ABS' },
             releaseYear: 2021,
             status: 'available',
-            imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/5/56/D19E-916%2C_Vietnam%2C_Binh_Thuan%2C_station_Phan_Thiet_%28Trainpix_215803%29.jpg',
+            imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/4/45/D19E-968_Da_Nang.jpg',
             notes: { zh: '精细还原中车资阳制造的 D19E 型越南米轨内燃机车，飞轮转动、前灯可亮，配越铁车头金属铭牌', en: 'High-detail HO scale model reproducing CRRC Ziyang D19E locomotive in authentic VNR livery.' },
           },
         ],
