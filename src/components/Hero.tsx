@@ -17,6 +17,11 @@ export const Hero: React.FC<HeroProps> = ({
   onSelectTag,
 }) => {
   const quickTags = [
+    { label: '不丹航空 / 雷龙', query: '不丹皇家航空' },
+    { label: '星悦航空 / 黑天鹅', query: '星悦航空' },
+    { label: '斯里兰卡 / 海上茶园蓝色火车', query: '斯里兰卡铁路' },
+    { label: 'KTMB / 马来西亚米轨高速', query: '马来亚铁道' },
+    { label: '哈萨克斯坦 / 塔利戈', query: '哈萨克斯坦国家铁路' },
     { label: '阿航 A380 / Emirates', query: '阿联酋航空' },
     { label: '卡航 A350 / Qatar', query: '卡塔尔航空' },
     { label: 'ANA 宝可梦 / Pokemon', query: '宝可梦' },

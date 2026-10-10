@@ -16,28 +16,35 @@ export const COUNTRY_ORDER: Record<string, number> = {
   TW: 12, // 中国台湾 Taiwan, China
   JP: 13, // 日本 Japan
   KR: 14, // 韩国 South Korea
-  SG: 15, // 新加坡 Singapore
-  MY: 16, // 马来西亚 Malaysia
-  TH: 17, // 泰国 Thailand
-  VN: 18, // 越南 Vietnam
-  LA: 19, // 老挝 Laos
-  ID: 20, // 印度尼西亚 Indonesia
-  IN: 21, // 印度 India
-  UZ: 22, // 乌兹别克斯坦 Uzbekistan
-  SA: 23, // 沙特阿拉伯 Saudi Arabia
-  AE: 24, // 阿联酋 United Arab Emirates
-  QA: 25, // 卡塔尔 Qatar
+  MN: 15, // 蒙古 Mongolia
+  SG: 16, // 新加坡 Singapore
+  MY: 17, // 马来西亚 Malaysia
+  TH: 18, // 泰国 Thailand
+  VN: 19, // 越南 Vietnam
+  LA: 20, // 老挝 Laos
+  BN: 21, // 文莱 Brunei
+  ID: 22, // 印度尼西亚 Indonesia
+  IN: 23, // 印度 India
+  LK: 24, // 斯里兰卡 Sri Lanka
+  MV: 25, // 马尔代夫 Maldives
+  BT: 26, // 不丹 Bhutan
+  UZ: 27, // 乌兹别克斯坦 Uzbekistan
+  KZ: 28, // 哈萨克斯坦 Kazakhstan
+  SA: 29, // 沙特阿拉伯 Saudi Arabia
+  AE: 30, // 阿联酋 United Arab Emirates
+  QA: 31, // 卡塔尔 Qatar
+  OM: 32, // 阿曼 Oman
 
   // 欧洲 Europe
-  FR: 30, // 法国 France
-  GB: 31, // 英国 United Kingdom
-  NL: 32, // 荷兰 Netherlands
-  DE: 33, // 德国 Germany
-  EU: 34, // 欧洲联合 Europe
+  FR: 40, // 法国 France
+  GB: 41, // 英国 United Kingdom
+  NL: 42, // 荷兰 Netherlands
+  DE: 43, // 德国 Germany
+  EU: 44, // 欧洲联合 Europe
 
   // 北美洲 North America
-  US: 50, // 美国 United States
-  CA: 51, // 加拿大 Canada
+  US: 60, // 美国 United States
+  CA: 61, // 加拿大 Canada
 };
 
 export const OPERATORS: Record<string, Operator> = {
@@ -203,6 +210,16 @@ export const OPERATORS: Record<string, Operator> = {
     continentCode: 'AS',
     type: 'aviation',
   },
+  starflyer: {
+    id: 'starflyer',
+    name: { zh: '星悦航空', en: 'StarFlyer' },
+    code: 'SFJ / 7G',
+    country: { zh: '日本', en: 'Japan' },
+    countryCode: 'JP',
+    continent: { zh: '亚洲', en: 'Asia' },
+    continentCode: 'AS',
+    type: 'aviation',
+  },
 
   // 🇰🇷 韩国 / South Korea
   korean_air: {
@@ -211,6 +228,18 @@ export const OPERATORS: Record<string, Operator> = {
     code: 'KAL / KE',
     country: { zh: '韩国', en: 'South Korea' },
     countryCode: 'KR',
+    continent: { zh: '亚洲', en: 'Asia' },
+    continentCode: 'AS',
+    type: 'aviation',
+  },
+
+  // 🇲🇳 蒙古 / Mongolia
+  miat_mongolian: {
+    id: 'miat_mongolian',
+    name: { zh: '蒙古民航 (蒙古航空)', en: 'MIAT Mongolian Airlines' },
+    code: 'MGL / OM',
+    country: { zh: '蒙古', en: 'Mongolia' },
+    countryCode: 'MN',
     continent: { zh: '亚洲', en: 'Asia' },
     continentCode: 'AS',
     type: 'aviation',
@@ -261,6 +290,16 @@ export const OPERATORS: Record<string, Operator> = {
     continentCode: 'AS',
     type: 'aviation',
   },
+  bangkok_airways: {
+    id: 'bangkok_airways',
+    name: { zh: '曼谷航空 (精品航空)', en: 'Bangkok Airways' },
+    code: 'BKI / PG',
+    country: { zh: '泰国', en: 'Thailand' },
+    countryCode: 'TH',
+    continent: { zh: '亚洲', en: 'Asia' },
+    continentCode: 'AS',
+    type: 'aviation',
+  },
 
   // 🇻🇳 越南 / Vietnam
   vietnam_airlines: {
@@ -274,6 +313,18 @@ export const OPERATORS: Record<string, Operator> = {
     type: 'aviation',
   },
 
+  // 🇧🇳 文莱 / Brunei
+  royal_brunei: {
+    id: 'royal_brunei',
+    name: { zh: '皇家文莱航空', en: 'Royal Brunei Airlines' },
+    code: 'RBA / BI',
+    country: { zh: '文莱', en: 'Brunei' },
+    countryCode: 'BN',
+    continent: { zh: '亚洲', en: 'Asia' },
+    continentCode: 'AS',
+    type: 'aviation',
+  },
+
   // 🇮🇩 印度尼西亚 / Indonesia
   garuda_indonesia: {
     id: 'garuda_indonesia',
@@ -281,6 +332,54 @@ export const OPERATORS: Record<string, Operator> = {
     code: 'GIA / GA',
     country: { zh: '印度尼西亚', en: 'Indonesia' },
     countryCode: 'ID',
+    continent: { zh: '亚洲', en: 'Asia' },
+    continentCode: 'AS',
+    type: 'aviation',
+  },
+
+  // 🇮🇳 印度 / India
+  air_india: {
+    id: 'air_india',
+    name: { zh: '印度航空 (印度国家航空)', en: 'Air India' },
+    code: 'AIC / AI',
+    country: { zh: '印度', en: 'India' },
+    countryCode: 'IN',
+    continent: { zh: '亚洲', en: 'Asia' },
+    continentCode: 'AS',
+    type: 'aviation',
+  },
+
+  // 🇱🇰 斯里兰卡 / Sri Lanka
+  srilankan_airlines: {
+    id: 'srilankan_airlines',
+    name: { zh: '斯里兰卡航空', en: 'SriLankan Airlines' },
+    code: 'ALK / UL',
+    country: { zh: '斯里兰卡', en: 'Sri Lanka' },
+    countryCode: 'LK',
+    continent: { zh: '亚洲', en: 'Asia' },
+    continentCode: 'AS',
+    type: 'aviation',
+  },
+
+  // 🇲🇻 马尔代夫 / Maldives
+  trans_maldivian: {
+    id: 'trans_maldivian',
+    name: { zh: '马尔代夫水上飞机 (TMA)', en: 'Trans Maldivian Airways' },
+    code: 'TMA',
+    country: { zh: '马尔代夫', en: 'Maldives' },
+    countryCode: 'MV',
+    continent: { zh: '亚洲', en: 'Asia' },
+    continentCode: 'AS',
+    type: 'aviation',
+  },
+
+  // 🇧🇹 不丹 / Bhutan
+  drukair: {
+    id: 'drukair',
+    name: { zh: '不丹皇家航空 (雷龙航空)', en: 'Drukair (Royal Bhutan Airlines)' },
+    code: 'DRK / KB',
+    country: { zh: '不丹', en: 'Bhutan' },
+    countryCode: 'BT',
     continent: { zh: '亚洲', en: 'Asia' },
     continentCode: 'AS',
     type: 'aviation',
@@ -327,6 +426,18 @@ export const OPERATORS: Record<string, Operator> = {
     code: 'QTR / QR',
     country: { zh: '卡塔尔', en: 'Qatar' },
     countryCode: 'QA',
+    continent: { zh: '亚洲', en: 'Asia' },
+    continentCode: 'AS',
+    type: 'aviation',
+  },
+
+  // 🇴🇲 阿曼 / Oman
+  oman_air: {
+    id: 'oman_air',
+    name: { zh: '阿曼航空', en: 'Oman Air' },
+    code: 'OAS / WY',
+    country: { zh: '阿曼', en: 'Oman' },
+    countryCode: 'OM',
     continent: { zh: '亚洲', en: 'Asia' },
     continentCode: 'AS',
     type: 'aviation',
@@ -555,6 +666,30 @@ export const OPERATORS: Record<string, Operator> = {
     type: 'railway',
   },
 
+  // 🇲🇾 马来西亚 / Malaysia
+  ktmb: {
+    id: 'ktmb',
+    name: { zh: '马来亚铁道公司 (KTMB / 马来亚铁道)', en: 'Kereta Tanah Melayu Berhad (KTMB)' },
+    code: 'KTMB',
+    country: { zh: '马来西亚', en: 'Malaysia' },
+    countryCode: 'MY',
+    continent: { zh: '亚洲', en: 'Asia' },
+    continentCode: 'AS',
+    type: 'railway',
+  },
+
+  // 🇻🇳 越南 / Vietnam
+  vietnam_railways: {
+    id: 'vietnam_railways',
+    name: { zh: '越南铁路总公司 (越南铁路)', en: 'Vietnam Railways (VNR)' },
+    code: 'VNR',
+    country: { zh: '越南', en: 'Vietnam' },
+    countryCode: 'VN',
+    continent: { zh: '亚洲', en: 'Asia' },
+    continentCode: 'AS',
+    type: 'railway',
+  },
+
   // 🇱🇦 老挝 / Laos
   lao_china_railway: {
     id: 'lao_china_railway',
@@ -578,6 +713,16 @@ export const OPERATORS: Record<string, Operator> = {
     continentCode: 'AS',
     type: 'railway',
   },
+  kai_indonesia: {
+    id: 'kai_indonesia',
+    name: { zh: '印度尼西亚铁路公司 (PT KAI)', en: 'Kereta Api Indonesia (PT KAI)' },
+    code: 'KAI',
+    country: { zh: '印度尼西亚', en: 'Indonesia' },
+    countryCode: 'ID',
+    continent: { zh: '亚洲', en: 'Asia' },
+    continentCode: 'AS',
+    type: 'railway',
+  },
 
   // 🇮🇳 印度 / India
   indian_railways: {
@@ -591,6 +736,18 @@ export const OPERATORS: Record<string, Operator> = {
     type: 'railway',
   },
 
+  // 🇱🇰 斯里兰卡 / Sri Lanka
+  sri_lanka_railways: {
+    id: 'sri_lanka_railways',
+    name: { zh: '斯里兰卡铁路', en: 'Sri Lanka Railways (SLR)' },
+    code: 'SLR',
+    country: { zh: '斯里兰卡', en: 'Sri Lanka' },
+    countryCode: 'LK',
+    continent: { zh: '亚洲', en: 'Asia' },
+    continentCode: 'AS',
+    type: 'railway',
+  },
+
   // 🇺🇿 乌兹别克斯坦 / Uzbekistan
   uzbekistan_railways: {
     id: 'uzbekistan_railways',
@@ -598,6 +755,18 @@ export const OPERATORS: Record<string, Operator> = {
     code: 'UTY',
     country: { zh: '乌兹别克斯坦', en: 'Uzbekistan' },
     countryCode: 'UZ',
+    continent: { zh: '亚洲', en: 'Asia' },
+    continentCode: 'AS',
+    type: 'railway',
+  },
+
+  // 🇰🇿 哈萨克斯坦 / Kazakhstan
+  kazakhstan_railways_ktz: {
+    id: 'kazakhstan_railways_ktz',
+    name: { zh: '哈萨克斯坦国家铁路 (KTZ)', en: 'Kazakhstan Temir Zholy (KTZ)' },
+    code: 'KTZ',
+    country: { zh: '哈萨克斯坦', en: 'Kazakhstan' },
+    countryCode: 'KZ',
     continent: { zh: '亚洲', en: 'Asia' },
     continentCode: 'AS',
     type: 'railway',
@@ -6531,6 +6700,921 @@ export const VEHICLES: Vehicle[] = [
         caption: { zh: '专门针对热带沙漠强沙尘与超高温严苛工况设计的鸭嘴流线型车头，兼具极致气动与防砂防护。', en: 'Aerodynamic duckbill locomotive nose engineered specifically for extreme Arabian desert environments.' },
         url: 'https://upload.wikimedia.org/wikipedia/commons/3/31/Talgo_350_SRO.jpg',
         tag: { zh: '车头特写', en: 'Locomotive' },
+      },
+    ],
+  },
+
+  // 80. 星悦航空 空客 A320 "黑天鹅" 极简纯黑客机 (JA01MC / 日本)
+  {
+    id: 'starflyer-a320',
+    category: 'aviation',
+    modelName: { zh: '星悦航空 空客 A320 "黑天鹅" 极简纯黑客机', en: 'StarFlyer Airbus A320 "Black Swan"' },
+    code: 'A320-SFJ',
+    manufacturer: { zh: '空中客车 (Airbus)', en: 'Airbus' },
+    status: 'active',
+    firstServiceYear: 2006,
+    country: { zh: '日本', en: 'Japan' },
+    countryCode: 'JP',
+    operatorIds: ['starflyer'],
+    specs: {
+      maxSpeed: '870 km/h (Mach 0.78)',
+      capacity: '150 座 (极度宽敞全黑真皮客舱 / 独享触控娱乐系统与脚踏)',
+      rangeOrPower: '6,150 km (东京羽田往返北九州、福冈、关西)',
+      length: '37.57 m (翼展 Wingspan: 34.10 m)',
+    },
+    overview: {
+      zh: '全球民航界罕见的纯黑极简设计美学典范！日本星悦航空由知名设计师松井龙哉操刀整体品牌形象，机身采用颠覆性的黑白双色撞色方案，机身左黑右白、垂直尾翼通体曜石亮黑，被日本航空界誉为“羽田黑天鹅”。客舱全舱配备昂贵黑色真皮座椅与多点独立可调节头枕，打破低成本与全服务传统界限。',
+      en: 'A design masterpiece in commercial aviation with a striking high-gloss black and white livery. Designed by Tatsuya Matsui, nicknamed the "Black Swan of Haneda".',
+    },
+    heroImage: 'https://upload.wikimedia.org/wikipedia/commons/b/be/Starflyer-ja01mc.jpg',
+    liveries: [
+      {
+        id: 'sfj-a320-black',
+        name: { zh: '星悦航空高光曜石纯黑标准涂装 (JA01MC)', en: 'StarFlyer Signature Gloss Black Livery (JA01MC)' },
+        type: 'standard',
+        yearsActive: '2006 - 至今 / Present',
+        operatorId: 'starflyer',
+        isRetired: false,
+        description: {
+          zh: '高反光度黑色烤漆机体搭配白色翼尖小翼，机尾印制极简白点彗星与“S”形品牌徽记，冷峻现代。',
+          en: 'Obsidian gloss black fuselage with contrasting white wingtips and minimalist modern tail logo.',
+        },
+        photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/b/be/Starflyer-ja01mc.jpg',
+        scaleModels: [
+          {
+            id: 'jcw-sfj-a320',
+            brand: 'JC Wings',
+            itemCode: 'LH4010',
+            scale: '1:400',
+            material: { zh: '锌合金 / 压铸全金属', en: 'Diecast Metal Alloy' },
+            releaseYear: 2018,
+            status: 'available',
+            imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/b/be/Starflyer-ja01mc.jpg',
+            notes: { zh: 'JC Wings 精工纯黑涂装压铸飞机模型，黑曜石漆面平滑通透，模界公认黑武士风格神作', en: 'JC Wings 1:400 diecast featuring mirror-finish gloss black paint and crisp white markings.' },
+          },
+        ],
+      },
+    ],
+    detailPhotos: [
+      {
+        title: { zh: '羽田机场机坪纯黑机身光影特写 (JA03MC)', en: 'StarFlyer A320 Tarmac Profile' },
+        caption: { zh: '静候在停机坪上的星悦 A320，黑色高光机身如黑曜石般折射出机场晨曦。', en: 'JA03MC resting at Haneda tarmac with sleek black reflective fuselage.' },
+        url: 'https://upload.wikimedia.org/wikipedia/commons/b/b6/%E3%82%B9%E3%82%BF%E3%83%BC%E3%83%95%E3%83%A9%E3%82%A4%E3%83%A4%E3%83%BC_AIRBUS_A320_JA03MC.jpg',
+        tag: { zh: '机坪光影', en: 'Tarmac' },
+      },
+    ],
+  },
+
+  // 81. 蒙古民航 波音 787-9 "风马神驹" 梦想客机 (EI-MGL / 蒙古国)
+  {
+    id: 'miat-787-9',
+    category: 'aviation',
+    modelName: { zh: '蒙古民航 波音 787-9 "风马神驹" 梦想客机', en: 'MIAT Mongolian Airlines Boeing 787-9 Dreamliner' },
+    code: 'B789-MGL',
+    manufacturer: { zh: '波音 (Boeing)', en: 'Boeing' },
+    status: 'active',
+    firstServiceYear: 2023,
+    country: { zh: '蒙古', en: 'Mongolia' },
+    countryCode: 'MN',
+    operatorIds: ['miat_mongolian'],
+    specs: {
+      maxSpeed: '913 km/h (Mach 0.85)',
+      capacity: '292 座 (商务舱 30 / 优选经济舱 36 / 经济舱 226)',
+      rangeOrPower: '14,140 km (乌兰巴托直飞法兰克福、首尔、伊斯坦布尔)',
+      length: '62.81 m (翼展 Wingspan: 60.12 m)',
+    },
+    overview: {
+      zh: '中亚草原苍狼与辽阔蓝天的现代飞翼！蒙古民航（MIAT）波音 787-9 是蒙古国历史上最现代化的洲际旗舰。机尾喷涂蒙古游牧民族信仰中象征自由、守护与好运的神圣天马“风马（Hiimori）”，机身腰线采用蒙古长生天蓝（Eternal Blue Sky）。常年顶风冒雪穿梭于西伯利亚冰原与蒙古高原，将乌兰巴托紧密连结全球。',
+      en: 'Flagship of Mongolia featuring the sacred flying steed "Hiimori" (Wind Horse) on the tail, embodying nomad freedom across the eternal blue sky.',
+    },
+    heroImage: 'https://upload.wikimedia.org/wikipedia/commons/3/3c/MIAT_Mongolian_Airlines_Boeing_787-9_EI-MGL.jpg',
+    liveries: [
+      {
+        id: 'miat-787-standard',
+        name: { zh: '蒙古民航苍穹长生天蓝与风马神驹标准涂装 (EI-MGL)', en: 'MIAT Blue Sky & Wind Horse Livery (EI-MGL)' },
+        type: 'standard',
+        yearsActive: '2023 - 至今 / Present',
+        operatorId: 'miat_mongolian',
+        isRetired: false,
+        description: {
+          zh: '珍珠白机身贯穿蒙古深蓝长生天腰线，垂直尾翼喷绘金色双翼飞马“Hiimori”徽章，充满大草原的辽阔气魄。',
+          en: 'Pearl white body with deep Mongolian sky blue cheatline and golden winged horse crest on tail.',
+        },
+        photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/3/3c/MIAT_Mongolian_Airlines_Boeing_787-9_EI-MGL.jpg',
+        scaleModels: [
+          {
+            id: 'ph-miat-787',
+            brand: 'Phoenix',
+            itemCode: '11846',
+            scale: '1:400',
+            material: { zh: '锌合金 / 压铸全金属', en: 'Diecast Metal Alloy' },
+            releaseYear: 2024,
+            status: 'available',
+            imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/3/3c/MIAT_Mongolian_Airlines_Boeing_787-9_EI-MGL.jpg',
+            notes: { zh: 'Phoenix 2024年全新压铸模型，极其稀缺的小众中亚国家旗舰题材，金马徽标移印精致', en: 'Phoenix 1:400 diecast featuring the iconic Wind Horse emblem of Mongolia.' },
+          },
+        ],
+      },
+    ],
+    detailPhotos: [
+      {
+        title: { zh: '法兰克福国际机场跑道降落滑行特写', en: 'MIAT Boeing 787-9 Landing at Frankfurt' },
+        caption: { zh: '执飞洲际长途航线降落法兰克福的 EI-MGL，机尾金色天马在欧洲晴空下格外显眼。', en: 'EI-MGL touching down at Frankfurt on intercontinental service from Ulaanbaatar.' },
+        url: 'https://upload.wikimedia.org/wikipedia/commons/a/ab/MIAT_Mongolian_Airlines_Boeing_787-9_FRA_16082023.jpg',
+        tag: { zh: '接地滑行', en: 'Landing' },
+      },
+    ],
+  },
+
+  // 82. 曼谷航空 空客 A320 "苏梅精品" 海岛彩绘客机 (HS-PPJ / 泰国)
+  {
+    id: 'bangkok-airways-a320',
+    category: 'aviation',
+    modelName: { zh: '曼谷航空 空客 A320 "苏梅精品" 海岛彩绘客机', en: 'Bangkok Airways Airbus A320 "Boutique Samui"' },
+    code: 'A320-BKI',
+    manufacturer: { zh: '空中客车 (Airbus)', en: 'Airbus' },
+    status: 'active',
+    firstServiceYear: 2004,
+    country: { zh: '泰国', en: 'Thailand' },
+    countryCode: 'TH',
+    operatorIds: ['bangkok_airways'],
+    specs: {
+      maxSpeed: '870 km/h (Mach 0.78)',
+      capacity: '162 座 (全经济舱海岛度假布局)',
+      rangeOrPower: '6,150 km (连接曼谷、苏梅岛、普吉岛与清迈)',
+      length: '37.57 m (翼展 Wingspan: 34.10 m)',
+    },
+    overview: {
+      zh: '享有“亚洲精品航空（Asia\'s Boutique Airline）”美誉的度假胜地载旗航司！曼谷航空以自建并运营苏梅岛全开放茅草顶花园度假机场闻名。全机队身披热带海岛卡通彩绘，融合海豚、海浪、棕榈树与热带鱼等浓郁度假元素，为旅客带来沉浸式的海岛度假氛围。',
+      en: 'Asia\'s Boutique Airline operating cheerful tropical holiday liveries and owning the world-famous open-air garden airport on Koh Samui.',
+    },
+    heroImage: 'https://upload.wikimedia.org/wikipedia/commons/5/55/Bangkok_Airways%2C_HS-PPJ%2C_Airbus_A320-232_%2846939324164%29.jpg',
+    liveries: [
+      {
+        id: 'bki-a320-samui',
+        name: { zh: '曼谷航空苏梅岛阳光海浪波纹标准彩绘 (HS-PPJ)', en: 'Bangkok Airways Tropical Waves Livery (HS-PPJ)' },
+        type: 'standard',
+        yearsActive: '2008 - 至今 / Present',
+        operatorId: 'bangkok_airways',
+        isRetired: false,
+        description: {
+          zh: '明快的粉紫、天蓝与墨绿热带海浪波纹贯穿全机，垂尾印有抽象的东方吉祥海鸟展翅图案。',
+          en: 'Tropical ocean waves in cyan, magenta, and blue rolling across the fuselage with soaring bird crest.',
+        },
+        photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/5/55/Bangkok_Airways%2C_HS-PPJ%2C_Airbus_A320-232_%2846939324164%29.jpg',
+        scaleModels: [
+          {
+            id: 'jcw-bki-a320',
+            brand: 'JC Wings',
+            itemCode: 'LH4068',
+            scale: '1:400',
+            material: { zh: '锌合金 / 压铸全金属', en: 'Diecast Metal Alloy' },
+            releaseYear: 2019,
+            status: 'available',
+            imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/5/55/Bangkok_Airways%2C_HS-PPJ%2C_Airbus_A320-232_%2846939324164%29.jpg',
+            notes: { zh: 'JC Wings 热带度假涂装模型，多彩波浪线条过渡自然，极具海岛风情', en: 'JC Wings 1:400 diecast featuring the vibrant tropical wave scheme.' },
+          },
+        ],
+      },
+    ],
+    detailPhotos: [
+      {
+        title: { zh: '曼谷航空海岛彩绘机起飞离地特写', en: 'Bangkok Airways A320 Takeoff' },
+        caption: { zh: '腾空而起的曼谷航空 A320，热带海浪图案在阳光照射下洋溢着度假愉悦。', en: 'A320 climbing into tropical sky showcasing cheerful colorful scheme.' },
+        url: 'https://upload.wikimedia.org/wikipedia/commons/5/55/Bangkok_Airways%2C_HS-PPJ%2C_Airbus_A320-232_%2846939324164%29.jpg',
+        tag: { zh: '起飞离地', en: 'Takeoff' },
+      },
+    ],
+  },
+
+  // 83. 皇家文莱航空 波音 787-8 皇家金顶客机 (V8-DLA / 文莱)
+  {
+    id: 'royal-brunei-787-8',
+    category: 'aviation',
+    modelName: { zh: '皇家文莱航空 波音 787-8 皇家金顶客机', en: 'Royal Brunei Airlines Boeing 787-8 Dreamliner' },
+    code: 'B788-RBA',
+    manufacturer: { zh: '波音 (Boeing)', en: 'Boeing' },
+    status: 'active',
+    firstServiceYear: 2013,
+    country: { zh: '文莱', en: 'Brunei' },
+    countryCode: 'BN',
+    operatorIds: ['royal_brunei'],
+    specs: {
+      maxSpeed: '913 km/h (Mach 0.85)',
+      capacity: '254 座 (公务舱 18 / 经济舱 236)',
+      rangeOrPower: '14,140 km (斯里巴加湾市直飞伦敦希思罗、墨尔本、迪拜)',
+      length: '56.72 m (翼展 Wingspan: 60.12 m)',
+    },
+    overview: {
+      zh: '和平之邦文莱苏丹王国的奢华国家载旗航空！皇家文莱航空（Royal Brunei）是全球首家在远程航线上全波音 787 化的小而美精品航司。机身以纯净白金与暖黄色调彰显文莱皇室尊贵气派，起飞前机舱广播古兰经平安祈祷经文，长年执飞从婆罗洲直飞伦敦希思罗等跨洋旗舰航线。',
+      en: 'Boutique flag carrier of the Sultanate of Brunei. Known for operating Boeing 787 Dreamliners with serene Islamic royal hospitality on long-haul routes.',
+    },
+    heroImage: 'https://upload.wikimedia.org/wikipedia/commons/c/ce/Royal_Brunei_Airlines%2C_V8-DLA%2C_Boeing_787-8_Dreamliner.jpg',
+    liveries: [
+      {
+        id: 'rba-787-standard',
+        name: { zh: '皇家文莱航空纯白金顶皇家标准涂装 (V8-DLA)', en: 'Royal Brunei Airlines Royal Yellow & White Livery (V8-DLA)' },
+        type: 'standard',
+        yearsActive: '2013 - 至今 / Present',
+        operatorId: 'royal_brunei',
+        isRetired: false,
+        description: {
+          zh: '珍珠白机身点缀暖黄与棕褐色流线细带，垂直尾翼印有醒目的黄色 RB 皇家字母徽章，高雅沉静。',
+          en: 'Elegant cream and yellow cheatlines running gracefully to the iconic yellow RB crest on vertical tail.',
+        },
+        photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/c/ce/Royal_Brunei_Airlines%2C_V8-DLA%2C_Boeing_787-8_Dreamliner.jpg',
+        scaleModels: [
+          {
+            id: 'ph-rba-787',
+            brand: 'Phoenix',
+            itemCode: '10972',
+            scale: '1:400',
+            material: { zh: '锌合金 / 压铸全金属', en: 'Diecast Metal Alloy' },
+            releaseYear: 2014,
+            status: 'available',
+            imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/c/ce/Royal_Brunei_Airlines%2C_V8-DLA%2C_Boeing_787-8_Dreamliner.jpg',
+            notes: { zh: 'Phoenix 经典 787-8 合金模型，暖黄与棕褐细线条移印细腻，文莱皇家徽标端庄', en: 'Phoenix 1:400 diecast with accurately painted Royal Brunei yellow cheatline and logo.' },
+          },
+        ],
+      },
+    ],
+    detailPhotos: [
+      {
+        title: { zh: '伦敦希思罗机场停机坪 V8-DLD 特写', en: 'Royal Brunei 787 Parked at Heathrow' },
+        caption: { zh: '执飞旗舰航线抵达伦敦希思罗机场的文莱 787，展现小巧而奢华的东南亚苏丹王国风韵。', en: 'V8-DLD resting at Heathrow terminal after intercontinental flight from Bandar Seri Begawan.' },
+        url: 'https://upload.wikimedia.org/wikipedia/commons/5/57/Royal_Brunei_Airlines_%28V8-DLD%29_at_parked_at_Heathrow.jpg',
+        tag: { zh: '机坪停靠', en: 'Tarmac' },
+      },
+    ],
+  },
+
+  // 84. 印度航空 波音 787-8 "大君之窗" 梦想客机 (VT-ANB / 印度)
+  {
+    id: 'air-india-787-8',
+    category: 'aviation',
+    modelName: { zh: '印度航空 波音 787-8 "大君之窗" 梦想客机', en: 'Air India Boeing 787-8 Dreamliner' },
+    code: 'B788-AIC',
+    manufacturer: { zh: '波音 (Boeing)', en: 'Boeing' },
+    status: 'active',
+    firstServiceYear: 2012,
+    country: { zh: '印度', en: 'India' },
+    countryCode: 'IN',
+    operatorIds: ['air_india'],
+    specs: {
+      maxSpeed: '913 km/h (Mach 0.85)',
+      capacity: '256 座 (商务舱 18 / 经济舱 238)',
+      rangeOrPower: '14,140 km (新德里 / 孟买直飞伦敦、巴黎、法兰克福)',
+      length: '56.72 m (翼展 Wingspan: 60.12 m)',
+    },
+    overview: {
+      zh: '印度历史最悠久的国家载旗航空公司！印度航空经典涂装以风靡全球的吉祥物“大君（Maharaja）”红头巾为灵感，最具特色的莫过于整排客舱舷窗外侧装饰有拉贾斯坦邦传统古代宫殿拱门窗棂（Jharokha），垂直尾翼喷涂金色太阳转轮天鹅徽标，承载浓厚印度次大陆古老宫廷艺术风情。',
+      en: 'Flag carrier of India featuring the iconic palace window frames (Jharokha) painted around cabin windows and the Konark sun wheel emblem.',
+    },
+    heroImage: 'https://upload.wikimedia.org/wikipedia/commons/2/20/Air_India_787-8_%28VT-ANB%29.jpg',
+    liveries: [
+      {
+        id: 'aic-787-maharaja',
+        name: { zh: '印度航空经典拉贾斯坦宫廷拱窗红金标准涂装 (VT-ANB)', en: 'Air India Classic Palace Windows Livery (VT-ANB)' },
+        type: 'standard',
+        yearsActive: '2012 - 至今 / Present',
+        operatorId: 'air_india',
+        isRetired: false,
+        description: {
+          zh: '洁白机身以朱红与灿金细线环绕，每个舷窗四周喷绘传统红白相间的印度古宫殿拱门花纹，独一无二。',
+          en: 'Signature red palace arch frames surrounding every passenger window, accompanied by the Konark sun wheel tail logo.',
+        },
+        photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/2/20/Air_India_787-8_%28VT-ANB%29.jpg',
+        scaleModels: [
+          {
+            id: 'ph-aic-787',
+            brand: 'Phoenix',
+            itemCode: '10738',
+            scale: '1:400',
+            material: { zh: '锌合金 / 压铸全金属', en: 'Diecast Metal Alloy' },
+            releaseYear: 2013,
+            status: 'available',
+            imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/2/20/Air_India_787-8_%28VT-ANB%29.jpg',
+            notes: { zh: 'Phoenix 早期高难度移印神作，精工复刻数十个舷窗外沿的红白拉贾斯坦宫殿拱门花纹', en: 'Phoenix 1:400 diecast featuring the intricate palace window details.' },
+          },
+        ],
+      },
+    ],
+    detailPhotos: [
+      {
+        title: { zh: '东京成田机场跑道降落侧面特写', en: 'Air India 787 Landing at Narita' },
+        caption: { zh: 'VT-ANB 降落东京成田机场，机窗上一字排开的印度传统宫殿窗棂在日光下极为醒目。', en: 'VT-ANB on touchdown showing the remarkable palace window livery pattern.' },
+        url: 'https://upload.wikimedia.org/wikipedia/commons/f/f9/Air_India_Boeing_787-8_VT-ANB_NRT_%2815922475860%29.jpg',
+        tag: { zh: '跑道降落', en: 'Landing' },
+      },
+    ],
+  },
+
+  // 85. 斯里兰卡航空 空客 A330-300 "锡兰孔雀" 旗舰客机 (4R-ALT / 斯里兰卡)
+  {
+    id: 'srilankan-a330-300',
+    category: 'aviation',
+    modelName: { zh: '斯里兰卡航空 空客 A330-300 "锡兰孔雀" 旗舰客机', en: 'SriLankan Airlines Airbus A330-300 Ceylon Peacock' },
+    code: 'A333-ALK',
+    manufacturer: { zh: '空中客车 (Airbus)', en: 'Airbus' },
+    status: 'active',
+    firstServiceYear: 2014,
+    country: { zh: '斯里兰卡', en: 'Sri Lanka' },
+    countryCode: 'LK',
+    operatorIds: ['srilankan_airlines'],
+    specs: {
+      maxSpeed: '913 km/h (Mach 0.82)',
+      capacity: '297 座 (商务舱 28 / 经济舱 269)',
+      rangeOrPower: '11,750 km (科伦坡直飞伦敦希思罗、东京、墨尔本)',
+      length: '63.66 m (翼展 Wingspan: 60.30 m)',
+    },
+    overview: {
+      zh: '印度洋宝石之国的国家载旗航空宽体主力！斯里兰卡航空以斯里兰卡国鸟——华美开屏的“锡兰孔雀（Monara）”为图腾，机尾展开红、黄、青、绿四色绚烂羽翼，机身配以印度洋深海碧蓝波浪线条。机组空乘身着传统手工刺绣孔雀花纹莎丽，洋溢着印度洋海岛的热情与优雅。',
+      en: 'Flag carrier of the pearl of the Indian Ocean, featuring the stunning colorful peacock (Monara) emblem and deep marine blue waves.',
+    },
+    heroImage: 'https://upload.wikimedia.org/wikipedia/commons/3/34/Front_Sri_Lankan_A330_4R-ALT_Chennai_Jul25_R16_07941.jpg',
+    liveries: [
+      {
+        id: 'alk-a333-peacock',
+        name: { zh: '斯里兰卡航空经典五彩孔雀开屏标准涂装 (4R-ALT)', en: 'SriLankan Airlines Ceylon Peacock Livery (4R-ALT)' },
+        type: 'standard',
+        yearsActive: '2014 - 至今 / Present',
+        operatorId: 'srilankan_airlines',
+        isRetired: false,
+        description: {
+          zh: '垂尾印有红黄蓝绿四色绚丽开屏孔雀，洁白机身配以深邃蔚蓝海浪线条与金色尾翎点缀。',
+          en: 'Vibrant peacock plume crest on the vertical tail with dark navy and teal ocean dynamic ribbons.',
+        },
+        photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/3/34/Front_Sri_Lankan_A330_4R-ALT_Chennai_Jul25_R16_07941.jpg',
+        scaleModels: [
+          {
+            id: 'jcw-alk-a333',
+            brand: 'JC Wings',
+            itemCode: 'LH4122',
+            scale: '1:400',
+            material: { zh: '锌合金 / 压铸全金属', en: 'Diecast Metal Alloy' },
+            releaseYear: 2017,
+            status: 'available',
+            imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/3/34/Front_Sri_Lankan_A330_4R-ALT_Chennai_Jul25_R16_07941.jpg',
+            notes: { zh: 'JC Wings 旗舰合金 A330 模具，机尾孔雀四色渐变羽毛开印生动艳丽', en: 'JC Wings 1:400 diecast featuring the vivid peacock feather tail print.' },
+          },
+        ],
+      },
+    ],
+    detailPhotos: [
+      {
+        title: { zh: '金奈国际机场滑行侧面孔雀机尾特写', en: 'SriLankan A330-300 Taxiing Profile' },
+        caption: { zh: '在南亚阳光下滑行起飞的 4R-ALT，五彩孔雀羽翼在蓝天映衬下光彩夺目。', en: '4R-ALT taxiing under bright sunlight showing its rich Ceylon heritage.' },
+        url: 'https://upload.wikimedia.org/wikipedia/commons/3/34/Front_Sri_Lankan_A330_4R-ALT_Chennai_Jul25_R16_07941.jpg',
+        tag: { zh: '机坪滑行', en: 'Taxiing' },
+      },
+    ],
+  },
+
+  // 86. 马尔代夫水上飞机 DHC-6 双水獭水陆两栖客机 (8Q-TMV / 马尔代夫)
+  {
+    id: 'trans-maldivian-dhc-6',
+    category: 'aviation',
+    modelName: { zh: '马尔代夫水上飞机 DHC-6 双水獭水陆两栖客机', en: 'Trans Maldivian Airways DHC-6 Twin Otter Floatplane' },
+    code: 'DHC6-TMA',
+    manufacturer: { zh: '加拿大德哈维兰 (De Havilland Canada)', en: 'De Havilland Canada' },
+    status: 'active',
+    firstServiceYear: 1989,
+    country: { zh: '马尔代夫', en: 'Maldives' },
+    countryCode: 'MV',
+    operatorIds: ['trans_maldivian'],
+    specs: {
+      maxSpeed: '314 km/h',
+      capacity: '15 座 (全观光浮筒水陆两栖布局)',
+      rangeOrPower: '1,435 km (全马尔代夫环礁岛礁海域通勤跳岛)',
+      length: '15.77 m (翼展 Wingspan: 19.81 m / 装备两副大型水上双浮筒)',
+    },
+    overview: {
+      zh: '全球规模最大的水上飞机航空公司！马尔代夫水上飞机（TMA）独家运营近 70 架 DHC-6 双水獭（Twin Otter）水陆两用双发螺旋桨飞机。机身喷涂热烈奔放的明黄色与艳红色，机腹装有坚固浮筒；飞行员常年光脚身穿短裤、人字拖在碧蓝环礁与珊瑚海之上水面起降，是马尔代夫度假与跳岛飞行的标志性明信片。',
+      en: 'The world\'s largest seaplane operator with nearly 70 DHC-6 Twin Otters connecting resort atolls across the Indian Ocean in vibrant yellow and red livery.',
+    },
+    heroImage: 'https://upload.wikimedia.org/wikipedia/commons/3/35/DHC-6_Twin_Otter_floatplanes_%28Trans_Maldivian_Airways%29.JPG',
+    liveries: [
+      {
+        id: 'tma-dhc6-sunshine',
+        name: { zh: '马尔代夫水上飞机经典艳红金黄骄阳涂装', en: 'TMA Tropical Sunshine Red & Yellow Livery' },
+        type: 'standard',
+        yearsActive: '1998 - 至今 / Present',
+        operatorId: 'trans_maldivian',
+        isRetired: false,
+        description: {
+          zh: '高饱和度暖黄色机身镶嵌鲜红斑块与天蓝流线，双浮筒配有登机舷梯，在碧海蓝天中极具辨识度。',
+          en: 'High-visibility tropical red, yellow and blue livery with twin water floats tailored for oceanic lagoon landings.',
+        },
+        photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/3/35/DHC-6_Twin_Otter_floatplanes_%28Trans_Maldivian_Airways%29.JPG',
+        scaleModels: [
+          {
+            id: 'gj-tma-dhc6',
+            brand: 'GeminiJets',
+            itemCode: 'GJTMA1850',
+            scale: '1:400',
+            material: { zh: '锌合金 / 压铸全金属', en: 'Diecast Metal Alloy' },
+            releaseYear: 2019,
+            status: 'available',
+            imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/3/35/DHC-6_Twin_Otter_floatplanes_%28Trans_Maldivian_Airways%29.JPG',
+            notes: { zh: 'GeminiJets 经典合金水上小飞机，完整还原机腹双浮筒与微型螺旋桨叶片', en: 'GeminiJets 1:400 diecast floatplane with detailed dual floats.' },
+          },
+        ],
+      },
+    ],
+    detailPhotos: [
+      {
+        title: { zh: '马累国际机场水上机坪群机停泊壮景', en: 'Trans Maldivian Seaplanes at Male Water Docks' },
+        caption: { zh: '停泊在马累水上机码头的红黄双水獭机群，犹如浮在印度洋绿松石潟湖上的轻舟。', en: 'Fleet of Twin Otters docked at Male seaplane terminal ready for atoll transfer.' },
+        url: 'https://upload.wikimedia.org/wikipedia/commons/3/35/DHC-6_Twin_Otter_floatplanes_%28Trans_Maldivian_Airways%29.JPG',
+        tag: { zh: '水上停泊', en: 'Water Dock' },
+      },
+    ],
+  },
+
+  // 87. 不丹皇家航空 空客 A319 "雷龙" 喜马拉雅高原客机 (A5-RGG / 不丹)
+  {
+    id: 'drukair-a319',
+    category: 'aviation',
+    modelName: { zh: '不丹皇家航空 空客 A319 "雷龙" 喜马拉雅高原客机', en: 'Drukair Airbus A319 Thunder Dragon High-Altitude' },
+    code: 'A319-DRK',
+    manufacturer: { zh: '空中客车 (Airbus)', en: 'Airbus' },
+    status: 'active',
+    firstServiceYear: 2004,
+    country: { zh: '不丹', en: 'Bhutan' },
+    countryCode: 'BT',
+    operatorIds: ['drukair'],
+    specs: {
+      maxSpeed: '870 km/h (Mach 0.78)',
+      capacity: '118 座 (商务舱 16 / 经济舱 102 / 配备 CFM56-5B 高推力高原发动机)',
+      rangeOrPower: '6,850 km (专门满足帕罗 2235米海拔短跑道大坡度进近与起降要求)',
+      length: '33.84 m (翼展 Wingspan: 34.10 m)',
+    },
+    overview: {
+      zh: '全球最具挑战性与传奇色彩的喜马拉雅山地航司！不丹皇家航空（Drukair）基地帕罗机场深藏于群山峡谷之中，跑道两端紧挨 5000 米雪峰，无盲降设备全靠目视进近，全球仅屈指可数的特训资深机长拥有降落执照。A319 机身喷涂不丹国旗金黄与亮橙色，垂直尾翼印有威武腾飞的白色“雷龙（Druk）”，穿梭在世界屋脊雪峰之巅。',
+      en: 'Legendary Himalayan airline operating into challenging Paro Valley Airport surrounded by 5,000m peaks. Adorned with Bhutan\'s white Thunder Dragon (Druk).',
+    },
+    heroImage: 'https://upload.wikimedia.org/wikipedia/commons/d/d9/A5-RGG_-_Airbus_A319-115_-_Drukair_-_VGHS.jpg',
+    liveries: [
+      {
+        id: 'drk-a319-thunder-dragon',
+        name: { zh: '不丹皇家航空金黄亮橙雪山雷龙标准涂装 (A5-RGG)', en: 'Drukair National Flag Thunder Dragon Livery (A5-RGG)' },
+        type: 'standard',
+        yearsActive: '2004 - 至今 / Present',
+        operatorId: 'drukair',
+        isRetired: false,
+        description: {
+          zh: '以不丹国旗金黄（象征世俗王权）与亮橙（象征藏传佛教精神）为底色，垂尾绘有手握珠宝腾空飞跃的纯白雷龙。',
+          en: 'Bhutan national flag yellow and orange diagonal fields with the majestic white dragon clutching jewels on the tail.',
+        },
+        photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/d/d9/A5-RGG_-_Airbus_A319-115_-_Drukair_-_VGHS.jpg',
+        scaleModels: [
+          {
+            id: 'jcw-drk-a319',
+            brand: 'JC Wings',
+            itemCode: 'LH4082',
+            scale: '1:400',
+            material: { zh: '锌合金 / 压铸全金属', en: 'Diecast Metal Alloy' },
+            releaseYear: 2018,
+            status: 'available',
+            imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/d/d9/A5-RGG_-_Airbus_A319-115_-_Drukair_-_VGHS.jpg',
+            notes: { zh: 'JC Wings 经典高原神机模具，精工刻画机尾不丹白雷龙鳞片与金黄亮橙双色漆面', en: 'JC Wings 1:400 diecast featuring the iconic Bhutanese Thunder Dragon artwork.' },
+          },
+        ],
+      },
+    ],
+    detailPhotos: [
+      {
+        title: { zh: '帕罗机场雪峰峡谷间停泊特写', en: 'Drukair A319 at Paro Valley Airport' },
+        caption: { zh: '停泊在帕罗机场的不丹 A319，身后是层峦叠嶂的喜马拉雅崇山峻岭与传统藏式宗堡建筑。', en: 'A5-RGG resting against the breathtaking backdrop of Himalayan valley mountains.' },
+        url: 'https://upload.wikimedia.org/wikipedia/commons/5/53/Drukair_-_A5-RGG_-_Airbus_A319_-_Left_Engine_plus_Body_-_Paro_Airport.jpg',
+        tag: { zh: '高原峡谷', en: 'Himalayas' },
+      },
+    ],
+  },
+
+  // 88. 阿曼航空 波音 787-9 "绿松石之香" 梦幻客机 (A4O-SF / 阿曼)
+  {
+    id: 'oman-air-787-9',
+    category: 'aviation',
+    modelName: { zh: '阿曼航空 波音 787-9 "绿松石之香" 梦幻客机', en: 'Oman Air Boeing 787-9 Dreamliner' },
+    code: 'B789-OAS',
+    manufacturer: { zh: '波音 (Boeing)', en: 'Boeing' },
+    status: 'active',
+    firstServiceYear: 2015,
+    country: { zh: '阿曼', en: 'Oman' },
+    countryCode: 'OM',
+    operatorIds: ['oman_air'],
+    specs: {
+      maxSpeed: '913 km/h (Mach 0.85)',
+      capacity: '288 座 (豪华头等套房 8 / 商务舱 24 / 经济舱 256)',
+      rangeOrPower: '14,140 km (马斯喀特直飞伦敦、巴黎、法兰克福、广州)',
+      length: '62.81 m (翼展 Wingspan: 60.12 m)',
+    },
+    overview: {
+      zh: '阿拉伯半岛东南部极具海洋航海文明底蕴的精品奢华航司！阿曼苏丹国载旗航空（阿曼航空）以深邃宁静的绿松石深蓝（Turquoise Blue）为基调，机尾喷涂金色乳香（Frankincense）缭绕烟雾螺旋图案，客舱奢华度与宁静感享誉海湾。波音 787-9 执飞从马斯喀特直达欧洲与亚洲核心都市。',
+      en: 'Flag carrier of Oman showcasing Arabian elegance with turquoise ocean tones and swirling golden frankincense smoke tail crest.',
+    },
+    heroImage: 'https://upload.wikimedia.org/wikipedia/commons/7/7b/Oman_Air_%28A4O-SF%29_Boeing_787-9_Dreamliner_%2839294%29.jpg',
+    liveries: [
+      {
+        id: 'oas-787-turquoise',
+        name: { zh: '阿曼航空纯正阿拉伯绿松石波浪与金色乳香标准涂装 (A4O-SF)', en: 'Oman Air Turquoise Ocean & Golden Smoke Livery (A4O-SF)' },
+        type: 'standard',
+        yearsActive: '2015 - 至今 / Present',
+        operatorId: 'oman_air',
+        isRetired: false,
+        description: {
+          zh: '珍珠白机身流淌深邃绿松石青蓝波纹，垂直尾翼印有金色漩涡状阿拉伯乳香烟气徽标，奢华低调。',
+          en: 'Turquoise ocean blue cheatlines with swirling golden incense smoke emblem on vertical fin.',
+        },
+        photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/7/7b/Oman_Air_%28A4O-SF%29_Boeing_787-9_Dreamliner_%2839294%29.jpg',
+        scaleModels: [
+          {
+            id: 'ph-oas-787',
+            brand: 'Phoenix',
+            itemCode: '11488',
+            scale: '1:400',
+            material: { zh: '锌合金 / 压铸全金属', en: 'Diecast Metal Alloy' },
+            releaseYear: 2019,
+            status: 'available',
+            imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/7/7b/Oman_Air_%28A4O-SF%29_Boeing_787-9_Dreamliner_%2839294%29.jpg',
+            notes: { zh: 'Phoenix 精细压铸 787-9 模型，绿松石金属渐变色泽调配精准，金色乳香标立体感强', en: 'Phoenix 1:400 diecast featuring the elegant turquoise and gold Oman Air livery.' },
+          },
+        ],
+      },
+    ],
+    detailPhotos: [
+      {
+        title: { zh: '阿曼航空波音 787-9 降落滑行特写', en: 'Oman Air Boeing 787-9 Profile' },
+        caption: { zh: 'A4O-SF 在欧洲枢纽跑道滑行，绿松石与纯白机身在阳光下显现阿拉伯海湾独特的高贵质感。', en: 'A4O-SF taxiing showing the rich turquoise wave design.' },
+        url: 'https://upload.wikimedia.org/wikipedia/commons/7/7b/Oman_Air_%28A4O-SF%29_Boeing_787-9_Dreamliner_%2839294%29.jpg',
+        tag: { zh: '滑行起飞', en: 'Taxi' },
+      },
+    ],
+  },
+
+  // 89. 马来亚铁道 ETS Class 93 世界最高速米轨动车组 (ETS 201 / 马来西亚)
+  {
+    id: 'ktmb-ets-class-93',
+    category: 'railway',
+    modelName: { zh: '马来亚铁道 ETS Class 93 世界最高速米轨动车组', en: 'KTM ETS Class 93 Metre-Gauge High-Speed EMU' },
+    code: 'ETS-CLASS-93',
+    manufacturer: { zh: '中车株洲电力机车 (CRRC Zhuzhou)', en: 'CRRC Zhuzhou' },
+    status: 'active',
+    firstServiceYear: 2015,
+    country: { zh: '马来西亚', en: 'Malaysia' },
+    countryCode: 'MY',
+    operatorIds: ['ktmb'],
+    specs: {
+      maxSpeed: '160 km/h (设计试验最高时速 176 km/h，创世界 1000mm 米轨铁路最高纪录)',
+      capacity: '320 座 (6节编组，设头等商务舱与标准座席，配祈祷室及餐吧车)',
+      rangeOrPower: '4,000 kW (25kV 50Hz 交流接触网供电，贯穿马来半岛西海岸干线)',
+      length: '138 m (6辆固定编组 / 配备米轨径向转向架)',
+    },
+    overview: {
+      zh: '打破世界米轨铁路速度纪录的工业奇迹！马来亚铁道（KTMB）运营的 ETS Class 93 电气化动车组由中国中车株机量身研发制造，在仅仅 1000mm（1米）的窄轨轨道上跑出高达 160 公里/小时的世界最高商业运营时速。列车采用金黄、蓝、灰三色气动前脸，全线贯通吉隆坡、怡保、槟城（北海）至马泰边境巴东勿刹，将原本耗时数天的西海岸干线缩减至数小时。',
+      en: 'The world\'s fastest commercial metre-gauge (1,000 mm) train with an operating speed of 160 km/h. Built by CRRC Zhuzhou for KTM connecting KL, Penang, and the Thai border.',
+    },
+    heroImage: 'https://upload.wikimedia.org/wikipedia/commons/a/a3/ETS_201_KTM_Class_93_Batu_Gajah.jpg',
+    liveries: [
+      {
+        id: 'ktmb-ets-yellow-grey',
+        name: { zh: '马来亚铁道金黄银灰现代流线标准涂装 (ETS 201)', en: 'KTM ETS Modern Yellow, Grey & Blue Streamline Livery' },
+        type: 'standard',
+        yearsActive: '2015 - 至今 / Present',
+        operatorId: 'ktmb',
+        isRetired: false,
+        description: {
+          zh: '银灰金属质感底色，车头点缀亮丽的金黄色护目镜线条与深蓝侧带，车窗采用全通式墨镜防晒玻璃设计。',
+          en: 'Sleek aerodynamic silver and grey body accented with bright yellow goggles mask and KTM blue waistband.',
+        },
+        photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/a/a3/ETS_201_KTM_Class_93_Batu_Gajah.jpg',
+        scaleModels: [
+          {
+            id: 'crrc-ktmb-class93',
+            brand: '中车文创',
+            itemCode: 'CRRC-KTMB-93',
+            scale: 'HO (1:87)',
+            material: { zh: '合金底盘与工程复合 ABS', en: 'Diecast Metal Chassis & ABS' },
+            releaseYear: 2016,
+            status: 'limited',
+            imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/a/a3/ETS_201_KTM_Class_93_Batu_Gajah.jpg',
+            notes: { zh: '中车株机官方限量订制出海纪念模型，精确刻画世界米轨最高速动车组 Class 93 流线车头与受电弓', en: 'Official CRRC Zhuzhou commemorative HO model depicting the world-record Class 93 metre-gauge EMU.' },
+          },
+        ],
+      },
+    ],
+    detailPhotos: [
+      {
+        title: { zh: '马来西亚霹雳州华都牙也站进站特写', en: 'ETS Class 93 Arriving at Batu Gajah' },
+        caption: { zh: '由吉隆坡疾驰而来的 ETS 201 缓缓停靠站台，展现现代米轨高速动车组流畅的气动线条。', en: 'ETS 201 arriving at Batu Gajah station along the electrified double track.' },
+        url: 'https://upload.wikimedia.org/wikipedia/commons/a/a3/ETS_201_KTM_Class_93_Batu_Gajah.jpg',
+        tag: { zh: '列车站台', en: 'Station' },
+      },
+    ],
+  },
+
+  // 90. 越南铁路 "南北统一特快" D19E 创新号客运机车 (D19E-916 / 越南)
+  {
+    id: 'vietnam-railways-d19e',
+    category: 'railway',
+    modelName: { zh: '越南铁路 "南北统一特快" D19E 创新号客运机车', en: 'Vietnam Railways D19E "Doi Moi" Reunification Express' },
+    code: 'D19E-VNR',
+    manufacturer: { zh: '中车资阳机车 (CRRC Ziyang)', en: 'CRRC Ziyang' },
+    status: 'active',
+    firstServiceYear: 2002,
+    country: { zh: '越南', en: 'Vietnam' },
+    countryCode: 'VN',
+    operatorIds: ['vietnam_railways'],
+    specs: {
+      maxSpeed: '120 km/h (米轨客运主力最高时速)',
+      capacity: '重载牵引 15 节空调卧铺客车组 (约 600~800 旅客)',
+      rangeOrPower: '1,435 kW (1,950 马力，CAT 3512B 柴油引擎，贯通河内至胡志明市 1,726公里南北大干线)',
+      length: '15.50 m (重联轴重轻量化设计，适应米轨复杂桥梁地形)',
+    },
+    overview: {
+      zh: '贯穿越南全境的“南北统一铁路（Reunification Express）”客运功勋机车！D19E 型“创新号（Đổi Mới）”内燃机车由中车资阳机车专为越南 1000mm 米轨研制，是越铁数量最多、出勤率最高的核心牵引动力。列车翻越著名的海云关（Hai Van Pass）依山傍海前行，一面是险峻悬崖，一面是浩瀚南海，入选世界最美火车旅行线路。',
+      en: 'The backbone diesel locomotive of Vietnam\'s iconic Reunification Express linking Hanoi and Ho Chi Minh City along the dramatic Hai Van coastline.',
+    },
+    heroImage: 'https://upload.wikimedia.org/wikipedia/commons/5/56/D19E-916%2C_Vietnam%2C_Binh_Thuan%2C_station_Phan_Thiet_%28Trainpix_215803%29.jpg',
+    liveries: [
+      {
+        id: 'vnr-d19e-tri-color',
+        name: { zh: '越南铁路红白蓝三色统一特快涂装 (D19E-916)', en: 'Vietnam Railways Classic Red, White & Blue Livery' },
+        type: 'standard',
+        yearsActive: '2002 - 至今 / Present',
+        operatorId: 'vietnam_railways',
+        isRetired: false,
+        description: {
+          zh: '前脸为醒目的热带亮黄色警示线条，车身侧面贯穿深海蓝与正红双腰线，车头嵌有金色越南铁路 VNR 飞轮徽章。',
+          en: 'Distinctive tropical yellow nose with red and blue side stripes and Vietnam Railways winged logo.',
+        },
+        photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/5/56/D19E-916%2C_Vietnam%2C_Binh_Thuan%2C_station_Phan_Thiet_%28Trainpix_215803%29.jpg',
+        scaleModels: [
+          {
+            id: 'cm-vnr-d19e',
+            brand: '长鸣火模',
+            itemCode: 'CM-D19E-VN',
+            scale: 'HO (1:87)',
+            material: { zh: '锌合金压铸底盘与工程 ABS', en: 'Diecast Metal Chassis & ABS' },
+            releaseYear: 2021,
+            status: 'available',
+            imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/5/56/D19E-916%2C_Vietnam%2C_Binh_Thuan%2C_station_Phan_Thiet_%28Trainpix_215803%29.jpg',
+            notes: { zh: '精细还原中车资阳制造的 D19E 型越南米轨内燃机车，飞轮转动、前灯可亮，配越铁车头金属铭牌', en: 'High-detail HO scale model reproducing CRRC Ziyang D19E locomotive in authentic VNR livery.' },
+          },
+        ],
+      },
+    ],
+    detailPhotos: [
+      {
+        title: { zh: 'D19E-936 机车牵引旅客列车前脸特写', en: 'Vietnam Railways D19E-936 Locomotive Nose' },
+        caption: { zh: 'D19E-936 机车车头醒目的黄色防撞条与红白蓝越铁制式涂装，展现坚固耐用的工业美感。', en: 'Close up of D19E-936 showing rugged front nose design and VNR crest.' },
+        url: 'https://upload.wikimedia.org/wikipedia/commons/4/42/Vietnam_Railways_D19E_-_936.jpg',
+        tag: { zh: '机车前脸', en: 'Locomotive' },
+      },
+    ],
+  },
+
+  // 91. 印尼铁路 "爪哇全景火山观光特急" CC206 机车客车组 (印度尼西亚 / KAI)
+  {
+    id: 'kai-panoramic-cc206',
+    category: 'railway',
+    modelName: { zh: '印尼铁路 "爪哇全景火山观光特急" CC206 机车客车组', en: 'PT KAI CC206 Locomotive & Panoramic Train' },
+    code: 'CC206-KAI',
+    manufacturer: { zh: '美国通用电气 (GE Transportation / PT INKA)', en: 'GE Transportation / PT INKA' },
+    status: 'active',
+    firstServiceYear: 2012,
+    country: { zh: '印度尼西亚', en: 'Indonesia' },
+    countryCode: 'ID',
+    operatorIds: ['kai_indonesia'],
+    specs: {
+      maxSpeed: '120 km/h (1067mm 窄轨干线最高时速)',
+      capacity: '重载牵引豪华全景玻璃车厢 (超大弧形全景天窗与自动遮阳帘)',
+      rangeOrPower: '1,680 kW (2,250 马力，GE FDL-8 双驾驶室重型内燃机车)',
+      length: '15.93 m (双端双驾驶室设计，适应爪哇岛崎岖山地弯道)',
+    },
+    overview: {
+      zh: '穿梭于热带活火山与翠绿梯田间的天际列车！印度尼西亚铁路公司（PT KAI）重型机车 CC206 采用美国 GE 双驾驶室定制设计，常年牵引开往万隆与日惹的“全景玻璃观光车（Kereta Panoramic）”。列车飞跃百米高的西库邦高架铁路桥（Cikubang Bridge），窗外即是云雾蒸腾的默拉皮活火山，堪称热带群岛铁道奇景。',
+      en: 'The pride of Indonesian railways crossing dramatic volcanic mountains and terraced rice paddies in Java, powered by GE CC206 double-cab diesel locomotives.',
+    },
+    heroImage: 'https://upload.wikimedia.org/wikipedia/commons/1/11/Purwokerto_Indonesia_Train-at-Purwokerto-Station-01.jpg',
+    liveries: [
+      {
+        id: 'kai-cc206-blue-orange',
+        name: { zh: '印尼铁路 KAI 经典深蓝与鲜橙波纹涂装', en: 'PT KAI Modern Navy & Orange Wave Livery' },
+        type: 'standard',
+        yearsActive: '2012 - 至今 / Present',
+        operatorId: 'kai_indonesia',
+        isRetired: false,
+        description: {
+          zh: '白色车身饰以醒目的深蓝与鲜橙两色交织波浪条纹，双端方形驾驶室配大视野防眩风挡。',
+          en: 'White body with bold dark navy and vibrant orange dynamic ribbons across both cab sides.',
+        },
+        photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/1/11/Purwokerto_Indonesia_Train-at-Purwokerto-Station-01.jpg',
+        scaleModels: [
+          {
+            id: 'ag-kai-cc206',
+            brand: 'TOMIX',
+            itemCode: 'HO-KAI-206',
+            scale: 'HO (1:87)',
+            material: { zh: '合金底盘与工程复合 ABS', en: 'Diecast Metal & ABS' },
+            releaseYear: 2020,
+            status: 'available',
+            imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/1/11/Purwokerto_Indonesia_Train-at-Purwokerto-Station-01.jpg',
+            notes: { zh: '高精度复刻印尼双驾驶室 CC206 型柴油机车，配全景客车编组', en: 'HO scale diecast model representing PT KAI CC206 double-cab diesel locomotive.' },
+          },
+        ],
+      },
+    ],
+    detailPhotos: [
+      {
+        title: { zh: '普禾哥多车站停靠的双端驾驶室 CC206 特写', en: 'CC206 Locomotive at Purwokerto Station' },
+        caption: { zh: '停靠站台等待发车的 CC206 机车，双端驾驶室设计极具东南亚窄轨机车重载特色。', en: 'CC206 ready for departure under the Indonesian tropical sun.' },
+        url: 'https://upload.wikimedia.org/wikipedia/commons/1/11/Purwokerto_Indonesia_Train-at-Purwokerto-Station-01.jpg',
+        tag: { zh: '车站停靠', en: 'Station' },
+      },
+    ],
+  },
+
+  // 92. 印度铁路 "范德巴拉特号" (Train 18) 高速动车组 (印度)
+  {
+    id: 'indian-railways-vande-bharat',
+    category: 'railway',
+    modelName: { zh: '印度铁路 "范德巴拉特号" (Train 18) 高速动车组', en: 'Indian Railways Vande Bharat Express (Train 18)' },
+    code: 'TRAIN-18-VB',
+    manufacturer: { zh: '金奈联合客车厂 (Integral Coach Factory, ICF)', en: 'Integral Coach Factory (ICF)' },
+    status: 'active',
+    firstServiceYear: 2019,
+    country: { zh: '印度', en: 'India' },
+    countryCode: 'IN',
+    operatorIds: ['indian_railways'],
+    specs: {
+      maxSpeed: '160 km/h (设计试验最高时速 180 km/h)',
+      capacity: '1,128 座 (16节编组，配行政商务包厢及旋转舒适软座)',
+      rangeOrPower: '8,000 kW (印度制造 Make in India 首列自主集成高速动车组)',
+      length: '384 m (16辆编组 / 空气动力学流线车头与全通密封风挡)',
+    },
+    overview: {
+      zh: '印度铁路迈向现代化的时代象征！“范德巴拉特号（Vande Bharat Express，意为向印度致敬）”，代号 Train 18，是由印度金奈客车厂完全自主设计集成的半高速动力分散型动车组。列车摒弃了传统笨重的机车牵引模式，采用流线型空气动力学白色车头与深蓝防晒玻璃腰线，极大地提升了新德里至瓦拉纳西、孟买至艾哈迈达巴德等干线的运行速度。',
+      en: 'India\'s pride and first semi-high speed EMU under "Make in India". Features aerodynamic blue and white streamline nose and modern passenger amenities.',
+    },
+    heroImage: 'https://upload.wikimedia.org/wikipedia/commons/4/43/Vande_Bharat_Express_train.jpg',
+    liveries: [
+      {
+        id: 'ir-vande-bharat-blue-white',
+        name: { zh: '范德巴拉特号经典白蓝流线型标准涂装', en: 'Vande Bharat Aerodynamic White & Blue Livery' },
+        type: 'standard',
+        yearsActive: '2019 - 至今 / Present',
+        operatorId: 'indian_railways',
+        isRetired: false,
+        description: {
+          zh: '前沿空气动力学流线型纯白车头，机车侧面贯穿沉稳优雅的深海蓝色宽幅腰线，车头嵌有闪亮镀铬车灯。',
+          en: 'Sleek white aerodynamic bullet nose with royal blue wide waistband running smoothly across passenger cars.',
+        },
+        photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/4/43/Vande_Bharat_Express_train.jpg',
+        scaleModels: [
+          {
+            id: 'ir-vb-ho',
+            brand: '中车文创',
+            itemCode: 'IR-VB-18',
+            scale: 'HO (1:87)',
+            material: { zh: '合金底盘与工程 ABS', en: 'Diecast Metal & Engineering ABS' },
+            releaseYear: 2022,
+            status: 'available',
+            imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/4/43/Vande_Bharat_Express_train.jpg',
+            notes: { zh: '高仿真白蓝双色 Train 18 动车组模型，带独立 LED 头尾透光车灯与密连挂钩', en: 'HO scale model capturing the modern aerodynamic bullet nose of India\'s Train 18.' },
+          },
+        ],
+      },
+    ],
+    detailPhotos: [
+      {
+        title: { zh: '孟买郊区干线飞驰中的范德巴拉特动车组', en: 'Vande Bharat Express Running near Mumbai' },
+        caption: { zh: '在南亚艳阳下疾驰的“印度制造”高速动车组，象征着古老印度铁路网的脱胎换骨。', en: 'Vande Bharat Express train gliding smoothly along the mainline near Mumbai.' },
+        url: 'https://upload.wikimedia.org/wikipedia/commons/4/43/Vande_Bharat_Express_train.jpg',
+        tag: { zh: '高速飞驰', en: 'High Speed' },
+      },
+    ],
+  },
+
+  // 93. 斯里兰卡高山茶园与海上铁道 Class S12 蓝色动车组 (斯里兰卡 / SLR)
+  {
+    id: 'sri-lanka-class-s12',
+    category: 'railway',
+    modelName: { zh: '斯里兰卡高山茶园与海上铁道 Class S12 蓝色动车组', en: 'Sri Lanka Railways Class S12 Blue Train' },
+    code: 'CLASS-S12-SLR',
+    manufacturer: { zh: '中车四方机车车辆 (CRRC Sifang)', en: 'CRRC Sifang' },
+    status: 'active',
+    firstServiceYear: 2012,
+    country: { zh: '斯里兰卡', en: 'Sri Lanka' },
+    countryCode: 'LK',
+    operatorIds: ['sri_lanka_railways'],
+    specs: {
+      maxSpeed: '100 km/h (宽轨 1676mm 高山与沿海特快)',
+      capacity: '600 座 (配观光大窗一等车厢、二等及三等座车)',
+      rangeOrPower: '1,950 kW (两端动车配备 Paxman 柴油引擎，强劲爬坡能力克服 33‰ 高山陡坡)',
+      length: '180 m (8辆至10辆编组 / 专为印度洋海风耐腐蚀与热带高湿环境研制)',
+    },
+    overview: {
+      zh: '闻名全球的“海上火车”与“高山茶园小火车”的真实化身！斯里兰卡铁路 Class S12 动车组由中国中车四方专门为斯里兰卡 1676mm 宽轨研制。通体身披纯正印度洋深蓝色涂装，常年执飞从康提穿行于云雾茶山、九拱桥（Nine Arch Bridge）至埃拉的高山线，以及紧贴印度洋浪花飞驰的加勒沿海线，是宫崎骏《千与千寻》海上列车的灵感现实原型。',
+      en: 'The world-famous Sri Lankan "Blue Train" traversing tea plantations across Nine Arch Bridge and running inches from the Indian Ocean waves along Galle coastline.',
+    },
+    heroImage: 'https://upload.wikimedia.org/wikipedia/commons/e/e4/Class_S12.jpg',
+    liveries: [
+      {
+        id: 'slr-s12-ocean-blue',
+        name: { zh: '锡兰高地与印度洋蔚蓝经典涂装 (蓝色小火车)', en: 'Sri Lanka Ceylon High Blue & White Livery' },
+        type: 'standard',
+        yearsActive: '2012 - 至今 / Present',
+        operatorId: 'sri_lanka_railways',
+        isRetired: false,
+        description: {
+          zh: '整列车身喷涂纯正浓郁的海蓝色，窗线嵌以纯白与金黄细带，两端圆润机车头在茶山云海中犹如一道蓝色清流。',
+          en: 'All-over vibrant oceanic blue body with crisp white and gold side stripes, iconic across Ceylon tea hills.',
+        },
+        photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/e/e4/Class_S12.jpg',
+        scaleModels: [
+          {
+            id: 'crrc-slr-s12',
+            brand: '中车文创',
+            itemCode: 'CRRC-SLR-S12',
+            scale: 'HO (1:87)',
+            material: { zh: '精工合金底盘与工程 ABS', en: 'Diecast Metal Chassis & ABS' },
+            releaseYear: 2018,
+            status: 'available',
+            imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/e/e4/Class_S12.jpg',
+            notes: { zh: '中车四方官方特许经典出海纪念列车模型，忠实还原千与千寻海上小火车深蓝车身与宽轨转向架', en: 'Official CRRC Sifang scale model of the legendary Sri Lankan blue train.' },
+          },
+        ],
+      },
+    ],
+    detailPhotos: [
+      {
+        title: { zh: '高山茶园埃拉 (Ella) 附近九拱桥飞驰绝景', en: 'Sri Lanka Blue Train crossing Demodara Viaduct' },
+        caption: { zh: '蓝色 Class S12 列车穿越殖民时代百年英式石砌九拱桥，云雾缭绕于锡兰红茶梯田，如画卷般诗意。', en: 'Class S12 gliding majestically across Demodara Nine Arch Bridge amid lush tea hills.' },
+        url: 'https://upload.wikimedia.org/wikipedia/commons/6/62/SL_Demodara_near_Ella_asv2020-01_img02.jpg',
+        tag: { zh: '九拱桥绝景', en: 'Nine Arch Bridge' },
+      },
+    ],
+  },
+
+  // 94. 哈萨克斯坦铁路 "图尔根号" (Tulpar-Talgo) 宽轨草原高速列车 (哈萨克斯坦 / KTZ)
+  {
+    id: 'kazakhstan-tulpar-talgo',
+    category: 'railway',
+    modelName: { zh: '哈萨克斯坦铁路 "图尔根号" (Tulpar-Talgo) 宽轨草原高速列车', en: 'Kazakhstan Temir Zholy "Tulpar-Talgo" Steppe Train' },
+    code: 'TULPAR-TALGO',
+    manufacturer: { zh: '西班牙塔尔高 / 阿斯塔纳塔尔高制造厂 (Tulpar-Talgo)', en: 'Patentes Talgo / Tulpar-Talgo' },
+    status: 'active',
+    firstServiceYear: 2003,
+    country: { zh: '哈萨克斯坦', en: 'Kazakhstan' },
+    countryCode: 'KZ',
+    operatorIds: ['kazakhstan_railways_ktz'],
+    specs: {
+      maxSpeed: '200 km/h (宽轨 1520mm 欧亚草原高速特快)',
+      capacity: '400~500 座 (配备尊贵豪华双人包厢、餐车酒吧及淋浴设施)',
+      rangeOrPower: '机车牵引摆式铰接车组 (耐零下 50℃ 严寒防冻车体，直通阿拉木图至阿斯塔纳 1,350公里大动脉)',
+      length: '320 m (超长铰接摆式车组 / 铰接无轴独立车轮组)',
+    },
+    overview: {
+      zh: '驰骋在欧亚最大干旱大草原上的飞驰神驹！哈萨克斯坦国家铁路（KTZ）运营的“图尔根号（Tulpar-Talgo，图尔根意为哈萨克神话中长着金翼的神马）”由西班牙 Talgo 针对 1520mm 宽轨及中亚 -50℃ 至 +45℃ 极寒极端温差量身定制。列车以 200 公里/小时的高速贯穿新旧首都阿斯塔纳与阿拉木图，是连接欧亚新大陆桥的核心客运象征。',
+      en: 'The flagship steppe train of Kazakhstan running 200 km/h across the vast Eurasian grasslands between Astana and Almaty. Custom-built by Talgo for -50°C severe winters.',
+    },
+    heroImage: 'https://upload.wikimedia.org/wikipedia/commons/f/f7/Talgo_200_Tulpar%2C_Almaty_%28P1180169%29.jpg',
+    liveries: [
+      {
+        id: 'ktz-tulpar-blue-gold',
+        name: { zh: '哈萨克斯坦国旗天蓝与太阳金草原流线涂装', en: 'Kazakhstan Steppe Sky Blue & Gold Sun Livery' },
+        type: 'standard',
+        yearsActive: '2003 - 至今 / Present',
+        operatorId: 'kazakhstan_railways_ktz',
+        isRetired: false,
+        description: {
+          zh: '银白不锈钢车身搭配哈萨克斯坦国旗特有的天蓝色腰带与金黄色雄鹰太阳图腾线条，低重心矮车体极具动感。',
+          en: 'Steppe sky blue dynamic ribbon along silver stainless steel body with golden sun and eagle accents.',
+        },
+        photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/f/f7/Talgo_200_Tulpar%2C_Almaty_%28P1180169%29.jpg',
+        scaleModels: [
+          {
+            id: 'el-ktz-tulpar',
+            brand: 'Electrotren',
+            itemCode: 'HE-TALGO-KZ',
+            scale: 'HO (1:87)',
+            material: { zh: '锌合金底盘与工程复合塑料', en: 'Diecast Metal & ABS' },
+            releaseYear: 2017,
+            status: 'available',
+            imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/f/f7/Talgo_200_Tulpar%2C_Almaty_%28P1180169%29.jpg',
+            notes: { zh: 'Electrotren 经典 Talgo 200 车组，逼真还原哈萨克斯坦“图尔根号”特有天蓝腰线与铰接短车厢', en: 'Electrotren HO scale train with realistic low-slung articulated Talgo coaches in KTZ livery.' },
+          },
+        ],
+      },
+    ],
+    detailPhotos: [
+      {
+        title: { zh: '阿拉木图 2 号火车站停靠的图尔根号车组', en: 'Tulpar-Talgo Train at Almaty-2 Station' },
+        caption: { zh: '停靠在阿拉木图车站站台的 Tulpar-Talgo 列车，低矮的流线型车厢在中亚宽轨铁道线上格外突出。', en: 'Tulpar-Talgo resting at Almaty terminal after traversing the vast Kazakh steppe.' },
+        url: 'https://upload.wikimedia.org/wikipedia/commons/f/f7/Talgo_200_Tulpar%2C_Almaty_%28P1180169%29.jpg',
+        tag: { zh: '车站月台', en: 'Platform' },
       },
     ],
   },
