@@ -133,53 +133,67 @@ export const ScaleModelView: React.FC<ScaleModelViewProps> = ({
             className="bg-slate-900/90 rounded-2xl border border-slate-800 overflow-hidden flex flex-col justify-between hover:border-purple-600/60 transition-all hover:shadow-xl hover:shadow-purple-950/20 group"
           >
             <div>
-              {/* Model Photo Banner */}
-              <div className="relative h-48 bg-slate-950 overflow-hidden border-b border-slate-800">
+              {/* Model Photo Banner with Showroom Styling */}
+              <div className="relative h-48 bg-slate-950 overflow-hidden border-b border-purple-900/40">
                 <img
                   src={item.model.imageUrl || item.livery.photoUrl}
                   alt={`${item.model.brand} ${item.model.itemCode}`}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   loading="lazy"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent" />
-                <div className="absolute top-2.5 left-2.5 flex items-center space-x-1.5">
-                  <span className="text-xs font-bold text-purple-200 font-mono bg-purple-950/90 border border-purple-700 px-2.5 py-1 rounded-lg shadow-md backdrop-blur-sm">
-                    {item.model.brand}
-                  </span>
-                  <span className="text-xs font-mono font-bold px-2 py-1 rounded-lg bg-slate-900/90 text-white border border-slate-700 shadow-md backdrop-blur-sm">
-                    {item.model.scale}
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent" />
+
+                {/* Top Badges */}
+                <div className="absolute top-2.5 left-2.5 right-2.5 flex items-center justify-between gap-1.5">
+                  <div className="flex items-center space-x-1.5">
+                    <span className="text-xs font-bold text-purple-200 font-mono bg-purple-950/90 border border-purple-600 px-2.5 py-1 rounded-lg shadow-md backdrop-blur-sm">
+                      {item.model.brand}
+                    </span>
+                    <span className="text-xs font-mono font-bold px-2 py-1 rounded-lg bg-slate-900/90 text-white border border-slate-700 shadow-md backdrop-blur-sm">
+                      {item.model.scale}
+                    </span>
+                  </div>
+                  {/* Collector Diecast Badge */}
+                  <span className="text-[10px] font-mono font-semibold px-2 py-0.5 rounded-full bg-indigo-950/90 text-indigo-300 border border-indigo-700/80 backdrop-blur-sm shadow-sm flex items-center space-x-1">
+                    <Sparkles className="w-3 h-3 text-indigo-400" />
+                    <span>模型典藏 · DIECAST</span>
                   </span>
                 </div>
+
+                {/* Bottom Model Info Banner */}
                 <div className="absolute bottom-2.5 left-3 right-3 flex items-center justify-between text-xs font-mono">
-                  <span className="text-purple-300 font-bold bg-slate-950/80 px-2 py-0.5 rounded border border-purple-900/50 backdrop-blur-sm">
+                  <span className="text-purple-300 font-bold bg-slate-950/90 px-2 py-0.5 rounded border border-purple-900/60 backdrop-blur-sm">
                     SKU: {item.model.itemCode}
                   </span>
-                  <span className="text-slate-300 bg-slate-950/80 px-2 py-0.5 rounded border border-slate-800 backdrop-blur-sm">
+                  <span className="text-slate-300 bg-slate-950/90 px-2 py-0.5 rounded border border-slate-800 backdrop-blur-sm">
                     {item.model.releaseYear} 年发售
                   </span>
                 </div>
               </div>
 
               <div className="p-4">
-                {/* Real vehicle prototype mapped */}
-                <div className="bg-slate-950/70 p-3 rounded-xl border border-slate-850 mb-3 space-y-1">
-                  <div className="text-[10px] text-sky-400 font-mono uppercase">复刻真实载具原型 Prototype:</div>
+                {/* Real vehicle prototype mapped with clear visual cues */}
+                <div className="bg-slate-950/80 p-3 rounded-xl border border-slate-800 mb-3 space-y-1">
+                  <div className="flex items-center justify-between text-[10px] text-sky-400 font-mono uppercase">
+                    <span>复刻真实载具原型 Prototype</span>
+                    <span className="text-slate-500 text-[10px]">1:1 实车映射</span>
+                  </div>
                   <div className="text-sm font-bold text-white group-hover:text-sky-300 transition-colors">
                     {item.vehicle.modelName.zh}
                   </div>
                   <div className="text-xs text-slate-400 font-mono">
                     {item.vehicle.modelName.en}
                   </div>
-                  <div className="text-xs text-slate-300 pt-1 border-t border-slate-900 mt-1">
-                    涂装: <span className="font-semibold text-slate-200">{item.livery.name.zh}</span>
+                  <div className="text-xs text-slate-300 pt-1 border-t border-slate-850 mt-1 flex items-center justify-between">
+                    <span>涂装版本: <strong className="font-semibold text-slate-200">{item.livery.name.zh}</strong></span>
                   </div>
                 </div>
 
                 {/* Material & Specs */}
-                <div className="text-xs text-slate-300 mb-2">
-                  <span className="text-slate-400">材质工艺:</span>{' '}
-                  <span className="text-slate-200 font-medium">
-                    {item.model.material.zh} / {item.model.material.en}
+                <div className="text-xs text-slate-300 mb-2 flex items-center justify-between">
+                  <span className="text-slate-400">材质工艺:</span>
+                  <span className="text-purple-300 font-medium font-mono">
+                    {item.model.material.zh}
                   </span>
                 </div>
 

@@ -386,21 +386,26 @@ export const VehicleModal: React.FC<VehicleModalProps> = ({ vehicle, onClose }) 
                           className="bg-slate-900/90 rounded-xl overflow-hidden border border-purple-900/40 hover:border-purple-600/70 transition-colors flex flex-col justify-between"
                         >
                           <div>
-                            {/* Model photo preview */}
-                            <div className="relative h-32 bg-slate-950 overflow-hidden border-b border-slate-800">
+                            {/* Model photo preview with collector badge */}
+                            <div className="relative h-36 bg-slate-950 overflow-hidden border-b border-purple-900/40">
                               <img
                                 src={m.imageUrl || activeLivery.photoUrl}
                                 alt={`${m.brand} ${m.itemCode}`}
                                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                                 loading="lazy"
                               />
-                              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent" />
-                              <div className="absolute top-2 left-2 flex items-center space-x-1.5">
-                                <span className="text-[11px] font-bold text-purple-200 font-mono bg-purple-950/90 border border-purple-700 px-2 py-0.5 rounded backdrop-blur-sm">
-                                  {m.brand}
-                                </span>
-                                <span className="text-[11px] font-mono px-1.5 py-0.5 rounded bg-slate-900/90 text-white border border-slate-700 backdrop-blur-sm">
-                                  {m.scale}
+                              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent" />
+                              <div className="absolute top-2 left-2 right-2 flex items-center justify-between">
+                                <div className="flex items-center space-x-1.5">
+                                  <span className="text-[11px] font-bold text-purple-200 font-mono bg-purple-950/90 border border-purple-600 px-2 py-0.5 rounded backdrop-blur-sm">
+                                    {m.brand}
+                                  </span>
+                                  <span className="text-[11px] font-mono px-1.5 py-0.5 rounded bg-slate-900/90 text-white border border-slate-700 backdrop-blur-sm">
+                                    {m.scale}
+                                  </span>
+                                </div>
+                                <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-indigo-950/90 text-indigo-300 border border-indigo-700/80 backdrop-blur-sm">
+                                  模型典藏 DIECAST
                                 </span>
                               </div>
                             </div>
