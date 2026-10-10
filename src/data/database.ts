@@ -1482,7 +1482,7 @@ export const VEHICLES: Vehicle[] = [
       zh: '中国南方航空引进的新一代宽体远程旗舰客机。采用碳纤维复合材料机身、气动鲨鳍翼梢小翼与罗尔斯·罗伊斯遄达 XWB 高效发动机。垂直尾翼喷涂典雅的木棉花徽标，机身通体珠光白配双色蓝天海浪腰线，执飞广州北京大兴至伦敦、阿姆斯特丹、悉尼等全球洲际枢纽航线。',
       en: 'China Southerns long-haul twin-aisle flagship featuring carbon composite structure, Rolls-Royce Trent XWB turbofans, and iconic Kapok flower tailfin, serving premier intercontinental routes from Guangzhou and Beijing Daxing.',
     },
-    heroImage: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1a/China_Southern_Airlines_%28B-32ED%29_Airbus_A350-941_departing_Sydney_Airport_%283%29.jpg/1280px-China_Southern_Airlines_%28B-32ED%29_Airbus_A350-941_departing_Sydney_Airport_%283%29.jpg',
+    heroImage: 'https://upload.wikimedia.org/wikipedia/commons/3/3a/GeminiJets1400ap.JPG',
     liveries: [
       {
         id: 'csn-a350-standard',
@@ -1494,7 +1494,7 @@ export const VEHICLES: Vehicle[] = [
           zh: '标志性的南航双色蓝腰线配典雅红金木棉花垂尾，驾驶舱墨镜风挡气势磅礴，机身印有立体光泽“CHINA SOUTHERN 中国南方航空”中英文标志。',
           en: 'Classic dual-blue cheatline with scarlet-and-gold Kapok blossom tail, stylish cockpit sunglasses mask, and high-gloss bilingual titles.',
         },
-        photoUrl: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1a/China_Southern_Airlines_%28B-32ED%29_Airbus_A350-941_departing_Sydney_Airport_%283%29.jpg/1280px-China_Southern_Airlines_%28B-32ED%29_Airbus_A350-941_departing_Sydney_Airport_%283%29.jpg',
+        photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/3/3a/GeminiJets1400ap.JPG',
         isRetired: false,
         scaleModels: [
           {
@@ -1505,7 +1505,7 @@ export const VEHICLES: Vehicle[] = [
             material: { zh: '高精合金 (Diecast)', en: 'Diecast Metal' },
             releaseYear: 2021,
             status: 'available',
-            imageUrl: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1a/China_Southern_Airlines_%28B-32ED%29_Airbus_A350-941_departing_Sydney_Airport_%283%29.jpg/1280px-China_Southern_Airlines_%28B-32ED%29_Airbus_A350-941_departing_Sydney_Airport_%283%29.jpg',
+            imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/3/3a/GeminiJets1400ap.JPG',
             notes: { zh: '带独立金属天线、镂空 Trent XWB 发动机透光叶片、磁吸齿轮起落架', en: 'Precision etched antennas, see-through Trent XWB fan blades, magnetic landing gear' },
           },
           {
@@ -1532,7 +1532,7 @@ export const VEHICLES: Vehicle[] = [
       {
         title: { zh: '悉尼机场起飞爬升机腹仰角特写 (B-32ED)', en: 'China Southern A350 B-32ED Sydney Departure' },
         caption: { zh: '四轮主起落架收入起落架舱瞬间，巨大的碳纤维超临界机翼迎风展翅。', en: 'Main gear retraction during climb out over Sydney with wide supercritical wings.' },
-        url: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1a/China_Southern_Airlines_%28B-32ED%29_Airbus_A350-941_departing_Sydney_Airport_%283%29.jpg/1280px-China_Southern_Airlines_%28B-32ED%29_Airbus_A350-941_departing_Sydney_Airport_%283%29.jpg',
+        url: 'https://upload.wikimedia.org/wikipedia/commons/3/3a/GeminiJets1400ap.JPG',
         tag: { zh: '起飞离场', en: 'Sydney Climb' },
       },
       {
@@ -1566,7 +1566,7 @@ export const VEHICLES: Vehicle[] = [
       zh: '中国南方航空是中国首家接收并运营波音 787 梦想客机的航空公司（首架机 B-2725 于 2013 年入列）。787 采用开创性的全复合材料机身、锯齿形降噪发动机短舱、电子调光超大舷窗与高舒适度座舱增压环境。南航 787 机队拥有极具美感的大翼掠角，常年执飞广深始发跨洋国际航线。',
       en: 'China Southern was the first Chinese airline to introduce the Boeing 787 Dreamliner (in 2013). Featuring full composite airframe, chevron engine nacelles, and dimmable windows, it revolutionized long-haul passenger comfort.',
     },
-    heroImage: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/4/44/China_Southern_Airlines%2C_Boeing_787-8_Dreamliner%2C_B-2735.jpg/1280px-China_Southern_Airlines%2C_Boeing_787-8_Dreamliner%2C_B-2735.jpg',
+    heroImage: 'https://upload.wikimedia.org/wikipedia/commons/0/01/EM_Gemini_Jets_CO_737-700_%282394687662%29.jpg',
     liveries: [
       {
         id: 'csn-b787-standard',
@@ -1578,7 +1578,7 @@ export const VEHICLES: Vehicle[] = [
           zh: '白底蓝带与机身特别标注的“DREAMLINER 梦想飞机”字体，配合锯齿形 GEnx 发动机尾喷管，展现现代民航工程最高水准。',
           en: 'Adorned with China Southerns classic livery, prominent "Dreamliner" titles, and acoustic chevron engine nacelles.',
         },
-        photoUrl: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/4/44/China_Southern_Airlines%2C_Boeing_787-8_Dreamliner%2C_B-2735.jpg/1280px-China_Southern_Airlines%2C_Boeing_787-8_Dreamliner%2C_B-2735.jpg',
+        photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/0/01/EM_Gemini_Jets_CO_737-700_%282394687662%29.jpg',
         isRetired: false,
         scaleModels: [
           {
@@ -1589,7 +1589,7 @@ export const VEHICLES: Vehicle[] = [
             material: { zh: '高精合金 (Diecast)', en: 'Diecast Metal' },
             releaseYear: 2022,
             status: 'available',
-            imageUrl: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/4/44/China_Southern_Airlines%2C_Boeing_787-8_Dreamliner%2C_B-2735.jpg/1280px-China_Southern_Airlines%2C_Boeing_787-8_Dreamliner%2C_B-2735.jpg',
+            imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/0/01/EM_Gemini_Jets_CO_737-700_%282394687662%29.jpg',
             notes: { zh: '精细还原波音 787 锯齿形短舱与斜削翼尖小翼，可转动钛金叶片', en: 'Detailed chevron nacelles, raked wingtips, and spinning metal fan blades' },
           },
           {
@@ -1616,7 +1616,7 @@ export const VEHICLES: Vehicle[] = [
       {
         title: { zh: 'B-2735 接地瞬间主起落架青烟特写', en: 'B-2735 Touchdown Smoke Action' },
         caption: { zh: '波音 787 四轮主起落架胎面高速接触跑道，升起一缕标志性青烟。', en: 'Four-wheel bogie tires kissing the runway surface generating a puff of touchdown smoke.' },
-        url: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/4/44/China_Southern_Airlines%2C_Boeing_787-8_Dreamliner%2C_B-2735.jpg/1280px-China_Southern_Airlines%2C_Boeing_787-8_Dreamliner%2C_B-2735.jpg',
+        url: 'https://upload.wikimedia.org/wikipedia/commons/0/01/EM_Gemini_Jets_CO_737-700_%282394687662%29.jpg',
         tag: { zh: '接地特写', en: 'Touchdown' },
       },
       {
@@ -1935,7 +1935,7 @@ export const VEHICLES: Vehicle[] = [
             material: { zh: '高精注塑 + 铜质轮对 (ABS & Brass Pickups)', en: 'Precision ABS & Brass Pickups' },
             releaseYear: 2023,
             status: 'available',
-            imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/9/90/Shinkansen_Series0_R67_JNRcolor.jpg',
+            imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/2/20/Kyoto_Railway_Museum_%281%29_-_JNR_Shinkansen_Series_0_car_22-1_model.jpg',
             notes: { zh: '再现 2000 番台最终小窗形态，标配 KATO 密连车钩及发光式头灯车鼻', en: 'Accurately models late 2000-subseries small windows, KATO body-mount couplers' },
           },
           {
@@ -1946,7 +1946,7 @@ export const VEHICLES: Vehicle[] = [
             material: { zh: '精密模塑 + 飞轮动力 (Precision Molded & Flywheel)', en: 'Precision Molded & Flywheel Drive' },
             releaseYear: 2021,
             status: 'limited',
-            imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/9/90/Shinkansen_Series0_R67_JNRcolor.jpg',
+            imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/2/20/Kyoto_Railway_Museum_%281%29_-_JNR_Shinkansen_Series_0_car_22-1_model.jpg',
             notes: { zh: '昭和39年开业初期大窗大字涂装再现，车头导光灯罩通电亮灯，金属车轮全轮集电', en: 'Recreates Showa 39 inaugural wide-window layout with working nose cone illumination' },
           },
         ],
