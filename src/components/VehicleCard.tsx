@@ -1,7 +1,7 @@
 import React from 'react';
 import type { Vehicle } from '../types';
 import { OPERATORS } from '../data/database';
-import { Plane, Train, Gauge, Users, ArrowUpRight, Box, History } from 'lucide-react';
+import { Plane, Train, Gauge, Users, ArrowUpRight, Box, History, Camera } from 'lucide-react';
 
 interface VehicleCardProps {
   vehicle: Vehicle;
@@ -64,6 +64,12 @@ export const VehicleCard: React.FC<VehicleCardProps> = ({ vehicle, onSelect }) =
               <span>现役运营 / In Service</span>
             </span>
           )}
+        </div>
+
+        {/* Badges on bottom */}
+        <div className="absolute bottom-3 left-3 flex items-center space-x-1.5 font-mono text-[11px] px-2 py-0.5 rounded bg-slate-950/80 text-sky-300 border border-slate-700/80 backdrop-blur-sm">
+          <Camera className="w-3 h-3 text-sky-400" />
+          <span>{vehicle.detailPhotos.length} 张特写 / Photos</span>
         </div>
 
         {/* Code badge bottom right */}

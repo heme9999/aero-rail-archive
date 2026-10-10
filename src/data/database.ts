@@ -9,6 +9,22 @@ export const OPERATORS: Record<string, Operator> = {
     countryCode: 'CN',
     type: 'aviation',
   },
+  china_eastern: {
+    id: 'china_eastern',
+    name: { zh: '中国东方航空', en: 'China Eastern Airlines' },
+    code: 'CES / MU',
+    country: { zh: '中国', en: 'China' },
+    countryCode: 'CN',
+    type: 'aviation',
+  },
+  china_southern: {
+    id: 'china_southern',
+    name: { zh: '中国南方航空', en: 'China Southern Airlines' },
+    code: 'CSN / CZ',
+    country: { zh: '中国', en: 'China' },
+    countryCode: 'CN',
+    type: 'aviation',
+  },
   sichuan_airlines: {
     id: 'sichuan_airlines',
     name: { zh: '四川航空', en: 'Sichuan Airlines' },
@@ -17,12 +33,28 @@ export const OPERATORS: Record<string, Operator> = {
     countryCode: 'CN',
     type: 'aviation',
   },
-  china_eastern: {
-    id: 'china_eastern',
-    name: { zh: '中国东方航空', en: 'China Eastern Airlines' },
-    code: 'CES / MU',
-    country: { zh: '中国', en: 'China' },
-    countryCode: 'CN',
+  cathay_pacific: {
+    id: 'cathay_pacific',
+    name: { zh: '国泰航空', en: 'Cathay Pacific' },
+    code: 'CPA / CX',
+    country: { zh: '中国香港', en: 'Hong Kong, China' },
+    countryCode: 'HK',
+    type: 'aviation',
+  },
+  emirates: {
+    id: 'emirates',
+    name: { zh: '阿联酋航空', en: 'Emirates' },
+    code: 'UAE / EK',
+    country: { zh: '阿联酋', en: 'United Arab Emirates' },
+    countryCode: 'AE',
+    type: 'aviation',
+  },
+  ana: {
+    id: 'ana',
+    name: { zh: '全日空航空公司', en: 'All Nippon Airways (ANA)' },
+    code: 'ANA / NH',
+    country: { zh: '日本', en: 'Japan' },
+    countryCode: 'JP',
     type: 'aviation',
   },
   british_airways: {
@@ -41,6 +73,14 @@ export const OPERATORS: Record<string, Operator> = {
     countryCode: 'FR',
     type: 'aviation',
   },
+  klm: {
+    id: 'klm',
+    name: { zh: '荷兰皇家航空', en: 'KLM Royal Dutch Airlines' },
+    code: 'KLM / KL',
+    country: { zh: '荷兰', en: 'Netherlands' },
+    countryCode: 'NL',
+    type: 'aviation',
+  },
   united_airlines: {
     id: 'united_airlines',
     name: { zh: '美国联合航空', en: 'United Airlines' },
@@ -49,20 +89,22 @@ export const OPERATORS: Record<string, Operator> = {
     countryCode: 'US',
     type: 'aviation',
   },
+  aeroflot: {
+    id: 'aeroflot',
+    name: { zh: '俄罗斯航空 (前苏联民航)', en: 'Aeroflot Russian Airlines' },
+    code: 'AFL / SU',
+    country: { zh: '俄罗斯', en: 'Russia' },
+    countryCode: 'RU',
+    type: 'aviation',
+  },
+
+  // 铁路机构 Operators
   china_railway: {
     id: 'china_railway',
-    name: { zh: '中国国家铁路集团 (国铁)', en: 'China Railway (CR)' },
+    name: { zh: '中国国家铁路集团 (中国铁路)', en: 'China Railway (CR)' },
     code: 'CR',
     country: { zh: '中国', en: 'China' },
     countryCode: 'CN',
-    type: 'railway',
-  },
-  jr_west: {
-    id: 'jr_west',
-    name: { zh: '西日本旅客铁道 (JR西日本)', en: 'West Japan Railway (JR West)' },
-    code: 'JR-W',
-    country: { zh: '日本', en: 'Japan' },
-    countryCode: 'JP',
     type: 'railway',
   },
   jr_central: {
@@ -73,17 +115,35 @@ export const OPERATORS: Record<string, Operator> = {
     countryCode: 'JP',
     type: 'railway',
   },
-  sncf: {
-    id: 'sncf',
-    name: { zh: '法国国家铁路公司', en: 'SNCF (French National Railway)' },
-    code: 'SNCF',
-    country: { zh: '法国', en: 'France' },
-    countryCode: 'FR',
+  jr_east: {
+    id: 'jr_east',
+    name: { zh: '东日本旅客铁道 (JR东日本)', en: 'East Japan Railway (JR East)' },
+    code: 'JR-E',
+    country: { zh: '日本', en: 'Japan' },
+    countryCode: 'JP',
+    type: 'railway',
+  },
+  jr_west: {
+    id: 'jr_west',
+    name: { zh: '西日本旅客铁道 (JR西日本)', en: 'West Japan Railway (JR West)' },
+    code: 'JR-W',
+    country: { zh: '日本', en: 'Japan' },
+    countryCode: 'JP',
+    type: 'railway',
+  },
+  union_pacific: {
+    id: 'union_pacific',
+    name: { zh: '美国联合太平洋铁路', en: 'Union Pacific Railroad (UP)' },
+    code: 'UP',
+    country: { zh: '美国', en: 'United States' },
+    countryCode: 'US',
     type: 'railway',
   },
 };
 
 export const VEHICLES: Vehicle[] = [
+  // ==================== 航空系列 / AVIATION ====================
+
   // 1. 波音 747-400 (已退役经典 / 航空)
   {
     id: 'b747-400',
@@ -174,23 +234,99 @@ export const VEHICLES: Vehicle[] = [
             imageUrl: 'https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=600&q=80',
             notes: { zh: '全球限量 1200 尊，高光烤漆还原 BOAC 金色飞马徽标', en: 'Limited to 1,200 pcs worldwide, high-gloss lacquer with gold Speedbird logo' },
           },
-          {
-            id: 'm-av400-boac',
-            brand: 'Aviation400',
-            itemCode: 'AV4089',
-            scale: '1:400',
-            material: { zh: '高精合金 (Diecast)', en: 'Diecast Metal' },
-            releaseYear: 2021,
-            status: 'available',
-            imageUrl: 'https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=600&q=80',
-            notes: { zh: '1:400 黄金比例，带独立天线与夜光起落架轮毂', en: '1:400 collector edition with separately attached antennas' },
-          },
         ],
+      },
+    ],
+    detailPhotos: [
+      {
+        title: { zh: '标志性机头鹅头双层客舱外廓', en: 'Iconic Upper Deck Hump Profile' },
+        caption: { zh: '经典的鹅头阶梯式上层客舱与流线型驾驶舱风挡，塑造了空中女王半个世纪的优雅轮廓。', en: 'The unmistakable stepped upper deck and streamlined cockpit, defining the elegance of Queen of the Skies.' },
+        url: 'https://images.unsplash.com/photo-1542296332-2e4473faf563?auto=format&fit=crop&w=800&q=80',
+        tag: { zh: '机头/驾驶舱特写', en: 'Nose & Cockpit' },
+      },
+      {
+        title: { zh: '通用电气 CF6 / 普惠 PW4000 巨型四发涡扇特写', en: 'CF6 / PW4000 Turbofan Quad Engines' },
+        caption: { zh: '单发推力超过 270 千牛的重型涡扇进气道，提供无与伦比的四发洲际越洋安全冗余。', en: 'High-bypass turbofans delivering over 60,000 lbf thrust each for reliable transoceanic crossings.' },
+        url: 'https://images.unsplash.com/photo-1519074069444-1ba4eae16e16?auto=format&fit=crop&w=800&q=80',
+        tag: { zh: '发动机特写', en: 'Engine Nacelle' },
+      },
+      {
+        title: { zh: '波音 747-400 独创下反角翼尖小翼', en: 'Canted Winglet Architecture' },
+        caption: { zh: '高达 1.8 米的外倾斜角翼尖小翼，大幅降低诱导阻力并提升燃油经济性。', en: '6-foot canted winglets reducing induced drag and increasing range by 3.5%.' },
+        url: 'https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=800&q=80',
+        tag: { zh: '翼尖机构特写', en: 'Winglet & Flaps' },
       },
     ],
   },
 
-  // 2. 空中客车 A350-900 (现役主力 / 航空)
+  // 2. 空中客车 A380-800 "空中巨无霸" (航空 / 现役与部分退役)
+  {
+    id: 'a380-800',
+    category: 'aviation',
+    modelName: { zh: '空中客车 A380-800 "空中巨无霸"', en: 'Airbus A380-800 Superjumbo' },
+    code: 'A388',
+    manufacturer: { zh: '空中客车集团', en: 'Airbus' },
+    status: 'active',
+    firstServiceYear: 2007,
+    country: { zh: '欧洲联合', en: 'European Consortium' },
+    countryCode: 'EU',
+    operatorIds: ['emirates', 'china_southern', 'ana'],
+    specs: {
+      maxSpeed: '1,020 km/h (Mach 0.89)',
+      capacity: '标准三舱 555 座 / 最高载客 853 座',
+      rangeOrPower: '15,000 km (8,000 nmi)',
+      length: '72.72 m (全双层双过道，翼展 79.75 m)',
+    },
+    overview: {
+      zh: '人类民航史上建造的最大全双层喷气客机，拥有相当于三座网球场大小的巨大客舱面积与机上酒吧/水疗淋浴房设施。中国南航曾运营5架后退役封存；阿联酋航空仍为主力机队。',
+      en: 'The largest passenger airliner ever built, featuring a full-length double-deck fuselage and up to 853 passenger capacity. Emirates operates the worlds largest fleet.',
+    },
+    heroImage: 'https://images.unsplash.com/photo-1520437358207-323b43b50729?auto=format&fit=crop&w=1200&q=80',
+    liveries: [
+      {
+        id: 'a380-ek-expo',
+        name: { zh: '阿联酋航空 迪拜世博会金色特别彩绘 (A6-EVS)', en: 'Emirates Expo 2020 Dubai Opportunity Gold Livery' },
+        type: 'special',
+        yearsActive: '2019 - 2022',
+        operatorId: 'emirates',
+        description: {
+          zh: '阿联酋航空为 2020 迪拜世博会量身打造的巨幅金属质感金色花纹彩绘，飞跃全球上百个目的地，成为世博会最醒目的移动名片。',
+          en: 'Adorned with opulent gold geometric rings celebrating the Expo 2020 Dubai, radiating brilliant metallic luster across major global hubs.',
+        },
+        photoUrl: 'https://images.unsplash.com/photo-1520437358207-323b43b50729?auto=format&fit=crop&w=800&q=80',
+        isRetired: false,
+        scaleModels: [
+          {
+            id: 'm-av400-ek-expo',
+            brand: 'Aviation400',
+            itemCode: 'AV4066',
+            scale: '1:400',
+            material: { zh: '重合金压铸 (Solid Diecast)', en: 'Solid Diecast' },
+            releaseYear: 2021,
+            status: 'limited',
+            imageUrl: 'https://images.unsplash.com/photo-1520437358207-323b43b50729?auto=format&fit=crop&w=600&q=80',
+            notes: { zh: '特调真金质感金属电镀漆面，带起落架橡胶减震联动', en: 'Real electroplated gold shimmer paint, sprung shock-absorbing bogies' },
+          },
+        ],
+      },
+    ],
+    detailPhotos: [
+      {
+        title: { zh: '罗尔斯·罗伊斯 Trent 900 巨大发动机风扇特写', en: 'Trent 900 Titanium Fan Blades' },
+        caption: { zh: '直径达到 2.95 米的宽弦空心钛合金风扇叶片，近距离感受庞然巨兽的空气动力学震撼。', en: '116-inch wide-chord swept titanium fan blades capable of ingesting 1.25 tonnes of air per second.' },
+        url: 'https://images.unsplash.com/photo-1520437358207-323b43b50729?auto=format&fit=crop&w=800&q=80',
+        tag: { zh: '超大涡扇特写', en: 'Giant Turbofan' },
+      },
+      {
+        title: { zh: '全双层前机头与双排舷窗特写', en: 'Full Double-Deck Cockpit & Cabin Windows' },
+        caption: { zh: '位于上下两层客舱中间的独立驾驶舱，以及整齐排布的双层舷窗，展现巨无霸独有的威严气势。', en: 'The cockpit nestled between main and upper decks, flanked by endless double-level passenger windows.' },
+        url: 'https://images.unsplash.com/photo-1542296332-2e4473faf563?auto=format&fit=crop&w=800&q=80',
+        tag: { zh: '机身双层结构', en: 'Double-Deck Hull' },
+      },
+    ],
+  },
+
+  // 3. 空中客车 A350-900 (现役主力 / 航空)
   {
     id: 'a350-900',
     category: 'aviation',
@@ -199,7 +335,7 @@ export const VEHICLES: Vehicle[] = [
     manufacturer: { zh: '空中客车集团', en: 'Airbus' },
     status: 'active',
     firstServiceYear: 2015,
-    country: { zh: '欧洲 (法/德/西/英)', en: 'Europe (FR/DE/ES/UK)' },
+    country: { zh: '欧洲联合', en: 'Europe (FR/DE/ES/UK)' },
     countryCode: 'EU',
     operatorIds: ['sichuan_airlines', 'air_china', 'air_france'],
     specs: {
@@ -238,23 +374,26 @@ export const VEHICLES: Vehicle[] = [
             imageUrl: 'https://images.unsplash.com/photo-1519074069444-1ba4eae16e16?auto=format&fit=crop&w=600&q=80',
             notes: { zh: '熊猫细节高精丝网移印，双侧彩绘图案不对称忠实还原', en: 'Ultra-crisp tampo pad printing capturing asymmetrical side artwork' },
           },
-          {
-            id: 'm-jcw-3upanda',
-            brand: 'JC Wings',
-            itemCode: 'LH4032',
-            scale: '1:400',
-            material: { zh: '压铸合金 (Diecast)', en: 'Diecast Metal' },
-            releaseYear: 2020,
-            status: 'available',
-            imageUrl: 'https://images.unsplash.com/photo-1519074069444-1ba4eae16e16?auto=format&fit=crop&w=600&q=80',
-            notes: { zh: '附送川航专属防伪收藏卡片与机坪展示地垫', en: 'Includes official collector authenticity card and tarmac display mat' },
-          },
         ],
+      },
+    ],
+    detailPhotos: [
+      {
+        title: { zh: '标志性 "墨镜侠" 碳纤维驾驶舱曲面风挡', en: 'Signature "Sunglasses" Cockpit Windshield' },
+        caption: { zh: '黑色边框包裹的曲面驾驶舱防眩光玻璃，不仅改善气流过渡，更成为 A350 的明星面相。', en: 'Aerodynamically flush curved windshield framed by black anti-glare trim.' },
+        url: 'https://images.unsplash.com/photo-1559067515-bf7d799b6d4d?auto=format&fit=crop&w=800&q=80',
+        tag: { zh: '驾驶舱特写', en: 'Cockpit Mask' },
+      },
+      {
+        title: { zh: '大展弦比自然向上弯曲鲨鳍小翼', en: 'Blended Curved Sharklet Wingtip' },
+        caption: { zh: '由复合材料整体成型的优雅弯刀小翼，在巡航高空中呈现极具张力的几何弧度。', en: 'Seamlessly blended carbon-composite winglet sculpted to eliminate vortex drag.' },
+        url: 'https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=800&q=80',
+        tag: { zh: '翼尖小翼特写', en: 'Curved Winglet' },
       },
     ],
   },
 
-  // 3. 协和式超音速客机 (已退役传奇 / 航空)
+  // 4. 协和式超音速客机 (已退役传奇 / 航空)
   {
     id: 'concorde',
     category: 'aviation',
@@ -310,15 +449,32 @@ export const VEHICLES: Vehicle[] = [
         ],
       },
     ],
+    detailPhotos: [
+      {
+        title: { zh: '传奇可下垂 12.5 度机械机鼻特写', en: '12.5-Degree Articulated Droop Nose' },
+        caption: { zh: '在起降阶段机鼻液压下垂，提供飞行员清晰的跑道视野；超音速巡航时收回变为尖锥减少波阻。', en: 'Hydraulically lowered for runway visibility during takeoff and landing, raised for supersonic needle streamline.' },
+        url: 'https://images.unsplash.com/photo-1517649763962-0c623266ddc0?auto=format&fit=crop&w=800&q=80',
+        tag: { zh: '机械机鼻特写', en: 'Droop Nose' },
+      },
+      {
+        title: { zh: '奥林匹斯 593 带加力喷管双发机腹进气舱', en: 'Olympus 593 Afterburning Turbojet Bins' },
+        caption: { zh: '四台配备加力燃烧室的涡轮喷气引擎成对安装于机腹下方，超音速飞行时机身因摩擦升温延长达 20 厘米。', en: 'Paired square-intake engines with variable ramp geometry and reheat afterburners.' },
+        url: 'https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=800&q=80',
+        tag: { zh: '超音速动力舱', en: 'Powerplants' },
+      },
+    ],
   },
 
-  // 4. 复兴号 CR400BF-Z / CR400AF 智能动车组 (现役主力 / 铁道)
+
+  // ==================== 铁道系列 / RAILWAY ====================
+
+  // 5. 复兴号 CR400BF-Z 智能动车组 (现役主力 / 铁道)
   {
     id: 'cr400bf-z',
     category: 'railway',
-    modelName: { zh: '复兴号智能动车组 (CR400BF-Z / AF-Z)', en: 'Fuxing CR400BF-Z Intelligent High-Speed EMU' },
+    modelName: { zh: '复兴号智能高速动车组 (CR400BF-Z)', en: 'Fuxing Intelligent High-Speed EMU' },
     code: 'CR400-Z',
-    manufacturer: { zh: '中国中车集团 (中车长客 / 中车四方)', en: 'CRRC Corporation Limited' },
+    manufacturer: { zh: '中国中车 (中车长客 / 中车四方)', en: 'CRRC Changchun / CRRC Sifang' },
     status: 'active',
     firstServiceYear: 2021,
     country: { zh: '中国', en: 'China' },
@@ -338,12 +494,12 @@ export const VEHICLES: Vehicle[] = [
     liveries: [
       {
         id: 'cr400-winter-olympics',
-        name: { zh: '京张高铁 "瑞雪迎春" 冬奥特别彩绘涂装 (CR400BF-C-5166)', en: 'Beijing-Zhangjiakou "Ruixue Yingchun" Winter Olympics Special (CR400BF-C)' },
+        name: { zh: '京张高铁 "瑞雪迎春" 冬奥特别彩绘 (CR400BF-C-5166)', en: 'Beijing-Zhangjiakou "Ruixue Yingchun" Winter Olympics Special' },
         type: 'special',
         yearsActive: '2022 - 2023',
         operatorId: 'china_railway',
         description: {
-          zh: '专为 2022 北京冬奥会与冬残奥会定制的高铁涂装，车身以冰雪蓝底衬托渐变雪花与运动健儿剪影，内设世界首个高铁 5G 超高清演播室。',
+          zh: '专为 2022 北京冬奥会定制的高铁涂装，车身以冰雪蓝底衬托渐变雪花与运动健儿剪影，内设世界首个高铁 5G 超高清移动演播室。',
           en: 'Custom Olympic trainset adorned with cyan-blue gradient snowflakes and athletic motifs, equipped with the worlds first on-board 5G ultra-HD live broadcast studio.',
         },
         photoUrl: 'https://images.unsplash.com/photo-1474487548417-781cb71495f3?auto=format&fit=crop&w=800&q=80',
@@ -354,55 +510,38 @@ export const VEHICLES: Vehicle[] = [
             brand: '中车文创 (CRRC Cultural & Creative)',
             itemCode: 'CRRC-BF5166-HO',
             scale: 'HO (1:87)',
-            material: { zh: '合金配重 + 精工ABS (Diecast & ABS)', en: 'Diecast Chassis & Precision ABS' },
+            material: { zh: '合金底盘 + 精工ABS (Diecast & Precision ABS)', en: 'Diecast Chassis & Precision ABS' },
             releaseYear: 2022,
             status: 'limited',
             imageUrl: 'https://images.unsplash.com/photo-1474487548417-781cb71495f3?auto=format&fit=crop&w=600&q=80',
             notes: { zh: '中车官方正版编号限量典藏，内置全车暖白LED车厢内饰照明与数码声音芯片', en: 'Official CRRC licensed edition with factory warm-white interior lighting and DCC sound chip' },
           },
-          {
-            id: 'm-changming-n-cr400',
-            brand: '长鸣火模 (Changming)',
-            itemCode: 'CM-CR400-N08',
-            scale: 'N (1:160)',
-            material: { zh: '工程塑料 + 金属受电弓 (ABS & Metal Pantograph)', en: 'High Precision ABS & Metal Pantographs' },
-            releaseYear: 2023,
-            status: 'available',
-            imageUrl: 'https://images.unsplash.com/photo-1474487548417-781cb71495f3?auto=format&fit=crop&w=600&q=80',
-            notes: { zh: '飞轮五极斜槽马达，低速起步极其平顺，双向自动头尾灯切换', en: 'Flywheel 5-pole skewed motor, ultra-smooth crawl, bi-directional LED head/tail lamps' },
-          },
         ],
       },
+    ],
+    detailPhotos: [
       {
-        id: 'cr400-golden-phoenix',
-        name: { zh: '标准量产 "金凤凰" 金色流线涂装', en: 'Standard Production "Golden Phoenix" Livery' },
-        type: 'standard',
-        yearsActive: '2017 - 至今 / Present',
-        operatorId: 'china_railway',
-        description: {
-          zh: 'CR400BF 的经典标志性量产涂装，以纯白色车身贯穿金色凤凰流线羽翼腰线，象征神州大地的腾飞与高铁新时代的到来。',
-          en: 'The signature baseline livery of the CR400BF series, characterized by crisp white with golden ribbon wings surging across passenger cars.',
-        },
-        photoUrl: 'https://images.unsplash.com/photo-1515165562839-978bbcf18277?auto=format&fit=crop&w=800&q=80',
-        isRetired: false,
-        scaleModels: [
-          {
-            id: 'm-crrc-std-n',
-            brand: '中车文创 (CRRC Cultural & Creative)',
-            itemCode: 'CRRC-CR400BF-N8',
-            scale: 'N (1:160)',
-            material: { zh: '精细模塑 (Precision Molded)', en: 'Precision Molded' },
-            releaseYear: 2021,
-            status: 'available',
-            imageUrl: 'https://images.unsplash.com/photo-1515165562839-978bbcf18277?auto=format&fit=crop&w=600&q=80',
-            notes: { zh: '官方礼盒包装，附带亚克力防尘防潮展示箱及编号铭牌', en: 'Official collector box with acrylic showcase display case' },
-          },
-        ],
+        title: { zh: '“金凤凰 / 瑞雪迎春” 仿生超低阻力车鼻特写', en: 'Bionic Aerodynamic Nose Fairing' },
+        caption: { zh: '头型阻力比前代和谐号进一步降低 12% 以上，矩阵式 LED 飞鹰大灯在黑夜中宛如利剑破空。', en: 'Wind-tunnel tested carbon fairing cutting air resistance by 12% with falcon-eye LED light clusters.' },
+        url: 'https://images.unsplash.com/photo-1474487548417-781cb71495f3?auto=format&fit=crop&w=800&q=80',
+        tag: { zh: '车头车鼻特写', en: 'Nose & Headlamps' },
+      },
+      {
+        title: { zh: '350km/h 级低噪音单臂受电弓及绝缘整流罩', en: 'High-Speed Aerodynamic Pantograph' },
+        caption: { zh: '采用整体下沉式低阻导流罩，碳滑板接触受流极其平稳，大幅降低高速运行时产生的弓网气动噪音。', en: 'Recessed low-noise single-arm pantograph with carbon collector strips and streamlined fairings.' },
+        url: 'https://images.unsplash.com/photo-1515165562839-978bbcf18277?auto=format&fit=crop&w=800&q=80',
+        tag: { zh: '受电弓机构特写', en: 'Pantograph System' },
+      },
+      {
+        title: { zh: '全无摇枕高速动力转向架与通风制动盘', en: 'High-Speed Motor Bogie & Disc Brakes' },
+        caption: { zh: '配有二系空气弹簧与高灵敏度轴温传感器，全轮制动盘可在极短距离内平稳减速停车。', en: 'Bolsterless high-speed bogie fitted with secondary air suspension and multi-disc axle braking.' },
+        url: 'https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=800&q=80',
+        tag: { zh: '动力转向架特写', en: 'Motor Bogie' },
       },
     ],
   },
 
-  // 5. 新干线 0 系 (经典退役传奇 / 铁道)
+  // 6. 新干线 0 系 (经典退役传奇 / 铁道)
   {
     id: 'shinkansen-0',
     category: 'railway',
@@ -455,23 +594,26 @@ export const VEHICLES: Vehicle[] = [
             imageUrl: 'https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=600&q=80',
             notes: { zh: '再现 2000 番台最终小窗形态，标配 KATO 密连车钩及发光式头灯车鼻', en: 'Accurately models late 2000-subseries small windows, KATO body-mount couplers' },
           },
-          {
-            id: 'm-tomix-0-opening',
-            brand: 'TOMIX (TOMYTEC)',
-            itemCode: '98706',
-            scale: 'N (1:150)',
-            material: { zh: '精密模塑 + 飞轮动力 (Precision Molded & Flywheel)', en: 'Precision Molded & Flywheel Drive' },
-            releaseYear: 2021,
-            status: 'limited',
-            imageUrl: 'https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=600&q=80',
-            notes: { zh: '昭和39年开业初期大窗大字涂装再现，车头导光灯罩通电亮灯，金属车轮全轮集电', en: 'Recreates Showa 39 inaugural wide-window layout with working nose cone illumination' },
-          },
         ],
+      },
+    ],
+    detailPhotos: [
+      {
+        title: { zh: '昭和经典发光 "光前头" 亚克力车鼻灯', en: 'Illuminated Translucent Nose Dome ("Hikari Maegashira")' },
+        caption: { zh: '初代 0 系车头最梦幻的标志：半透光亚克力车鼻锥内置强光照明灯，夜间如同科幻飞船。', en: 'Early units featured an acrylic nose cone that glowed brightly from the inside during nocturnal operations.' },
+        url: 'https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=800&q=80',
+        tag: { zh: '车鼻光前头特写', en: 'Glowing Nose Dome' },
+      },
+      {
+        title: { zh: '经典下沉式大车窗与钴蓝带涂装细节', en: 'Flush Windows & JNR Blue Cheatline' },
+        caption: { zh: '为了抵御进出隧道时的空气剧烈脉动，车窗采用全双层密闭加固平板玻璃。', en: 'Double-glazed flush panoramic windows engineered to withstand massive air-pressure pulses in tunnels.' },
+        url: 'https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=800&q=80',
+        tag: { zh: '侧车窗与涂装', en: 'Window Ribbon' },
       },
     ],
   },
 
-  // 6. 新干线 500 系 (现役/传奇动车组 / 铁道)
+  // 7. 新干线 500 系 (现役/传奇动车组 / 铁道)
   {
     id: 'shinkansen-500',
     category: 'railway',
@@ -491,7 +633,7 @@ export const VEHICLES: Vehicle[] = [
     },
     overview: {
       zh: '德国设计师亚历山大·纽迈斯特操刀，从翠鸟俯冲捕食原理汲取灵感设计的 15 米极长锥形车鼻与全圆柱机身，宛如陆地飞行的战斗机，是车迷公认外观最酷炫的高铁没有之一。',
-      en: 'Designed by Alexander Neumeister inspired by the kingfisher kingfisher beak. With its 15-meter long supersonic jet-fighter nose and cylindrical fuselage, it is hailed as the coolest train design in modern history.',
+      en: 'Designed by Alexander Neumeister inspired by the kingfisher beak. With its 15-meter long supersonic jet-fighter nose and cylindrical fuselage, it is hailed as the coolest train design in modern history.',
     },
     heroImage: 'https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=1200&q=80',
     liveries: [
@@ -519,71 +661,93 @@ export const VEHICLES: Vehicle[] = [
             imageUrl: 'https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=600&q=80',
             notes: { zh: '神作限定版，特制 EVA NERV 风格封套与全8辆专属移印，二级市场极具收藏价值', en: 'Grail collectible edition with NERV themed sleeve box and full 8-car custom markings' },
           },
-          {
-            id: 'm-kato-500-nozomi',
-            brand: 'KATO (关水金属)',
-            itemCode: '10-510 / 10-511',
-            scale: 'N (1:150)',
-            material: { zh: '高精模塑 (Precision ABS)', en: 'Precision ABS' },
-            releaseYear: 2022,
-            status: 'available',
-            imageUrl: 'https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=600&q=80',
-            notes: { zh: '原色 Nozomi 蓝灰银涂装，再现独特机翼状倒T形翼低噪音受电弓', en: 'Original Nozomi blue-silver livery with working wing-shaped low-noise pantographs' },
-          },
         ],
+      },
+    ],
+    detailPhotos: [
+      {
+        title: { zh: '15 米极长锥形车嘴与战斗机座舱风挡', en: '15-Meter Long Kingfisher Beak & Canopy' },
+        caption: { zh: '宛如超音速战斗机的全圆断面车体与驾驶舱流线气泡罩，将微气压波轰鸣降至物理极限。', en: 'Slender circular fuselage and aero canopy minimizing tunnel boom shockwaves.' },
+        url: 'https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=800&q=80',
+        tag: { zh: '战机车鼻特写', en: 'Jet-Fighter Nose' },
+      },
+      {
+        title: { zh: '独创倒 T 型“机翼状”低噪音受电弓', en: 'Inverted-T Wing-Profile Pantograph' },
+        caption: { zh: '受猫头鹰静音羽毛启发的倒T形翼受电弓支撑柱，表面附带微小锯齿减噪涡流发生器。', en: 'Aeronautical wing-shaped pantograph equipped with serrated vortex generators for silent collection.' },
+        url: 'https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=800&q=80',
+        tag: { zh: '机翼受电弓特写', en: 'Wing Pantograph' },
       },
     ],
   },
 
-  // 7. 东风4D型内燃机车 (经典机车 / 铁道)
+  // 8. 联合太平洋 "大男孩" Big Boy 4014 (世界最大蒸汽机车 / 铁道)
   {
-    id: 'df4d',
+    id: 'big-boy-4014',
     category: 'railway',
-    modelName: { zh: '东风4D型柴油内燃机车 "花东风 / 西瓜 / 乌克兰"', en: 'Dongfeng DF4D Diesel Locomotive Series' },
-    code: 'DF4D',
-    manufacturer: { zh: '中车大连机车车辆 (Dalian Locomotive)', en: 'CRRC Dalian' },
-    status: 'active',
-    firstServiceYear: 1996,
-    country: { zh: '中国', en: 'China' },
-    countryCode: 'CN',
-    operatorIds: ['china_railway'],
+    modelName: { zh: '联合太平洋 "大男孩" 巨型关节式蒸汽机车 (UP 4014)', en: 'Union Pacific "Big Boy" 4014 Articulated Steam Locomotive' },
+    code: 'UP4014',
+    manufacturer: { zh: '美国机车公司 (ALCO)', en: 'American Locomotive Company (ALCO)' },
+    status: 'retired',
+    firstServiceYear: 1941,
+    retiredYear: 1961,
+    country: { zh: '美国', en: 'United States' },
+    countryCode: 'US',
+    operatorIds: ['union_pacific'],
     specs: {
-      maxSpeed: '提速客运型 170 km/h / 货运型 100 km/h',
-      capacity: '机车重联牵引 18-20 节客车或万吨重载列车',
-      rangeOrPower: '柴油机装车功率 Engine Power: 2,940 kW (4,000 HP)',
-      length: '20.5 m (轴式 Co-Co)',
+      maxSpeed: '最高 130 km/h (持续翻山运营 110 km/h)',
+      capacity: '单机翻越瓦萨奇山脉重载 4,000 吨超长货列',
+      rangeOrPower: '功率 Output: 4,690 kW (6,290 马力，世界单体机车极限)',
+      length: '40.47 m (连煤水车重达 540 吨，轴式 4-8-8-4)',
     },
     overview: {
-      zh: '中国铁路大提速时代的绝对功臣，大连机车厂研制的四千马力重载客货两用内燃机车。因其不同涂装被铁友亲切冠以“花东风（红白黄提速客运）”、“西瓜（翠绿白带货运）”、“乌克兰（蓝黄）”等称号。',
-      en: 'The backbone workhorse of China Railways speed-up campaigns in the 1990s and 2000s. Cherished by railfans for its distinctive colorful liveries nicknamed "Watermelon" (green/white), "Flower DF" (red/yellow), and "Ukraine" (blue/yellow).',
+      zh: '人类机械工业有史以来建造过的最大、最重、最强劲的铰接式蒸汽机车！1941年专为在犹他州崇山峻岭间牵引重载战备军列而生。2019年4014号经修复重新燃起蒸汽，成为轰动全球的铁道历史图腾。',
+      en: 'The largest, heaviest, and most powerful articulated steam locomotive in human history. Built in 1941 to conquer Wasatch mountain grades. UP 4014 was restored to operation in 2019 as a living legend.',
     },
-    heroImage: 'https://images.unsplash.com/photo-1515165562839-978bbcf18277?auto=format&fit=crop&w=1200&q=80',
+    museumLocation: {
+      zh: '美国怀俄明州夏延机车库 (Cheyenne Depot) 动态运行维护',
+      en: 'Union Pacific Steam Shop (Cheyenne, Wyoming) - Operating Heritage Fleet',
+    },
+    heroImage: 'https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=1200&q=80',
     liveries: [
       {
-        id: 'df4d-flower',
-        name: { zh: '经典红白黄准高速 "花东风" 提速客运涂装 (DF4D-0188)', en: 'Classic Red-White-Yellow "Flower DF" Express Passenger Livery' },
-        type: 'standard',
-        yearsActive: '1998 - 至今 / Present',
-        operatorId: 'china_railway',
+        id: 'up4014-heritage',
+        name: { zh: '联合太平洋重油喷火动态复活巡游涂装 (UP 4014)', en: 'Union Pacific Heritage Steam Tour Black & Silver (UP 4014)' },
+        type: 'retro',
+        yearsActive: '2019 - 至今 / Present (复活运行)',
+        operatorId: 'union_pacific',
         description: {
-          zh: '伴随着中国前几次铁路大提速走红大江南北，鲜艳的红黄渐变线条配合白色机身，曾牵引无数特快（T字头）与快速（K字头）列车飞驰。',
-          en: 'The legendary red/yellow speed streaks on clean ivory body that hauled Chinas top express passenger services across golden rail eras.',
+          zh: '改装为燃油燃烧锅炉后的 4014 号神车，车头巨大的排障器与银色锅炉前脸，煤水车饰有巨大的 UNION PACIFIC 金色手写体标。',
+          en: 'Converted to oil-firing, pristine graphite smokebox and gleaming black boiler surging across North America.',
         },
-        photoUrl: 'https://images.unsplash.com/photo-1515165562839-978bbcf18277?auto=format&fit=crop&w=800&q=80',
+        photoUrl: 'https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=800&q=80',
         isRetired: false,
         scaleModels: [
           {
-            id: 'm-changming-df4d',
-            brand: '长鸣火模 (Changming)',
-            itemCode: 'CM-DF4D-0188',
-            scale: 'HO (1:87)',
-            material: { zh: '重合金属底盘 + 金属独立细部蚀刻片 (Diecast & Etched Brass)', en: 'Diecast Metal Chassis & Photo-etched Brass' },
-            releaseYear: 2021,
+            id: 'm-kato-bigboy',
+            brand: 'KATO (关水金属)',
+            itemCode: '126-4014',
+            scale: 'N (1:160)',
+            material: { zh: '重金属底盘 + 关节式双转向架联动 (Articulated Chassis)', en: 'Articulated Dual-Engine Chassis' },
+            releaseYear: 2023,
             status: 'limited',
-            imageUrl: 'https://images.unsplash.com/photo-1515165562839-978bbcf18277?auto=format&fit=crop&w=600&q=80',
-            notes: { zh: '全金属独立扶手雨刷、高保真 16 位 16V240ZJD 柴油机真实鸣笛声效，顶置散热风扇随油门转速自适应旋转', en: 'Full brass handrails, 16-bit authentic engine sound chip, motor-driven roof cooling fans' },
+            imageUrl: 'https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=600&q=80',
+            notes: { zh: '关水金属神作！最小可通过 R282 极小弯道的专利铰接连动机构，全轮集电配双五极斜槽高扭矩电机', en: 'KATOs engineering triumph: negotiates tight R282mm curves with patented dual-engine articulation' },
           },
         ],
+      },
+    ],
+    detailPhotos: [
+      {
+        title: { zh: '4-8-8-4 铰接式双组巨型动轮与活塞连杆', en: '4-8-8-4 Massive Dual Articulated Driving Gear' },
+        caption: { zh: '直径达 1.73 米的 16 颗重载动轮与粗壮的高合金钢连杆曲柄，喷吐蒸汽时展现机械暴力的极致之美。', en: 'Sixteen 68-inch drivers driven by two sets of dual cylinders exerting 135,375 lbf tractive effort.' },
+        url: 'https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=800&q=80',
+        tag: { zh: '动轮连杆特写', en: 'Drivers & Rods' },
+      },
+      {
+        title: { zh: '夏延机库石墨银烟室门与中心前照灯', en: 'Graphite Smokebox Face & Center Headlight' },
+        caption: { zh: '车头喷涂 4014 经典黄铜铭牌与联合太平洋盾形金属徽章，高耸的双联重型汽笛震彻山谷。', en: 'Restored brass number plate 4014 and enamel Union Pacific shield mounted on smokebox front.' },
+        url: 'https://images.unsplash.com/photo-1515165562839-978bbcf18277?auto=format&fit=crop&w=800&q=80',
+        tag: { zh: '机车前脸特写', en: 'Smokebox Face' },
       },
     ],
   },

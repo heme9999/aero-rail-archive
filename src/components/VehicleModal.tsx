@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import type { Vehicle } from '../types';
+import type { Vehicle, DetailPhoto } from '../types';
 import { OPERATORS } from '../data/database';
 import {
   X,
@@ -7,6 +7,8 @@ import {
   Train,
   Box,
   Building,
+  Camera,
+  Maximize2,
 } from 'lucide-react';
 
 interface VehicleModalProps {
@@ -20,6 +22,7 @@ export const VehicleModal: React.FC<VehicleModalProps> = ({ vehicle, onClose }) 
   const [activeLiveryId, setActiveLiveryId] = useState<string>(
     vehicle.liveries[0]?.id || ''
   );
+  const [activeDetailPhoto, setActiveDetailPhoto] = useState<DetailPhoto | null>(null);
 
   const activeLivery =
     vehicle.liveries.find((l) => l.id === activeLiveryId) || vehicle.liveries[0];
@@ -181,6 +184,60 @@ export const VehicleModal: React.FC<VehicleModalProps> = ({ vehicle, onClose }) 
             </div>
           )}
 
+          {/* NEW SECTION: Close-Up Photo Gallery (特写图片) */}
+          {vehicle.detailPhotos && vehicle.detailPhotos.length > 0 && (
+            <div className="bg-slate-950/90 rounded-2xl p-5 border border-slate-800">
+              <div className="flex items-center justify-between mb-4">
+                <div className="flex items-center space-x-2">
+                  <Camera className="w-4 h-4 text-sky-400" />
+                  <h3 className="text-base font-bold text-white">
+                    机械构造与涂装特写画廊 / Close-up Engineering & Detail Gallery
+                  </h3>
+                </div>
+                <span className="text-xs font-mono text-slate-400">
+                  收录 {vehicle.detailPhotos.length} 张高清细节特写
+                </span>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                {vehicle.detailPhotos.map((photo, idx) => (
+                  <div
+                    key={idx}
+                    onClick={() => setActiveDetailPhoto(photo)}
+                    className="group relative bg-slate-900 rounded-xl overflow-hidden border border-slate-800 hover:border-sky-500/70 transition-all cursor-pointer flex flex-col justify-between"
+                  >
+                    <div className="relative h-44 overflow-hidden bg-slate-950">
+                      <img
+                        src={photo.url}
+                        alt={photo.title.en}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent" />
+                      <div className="absolute top-2.5 right-2.5 px-2 py-0.5 rounded bg-slate-950/80 text-[10px] font-mono font-semibold text-sky-300 border border-sky-850 backdrop-blur-sm">
+                        {photo.tag.zh} / {photo.tag.en}
+                      </div>
+                      <div className="absolute bottom-2 right-2 p-1.5 rounded-lg bg-slate-900/80 text-slate-300 group-hover:text-white group-hover:bg-sky-500 group-hover:text-slate-950 transition-colors">
+                        <Maximize2 className="w-3.5 h-3.5" />
+                      </div>
+                    </div>
+
+                    <div className="p-3">
+                      <div className="text-xs font-bold text-white group-hover:text-sky-300 transition-colors line-clamp-1">
+                        {photo.title.zh}
+                      </div>
+                      <div className="text-[11px] text-slate-400 font-mono line-clamp-1 mb-1">
+                        {photo.title.en}
+                      </div>
+                      <p className="text-[11px] text-slate-400 leading-tight line-clamp-2">
+                        {photo.caption.zh}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
           {/* Livery Selector & Details */}
           <div>
             <div className="flex items-center justify-between mb-3">
@@ -324,6 +381,45 @@ export const VehicleModal: React.FC<VehicleModalProps> = ({ vehicle, onClose }) 
         </div>
 
       </div>
+
+      {/* Lightbox Modal for Fullscreen Close-up Image */}
+      {activeDetailPhoto && (
+        <div className="fixed inset-0 z-60 bg-black/95 backdrop-blur-lg flex items-center justify-center p-4">
+          <div className="relative max-w-4xl w-full flex flex-col items-center">
+            <button
+              onClick={() => setActiveDetailPhoto(null)}
+              className="absolute -top-12 right-0 p-2 text-slate-400 hover:text-white rounded-lg bg-slate-850"
+            >
+              <X className="w-5 h-5" />
+            </button>
+
+            <img
+              src={activeDetailPhoto.url}
+              alt={activeDetailPhoto.title.en}
+              className="max-h-[75vh] w-auto max-w-full rounded-2xl object-contain border border-slate-800 shadow-2xl"
+            />
+
+            <div className="mt-4 text-center max-w-2xl px-4">
+              <span className="text-xs font-mono px-2.5 py-0.5 rounded bg-sky-950 text-sky-400 border border-sky-800 mb-2 inline-block">
+                {activeDetailPhoto.tag.zh} / {activeDetailPhoto.tag.en}
+              </span>
+              <h3 className="text-base font-bold text-white">
+                {activeDetailPhoto.title.zh}
+              </h3>
+              <p className="text-xs text-slate-400 font-mono">
+                {activeDetailPhoto.title.en}
+              </p>
+              <p className="text-xs text-slate-300 mt-2 leading-relaxed">
+                {activeDetailPhoto.caption.zh}
+              </p>
+              <p className="text-[11px] text-slate-500 font-mono mt-0.5">
+                {activeDetailPhoto.caption.en}
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
+
     </div>
   );
 };

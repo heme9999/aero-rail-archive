@@ -42,6 +42,13 @@ export interface Livery {
   scaleModels: ScaleModelItem[];
 }
 
+export interface DetailPhoto {
+  title: LocalizedString;
+  caption: LocalizedString;
+  url: string;
+  tag: LocalizedString;
+}
+
 export interface Vehicle {
   id: string;
   category: Category;
@@ -64,4 +71,5 @@ export interface Vehicle {
   museumLocation?: LocalizedString; // Where visitors can see retired units
   heroImage: string;
   liveries: Livery[];
+  detailPhotos: DetailPhoto[];
 }
