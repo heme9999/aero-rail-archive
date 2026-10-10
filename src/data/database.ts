@@ -1014,22 +1014,22 @@ export const VEHICLES: Vehicle[] = [
     ],
     detailPhotos: [
       {
-        title: { zh: '1号机 JA381A (Lani) 湛蓝机鼻与好奇大眼睛特写', en: 'JA381A (Lani) Sky Blue Nose & Open Eyes' },
-        caption: { zh: '深浅天蓝色渐变包覆的机鼻雷达罩，海龟大眼睛充满好奇与朝气。', en: 'Curious open eyes on Lani’s sky blue bulbous radome nose.' },
+        title: { zh: '1号机 JA381A (Lani) 成田机场滑行机身侧后方全景', en: 'JA381A (Lani) Blue Turtle Side & Tail Profile at NRT' },
+        caption: { zh: '晴空蓝海龟彩绘机身侧面与高耸垂直尾翼全景，展现巨大的双层客舱舷窗与翼展。', en: 'Side and empennage perspective of Lani in brilliant sky blue livery taxiing at Narita.' },
         url: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f1/ANA_Airbus_A380_JA381A_in_Narita.jpg/1280px-ANA_Airbus_A380_JA381A_in_Narita.jpg',
-        tag: { zh: '1号蓝海龟特写', en: 'Lani Nose' },
+        tag: { zh: '1号蓝海龟全景', en: 'Lani Livery' },
       },
       {
-        title: { zh: '2号机 JA382A (Kai) 翡翠绿微笑机头起飞爬升特写', en: 'JA382A (Kai) Emerald Ocean Smiling Nose Rotation' },
-        caption: { zh: '翡翠色海龟嘴角微翘带笑，起飞时巨大机翼与劳斯莱斯四台 Trent 900 气势磅礴。', en: 'Kai smiling serenely as the superjumbo climbs smoothly out of Narita.' },
+        title: { zh: '2号机 JA382A (Kai) 翡翠绿海龟成田机场五边进近降落', en: 'JA382A (Kai) Emerald Ocean Landing Approach at NRT' },
+        caption: { zh: '翡翠绿色彩绘机身在低空平稳进近降落，全开缝翼襟翼与22轮主起落架清晰可见。', en: 'Kai in vibrant emerald green on final approach to Narita with gear and flaps deployed.' },
         url: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b6/ANA_Airbus_A380_JA382A_in_Narita.jpg/1280px-ANA_Airbus_A380_JA382A_in_Narita.jpg',
-        tag: { zh: '2号绿海龟特写', en: 'Kai Climb' },
+        tag: { zh: '2号绿海龟降落', en: 'Kai Approach' },
       },
       {
-        title: { zh: '3号机 JA383A (Ka La) 夕阳橙色俏皮长睫毛机头特写', en: 'JA383A (Ka La) Sunset Orange Long Eyelashes Nose' },
-        caption: { zh: '3号机最独特的标志性长睫毛，配上明亮夏威夷落日橙，极具热带假日热情。', en: 'Playful curling eyelashes adorning Ka La’s warm Hawaiian sunset orange face.' },
+        title: { zh: '3号机 JA383A (Ka La) 成田停机坪滑行正侧面全景', en: 'JA383A (Ka La) Sunset Orange Full Side Profile at NRT' },
+        caption: { zh: '夕阳橙色3号机在成田机场停机坪平稳滑行，机身中后段夏威夷亲子小海龟彩绘生动呈现。', en: 'Ka La dressed in warm Hawaiian sunset orange taxiing across the tarmac at Narita.' },
         url: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5c/JA383A_NRT_2026-05-24.jpg/1280px-JA383A_NRT_2026-05-24.jpg',
-        tag: { zh: '3号橙海龟特写', en: 'Ka La Eyelashes' },
+        tag: { zh: '3号橙海龟全貌', en: 'Ka La Profile' },
       },
     ],
   },
@@ -1482,7 +1482,7 @@ export const VEHICLES: Vehicle[] = [
       zh: '中国南方航空引进的新一代宽体远程旗舰客机。采用碳纤维复合材料机身、气动鲨鳍翼梢小翼与罗尔斯·罗伊斯遄达 XWB 高效发动机。垂直尾翼喷涂典雅的木棉花徽标，机身通体珠光白配双色蓝天海浪腰线，执飞广州北京大兴至伦敦、阿姆斯特丹、悉尼等全球洲际枢纽航线。',
       en: 'China Southerns long-haul twin-aisle flagship featuring carbon composite structure, Rolls-Royce Trent XWB turbofans, and iconic Kapok flower tailfin, serving premier intercontinental routes from Guangzhou and Beijing Daxing.',
     },
-    heroImage: 'https://upload.wikimedia.org/wikipedia/commons/3/3a/GeminiJets1400ap.JPG',
+    heroImage: 'https://upload.wikimedia.org/wikipedia/commons/1/1a/China_Southern_Airlines_%28B-32ED%29_Airbus_A350-941_departing_Sydney_Airport_%283%29.jpg',
     liveries: [
       {
         id: 'csn-a350-standard',
@@ -1494,7 +1494,7 @@ export const VEHICLES: Vehicle[] = [
           zh: '标志性的南航双色蓝腰线配典雅红金木棉花垂尾，驾驶舱墨镜风挡气势磅礴，机身印有立体光泽“CHINA SOUTHERN 中国南方航空”中英文标志。',
           en: 'Classic dual-blue cheatline with scarlet-and-gold Kapok blossom tail, stylish cockpit sunglasses mask, and high-gloss bilingual titles.',
         },
-        photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/3/3a/GeminiJets1400ap.JPG',
+        photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/1/1a/China_Southern_Airlines_%28B-32ED%29_Airbus_A350-941_departing_Sydney_Airport_%283%29.jpg',
         isRetired: false,
         scaleModels: [
           {
@@ -1505,7 +1505,7 @@ export const VEHICLES: Vehicle[] = [
             material: { zh: '高精合金 (Diecast)', en: 'Diecast Metal' },
             releaseYear: 2021,
             status: 'available',
-            imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/3/3a/GeminiJets1400ap.JPG',
+            imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/1/1a/China_Southern_Airlines_%28B-32ED%29_Airbus_A350-941_departing_Sydney_Airport_%283%29.jpg',
             notes: { zh: '带独立金属天线、镂空 Trent XWB 发动机透光叶片、磁吸齿轮起落架', en: 'Precision etched antennas, see-through Trent XWB fan blades, magnetic landing gear' },
           },
           {
@@ -1532,7 +1532,7 @@ export const VEHICLES: Vehicle[] = [
       {
         title: { zh: '悉尼机场起飞爬升机腹仰角特写 (B-32ED)', en: 'China Southern A350 B-32ED Sydney Departure' },
         caption: { zh: '四轮主起落架收入起落架舱瞬间，巨大的碳纤维超临界机翼迎风展翅。', en: 'Main gear retraction during climb out over Sydney with wide supercritical wings.' },
-        url: 'https://upload.wikimedia.org/wikipedia/commons/3/3a/GeminiJets1400ap.JPG',
+        url: 'https://upload.wikimedia.org/wikipedia/commons/1/1a/China_Southern_Airlines_%28B-32ED%29_Airbus_A350-941_departing_Sydney_Airport_%283%29.jpg',
         tag: { zh: '起飞离场', en: 'Sydney Climb' },
       },
       {
@@ -1566,7 +1566,7 @@ export const VEHICLES: Vehicle[] = [
       zh: '中国南方航空是中国首家接收并运营波音 787 梦想客机的航空公司（首架机 B-2725 于 2013 年入列）。787 采用开创性的全复合材料机身、锯齿形降噪发动机短舱、电子调光超大舷窗与高舒适度座舱增压环境。南航 787 机队拥有极具美感的大翼掠角，常年执飞广深始发跨洋国际航线。',
       en: 'China Southern was the first Chinese airline to introduce the Boeing 787 Dreamliner (in 2013). Featuring full composite airframe, chevron engine nacelles, and dimmable windows, it revolutionized long-haul passenger comfort.',
     },
-    heroImage: 'https://upload.wikimedia.org/wikipedia/commons/0/01/EM_Gemini_Jets_CO_737-700_%282394687662%29.jpg',
+    heroImage: 'https://upload.wikimedia.org/wikipedia/commons/4/44/China_Southern_Airlines%2C_Boeing_787-8_Dreamliner%2C_B-2735.jpg',
     liveries: [
       {
         id: 'csn-b787-standard',
@@ -1578,7 +1578,7 @@ export const VEHICLES: Vehicle[] = [
           zh: '白底蓝带与机身特别标注的“DREAMLINER 梦想飞机”字体，配合锯齿形 GEnx 发动机尾喷管，展现现代民航工程最高水准。',
           en: 'Adorned with China Southerns classic livery, prominent "Dreamliner" titles, and acoustic chevron engine nacelles.',
         },
-        photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/0/01/EM_Gemini_Jets_CO_737-700_%282394687662%29.jpg',
+        photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/4/44/China_Southern_Airlines%2C_Boeing_787-8_Dreamliner%2C_B-2735.jpg',
         isRetired: false,
         scaleModels: [
           {
@@ -1589,7 +1589,7 @@ export const VEHICLES: Vehicle[] = [
             material: { zh: '高精合金 (Diecast)', en: 'Diecast Metal' },
             releaseYear: 2022,
             status: 'available',
-            imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/0/01/EM_Gemini_Jets_CO_737-700_%282394687662%29.jpg',
+            imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/4/44/China_Southern_Airlines%2C_Boeing_787-8_Dreamliner%2C_B-2735.jpg',
             notes: { zh: '精细还原波音 787 锯齿形短舱与斜削翼尖小翼，可转动钛金叶片', en: 'Detailed chevron nacelles, raked wingtips, and spinning metal fan blades' },
           },
           {
@@ -1616,7 +1616,7 @@ export const VEHICLES: Vehicle[] = [
       {
         title: { zh: 'B-2735 接地瞬间主起落架青烟特写', en: 'B-2735 Touchdown Smoke Action' },
         caption: { zh: '波音 787 四轮主起落架胎面高速接触跑道，升起一缕标志性青烟。', en: 'Four-wheel bogie tires kissing the runway surface generating a puff of touchdown smoke.' },
-        url: 'https://upload.wikimedia.org/wikipedia/commons/0/01/EM_Gemini_Jets_CO_737-700_%282394687662%29.jpg',
+        url: 'https://upload.wikimedia.org/wikipedia/commons/4/44/China_Southern_Airlines%2C_Boeing_787-8_Dreamliner%2C_B-2735.jpg',
         tag: { zh: '接地特写', en: 'Touchdown' },
       },
       {
@@ -1693,28 +1693,28 @@ export const VEHICLES: Vehicle[] = [
     ],
     detailPhotos: [
       {
-        title: { zh: 'B-6139 满载滑行满框气势特写', en: 'China Southern A380 (B-6139) Taxi Action' },
-        caption: { zh: '双层巨无霸的浑厚机鼻与庞大机身展现无与伦比的视觉压迫感，木棉花尾翼巍然挺立。', en: 'Unrivaled ramp presence of the world’s largest passenger airliner with the giant Kapok emblem.' },
-        url: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/3/38/B-6139_Airbus_A380_China_Southern_%2811115486806%29.jpg/1280px-B-6139_Airbus_A380_China_Southern_%2811115486806%29.jpg',
-        tag: { zh: '滑行特写', en: 'A380 Giant' },
+        title: { zh: '北京首都机场进近降落特写 (B-6139)', en: 'China Southern A380 (B-6139) Final Approach at PEK' },
+        caption: { zh: '机身双层客舱舷窗清晰可见，机翼后缘缝翼襟翼与22轮主起落架完全展开，空中巨舰气势磅礴。', en: 'Approaching runway with fully deployed flaps, slats, and extended 22-wheel landing gear over Beijing Capital.' },
+        url: 'https://upload.wikimedia.org/wikipedia/commons/3/38/B-6139_Airbus_A380_China_Southern_%2811115486806%29.jpg',
+        tag: { zh: '进近降落', en: 'Final Approach' },
       },
       {
-        title: { zh: '停机坪远机位四台 Trent 900 发动机壮观排布', en: 'Quad Trent 900 Engines & Swept Wings' },
-        caption: { zh: '空客 A380 近 80 米的超宽双层翼展，四发翼吊引擎提供高达 140 吨起飞推力。', en: 'Nearly 80-meter wingspan mounting four Rolls-Royce Trent 900 engines.' },
-        url: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/2/25/B-6139_Airbus_A380_China_Southern_%2811115632583%29.jpg/1280px-B-6139_Airbus_A380_China_Southern_%2811115632583%29.jpg',
-        tag: { zh: '四发航发', en: 'Quad Engines' },
+        title: { zh: '右侧机腹仰角与四台遄达900发动机特写 (B-6139)', en: 'Right Underside & Quad Trent 900 Turbofans' },
+        caption: { zh: '近距离仰望超级空中巨无霸，四台罗罗遄达900引擎整齐排布，近80米超宽机翼遮天蔽日。', en: 'Close-up upward view highlighting the four Rolls-Royce Trent 900 turbofans mounted along the giant wingspan.' },
+        url: 'https://upload.wikimedia.org/wikipedia/commons/2/25/B-6139_Airbus_A380_China_Southern_%2811115632583%29.jpg',
+        tag: { zh: '四发机翼', en: 'Quad Turbofans' },
       },
       {
-        title: { zh: '跑道离地仰头爬升瞬间 (B-6139)', en: 'B-6139 Rotation Lift-Off' },
-        caption: { zh: '庞然大物轻盈离地，22 轮复杂主起落架正准备收起，极具视觉冲击力。', en: 'Mammoth airliner climbing into the sky with the 22-wheel undercarriage beginning to retract.' },
-        url: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2e/B-6139_Airbus_A380_China_Southern_%2811192406744%29.jpg/1280px-B-6139_Airbus_A380_China_Southern_%2811192406744%29.jpg',
-        tag: { zh: '离地起飞', en: 'Rotation Lift-Off' },
+        title: { zh: '北京首都机场地面滑行正侧面全景 (B-6139)', en: 'China Southern A380 Taxiing at Beijing Capital' },
+        caption: { zh: 'B-6139在滑行道平稳滑行，背景可见起飞离场的其他客机，双层巨舰长达73米的雄壮身躯一览无余。', en: 'B-6139 smoothly taxiing along Beijing Capital airport taxiway with another aircraft departing in the background.' },
+        url: 'https://upload.wikimedia.org/wikipedia/commons/2/2e/B-6139_Airbus_A380_China_Southern_%2811192406744%29.jpg',
+        tag: { zh: '地面滑行', en: 'Taxi Profile' },
       },
       {
-        title: { zh: '阿姆斯特丹史基浦机场五边降落 (B-6137)', en: 'China Southern A380 Schiphol Landing Approach' },
-        caption: { zh: '飞越南航跨洋洲际航线重点目的地史基浦，三缝翼展全面张开。', en: 'Gliding smoothly across Amsterdam Schiphol on international intercontinental rotation.' },
-        url: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5f/China_Southern_Airlines_Airbus_A380_B-6137_at_Schiphol_27-08-2021.jpg/1280px-China_Southern_Airlines_Airbus_A380_B-6137_at_Schiphol_27-08-2021.jpg',
-        tag: { zh: '跨洋降落', en: 'Schiphol Approach' },
+        title: { zh: '阿姆斯特丹史基浦机场跑道接地反推减速 (B-6137)', en: 'China Southern A380 Touchdown & Thrust Reversers at AMS' },
+        caption: { zh: '南航跨洋洲际航线重点机型，在雨后湿滑跑道接地后开启反推减速，机轮后方激起漫天水雾。', en: 'B-6137 deploying thrust reversers on wet runway at Amsterdam Schiphol, kicking up a dramatic spray of water mist.' },
+        url: 'https://upload.wikimedia.org/wikipedia/commons/5/5f/China_Southern_Airlines_Airbus_A380_B-6137_at_Schiphol_27-08-2021.jpg',
+        tag: { zh: '接地反推', en: 'Touchdown Reversers' },
       },
     ],
   },
