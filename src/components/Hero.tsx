@@ -18,12 +18,15 @@ export const Hero: React.FC<HeroProps> = ({
 }) => {
   const quickTags = [
     { label: 'ANA 宝可梦 / Pokemon', query: '宝可梦' },
+    { label: '国泰 777 / 香港精神号', query: '国泰航空' },
     { label: '大韩 747-8 / Korean Air', query: '大韩航空' },
+    { label: '新航 A380 / SG50国旗', query: '新加坡航空' },
+    { label: '马航 A350 / 我的祖国', query: '马来西亚航空' },
+    { label: '亚航 A320 / AirAsia', query: '亚洲航空' },
     { label: '台湾高铁 700T / THSR', query: '台湾高铁' },
     { label: '雅万高铁 / Whoosh', query: '雅万高铁' },
-    { label: '新航 A350 / Singapore Air', query: '新加坡航空' },
-    { label: 'KTX-山川 / Korail', query: 'KTX' },
     { label: '长荣 777 / EVA Air', query: '长荣航空' },
+    { label: '华航 A350 / 碳纤维红梅', query: '中华航空' },
     { label: '500 TYPE EVA 初号机', query: 'EVA' },
     { label: '新干线 E5 / 隼号', query: 'E5' },
     { label: 'C919 国产大飞机', query: 'C919' },

@@ -17,11 +17,12 @@ export const COUNTRY_ORDER: Record<string, number> = {
   JP: 13, // 日本 Japan
   KR: 14, // 韩国 South Korea
   SG: 15, // 新加坡 Singapore
-  ID: 16, // 印度尼西亚 Indonesia
-  TH: 17, // 泰国 Thailand
-  IN: 18, // 印度 India
-  AE: 19, // 阿联酋 United Arab Emirates
-  QA: 20, // 卡塔尔 Qatar
+  MY: 16, // 马来西亚 Malaysia
+  ID: 17, // 印度尼西亚 Indonesia
+  TH: 18, // 泰国 Thailand
+  IN: 19, // 印度 India
+  AE: 20, // 阿联酋 United Arab Emirates
+  QA: 21, // 卡塔尔 Qatar
 
   // 欧洲 Europe
   FR: 30, // 法国 France
@@ -156,6 +157,16 @@ export const OPERATORS: Record<string, Operator> = {
   },
 
   // 🇹🇼 中国台湾 / Taiwan, China
+  china_airlines: {
+    id: 'china_airlines',
+    name: { zh: '中华航空', en: 'China Airlines' },
+    code: 'CAL / CI',
+    country: { zh: '中国台湾', en: 'Taiwan, China' },
+    countryCode: 'TW',
+    continent: { zh: '亚洲', en: 'Asia' },
+    continentCode: 'AS',
+    type: 'aviation',
+  },
   eva_air: {
     id: 'eva_air',
     name: { zh: '长荣航空', en: 'EVA Air' },
@@ -208,6 +219,28 @@ export const OPERATORS: Record<string, Operator> = {
     code: 'SIA / SQ',
     country: { zh: '新加坡', en: 'Singapore' },
     countryCode: 'SG',
+    continent: { zh: '亚洲', en: 'Asia' },
+    continentCode: 'AS',
+    type: 'aviation',
+  },
+
+  // 🇲🇾 马来西亚 / Malaysia
+  airasia: {
+    id: 'airasia',
+    name: { zh: '亚洲航空', en: 'AirAsia' },
+    code: 'AXM / AK',
+    country: { zh: '马来西亚', en: 'Malaysia' },
+    countryCode: 'MY',
+    continent: { zh: '亚洲', en: 'Asia' },
+    continentCode: 'AS',
+    type: 'aviation',
+  },
+  malaysia_airlines: {
+    id: 'malaysia_airlines',
+    name: { zh: '马来西亚航空', en: 'Malaysia Airlines' },
+    code: 'MAS / MH',
+    country: { zh: '马来西亚', en: 'Malaysia' },
+    countryCode: 'MY',
     continent: { zh: '亚洲', en: 'Asia' },
     continentCode: 'AS',
     type: 'aviation',
@@ -4948,8 +4981,40 @@ export const VEHICLES: Vehicle[] = [
           },
         ],
       },
+      {
+        id: 'sia-a359-10000th',
+        name: { zh: '空客交付第10,000架飞机官方纪念彩绘 (9V-SMF)', en: '10,000th Airbus Aircraft Special Livery (9V-SMF)' },
+        type: 'special',
+        yearsActive: '2016 - 至今 / Present',
+        operatorId: 'singapore_airlines',
+        isRetired: false,
+        description: {
+          zh: '2016年10月空中客车集团向新加坡航空交付了自空客创办以来的第10,000架飞机。机身后部特别喷绘了醒目的大型 "10,000th Airbus Aircraft" 官方纪念徽标与渐变字符。',
+          en: 'Delivered in October 2016, marking the historic 10,000th Airbus aircraft built, featuring official commemorative decals on the rear fuselage.',
+        },
+        photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/0/03/9V-SMF_-_Singapore_Airlines_%2210%2C000th_Airbus_Aircraft%22_-_Airbus_A350-941_-_MSN_054_-_VGHS.jpg',
+        scaleModels: [
+          {
+            id: 'ph-sia-a359-10000th',
+            brand: 'Phoenix',
+            itemCode: '11340',
+            scale: '1:400',
+            material: { zh: '锌合金 / 压铸全金属', en: 'Diecast Metal Alloy' },
+            releaseYear: 2017,
+            status: 'limited',
+            imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/0/03/9V-SMF_-_Singapore_Airlines_%2210%2C000th_Airbus_Aircraft%22_-_Airbus_A350-941_-_MSN_054_-_VGHS.jpg',
+            notes: { zh: 'Phoenix 经典开模，精致还原机身后部第10,000架空客官方徽标与 Trent XWB 发动机', en: 'Detailed Phoenix 1:400 scale diecast featuring the official 10,000th Airbus commemorative livery.' },
+          },
+        ],
+      },
     ],
     detailPhotos: [
+      {
+        title: { zh: '法兰克福国际机场滑行 "10,000th Airbus" 机身特写', en: 'Singapore Airlines A350-900 10,000th Airbus Taxiing at Frankfurt' },
+        caption: { zh: '法兰克福机场跑道滑行中的 9V-SMF，机身后部醒目的第10,000架空客飞机官方纪念拉花熠熠生辉。', en: '9V-SMF taxiing at Frankfurt Airport showing the distinctive 10,000th Airbus celebratory fuselage markings.' },
+        url: 'https://upload.wikimedia.org/wikipedia/commons/e/e5/9V-SMF_-_Singapore_Airlines_%2210%2C000th_Airbus_Aircraft%22_-_Airbus_A350-941_at_Frankfurt_Airport%2C_October_2022_02.jpg',
+        tag: { zh: '纪念彩绘', en: 'Celebration Livery' },
+      },
       {
         title: { zh: '布里斯班国际机场降落进近机腹与金蓝线条特写', en: 'Singapore Airlines A350-900 on Final Approach at Brisbane' },
         caption: { zh: '柔和晨光中 A350 碳纤维弯曲翼梢小翼优雅划过天际，展现极致空气动力学与低油耗宁静飞行品质。', en: 'Gracefully descending into Brisbane showing aerodynamic winglets and Rolls-Royce Trent XWB engines.' },
@@ -5259,6 +5324,514 @@ export const VEHICLES: Vehicle[] = [
         caption: { zh: '列车流线型破风车头采用大角度倾角与贯通式深蓝防眩光驾驶室风挡，展现印度铁路现代风貌。', en: 'Close-up of the aerodynamic front cab with angled windscreen and royal blue chevron markings.' },
         url: 'https://upload.wikimedia.org/wikipedia/commons/4/43/Vande_Bharat_Express_train.jpg',
         tag: { zh: '车头特写', en: 'Cab Detail' },
+      },
+    ],
+  },
+
+  // 65. 中华航空 空客 A350-900 "红梅扬姿 / 碳纤维彩绘" 旗舰客机 (B-18918 / 中国台湾航空)
+  {
+    id: 'china-airlines-a350-900',
+    category: 'aviation',
+    modelName: { zh: '中华航空 空客 A350-900 "红梅扬姿 / 碳纤维彩绘" 旗舰客机', en: 'China Airlines Airbus A350-900 "Plum Blossom & Carbon Fiber" Flagship' },
+    code: 'A359-CAL',
+    manufacturer: { zh: '空中客车 (Airbus)', en: 'Airbus' },
+    status: 'active',
+    firstServiceYear: 2016,
+    country: { zh: '中国台湾', en: 'Taiwan, China' },
+    countryCode: 'TW',
+    operatorIds: ['china_airlines'],
+    specs: {
+      maxSpeed: '945 km/h (Mach 0.85)',
+      capacity: '306 座 (豪华商务舱 32 / 豪华经济舱 31 / 经济舱 243)',
+      rangeOrPower: '15,000 km (8,100 nmi)',
+      length: '66.80 m (翼展 Wingspan: 64.75 m 碳纤维流线型小翼)',
+    },
+    overview: {
+      zh: '中华航空（China Airlines）新世代长程越洋机队主力旗舰！华航创立于 1959 年，以其典雅优美的“红梅扬姿”水墨画风梅花尾翼享誉国际。2018 年华航接收其第 14 架 A350（注册号 B-18918），与空客官方联名打造全球独一无二的“碳纤维彩绘机”：前半机身为华航水墨红梅扬姿经典涂装，后半机身与尾翼无缝过渡为空客原厂标志性的深蓝与编织纹碳纤维复合材料图腾，成为世界航空彩绘史上极具科技感与东方诗意的代表作。',
+      en: 'The flagship widebody aircraft of China Airlines. Famous for its poetic "Plum Blossom" (红梅扬姿) tail fin designed with Chinese ink-wash brushwork. In 2018, China Airlines took delivery of its 14th A350 (B-18918), featuring a rare joint livery with Airbus: the front half carries the serene plum blossom livery, seamlessly merging into Airbus\'s high-tech woven carbon fiber pattern.',
+    },
+    heroImage: 'https://upload.wikimedia.org/wikipedia/commons/c/c6/China_Airlines_Airbus_A350-900_B-18918.jpg',
+    liveries: [
+      {
+        id: 'cal-a359-carbon-fiber',
+        name: { zh: '华航与空客联合碳纤维彩绘 (B-18918)', en: 'China Airlines & Airbus Carbon Fiber Joint Livery (B-18918)' },
+        type: 'special',
+        yearsActive: '2018 - 至今 / Present',
+        operatorId: 'china_airlines',
+        isRetired: false,
+        description: {
+          zh: '前机身为华航红梅水墨，后部机身融入空客碳纤维编织几何暗纹，垂直尾翼两侧分别印有红梅与 AIRBUS 标识。',
+          en: 'Unique hybrid livery blending China Airlines plum blossom with Airbus\'s iconic woven carbon-fiber pattern.',
+        },
+        photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/c/c6/China_Airlines_Airbus_A350-900_B-18918.jpg',
+        scaleModels: [
+          {
+            id: 'av400-cal-a359-18918',
+            brand: 'Aviation400',
+            itemCode: 'AV4068',
+            scale: '1:400',
+            material: { zh: '锌合金 / 压铸全金属', en: 'Diecast Metal Alloy' },
+            releaseYear: 2021,
+            status: 'available',
+            imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/c/c6/China_Airlines_Airbus_A350-900_B-18918.jpg',
+            notes: { zh: 'Aviation400 旗舰合金模具，微米级精准移印碳纤维编织立体渐变网格，磁吸起落架及罗罗遄达发动机镂空叶片', en: 'Aviation400 1:400 diecast with high-precision carbon-fiber weave pad printing and magnetic landing gears.' },
+          },
+        ],
+      },
+      {
+        id: 'cal-a359-plum-blossom',
+        name: { zh: '中华航空经典红梅扬姿标准涂装 (B-18905)', en: 'China Airlines Classic Plum Blossom Livery (B-18905)' },
+        type: 'standard',
+        yearsActive: '2016 - 至今 / Present',
+        operatorId: 'china_airlines',
+        isRetired: false,
+        description: {
+          zh: '珍珠白机身贯穿浅蔚蓝流线，垂直尾翼喷涂典雅的水墨渐变粉紫红梅，客舱融合柿木纹宋代美学。',
+          en: 'Signature pearl white body with ink-wash plum blossom on the vertical fin and Eastern aesthetics.',
+        },
+        photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/8/8e/China_Airlines_A350-900_%28B-18905%29_%40_AMS%2C_July_2018.jpg',
+        scaleModels: [
+          {
+            id: 'jcw-cal-a359-standard',
+            brand: 'JC Wings',
+            itemCode: 'LH4CAL158',
+            scale: '1:400',
+            material: { zh: '锌合金 / 压铸全金属', en: 'Diecast Metal Alloy' },
+            releaseYear: 2019,
+            status: 'available',
+            imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/8/8e/China_Airlines_A350-900_%28B-18905%29_%40_AMS%2C_July_2018.jpg',
+            notes: { zh: 'JC Wings 经典金属压铸模型，精细还原机尾粉红水墨梅花层次晕染', en: 'JC Wings 1:400 diecast featuring the iconic pink plum blossom gradient.' },
+          },
+        ],
+      },
+    ],
+    detailPhotos: [
+      {
+        title: { zh: '维也纳国际机场机坪碳纤维机尾与红梅交融特写 (B-18918)', en: 'China Airlines A350 B-18918 at Vienna Airport' },
+        caption: { zh: '飞机停泊在欧洲维也纳机场，机身后半部深蓝色碳纤维编织涂装与前部水墨红梅在阳光下呈现极其强烈的现代科技反差。', en: 'Parked at Vienna showing the transition from plum blossom to high-tech carbon weave pattern.' },
+        url: 'https://upload.wikimedia.org/wikipedia/commons/1/14/China_Airlines_Airbus_A350_B-18918_at_Vienna_Airport.jpg',
+        tag: { zh: '机坪特写', en: 'Tarmac Stand' },
+      },
+      {
+        title: { zh: '阿姆斯特丹史基浦机场跑道降落水墨红梅垂尾特写 (B-18905)', en: 'China Airlines A350 Plum Blossom Landing at Amsterdam' },
+        caption: { zh: '华航 A350 执飞欧洲越洋直达航班降落阿姆斯特丹，后视角度下粉红水墨红梅格外娇艳动人。', en: 'Landing at Amsterdam Schiphol showing the full beauty of the plum blossom tailfin.' },
+        url: 'https://upload.wikimedia.org/wikipedia/commons/8/8e/China_Airlines_A350-900_%28B-18905%29_%40_AMS%2C_July_2018.jpg',
+        tag: { zh: '进近降落', en: 'Final Approach' },
+      },
+    ],
+  },
+
+  // 66. 国泰航空 波音 777-300ER "香港精神号" 远程旗舰客机 (B-KPB / 中国香港)
+  {
+    id: 'cathay-pacific-777-300er',
+    category: 'aviation',
+    modelName: { zh: '国泰航空 波音 777-300ER "香港精神号" 远程旗舰客机', en: 'Cathay Pacific Boeing 777-300ER Flagship' },
+    code: 'B77W-CPA',
+    manufacturer: { zh: '波音 (Boeing)', en: 'Boeing' },
+    status: 'active',
+    firstServiceYear: 2007,
+    country: { zh: '中国香港', en: 'Hong Kong, China' },
+    countryCode: 'HK',
+    operatorIds: ['cathay_pacific'],
+    specs: {
+      maxSpeed: '945 km/h (Mach 0.84)',
+      capacity: '294 / 368 座 (四舱 / 三舱布局 / 头等舱豪华套房配备)',
+      rangeOrPower: '13,650 km (连接香港至伦敦、纽约、洛杉矶跨洋骨干主力)',
+      length: '73.86 m (翼展 Wingspan: 64.80 m / GE90-115B 巨型双发引擎)',
+    },
+    overview: {
+      zh: '中国香港旗舰航空公司国泰航空的跨洋洲际骨干机队！国泰波音 777-300ER 长期执飞香港至伦敦希思罗、纽约肯尼迪、洛杉矶等全球顶级金融航线。其中 B-KPB 曾身披轰动全球的第三代“香港精神号 (The Spirit of Hong Kong)”特别彩绘，机身融合香港标志性维港天际线与 110 位香港市民自强不息的代表剪影，向全世界展现香港坚韧拼搏精神与多元活力。',
+      en: 'Cathay Pacific premier long-haul flagship connecting Hong Kong to London, New York and Los Angeles. Notably featuring the iconic B-KPB "The Spirit of Hong Kong" special livery celebrating the city skyline and ordinary people silhouette.',
+    },
+    heroImage: 'https://upload.wikimedia.org/wikipedia/commons/4/45/B-KPB_The_Spirit_of_Hong_Kong.jpg',
+    liveries: [
+      {
+        id: 'cx-b77w-spirit-of-hk',
+        name: { zh: '国泰航空第三代 "香港精神号" 城市剪影特别彩绘 (B-KPB)', en: 'The Spirit of Hong Kong 3rd Generation Livery (B-KPB)' },
+        type: 'special',
+        yearsActive: '2013 - 2017 (典藏彩绘 / Special Livery)',
+        operatorId: 'cathay_pacific',
+        isRetired: true,
+        description: {
+          zh: '以香港特区区旗洋紫荆红为基调，机身绘有维多利亚港天际线建筑轮廓，以及征集自全港市民的 110 位普通香港人奋斗剪影，承载狮子山精神。',
+          en: 'Featuring the Victoria Harbour skyline and silhouettes of 110 real Hong Kong residents embodying the Spirit of Hong Kong.',
+        },
+        photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/4/45/B-KPB_The_Spirit_of_Hong_Kong.jpg',
+        scaleModels: [
+          {
+            id: 'ph-cx-b77w-spirit',
+            brand: 'Phoenix',
+            itemCode: '10878',
+            scale: '1:400',
+            material: { zh: '锌合金 / 压铸全金属', en: 'Diecast Metal Alloy' },
+            releaseYear: 2014,
+            status: 'limited',
+            imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/4/45/B-KPB_The_Spirit_of_Hong_Kong.jpg',
+            notes: { zh: 'Phoenix 典藏限量 1:400 合金模型，极高精度还原机身 110 个人物剪影与维港建筑线稿，模界争相收藏的热门神作', en: 'Phoenix limited diecast 1:400 depicting every minute detail of the human silhouettes and skyline.' },
+          },
+        ],
+      },
+      {
+        id: 'cx-b77w-oneworld',
+        name: { zh: '国泰航空 "寰宇一家" 航空联盟特别涂装 (B-KQM)', en: 'Cathay Pacific Oneworld Alliance Livery (B-KQM)' },
+        type: 'special',
+        yearsActive: '2014 - 至今 / Present',
+        operatorId: 'cathay_pacific',
+        isRetired: false,
+        description: {
+          zh: '前机身印制醒目的大型 oneworld 环球联盟字样，垂尾保留国泰经典翘首振翅（Brushwing）标志，彰显全球顶级航空联盟成员身份。',
+          en: 'Bold oneworld alliance titles across forward fuselage with classic Cathay brushwing on tail.',
+        },
+        photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/4/47/Cathay_Pacific_B-KQM_%28Oneworld_livery%29_run_CX830_%28Hong_Kong_International_Airport_to_United_States_New_York_John_F._Kennedy_International_Airport%29_25-01-2025_%281%29.jpg',
+        scaleModels: [
+          {
+            id: 'av400-cx-b77w-oneworld',
+            brand: 'Aviation400',
+            itemCode: 'AV4015',
+            scale: '1:400',
+            material: { zh: '锌合金 / 压铸全金属', en: 'Diecast Metal Alloy' },
+            releaseYear: 2021,
+            status: 'available',
+            imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/4/47/Cathay_Pacific_B-KQM_%28Oneworld_livery%29_run_CX830_%28Hong_Kong_International_Airport_to_United_States_New_York_John_F._Kennedy_International_Airport%29_25-01-2025_%281%29.jpg',
+            notes: { zh: 'Aviation400 旗舰波音 777-300ER 模具，超精密 GE90 发动机叶片可转动，机翼防撞灯立体透光', en: 'Aviation400 1:400 diecast with rotatable GE90 fan blades and 3D navigation lenses.' },
+          },
+        ],
+      },
+    ],
+    detailPhotos: [
+      {
+        title: { zh: 'B-KPB 香港精神号经典巡航机身彩绘特写', en: 'Cathay Pacific 777-300ER Spirit of Hong Kong Profile' },
+        caption: { zh: '机身侧面清晰展示维多利亚港两岸会展中心、中银大厦等代表性建筑天际线与市民剪影。', en: 'Magnificent side view highlighting Victoria Harbour landmarks and silhouette drawings.' },
+        url: 'https://upload.wikimedia.org/wikipedia/commons/9/99/B-KPB_Boeing_773_Cathay_Pacific_In_The_Spirit_Of_Hong_Kong_Colours_%2812255736396%29.jpg',
+        tag: { zh: '彩绘特写', en: 'Livery Detail' },
+      },
+    ],
+  },
+
+  // 67. 国泰航空 空客 A350-1000 "绿翼翱翔" 新一代旗舰客机 (B-LXA / 中国香港)
+  {
+    id: 'cathay-pacific-a350-1000',
+    category: 'aviation',
+    modelName: { zh: '国泰航空 空客 A350-1000 "绿翼翱翔" 新一代旗舰客机', en: 'Cathay Pacific Airbus A350-1000 Flagship' },
+    code: 'A35K-CPA',
+    manufacturer: { zh: '空中客车 (Airbus)', en: 'Airbus' },
+    status: 'active',
+    firstServiceYear: 2018,
+    country: { zh: '中国香港', en: 'Hong Kong, China' },
+    countryCode: 'HK',
+    operatorIds: ['cathay_pacific'],
+    specs: {
+      maxSpeed: '945 km/h (Mach 0.85)',
+      capacity: '334 座 (商务舱 46 / 特选经济舱 32 / 经济舱 256)',
+      rangeOrPower: '16,100 km (直飞北美东海岸与欧洲主要核心枢纽)',
+      length: '73.79 m (翼展 Wingspan: 64.75 m / 六轮小车重型主起落架)',
+    },
+    overview: {
+      zh: '空客超长航程宽体旗舰 A350-1000 全球主要运营商！国泰航空首架 A350-1000（B-LXA）于2018年顺利交付，机身身披国泰全新一代“翘首振翅 (Brushwing)”简约涂装，以清爽的国泰翠绿色腰线、雅致东方书法笔触飞翼尾标以及标志性的墨镜侠风挡，代表国泰现代化机队的新篇章。',
+      en: 'One of the largest global operators of the Airbus A350-1000. Features the updated streamlined Brushwing livery with refreshing Cathay jade green and clean calligraphy tail fin.',
+    },
+    heroImage: 'https://upload.wikimedia.org/wikipedia/commons/b/b8/Cathay_Pacific_A350-1000XWB_B-LXA.jpg',
+    liveries: [
+      {
+        id: 'cx-a35k-standard',
+        name: { zh: '国泰航空全新 "翘首振翅" 墨绿飞翼标准涂装 (B-LXA)', en: 'Cathay Pacific Modern Brushwing Green Livery (B-LXA)' },
+        type: 'standard',
+        yearsActive: '2018 - 至今 / Present',
+        operatorId: 'cathay_pacific',
+        isRetired: false,
+        description: {
+          zh: '机身采用现代化极简纯白机腹，机身前部饰以国泰翠绿渐变，垂直尾翼绘有挥洒自如的“翘首振翅”白色飞羽标志。',
+          en: 'Contemporary clean white livery with Cathay jade green accent and graceful white brushwing feather emblem.',
+        },
+        photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/b/b8/Cathay_Pacific_A350-1000XWB_B-LXA.jpg',
+        scaleModels: [
+          {
+            id: 'av400-cx-a35k-lxa',
+            brand: 'Aviation400',
+            itemCode: 'AV4036',
+            scale: '1:400',
+            material: { zh: '锌合金 / 压铸全金属', en: 'Diecast Metal Alloy' },
+            releaseYear: 2020,
+            status: 'available',
+            imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/b/b8/Cathay_Pacific_A350-1000XWB_B-LXA.jpg',
+            notes: { zh: 'Aviation400 顶尖模具，完美开出 A350-1000 特有的六轮小车主起落架与罗罗遄达 XWB-97 发动机', en: 'Aviation400 premier diecast featuring six-wheel main gear bogies and Trent XWB-97 engines.' },
+          },
+        ],
+      },
+    ],
+    detailPhotos: [
+      {
+        title: { zh: '香港国际机场 (HKG) 降落进近俯冲姿态', en: 'Cathay Pacific A350-1000 Landing Approach at HKG' },
+        caption: { zh: '降落香港国际机场跑道的 B-LXA，修长的机身与弯曲翼梢小翼构成极具现代美感的飞行轮廓。', en: 'B-LXA gliding towards runway touchdown at HKG, showcasing slender fuselage and raked wingtips.' },
+        url: 'https://upload.wikimedia.org/wikipedia/commons/7/77/Cathay_Pacific_A350-1000_%28B-LXA%29_%40_HKG%2C_March_2019.jpg',
+        tag: { zh: '进近降落', en: 'Final Approach' },
+      },
+    ],
+  },
+
+  // 68. 新加坡航空 空客 A380-800 双层超级巨无霸客机 (9V-SKI / 9V-SKU / 新加坡航空)
+  {
+    id: 'singapore-airlines-a380-800',
+    category: 'aviation',
+    modelName: { zh: '新加坡航空 空客 A380-800 双层超级巨无霸旗舰客机', en: 'Singapore Airlines Airbus A380-800 Superjumbo' },
+    code: 'A388-SIA',
+    manufacturer: { zh: '空中客车 (Airbus)', en: 'Airbus' },
+    status: 'active',
+    firstServiceYear: 2007,
+    country: { zh: '新加坡', en: 'Singapore' },
+    countryCode: 'SG',
+    operatorIds: ['singapore_airlines'],
+    specs: {
+      maxSpeed: '945 km/h (Mach 0.85)',
+      capacity: '471 座 (豪华套房 Suites 6 / 商务舱 78 / 优选经济舱 44 / 经济舱 343)',
+      rangeOrPower: '15,200 km (常年执飞新加坡直飞伦敦希思罗、悉尼等核心走廊)',
+      length: '72.72 m (翼展 Wingspan: 79.75 m / 全长双层超宽客舱)',
+    },
+    overview: {
+      zh: '全球首家商业运营空客 A380 超级巨无霸的航空公司！2007年10月新航率先执飞全球首趟 A380 商业航班（新加坡-悉尼），开创了民航奢华飞行新纪元，首创双人床“空中豪华套房 (Suites Class)”。庞大的双层机身身披新航标志性的金蓝细腰带与垂直尾翼金色灵鸟（Kris），并在新加坡建国50周年推出长达67米的震撼 SG50 红白国旗金禧彩绘。',
+      en: 'Worldwide launch customer of the Airbus A380 superjumbo in October 2007, pioneering the iconic Singapore Airlines Suites with double beds. Known for its majestic double-deck presence and special SG50 National Day jubilee livery.',
+    },
+    heroImage: 'https://upload.wikimedia.org/wikipedia/commons/f/f1/Singapore_Airlines_Airbus_A380_in_SG50_livery.jpg',
+    liveries: [
+      {
+        id: 'sia-a388-sg50',
+        name: { zh: '新加坡建国50周年 "SG50" 红白国旗金禧彩绘 (9V-SKI)', en: 'Singapore National Day SG50 Jubilee Flag Livery (9V-SKI)' },
+        type: 'special',
+        yearsActive: '2015 - 2017 (典藏彩绘 / Special Livery)',
+        operatorId: 'singapore_airlines',
+        isRetired: true,
+        description: {
+          zh: '为庆祝新加坡独立50周年，在两架 A380 机身两侧喷涂了长达 67 米、高 8.4 米的巨幅新加坡红白国旗与胡姬花图案，引擎罩喷绘金色 SG50 徽标，极其震撼。',
+          en: 'Spectacular 67-meter long Singapore national flag design across both sides of the double-decker fuselage with SG50 logos on engines.',
+        },
+        photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/f/f1/Singapore_Airlines_Airbus_A380_in_SG50_livery.jpg',
+        scaleModels: [
+          {
+            id: 'ph-sia-a388-sg50',
+            brand: 'Phoenix',
+            itemCode: '11187',
+            scale: '1:400',
+            material: { zh: '锌合金 / 压铸全金属', en: 'Diecast Metal Alloy' },
+            releaseYear: 2015,
+            status: 'limited',
+            imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/f/f1/Singapore_Airlines_Airbus_A380_in_SG50_livery.jpg',
+            notes: { zh: 'Phoenix 经典 1:400 A380 模具，超大面积移印新加坡国旗与引擎 SG50 金标，模友公认顶级珍藏', en: 'Phoenix limited diecast 1:400 featuring the complete 67m Singapore flag print.' },
+          },
+        ],
+      },
+      {
+        id: 'sia-a388-standard',
+        name: { zh: '新加坡航空经典金蓝灵鸟标准涂装 (9V-SKU)', en: 'Singapore Airlines Iconic Kris Standard Livery (9V-SKU)' },
+        type: 'standard',
+        yearsActive: '2007 - 至今 / Present',
+        operatorId: 'singapore_airlines',
+        isRetired: false,
+        description: {
+          zh: '新航半个世纪未变的经典设计在巨无霸 A380 上展现淋漓尽致，深蓝与金黄腰线笔直延伸，垂尾金色 Kris 飞鸟典雅华贵。',
+          en: 'Timeless dark blue and gold cheatline with golden Kris bird emblem across the magnificent A380 double-decker fuselage.',
+        },
+        photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/f/f4/Singapore_Airlines_A380_9V-SKI_at_LSZH_%2820039713823%29.jpg',
+        scaleModels: [
+          {
+            id: 'jcw-sia-a388-standard',
+            brand: 'JC Wings',
+            itemCode: 'LH4098',
+            scale: '1:400',
+            material: { zh: '锌合金 / 压铸全金属', en: 'Diecast Metal Alloy' },
+            releaseYear: 2020,
+            status: 'available',
+            imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/f/f4/Singapore_Airlines_A380_9V-SKI_at_LSZH_%2820039713823%29.jpg',
+            notes: { zh: 'JC Wings 全金属压铸模型，配可转动罗罗 Trent 900 涡扇叶片与橡胶转动轮组', en: 'JC Wings 1:400 diecast with rolling gears and spinning Trent 900 fan blades.' },
+          },
+        ],
+      },
+    ],
+    detailPhotos: [
+      {
+        title: { zh: '9V-SKI "SG50" 巡航红白国旗特写', en: 'Singapore Airlines A380 SG50 Flying Profile' },
+        caption: { zh: '空中巡航姿态下的 SG50 巨幅红白国旗涂装，犹如一幅翱翔天际的国家画卷。', en: 'The massive 67m Singapore flag painted along the double-deck fuselage flying high in the skies.' },
+        url: 'https://upload.wikimedia.org/wikipedia/commons/6/6f/Singapore_Airlines_Airbus_A380_in_SG50_livery_%282%29.jpg',
+        tag: { zh: '巡航姿态', en: 'In Flight' },
+      },
+    ],
+  },
+
+  // 69. 马来西亚航空 空客 A350-900 "我的祖国 / Negaraku" 旗舰客机 (9M-MAC / 马来西亚航空)
+  {
+    id: 'malaysia-airlines-a350-900',
+    category: 'aviation',
+    modelName: { zh: '马来西亚航空 空客 A350-900 "我的祖国" 旗舰客机', en: 'Malaysia Airlines Airbus A350-900 Negaraku Flagship' },
+    code: 'A359-MAS',
+    manufacturer: { zh: '空中客车 (Airbus)', en: 'Airbus' },
+    status: 'active',
+    firstServiceYear: 2017,
+    country: { zh: '马来西亚', en: 'Malaysia' },
+    countryCode: 'MY',
+    operatorIds: ['malaysia_airlines'],
+    specs: {
+      maxSpeed: '945 km/h (Mach 0.85)',
+      capacity: '286 座 (商务套房 4 / 商务舱 35 / 经济舱 247)',
+      rangeOrPower: '15,000 km (执飞吉隆坡至伦敦希思罗等旗舰洲际航线)',
+      length: '66.80 m (翼展 Wingspan: 64.75 m 碳纤维流线机翼)',
+    },
+    overview: {
+      zh: '马来西亚国家载旗航空公司的顶级宽体旗舰！马航 A350-900 机队专为吉隆坡往返伦敦等欧洲核心航线打造，配备尊贵商务套房。其中 9M-MAC 喷涂了轰动全球的 "Negaraku (我的祖国)" 马来西亚国旗“辉煌条纹”特别彩绘，将红白相间条纹与黄色新月芒星化为机身动感波浪线条；标准机身则采用传统 Wau Bulan 月亮风筝蓝红飘带，极富马来西亚民族文化自豪感。',
+      en: 'Malaysia Airlines flagship widebody featuring the breathtaking "Negaraku" national flag livery (9M-MAC) and traditional Wau Bulan kite livery (9M-MAB).',
+    },
+    heroImage: 'https://upload.wikimedia.org/wikipedia/commons/7/7c/Malaysia_Airlines_%28Malaysia_Negaraku_Livery%29%2C_9M-MAC%2C_Airbus_A350-941_%2842595667000%29.jpg',
+    liveries: [
+      {
+        id: 'mas-a359-negaraku',
+        name: { zh: '马来西亚航空 "Negaraku / 我的祖国" 国旗彩绘 (9M-MAC)', en: 'Malaysia Airlines Negaraku Flag Livery (9M-MAC)' },
+        type: 'special',
+        yearsActive: '2018 - 至今 / Present',
+        operatorId: 'malaysia_airlines',
+        isRetired: false,
+        description: {
+          zh: '机身前部喷绘巨幅马来西亚国旗“辉煌条纹（Jalur Gemilang）”，红色与白色线条如流水般舒展至机腹，黄色新月与14道光芒之星璀璨夺目。',
+          en: 'Adorned with the Malaysian Jalur Gemilang national flag waving dynamically across the front fuselage with yellow crescent moon and star.',
+        },
+        photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/7/7c/Malaysia_Airlines_%28Malaysia_Negaraku_Livery%29%2C_9M-MAC%2C_Airbus_A350-941_%2842595667000%29.jpg',
+        scaleModels: [
+          {
+            id: 'jcw-mas-a359-negaraku',
+            brand: 'JC Wings',
+            itemCode: 'LH4158',
+            scale: '1:400',
+            material: { zh: '锌合金 / 压铸全金属', en: 'Diecast Metal Alloy' },
+            releaseYear: 2019,
+            status: 'available',
+            imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/7/7c/Malaysia_Airlines_%28Malaysia_Negaraku_Livery%29%2C_9M-MAC%2C_Airbus_A350-941_%2842595667000%29.jpg',
+            notes: { zh: 'JC Wings 官方授权高精度合金模型，精密还原国旗黄色十四角星细节与飘动波浪条纹', en: 'JC Wings 1:400 diecast with ultra-fine national flag pad printing and antenna details.' },
+          },
+        ],
+      },
+      {
+        id: 'mas-a359-wau-bulan',
+        name: { zh: '马航经典 Wau Bulan 月亮风筝蓝红飘带标准涂装 (9M-MAB)', en: 'Malaysia Airlines Classic Wau Bulan Kite Livery (9M-MAB)' },
+        type: 'standard',
+        yearsActive: '2017 - 至今 / Present',
+        operatorId: 'malaysia_airlines',
+        isRetired: false,
+        description: {
+          zh: '垂尾印有马来西亚传统月亮风筝（Wau Bulan）几何飞鸟图案，机身搭配流线型红蓝双色飘带，兼具现代感与传统民俗艺术。',
+          en: 'Traditional Wau Bulan kite geometric emblem on the tail with red and blue dynamic ribbons running along fuselage.',
+        },
+        photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/a/a8/Airbus_A350-941_9M-MAB_Malaysia_Airlines_%2840114509810%29.jpg',
+        scaleModels: [
+          {
+            id: 'av400-mas-a359-standard',
+            brand: 'Aviation400',
+            itemCode: 'AV4012',
+            scale: '1:400',
+            material: { zh: '锌合金 / 压铸全金属', en: 'Diecast Metal Alloy' },
+            releaseYear: 2020,
+            status: 'available',
+            imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/a/a8/Airbus_A350-941_9M-MAB_Malaysia_Airlines_%2840114509810%29.jpg',
+            notes: { zh: 'Aviation400 旗舰模具，机腹磁吸起落架、精致 Trent XWB 发动机及 3D 立体天线配备', en: 'Aviation400 1:400 metal diecast with magnetic gears and accurate Wau Bulan tail art.' },
+          },
+        ],
+      },
+    ],
+    detailPhotos: [
+      {
+        title: { zh: '伦敦希思罗机场跑道滑行 (9M-MAC 我的祖国彩绘机)', en: 'Malaysia Airlines A350 Negaraku Taxiing at Heathrow' },
+        caption: { zh: '9M-MAC 执飞旗舰 MH1 航班降落伦敦希思罗机场，在机坪滑行中展现无与伦比的国旗彩绘气场。', en: '9M-MAC taxiing after flying the flagship MH1 route to London Heathrow.' },
+        url: 'https://upload.wikimedia.org/wikipedia/commons/c/ca/Malaysia_Airlines_A350-941_%289M-MAC%29_taxiing_at_London_Heathrow_Airport.jpg',
+        tag: { zh: '机坪滑行', en: 'Taxiing' },
+      },
+      {
+        title: { zh: '9M-MAB 标准风筝涂装降落姿态', en: 'Malaysia Airlines A350 Standard Wau Bulan Touchdown' },
+        caption: { zh: '马航 A350-900 标准涂装在跑道接地瞬间，红蓝波浪线条在蓝天下格外醒目。', en: '9M-MAB touching down showing the iconic red and blue Wau Bulan ribbons.' },
+        url: 'https://upload.wikimedia.org/wikipedia/commons/2/2c/Malaysia_Airlines%2C_9M-MAB%2C_Airbus_A350-941_%2849597228072%29.jpg',
+        tag: { zh: '跑道降落', en: 'Touchdown' },
+      },
+    ],
+  },
+
+  // 70. 亚洲航空 空客 A320neo "人人都能飞" 红色先锋客机 (9M-AGI / 亚洲航空)
+  {
+    id: 'airasia-a320neo',
+    category: 'aviation',
+    modelName: { zh: '亚洲航空 空客 A320neo "人人都能飞" 红色先锋客机', en: 'AirAsia Airbus A320neo Red Pioneer' },
+    code: 'A20N-AXM',
+    manufacturer: { zh: '空中客车 (Airbus)', en: 'Airbus' },
+    status: 'active',
+    firstServiceYear: 2016,
+    country: { zh: '马来西亚', en: 'Malaysia' },
+    countryCode: 'MY',
+    operatorIds: ['airasia'],
+    specs: {
+      maxSpeed: '870 km/h (Mach 0.78)',
+      capacity: '186 座 (全经济舱高密度布局 / CFM LEAP-1A 节油引擎)',
+      rangeOrPower: '6,500 km (覆盖东南亚全境并辐射东亚、南亚主要都市)',
+      length: '37.57 m (翼展 Wingspan: 35.80 m / 标配 2.4米鲨鳍小翼)',
+    },
+    overview: {
+      zh: '亚洲规模最大、连续多次蝉联“全球最佳低成本航空公司（Skytrax World Best LCC）”的亚洲航空（AirAsia）主力窄体客机！亚航以热情奔放的烈焰红色涂装与极具感染力的口号 "Now Everyone Can Fly (现在人人都能飞)" 享誉全球，开创了东南亚民航大众化平民飞行时代。A320neo 配备 CFM LEAP-1A 发动机与鲨鳍小翼，燃油效率提升 15%，是亚航高频次短途航线网络的绝对中坚。',
+      en: 'The signature aircraft of Asia\'s largest low-cost airline. Featuring the world-famous "Now Everyone Can Fly" slogan, vibrant red livery, and fuel-efficient CFM LEAP-1A engines with sharklets.',
+    },
+    heroImage: 'https://upload.wikimedia.org/wikipedia/commons/9/9f/AirAsia_Airbus_A320neo_9M-AGI_Perth_2024_%2801%29.jpg',
+    liveries: [
+      {
+        id: 'airasia-a20n-standard',
+        name: { zh: '亚洲航空标志性红白 "Now Everyone Can Fly" 标准涂装 (9M-AGI)', en: 'AirAsia Iconic Red & White Livery (9M-AGI)' },
+        type: 'standard',
+        yearsActive: '2016 - 至今 / Present',
+        operatorId: 'airasia',
+        isRetired: false,
+        description: {
+          zh: '明快亮红垂尾印有手写草书 AirAsia 白色徽标，机身印有标志性红色口号 "Now Everyone Can Fly"，鲨鳍小翼同样喷涂全红。',
+          en: 'Vibrant scarlet tail with script AirAsia logo, fuselage featuring "Now Everyone Can Fly" slogan, and bright red sharklets.',
+        },
+        photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/9/9f/AirAsia_Airbus_A320neo_9M-AGI_Perth_2024_%2801%29.jpg',
+        scaleModels: [
+          {
+            id: 'ph-airasia-a20n-agi',
+            brand: 'Phoenix',
+            itemCode: '11333',
+            scale: '1:400',
+            material: { zh: '锌合金 / 压铸全金属', en: 'Diecast Metal Alloy' },
+            releaseYear: 2017,
+            status: 'available',
+            imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/9/9f/AirAsia_Airbus_A320neo_9M-AGI_Perth_2024_%2801%29.jpg',
+            notes: { zh: 'Phoenix 经典 A320neo 模具，精准还原 CFM LEAP-1A 超大涵道比发动机与鲨鳍小翼细节', en: 'Phoenix 1:400 diecast with accurately modeled CFM LEAP-1A engines and sharklets.' },
+          },
+        ],
+      },
+      {
+        id: 'airasia-a320-red',
+        name: { zh: '亚洲航空全红机尾纯色涂装 (9M-AHY)', en: 'AirAsia Solid Red Tail & Fuselage Livery (9M-AHY)' },
+        type: 'standard',
+        yearsActive: '2012 - 至今 / Present',
+        operatorId: 'airasia',
+        isRetired: false,
+        description: {
+          zh: '醒目的红白主配色，机身圆润线条搭配纯正高饱和度红色涂料，成为全亚洲各大机场最容易辨识的一抹亮红。',
+          en: 'High-visibility red and white color scheme, making AirAsia aircraft instantly recognizable across Asian airports.',
+        },
+        photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/5/56/AirAsia_Airbus_A320_9M-AHY_Kuala_Lumpur_2025_%2803%29.jpg',
+        scaleModels: [
+          {
+            id: 'gj-airasia-a320-ahy',
+            brand: 'GeminiJets',
+            itemCode: 'GJAIR1782',
+            scale: '1:400',
+            material: { zh: '锌合金 / 压铸全金属', en: 'Diecast Metal Alloy' },
+            releaseYear: 2018,
+            status: 'available',
+            imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/5/56/AirAsia_Airbus_A320_9M-AHY_Kuala_Lumpur_2025_%2803%29.jpg',
+            notes: { zh: 'GeminiJets 经典合金小飞机，滚轮起落架与精细漆面处理', en: 'GeminiJets 1:400 diecast with rolling gears and high-gloss paint finish.' },
+          },
+        ],
+      },
+    ],
+    detailPhotos: [
+      {
+        title: { zh: '吉隆坡国际机场 (KLIA2) 滑行起飞', en: 'AirAsia A320neo Taxiing at Kuala Lumpur KLIA2' },
+        caption: { zh: '在亚航大本营吉隆坡国际机场第二航站楼滑行准备起飞的 9M-RAL，阳光下红色鲨鳍小翼分外鲜艳。', en: 'AirAsia A320neo 9M-RAL taxiing for departure at KLIA2 hub in bright sunlight.' },
+        url: 'https://upload.wikimedia.org/wikipedia/commons/4/48/AirAsia_Airbus_A320neo_9M-RAL_Kuala_Lumpur_2024_%2801%29.jpg',
+        tag: { zh: '机坪滑行', en: 'Taxiing' },
       },
     ],
   },
