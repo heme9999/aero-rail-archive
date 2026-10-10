@@ -2164,13 +2164,13 @@ export const VEHICLES: Vehicle[] = [
       {
         title: { zh: '关西机场特快专属花鸟风月车体侧面涂装', en: 'Haruka Floral & Butterfly Livery Car Sides' },
         caption: { zh: '白底蓝顶车体点缀以“花草与蝴蝶”为主题的和风图案，车门旁印有迎宾 Kitty 标志。', en: 'Graceful floral and butterfly motifs representing the spirit of traditional Kyoto hospitality.' },
-        url: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/0/07/Series281_HelloKittyHaruka_Kanzashiset.jpg/1280px-Series281_HelloKittyHaruka_Kanzashiset.jpg',
+        url: 'https://upload.wikimedia.org/wikipedia/commons/9/90/JRW_281_Haruka_Hello_Kitty_Kyoto_Station_2020-03-22.jpg',
         tag: { zh: '和风彩绘侧影', en: 'Japanese Floral Sides' },
       },
       {
         title: { zh: '京都站站台待发先头贯通门与标志性前照灯', en: 'Haruka Gangway Door & Twin Headlights at Kyoto' },
         caption: { zh: '281 系独特的垂直贯通门构型，在需要时可重联 3 节附属编组应对高峰客流。', en: 'Upright center gangway door allowing formation coupling for peak airport passenger demand.' },
-        url: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/8/87/JR_West_281_Series_Haruka_HA603.jpg/1280px-JR_West_281_Series_Haruka_HA603.jpg',
+        url: 'https://upload.wikimedia.org/wikipedia/commons/8/8d/At_Kyoto_2024_316_-_Hello_Kitty_Haruka_at_Kyoto_Station.jpg',
         tag: { zh: '贯通车头特写', en: 'Gangway Front' },
       },
     ],
@@ -4071,7 +4071,7 @@ export const VEHICLES: Vehicle[] = [
       zh: '美联航与卢卡斯影业（Lucasfilm）携手打造的航空彩绘史传奇之作（注册号 N36272）。整机采用黑色深邃宇宙星空底色，最具创意的是机身两侧采用了原力“光明面与黑暗面”的非对称对立设计：左侧机身为抵抗组织主题（蓝色激光剑与 X 翼星际战机），右侧机身为第一秩序主题（红色激光剑与 TIE 战机），垂尾两侧分别化身为巨幅蓝红光剑刃。',
       en: 'Celebrated pop-culture livery born from the partnership between United Airlines and Lucasfilm (Registration N36272). Decorated with a deep-space starfield, the aircraft features an asymmetric design: Resistance light side (blue lightsaber and X-wing) on one side, and First Order dark side (red lightsaber and TIE fighters) on the other.',
     },
-    heroImage: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1a/Star_Wars_Livery_%2849626219723%29.jpg/1280px-Star_Wars_Livery_%2849626219723%29.jpg',
+    heroImage: 'https://upload.wikimedia.org/wikipedia/commons/b/b0/Star_Wars_Livery_%2849626219723%29.jpg',
     liveries: [
       {
         id: 'ua-b738-star-wars',
@@ -4084,7 +4084,7 @@ export const VEHICLES: Vehicle[] = [
           zh: '全球独一无二的双面星战彩绘，一侧幽蓝光剑抵抗军，一侧赤红光剑第一秩序，配星战专属主题客舱头片。',
           en: 'Split-themed livery with Resistance blue lightsaber on port side and First Order red lightsaber on starboard side.',
         },
-        photoUrl: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1a/Star_Wars_Livery_%2849626219723%29.jpg/1280px-Star_Wars_Livery_%2849626219723%29.jpg',
+        photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/b/b0/Star_Wars_Livery_%2849626219723%29.jpg',
         scaleModels: [
           {
             id: 'gj-ua-b738-starwars',
@@ -4094,7 +4094,7 @@ export const VEHICLES: Vehicle[] = [
             material: { zh: '锌合金 / 压铸全金属', en: 'Diecast Metal Alloy' },
             releaseYear: 2020,
             status: 'limited',
-            imageUrl: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1a/Star_Wars_Livery_%2849626219723%29.jpg/1280px-Star_Wars_Livery_%2849626219723%29.jpg',
+            imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/b/b0/Star_Wars_Livery_%2849626219723%29.jpg',
             notes: { zh: 'GeminiJets 典藏绝版限定，精准还原机身两侧非对称红蓝光剑移印与 X 翼/TIE 战机编队细节', en: 'Rare limited GeminiJets 1:400 diecast featuring dual asymmetric lightsaber livery and Star Wars fighter graphics.' },
           },
         ],
@@ -4104,7 +4104,7 @@ export const VEHICLES: Vehicle[] = [
       {
         title: { zh: '旧金山国际机场 SFO 停机坪光剑星空侧影特写', en: 'N36272 Star Wars Tarmac Profile at San Francisco SFO' },
         caption: { zh: '黑色星空机身停靠旧金山机场停机坪，垂尾直插云霄的蓝色激光剑与 X 翼战机编队涂装震撼夺目。', en: 'Parked on the ramp at SFO showing the black starfield livery, blue lightsaber fin, and X-wing fighter graphics.' },
-        url: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1a/Star_Wars_Livery_%2849626219723%29.jpg/1280px-Star_Wars_Livery_%2849626219723%29.jpg',
+        url: 'https://upload.wikimedia.org/wikipedia/commons/b/b0/Star_Wars_Livery_%2849626219723%29.jpg',
         tag: { zh: '机坪全貌', en: 'Ramp Stand' },
       },
     ],
@@ -4132,7 +4132,7 @@ export const VEHICLES: Vehicle[] = [
       zh: '统治全球越洋长航线四十年的美国航空标志性传世经典！为了极致减重以提升航程与燃油效率，美航采用极其苛刻的裸铝高精机械镜面抛光工艺，不喷涂任何白色底漆。在阳光下折射出夺目的银色镜面金属辉光，贯穿机身的红白蓝三色闪电折线条纹与经典红蓝飞鹰垂尾（Massimo Vignelli 殿堂级设计），成为世界民航工业美学的永恒象征。',
       en: 'The legendary American Airlines bare-metal scheme that defined transatlantic travel. Designed without white primer to reduce airframe weight, the unpainted polished aluminum skin gleams like a silver mirror under sunlight, accented by the timeless Vignelli red-white-blue cheatlines and eagle tail.',
     },
-    heroImage: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ca/N786AN_Boeing_777_American_%287496790382%29.jpg/1280px-N786AN_Boeing_777_American_%287496790382%29.jpg',
+    heroImage: 'https://upload.wikimedia.org/wikipedia/commons/e/e4/N786AN_Boeing_777_American_%287496790382%29.jpg',
     liveries: [
       {
         id: 'aa-b772-polished-metal',
@@ -4145,7 +4145,7 @@ export const VEHICLES: Vehicle[] = [
           zh: '整机纯镜面抛光铝合金蒙皮，机身经典红白蓝三色腰线，垂尾经典红蓝双色美航雄鹰徽标。',
           en: 'Unpainted highly polished aluminum skin with red-white-blue cheatline and classic stylized eagle tailfin.',
         },
-        photoUrl: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ca/N786AN_Boeing_777_American_%287496790382%29.jpg/1280px-N786AN_Boeing_777_American_%287496790382%29.jpg',
+        photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/e/e4/N786AN_Boeing_777_American_%287496790382%29.jpg',
         scaleModels: [
           {
             id: 'gj-aa-b772-metal',
@@ -4155,7 +4155,7 @@ export const VEHICLES: Vehicle[] = [
             material: { zh: '锌合金 / 电镀镜面裸金处理', en: 'Chrome Electroplated Diecast Alloy' },
             releaseYear: 2008,
             status: 'limited',
-            imageUrl: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ca/N786AN_Boeing_777_American_%287496790382%29.jpg/1280px-N786AN_Boeing_777_American_%287496790382%29.jpg',
+            imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/e/e4/N786AN_Boeing_777_American_%287496790382%29.jpg',
             notes: { zh: 'GeminiJets 早期极具收藏价值的电镀镜面合金机身，完美呈现美航经典的金属镜面反射质感', en: 'Iconic chrome electroplated diecast model replicating American\'s mirror-finish aluminum fuselage.' },
           },
         ],
@@ -4165,7 +4165,7 @@ export const VEHICLES: Vehicle[] = [
       {
         title: { zh: '伦敦希思罗机场 LHR 滑行出港镜面反射特写', en: 'N786AN Mirror-Finish Taxiing at London Heathrow' },
         caption: { zh: '波音 777-200ER 巨大的机身在滑行道上反射着天空与地面倒影，尽显纯金属航空器的工业质感。', en: 'Reflecting the sky and taxiway markings under natural daylight, showcasing authentic bare metal sheen.' },
-        url: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ca/N786AN_Boeing_777_American_%287496790382%29.jpg/1280px-N786AN_Boeing_777_American_%287496790382%29.jpg',
+        url: 'https://upload.wikimedia.org/wikipedia/commons/e/e4/N786AN_Boeing_777_American_%287496790382%29.jpg',
         tag: { zh: '滑行出港', en: 'Taxiing' },
       },
     ],
@@ -4193,7 +4193,7 @@ export const VEHICLES: Vehicle[] = [
       zh: '全球最大低成本航空、纯波音 737 机队运营商西南航空（总部位于得克萨斯州达拉斯）为致敬其发源地倾力喷涂的图腾级彩绘机。全机身完整覆盖巨幅得克萨斯州“孤星旗”（Texas Lone Star Flag）：机头深蓝底色上托起巨大的白色五角星，机身红白双色宽幅条纹前后呼应，无论飞抵任何机场皆是航显视线的绝对焦点。',
       en: 'Southwest Airlines flagship tribute to its home state of Texas (Registration N8660A). The entire Boeing 737 fuselage is wrapped in the proud colors of the Lone Star Flag: deep blue nose with oversized white star, paired with vibrant red and white stripes across the fuselage.',
     },
-    heroImage: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d4/Boeing_737-8H4%28WL%29_%27Lone_Star_One%27_%28N8660A%2C_msn_36654%2C_ln_5273%29_%283-2-2024%29.jpg/1280px-Boeing_737-8H4%28WL%29_%27Lone_Star_One%27_%28N8660A%2C_msn_36654%2C_ln_5273%29_%283-2-2024%29.jpg',
+    heroImage: 'https://upload.wikimedia.org/wikipedia/commons/c/cf/Boeing_737-8H4%28WL%29_%27Lone_Star_One%27_%28N8660A%2C_msn_36654%2C_ln_5273%29_%283-2-2024%29.jpg',
     liveries: [
       {
         id: 'swa-b738-lonestar',
@@ -4206,7 +4206,7 @@ export const VEHICLES: Vehicle[] = [
           zh: '得克萨斯州孤星旗全包裹涂装，前机身深蓝底白五星，中后机身大红大白上下双色条纹。',
           en: 'Full fuselage wrap of the Texas Lone Star Flag with deep blue nose and bold red/white stripes.',
         },
-        photoUrl: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d4/Boeing_737-8H4%28WL%29_%27Lone_Star_One%27_%28N8660A%2C_msn_36654%2C_ln_5273%29_%283-2-2024%29.jpg/1280px-Boeing_737-8H4%28WL%29_%27Lone_Star_One%27_%28N8660A%2C_msn_36654%2C_ln_5273%29_%283-2-2024%29.jpg',
+        photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/c/cf/Boeing_737-8H4%28WL%29_%27Lone_Star_One%27_%28N8660A%2C_msn_36654%2C_ln_5273%29_%283-2-2024%29.jpg',
         scaleModels: [
           {
             id: 'gj-swa-b738-lonestar',
@@ -4216,7 +4216,7 @@ export const VEHICLES: Vehicle[] = [
             material: { zh: '锌合金 / 压铸全金属', en: 'Diecast Metal Alloy' },
             releaseYear: 2017,
             status: 'available',
-            imageUrl: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d4/Boeing_737-8H4%28WL%29_%27Lone_Star_One%27_%28N8660A%2C_msn_36654%2C_ln_5273%29_%283-2-2024%29.jpg/1280px-Boeing_737-8H4%28WL%29_%27Lone_Star_One%27_%28N8660A%2C_msn_36654%2C_ln_5273%29_%283-2-2024%29.jpg',
+            imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/c/cf/Boeing_737-8H4%28WL%29_%27Lone_Star_One%27_%28N8660A%2C_msn_36654%2C_ln_5273%29_%283-2-2024%29.jpg',
             notes: { zh: 'GeminiJets 经典热销之作，红白蓝三色分界锐利清晰，机鼻白星定位精确', en: 'Popular GeminiJets 1:400 diecast accurately depicting the Texas Lone Star Flag paint scheme.' },
           },
         ],
@@ -4226,7 +4226,7 @@ export const VEHICLES: Vehicle[] = [
       {
         title: { zh: '达拉斯爱田机场起飞爬升仰角特写 (N8660A)', en: 'N8660A Takeoff Climbout from Dallas Love Field' },
         caption: { zh: '西南航空大本营达拉斯爱田机场，Lone Star One 咆哮仰起机头爬升，蓝白红三色在阳光下极具饱和度。', en: 'Climbing out from Dallas Love Field showing the full beauty of the Texas Lone Star flag in bright sunlight.' },
-        url: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d4/Boeing_737-8H4%28WL%29_%27Lone_Star_One%27_%28N8660A%2C_msn_36654%2C_ln_5273%29_%283-2-2024%29.jpg/1280px-Boeing_737-8H4%28WL%29_%27Lone_Star_One%27_%28N8660A%2C_msn_36654%2C_ln_5273%29_%283-2-2024%29.jpg',
+        url: 'https://upload.wikimedia.org/wikipedia/commons/c/cf/Boeing_737-8H4%28WL%29_%27Lone_Star_One%27_%28N8660A%2C_msn_36654%2C_ln_5273%29_%283-2-2024%29.jpg',
         tag: { zh: '起飞爬升', en: 'Takeoff Climb' },
       },
     ],
@@ -4254,7 +4254,7 @@ export const VEHICLES: Vehicle[] = [
       zh: '北美大陆唯一的高速铁路走廊——美铁东北走廊（Northeast Corridor: 波士顿-纽约-费城-华盛顿特区）的全新主力高速旗舰！由阿尔斯通美国纽约州阿尔内尔工厂制造，融合了法国 TGV Avelia 核心技术，两端各设一台流线型低风阻动车头，并搭载主动车体倾斜系统，在旧有弯道较多的曲线上仍能高速平稳过弯，身披美铁 Phase VII 极具速度感的高速红白蓝箭形涂装。',
       en: 'North America\'s premier high-speed trainset operating along the vital Northeast Corridor (Boston - New York - Washington D.C.). Built by Alstom with active tilting Tiltronix technology and striking Amtrak Phase VII high-speed livery.',
     },
-    heroImage: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cf/Avelia_Liberty.jpg/1280px-Avelia_Liberty.jpg',
+    heroImage: 'https://upload.wikimedia.org/wikipedia/commons/f/fb/Avelia_Liberty.jpg',
     liveries: [
       {
         id: 'amtrak-avelia-phase-vii',
@@ -4267,7 +4267,7 @@ export const VEHICLES: Vehicle[] = [
           zh: '车头锋利劈风线采用深海蓝底色，车侧点缀动感红蓝斜向速度条纹与雪白车身。',
           en: 'Dynamic midnight blue nose with speed red and blue angled chevrons along a crisp white carriage.',
         },
-        photoUrl: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cf/Avelia_Liberty.jpg/1280px-Avelia_Liberty.jpg',
+        photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/f/fb/Avelia_Liberty.jpg',
         scaleModels: [
           {
             id: 'bachmann-avelia-ho',
@@ -4277,7 +4277,7 @@ export const VEHICLES: Vehicle[] = [
             material: { zh: '高精工程塑料 (ABS) + 金属底盘', en: 'ABS Plastic with Diecast Chassis' },
             releaseYear: 2024,
             status: 'available',
-            imageUrl: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cf/Avelia_Liberty.jpg/1280px-Avelia_Liberty.jpg',
+            imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/f/fb/Avelia_Liberty.jpg',
             notes: { zh: 'Bachmann 官方授权 HO 规高速动车组模型，双端动力头带 DCC 数字音效与受电弓联动升降', en: 'Official Bachmann HO scale model with DCC SoundValue and directional LED headlights.' },
           },
         ],
@@ -4287,7 +4287,7 @@ export const VEHICLES: Vehicle[] = [
       {
         title: { zh: '美铁东北走廊主线高速测试飞驰通过特写', en: 'Avelia Liberty High-Speed Testing on Northeast Corridor' },
         caption: { zh: '整列 9 节编组列车在麻省波士顿至罗德岛区间飞驰测试，先头动力车流线破风，车侧倾斜系统启动平稳过弯。', en: 'Speeding through Northeast Corridor mainline during high-speed revenue service qualification testing.' },
-        url: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cf/Avelia_Liberty.jpg/1280px-Avelia_Liberty.jpg',
+        url: 'https://upload.wikimedia.org/wikipedia/commons/f/fb/Avelia_Liberty.jpg',
         tag: { zh: '高速测试', en: 'Speed Run' },
       },
     ],
@@ -4308,14 +4308,14 @@ export const VEHICLES: Vehicle[] = [
     specs: {
       maxSpeed: '最高时速 177 km/h (110 mph)',
       capacity: '重联牵引加州西风号、帝国建设者号 12-16 节双层超级观光客车 (Superliner)',
-      rangeOrPower: '功率 Output: 3,170 kW (4,250 马力，GE 7FDL-16 电喷四冲程柴油机)',
+      rangeOrPower: '功率 Output: 3,270 kW (4,250 马力，GE 7FDL-16 电喷四冲程柴油机)',
       length: '21.03 m (整备重量 121.7 吨，超低风阻一体化单壳承载车身)',
     },
     overview: {
       zh: '全美横贯大陆长途客运铁路无可替代的灵魂图腾！自1996年起独挑大梁，牵引包括“加州西风号（California Zephyr）”、“帝国建设者号（Empire Builder）”、“西南酋长号”在内的传奇长途景观列车穿行于落基山脉、密西西比大平原与太平洋沿岸。其标志性的低矮楔形斜面车头专为通过美东旧时代低矮隧道而设计，车体承载经典 Phase V 蓝银波浪涂装。',
       en: 'The legendary workhorse of American long-distance passenger rail. Powered by a 4,250 hp GE engine, the aerodynamic monocoque P42DC hauls Amtrak\'s iconic double-decker Superliner trains across the Rocky Mountains and American heartland.',
     },
-    heroImage: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/5/52/Amtrak_P42DC_46_at_Grand_Junction_%282015%29.JPG/1280px-Amtrak_P42DC_46_at_Grand_Junction_%282015%29.JPG',
+    heroImage: 'https://upload.wikimedia.org/wikipedia/commons/f/f6/Amtrak_California_Zephyr_Green_River_-_Floy%2C_Utah.jpg',
     liveries: [
       {
         id: 'amtrak-p42dc-phase-v',
@@ -4328,7 +4328,7 @@ export const VEHICLES: Vehicle[] = [
           zh: '车头为午夜蓝大倾角楔形面，车身为经典铂金银配蓝色动感波浪线条。',
           en: 'Midnight blue sloped cab with platinum mist silver sides and dynamic blue wave stripes.',
         },
-        photoUrl: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/5/52/Amtrak_P42DC_46_at_Grand_Junction_%282015%29.JPG/1280px-Amtrak_P42DC_46_at_Grand_Junction_%282015%29.JPG',
+        photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/f/f6/Amtrak_California_Zephyr_Green_River_-_Floy%2C_Utah.jpg',
         scaleModels: [
           {
             id: 'kato-amtrak-p42-n',
@@ -4338,7 +4338,7 @@ export const VEHICLES: Vehicle[] = [
             material: { zh: '工程塑料 (ABS) + 金属压铸机芯', en: 'ABS Plastic with Diecast Chassis' },
             releaseYear: 2018,
             status: 'available',
-            imageUrl: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/5/52/Amtrak_P42DC_46_at_Grand_Junction_%282015%29.JPG/1280px-Amtrak_P42DC_46_at_Grand_Junction_%282015%29.JPG',
+            imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/f/f6/Amtrak_California_Zephyr_Green_River_-_Floy%2C_Utah.jpg',
             notes: { zh: '关水金属 (KATO) 全球铁模经典，超顺滑双飞轮五极电机，五方向发光 LED 头尾灯与可动车钩', en: 'KATO N-scale flagship with dual brass flywheels, smooth five-pole motor, and directional LED lighting.' },
           },
         ],
@@ -4346,9 +4346,9 @@ export const VEHICLES: Vehicle[] = [
     ],
     detailPhotos: [
       {
-        title: { zh: '科罗拉多大章克申车站待发整备全侧影特写 (AMTK 46)', en: 'Amtrak P42DC 46 at Grand Junction Station' },
-        caption: { zh: '机车牵引加州西风号翻越落基山脉前在大章克申站进行机车检查，单壳车体与车顶百叶排气窗清晰可见。', en: 'P42DC #46 waiting at Grand Junction depot while hauling the westbound California Zephyr.' },
-        url: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/5/52/Amtrak_P42DC_46_at_Grand_Junction_%282015%29.JPG/1280px-Amtrak_P42DC_46_at_Grand_Junction_%282015%29.JPG',
+        title: { zh: '科罗拉多大章克申车站双机重联待发整备全特写 (AMTK 1 & 56)', en: 'Amtrak California Zephyr Engines 1 & 56 at Grand Junction' },
+        caption: { zh: '机车重联牵引加州西风号翻越落基山脉前在大章克申站进行机车检查，单壳车体与车顶百叶排气窗清晰可见。', en: 'California Zephyr twin P42DC locomotives waiting at Grand Junction depot during eastbound run.' },
+        url: 'https://upload.wikimedia.org/wikipedia/commons/7/70/Amtrak_California_Zephyr_Engines_1_and_56_Eastbound_at_Grand_Junction_-_img1.jpg',
         tag: { zh: '车站待发', en: 'Depot Stop' },
       },
     ],
@@ -4376,7 +4376,7 @@ export const VEHICLES: Vehicle[] = [
       zh: '北美重载铁路货运王牌主力！通称“GEVO”，是贯穿落基山脉、五大湖与西海岸港口跨大陆双层集装箱集装列车（Double-Stack）的核心动力。身披 BNSF 经典 Heritage III / Swoosh 鲜艳橙黑条纹涂装，以惊人的低转速大扭矩和高可靠性征服北美大陆。',
       en: 'The powerhouse of North American transcontinental freight. Known as the GEVO, it hauls mile-long double-stack container trains across the Rockies. Sporting the iconic BNSF Heritage III "Swoosh" burnt orange and black scheme.',
     },
-    heroImage: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ce/BNSF_5927_leads_an_intermodal_train_at_Perris_Hill_Park_in_San_Bernardino%2C_California.jpg/1280px-BNSF_5927_leads_an_intermodal_train_at_Perris_Hill_Park_in_San_Bernardino%2C_California.jpg',
+    heroImage: 'https://upload.wikimedia.org/wikipedia/commons/8/87/BNSF_5824_GE_ES44AC.jpg',
     liveries: [
       {
         id: 'bnsf-es44ac-swoosh',
@@ -4389,7 +4389,7 @@ export const VEHICLES: Vehicle[] = [
           zh: '焦橙色宽鼻机头，车身黑色与金黄色镶边，侧壁喷涂现代 BNSF Swoosh 动感飞翼字样。',
           en: 'Burnt orange wide-cab with black roof and gold accents, featuring modern dynamic BNSF Swoosh logo.',
         },
-        photoUrl: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ce/BNSF_5927_leads_an_intermodal_train_at_Perris_Hill_Park_in_San_Bernardino%2C_California.jpg/1280px-BNSF_5927_leads_an_intermodal_train_at_Perris_Hill_Park_in_San_Bernardino%2C_California.jpg',
+        photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/8/87/BNSF_5824_GE_ES44AC.jpg',
         scaleModels: [
           {
             id: 'kato-bnsf-es44ac-n',
@@ -4399,7 +4399,7 @@ export const VEHICLES: Vehicle[] = [
             material: { zh: '工程塑料 (ABS) + 金属压铸机芯', en: 'ABS Plastic with Diecast Chassis' },
             releaseYear: 2019,
             status: 'available',
-            imageUrl: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ce/BNSF_5927_leads_an_intermodal_train_at_Perris_Hill_Park_in_San_Bernardino%2C_California.jpg/1280px-BNSF_5927_leads_an_intermodal_train_at_Perris_Hill_Park_in_San_Bernardino%2C_California.jpg',
+            imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/8/87/BNSF_5824_GE_ES44AC.jpg',
             notes: { zh: 'KATO 经典美版重载内燃模型，精密还原宽鼻正面扶手梯台、大尺寸顶置风扇与低重心交流牵引转向架', en: 'KATO N-scale GE ES44AC with prototype walkways, see-through radiator fans, and heavy diecast pulling power.' },
           },
         ],
@@ -4407,9 +4407,9 @@ export const VEHICLES: Vehicle[] = [
     ],
     detailPhotos: [
       {
-        title: { zh: '加利福尼亚圣贝纳迪诺峡谷重载双层集装箱班列领头', en: 'BNSF 5927 Leading Double-Stack Intermodal at San Bernardino' },
-        caption: { zh: 'BNSF ES44AC 重联牵引超长双层海铁联运集装箱班列，轰鸣穿越加州圣贝纳迪诺丘陵峡谷。', en: 'BNSF ES44AC hauling a heavy multi-mile intermodal train through southern California curves.' },
-        url: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ce/BNSF_5927_leads_an_intermodal_train_at_Perris_Hill_Park_in_San_Bernardino%2C_California.jpg/1280px-BNSF_5927_leads_an_intermodal_train_at_Perris_Hill_Park_in_San_Bernardino%2C_California.jpg',
+        title: { zh: 'BNSF 6414 重载干线机车侧前方雄姿特写', en: 'BNSF 6414 Heavy Freight Locomotive Profile' },
+        caption: { zh: 'BNSF ES44AC 重联牵引超长海铁联运集装箱班列，展现厚重的工业力量美学与宽体防撞机鼻结构。', en: 'BNSF ES44AC leading heavy transcontinental freight, highlighting rugged wide cab structure.' },
+        url: 'https://upload.wikimedia.org/wikipedia/commons/1/16/BNSF_6414-GE_ES44AC_%2847445791261%29.jpg',
         tag: { zh: '重载牵引', en: 'Heavy Freight' },
       },
     ],
@@ -4437,7 +4437,7 @@ export const VEHICLES: Vehicle[] = [
       zh: '全美铁道史上最具历史纪念价值的图腾级重载机车！2005年联合太平洋为向美国第41任总统乔治·H·W·布什（George H.W. Bush）致敬，将4141号机车特别喷涂为与波音 VC-25A “空军一号”总统专机完全一致的天蓝、亮白与银灰配色，机头镶嵌金色总统徽章。2018年12月，UP 4141 亲自牵引老布什总统国葬专列前往得州农工大学布什总统图书馆安葬，举世瞩目。',
       en: 'One of the most famous commemorative locomotives in American history. Painted in 2005 in the exact colors of Air Force One to honor the 41st U.S. President George H.W. Bush, featuring presidential blue, white, and silver with the presidential seal. In 2018, UP 4141 pulled President Bush\'s funeral train.',
     },
-    heroImage: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ca/Union_Pacific_4141.jpg/1280px-Union_Pacific_4141.jpg',
+    heroImage: 'https://upload.wikimedia.org/wikipedia/commons/e/ee/Union_Pacific_4141.jpg',
     liveries: [
       {
         id: 'up-4141-air-force-one',
@@ -4450,7 +4450,7 @@ export const VEHICLES: Vehicle[] = [
           zh: '机鼻与上车身为经典的空军一号天蓝色，下部为纯白与银灰反光条带，驾驶室侧面印有美国总统印章。',
           en: 'Authentic Air Force One presidential robin-egg blue, pure white, and silver grey with presidential seal.',
         },
-        photoUrl: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ca/Union_Pacific_4141.jpg/1280px-Union_Pacific_4141.jpg',
+        photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/e/ee/Union_Pacific_4141.jpg',
         scaleModels: [
           {
             id: 'kato-up-4141-n',
@@ -4460,7 +4460,7 @@ export const VEHICLES: Vehicle[] = [
             material: { zh: '工程塑料 (ABS) + 金属压铸机芯', en: 'ABS Plastic with Diecast Chassis' },
             releaseYear: 2020,
             status: 'limited',
-            imageUrl: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ca/Union_Pacific_4141.jpg/1280px-Union_Pacific_4141.jpg',
+            imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/e/ee/Union_Pacific_4141.jpg',
             notes: { zh: 'KATO 限量典藏珍品，完美还原空军一号蓝珠光漆面、驾驶室两侧微米级清晰的总统徽章与银色机体', en: 'Limited edition KATO N-scale model reproducing the exact Air Force One colors and sharp presidential seal.' },
           },
         ],
@@ -4470,8 +4470,75 @@ export const VEHICLES: Vehicle[] = [
       {
         title: { zh: '联合太平洋机车段前空军一号天蓝色机鼻与银白车体特写', en: 'UP 4141 Air Force One Cab and Presidential Livery Profile' },
         caption: { zh: '机车静止停靠在机车检修线，标志性的空军一号浅天蓝色车鼻与锃亮的银白车身线条在阳光下格外圣洁威严。', en: 'UP 4141 displayed on the maintenance tracks, gleaming in authentic presidential blue, white, and silver.' },
-        url: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ca/Union_Pacific_4141.jpg/1280px-Union_Pacific_4141.jpg',
+        url: 'https://upload.wikimedia.org/wikipedia/commons/e/ee/Union_Pacific_4141.jpg',
         tag: { zh: '机库整备', en: 'Depot View' },
+      },
+    ],
+  },
+
+  // 56. 华夏航空 中国商飞 C909 (ARJ21-700) 支线客机 (B-650P / 航空)
+  {
+    id: 'china-express-c909',
+    category: 'aviation',
+    modelName: { zh: '华夏航空 中国商飞 C909 (ARJ21-700) 支线客机', en: 'China Express COMAC C909 (ARJ21-700) Regional Jet' },
+    code: 'C909-HXA',
+    manufacturer: { zh: '中国商用飞机有限责任公司 (COMAC)', en: 'Commercial Aircraft Corporation of China (COMAC)' },
+    status: 'active',
+    firstServiceYear: 2020,
+    country: { zh: '中国', en: 'China' },
+    countryCode: 'CN',
+    operatorIds: ['china_express'],
+    specs: {
+      maxSpeed: '828 km/h (Mach 0.785)',
+      capacity: '95 座 (全经济舱舒适宽适 2+3 布局)',
+      rangeOrPower: '3,700 km (ER 延程型，适配高原与高寒复杂支线)',
+      length: '33.46 m (翼展 Wingspan: 27.28 m，客舱宽度 3.14 m)',
+    },
+    overview: {
+      zh: '中国商飞研制生产的双发喷气式支线客机（原名 ARJ21-700“翔凤”，2024年珠海航展正式更名为 C909）。华夏航空作为中国支线航空领军企业，于2020年11月正式接收首架飞机（注册号 B-650P，喷涂华夏航空鸽舞祥云红橙涂装），并签署了多达100架商飞客机的战略采购协议。C909 专为中国西部高温高原机场与复杂航路设计，机身采用宽适的 2+3 五并排座椅布局（宽达 3.14 米，显著优于 CRJ 的 2+2 狭长机身），装备两台通用电气 CF34-10A 涡扇发动机，已成为连接中国中小城市航空网络的国产主力支线脊梁。',
+      en: 'COMAC C909 (originally ARJ21-700 Xiangfeng, officially rebranded as C909 at the 2024 Zhuhai Airshow). China Express Airlines took delivery of its first aircraft (B-650P) in November 2020 and signed a strategic purchase agreement for up to 100 COMAC jets. Designed specifically for plateau airports and extreme climates, the C909 features a spacious 3.14-meter-wide 2+3 seating cross-section (notably wider than CRJ\'s 2+2 pencil cabin) and twin rear-mounted GE CF34-10A turbofans.',
+    },
+    heroImage: 'https://upload.wikimedia.org/wikipedia/commons/b/b7/Comac_ARJ21-700.jpg',
+    liveries: [
+      {
+        id: 'hxa-c909-standard',
+        name: { zh: '华夏航空“鸽舞祥云”红橙主力涂装 (B-650P)', en: 'China Express "Dove Dance" Red & Orange Livery (B-650P)' },
+        type: 'standard',
+        yearsActive: '2020 - 至今 / Present',
+        operatorId: 'china_express',
+        isRetired: false,
+        description: {
+          zh: '机身通体珠光白，侧壁勾勒华夏航空标志性的红橙双色律动波浪线，垂直尾翼腾飞金色飞鸽徽标，机身前部喷涂“华夏航空 CHINA EXPRESS”及商飞 C909 标识。',
+          en: 'China Express signature red and orange wave ribbons with golden flying dove tail fin.',
+        },
+        photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/b/b7/Comac_ARJ21-700.jpg',
+        scaleModels: [
+          {
+            id: 'comac-hxa-c909-100',
+            brand: '中国商飞官方 / COMAC Official',
+            itemCode: 'COMAC-C909-HXA-100',
+            scale: '1:100',
+            material: { zh: '树脂实心机身 + 镀铬金属支架 + 实木底座', en: 'Solid Resin Display Model with Chrome Stand' },
+            releaseYear: 2021,
+            status: 'available',
+            imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/b/b7/Comac_ARJ21-700.jpg',
+            notes: { zh: '中国商飞官方监制交付纪念展厅模型，精准再现 C909 饱满机头弧线、超临界机翼及尾吊 CF34 吊舱', en: 'Official COMAC 1:100 desktop display model celebrating the delivery of China Express regional fleet.' },
+          },
+        ],
+      },
+    ],
+    detailPhotos: [
+      {
+        title: { zh: '商飞尾吊通用电气 CF34-10A 涡扇发动机舱特写', en: 'Rear-Mounted GE CF34-10A Engine Nacelles' },
+        caption: { zh: 'C909 采用后置尾吊双发设计，搭载高推力低噪声 CF34-10A 发动机，大幅降低机翼离地间隙要求与外物吸入风险。', en: 'Rear fuselage twin CF34-10A turbofans reducing foreign object damage risk on regional airstrips.' },
+        url: 'https://upload.wikimedia.org/wikipedia/commons/4/4c/ARJ21%E7%9A%84CF34%E5%BC%95%E6%93%8E.jpg',
+        tag: { zh: '发动机特写', en: 'Engine Detail' },
+      },
+      {
+        title: { zh: 'C909 舒适型 2+3 五并排宽体支线客舱布局特写', en: 'Spacious 2+3 Five-Abreast Regional Cabin' },
+        caption: { zh: '相比 CRJ 系列狭窄的 2+2“铅笔筒”客舱，C909 机身外径达到 3.14 米，提供堪比窄体干线客机的头部与过道空间。', en: 'Generous 3.14 m fuselage width offering trunk-liner comfort compared to narrow 2+2 regional jets.' },
+        url: 'https://upload.wikimedia.org/wikipedia/commons/b/b2/%E5%8D%97%E8%88%AAARJ21%E8%88%B1%E5%86%85.jpg',
+        tag: { zh: '客舱内景', en: 'Cabin Interior' },
       },
     ],
   },
