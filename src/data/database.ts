@@ -18,11 +18,15 @@ export const COUNTRY_ORDER: Record<string, number> = {
   KR: 14, // 韩国 South Korea
   SG: 15, // 新加坡 Singapore
   MY: 16, // 马来西亚 Malaysia
-  ID: 17, // 印度尼西亚 Indonesia
-  TH: 18, // 泰国 Thailand
-  IN: 19, // 印度 India
-  AE: 20, // 阿联酋 United Arab Emirates
-  QA: 21, // 卡塔尔 Qatar
+  TH: 17, // 泰国 Thailand
+  VN: 18, // 越南 Vietnam
+  LA: 19, // 老挝 Laos
+  ID: 20, // 印度尼西亚 Indonesia
+  IN: 21, // 印度 India
+  UZ: 22, // 乌兹别克斯坦 Uzbekistan
+  SA: 23, // 沙特阿拉伯 Saudi Arabia
+  AE: 24, // 阿联酋 United Arab Emirates
+  QA: 25, // 卡塔尔 Qatar
 
   // 欧洲 Europe
   FR: 30, // 法国 France
@@ -258,6 +262,42 @@ export const OPERATORS: Record<string, Operator> = {
     type: 'aviation',
   },
 
+  // 🇻🇳 越南 / Vietnam
+  vietnam_airlines: {
+    id: 'vietnam_airlines',
+    name: { zh: '越南航空 (越南国家航空)', en: 'Vietnam Airlines' },
+    code: 'HVN / VN',
+    country: { zh: '越南', en: 'Vietnam' },
+    countryCode: 'VN',
+    continent: { zh: '亚洲', en: 'Asia' },
+    continentCode: 'AS',
+    type: 'aviation',
+  },
+
+  // 🇮🇩 印度尼西亚 / Indonesia
+  garuda_indonesia: {
+    id: 'garuda_indonesia',
+    name: { zh: '印度尼西亚鹰航 (印尼航空)', en: 'Garuda Indonesia' },
+    code: 'GIA / GA',
+    country: { zh: '印度尼西亚', en: 'Indonesia' },
+    countryCode: 'ID',
+    continent: { zh: '亚洲', en: 'Asia' },
+    continentCode: 'AS',
+    type: 'aviation',
+  },
+
+  // 🇸🇦 沙特阿拉伯 / Saudi Arabia
+  saudia: {
+    id: 'saudia',
+    name: { zh: '沙特阿拉伯航空 (沙特航空)', en: 'Saudia (Saudi Arabian Airlines)' },
+    code: 'SVA / SV',
+    country: { zh: '沙特阿拉伯', en: 'Saudi Arabia' },
+    countryCode: 'SA',
+    continent: { zh: '亚洲', en: 'Asia' },
+    continentCode: 'AS',
+    type: 'aviation',
+  },
+
   // 🇦🇪 阿联酋 / United Arab Emirates
   emirates: {
     id: 'emirates',
@@ -265,6 +305,28 @@ export const OPERATORS: Record<string, Operator> = {
     code: 'UAE / EK',
     country: { zh: '阿联酋', en: 'United Arab Emirates' },
     countryCode: 'AE',
+    continent: { zh: '亚洲', en: 'Asia' },
+    continentCode: 'AS',
+    type: 'aviation',
+  },
+  etihad_airways: {
+    id: 'etihad_airways',
+    name: { zh: '阿提哈德航空', en: 'Etihad Airways' },
+    code: 'ETD / EY',
+    country: { zh: '阿联酋', en: 'United Arab Emirates' },
+    countryCode: 'AE',
+    continent: { zh: '亚洲', en: 'Asia' },
+    continentCode: 'AS',
+    type: 'aviation',
+  },
+
+  // 🇶🇦 卡塔尔 / Qatar
+  qatar_airways: {
+    id: 'qatar_airways',
+    name: { zh: '卡塔尔航空', en: 'Qatar Airways' },
+    code: 'QTR / QR',
+    country: { zh: '卡塔尔', en: 'Qatar' },
+    countryCode: 'QA',
     continent: { zh: '亚洲', en: 'Asia' },
     continentCode: 'AS',
     type: 'aviation',
@@ -493,6 +555,18 @@ export const OPERATORS: Record<string, Operator> = {
     type: 'railway',
   },
 
+  // 🇱🇦 老挝 / Laos
+  lao_china_railway: {
+    id: 'lao_china_railway',
+    name: { zh: '老中铁路有限公司 (中老铁路)', en: 'Laos-China Railway (LCR)' },
+    code: 'LCR',
+    country: { zh: '老挝', en: 'Laos' },
+    countryCode: 'LA',
+    continent: { zh: '亚洲', en: 'Asia' },
+    continentCode: 'AS',
+    type: 'railway',
+  },
+
   // 🇮🇩 印度尼西亚 / Indonesia
   kcic_whoosh: {
     id: 'kcic_whoosh',
@@ -512,6 +586,30 @@ export const OPERATORS: Record<string, Operator> = {
     code: 'IR',
     country: { zh: '印度', en: 'India' },
     countryCode: 'IN',
+    continent: { zh: '亚洲', en: 'Asia' },
+    continentCode: 'AS',
+    type: 'railway',
+  },
+
+  // 🇺🇿 乌兹别克斯坦 / Uzbekistan
+  uzbekistan_railways: {
+    id: 'uzbekistan_railways',
+    name: { zh: '乌兹别克斯坦铁路 (UTY)', en: 'Uzbekistan Railways (Oʻzbekiston Temir Yoʻllari)' },
+    code: 'UTY',
+    country: { zh: '乌兹别克斯坦', en: 'Uzbekistan' },
+    countryCode: 'UZ',
+    continent: { zh: '亚洲', en: 'Asia' },
+    continentCode: 'AS',
+    type: 'railway',
+  },
+
+  // 🇸🇦 沙特阿拉伯 / Saudi Arabia
+  saudi_railway_sar: {
+    id: 'saudi_railway_sar',
+    name: { zh: '沙特铁路公司 (SAR / 麦加-麦地那高铁)', en: 'Saudi Arabia Railways (SAR / Haramain HSR)' },
+    code: 'SAR',
+    country: { zh: '沙特阿拉伯', en: 'Saudi Arabia' },
+    countryCode: 'SA',
     continent: { zh: '亚洲', en: 'Asia' },
     continentCode: 'AS',
     type: 'railway',
@@ -5832,6 +5930,607 @@ export const VEHICLES: Vehicle[] = [
         caption: { zh: '在亚航大本营吉隆坡国际机场第二航站楼滑行准备起飞的 9M-RAL，阳光下红色鲨鳍小翼分外鲜艳。', en: 'AirAsia A320neo 9M-RAL taxiing for departure at KLIA2 hub in bright sunlight.' },
         url: 'https://upload.wikimedia.org/wikipedia/commons/4/48/AirAsia_Airbus_A320neo_9M-RAL_Kuala_Lumpur_2024_%2801%29.jpg',
         tag: { zh: '机坪滑行', en: 'Taxiing' },
+      },
+    ],
+  },
+
+  // 71. 越南航空 空客 A350-900 金莲花旗舰客机 (VN-A887 / 越南国家航空)
+  {
+    id: 'vietnam-airlines-a350-900',
+    category: 'aviation',
+    modelName: { zh: '越南航空 空客 A350-900 金莲花旗舰客机', en: 'Vietnam Airlines Airbus A350-900 Golden Lotus Flagship' },
+    code: 'A359-HVN',
+    manufacturer: { zh: '空中客车 (Airbus)', en: 'Airbus' },
+    status: 'active',
+    firstServiceYear: 2015,
+    country: { zh: '越南', en: 'Vietnam' },
+    countryCode: 'VN',
+    operatorIds: ['vietnam_airlines'],
+    specs: {
+      maxSpeed: '945 km/h (Mach 0.85)',
+      capacity: '305 座 (商务舱 29 / 豪华经济舱 45 / 经济舱 231)',
+      rangeOrPower: '15,000 km (河内 / 胡志明市直飞巴黎、法兰克福、伦敦)',
+      length: '66.80 m (翼展 Wingspan: 64.75 m 碳纤维空气动力机翼)',
+    },
+    overview: {
+      zh: '越南国家载旗航空公司（越南航空）的洲际旗舰宽体机型！作为亚洲第二家接收空客 A350-900 的航空公司，越航以深邃闪耀的碧水青蓝（Teal Blue）金属珠光机身搭配优雅舒展的金色莲花（Golden Lotus）垂尾徽标闻名世界，常年执飞河内、胡志明市至欧洲、澳洲及东北亚主要国际枢纽。',
+      en: 'Vietnam Airlines flagship widebody featuring the iconic shimmering teal blue fuselage and blooming Golden Lotus tailfin emblem. Serves key long-haul routes from Hanoi and Ho Chi Minh City to Europe.',
+    },
+    heroImage: 'https://upload.wikimedia.org/wikipedia/commons/d/d4/Vietnam_Airlines_Airbus_A350-900XWB_VN-A887.jpg',
+    liveries: [
+      {
+        id: 'vn-a359-lotus',
+        name: { zh: '越南航空经典碧水青蓝金莲花标准涂装 (VN-A887)', en: 'Vietnam Airlines Signature Teal Blue Golden Lotus Livery (VN-A887)' },
+        type: 'standard',
+        yearsActive: '2015 - 至今 / Present',
+        operatorId: 'vietnam_airlines',
+        isRetired: false,
+        description: {
+          zh: '独特的珠光深青蓝色漆面，机腹衬以温润金沙腰线，垂直尾翼绽放纯正越南国花金色莲花，高贵典雅。',
+          en: 'Signature pearlescent teal blue fuselage with gold accent cheatline and blooming golden lotus tail logo.',
+        },
+        photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/d/d4/Vietnam_Airlines_Airbus_A350-900XWB_VN-A887.jpg',
+        scaleModels: [
+          {
+            id: 'ph-vn-a359-lotus',
+            brand: 'Phoenix',
+            itemCode: '11156',
+            scale: '1:400',
+            material: { zh: '锌合金 / 压铸全金属', en: 'Diecast Metal Alloy' },
+            releaseYear: 2016,
+            status: 'available',
+            imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/d/d4/Vietnam_Airlines_Airbus_A350-900XWB_VN-A887.jpg',
+            notes: { zh: 'Phoenix 经典开模，高光还原越航独特的碧水青蓝色金属漆面与金莲花纹理', en: 'Phoenix 1:400 diecast with authentic metallic teal finish and golden lotus tail art.' },
+          },
+        ],
+      },
+    ],
+    detailPhotos: [
+      {
+        title: { zh: '达卡机场雨后机坪碧水青蓝机身特写 (VN-A896)', en: 'Vietnam Airlines A350 VN-A896 at Dhaka' },
+        caption: { zh: '停靠机坪的越航 A350，机身上倒映着天空色泽，金莲花尾翼在热带阳光下格外夺目。', en: 'Parked at Dhaka tarmac showing the deep turquoise pearlescent luster and golden lotus.' },
+        url: 'https://upload.wikimedia.org/wikipedia/commons/8/81/VN-A896_-_Vietnam_Airlines_-_Airbus_A350-941_-_VGHS.jpg',
+        tag: { zh: '机坪停泊', en: 'Tarmac' },
+      },
+    ],
+  },
+
+  // 72. 印度尼西亚鹰航 波音 777-300ER "神鹰展翅" 旗舰客机 (PK-GIA / 印尼航空)
+  {
+    id: 'garuda-777-300er',
+    category: 'aviation',
+    modelName: { zh: '印度尼西亚鹰航 波音 777-300ER "神鹰展翅" 旗舰客机', en: 'Garuda Indonesia Boeing 777-300ER Nature Wing Flagship' },
+    code: 'B77W-GIA',
+    manufacturer: { zh: '波音 (Boeing)', en: 'Boeing' },
+    status: 'active',
+    firstServiceYear: 2013,
+    country: { zh: '印度尼西亚', en: 'Indonesia' },
+    countryCode: 'ID',
+    operatorIds: ['garuda_indonesia'],
+    specs: {
+      maxSpeed: '945 km/h (Mach 0.84)',
+      capacity: '314 / 393 座 (两舱或三舱头等舱套房布局)',
+      rangeOrPower: '13,650 km (连接雅加达与阿姆斯特丹、伦敦、东京等跨洲干线)',
+      length: '73.86 m (翼展 Wingspan: 64.80 m / GE90-115B 巨型引擎)',
+    },
+    overview: {
+      zh: '东南亚万岛之国印度尼西亚的五星级载旗航司旗舰！印尼鹰航波音 777-300ER 涂装设计灵感源自印尼传统神鸟迦楼罗（Garuda）的羽翼与千岛之国的碧蓝海洋，垂尾呈现从深海深蓝至浅青绿的层次羽翼渐变；曾连续多次荣膺“全球最佳机舱乘务员”殊荣，是连接雅加达与欧洲直达航线的绝对中坚。',
+      en: 'Garuda Indonesia flagship widebody featuring the "Nature\'s Wing" gradient tail design inspired by Indonesian marine culture and the mythical bird Garuda.',
+    },
+    heroImage: 'https://upload.wikimedia.org/wikipedia/commons/9/90/Garuda_773_PK-GIA_at_NRT_%2816653608527%29.jpg',
+    liveries: [
+      {
+        id: 'ga-b77w-nature',
+        name: { zh: '印尼鹰航 "自然之翼" 渐变青蓝标准涂装 (PK-GIA)', en: 'Garuda Indonesia Nature\'s Wing Gradient Livery (PK-GIA)' },
+        type: 'standard',
+        yearsActive: '2013 - 至今 / Present',
+        operatorId: 'garuda_indonesia',
+        isRetired: false,
+        description: {
+          zh: '垂尾喷绘象征海洋与群岛生态的五重深蓝至浅碧绿渐变羽翼线条，机身点缀深天蓝流线，纯洁高雅。',
+          en: 'Nature\'s Wing gradient stripes extending over the tail fin from deep sea blue to tropical turquoise.',
+        },
+        photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/9/90/Garuda_773_PK-GIA_at_NRT_%2816653608527%29.jpg',
+        scaleModels: [
+          {
+            id: 'ph-ga-b77w-gia',
+            brand: 'Phoenix',
+            itemCode: '10832',
+            scale: '1:400',
+            material: { zh: '锌合金 / 压铸全金属', en: 'Diecast Metal Alloy' },
+            releaseYear: 2014,
+            status: 'available',
+            imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/9/90/Garuda_773_PK-GIA_at_NRT_%2816653608527%29.jpg',
+            notes: { zh: 'Phoenix 经典 777-300ER 模具，细致再现尾翼五层渐变羽翼几何网格与 GE90 引擎', en: 'Phoenix 1:400 diecast with accurately tampo-printed Nature\'s Wing gradient patterns.' },
+          },
+        ],
+      },
+    ],
+    detailPhotos: [
+      {
+        title: { zh: '东京成田机场跑道降落滑行特写', en: 'Garuda Indonesia 777-300ER Landing at Tokyo Narita' },
+        caption: { zh: '印尼鹰航 777-300ER 降落成田国际机场，清爽的蓝绿渐变在蓝天下极富群岛风情。', en: 'PK-GIA touching down at Narita Airport showing the elegant blue-cyan tail lines.' },
+        url: 'https://upload.wikimedia.org/wikipedia/commons/9/90/Garuda_773_PK-GIA_at_NRT_%2816653608527%29.jpg',
+        tag: { zh: '跑道降落', en: 'Landing' },
+      },
+    ],
+  },
+
+  // 73. 沙特阿拉伯航空 波音 787-9 梦想客机 (HZ-ARB / 沙特航空)
+  {
+    id: 'saudia-787-9',
+    category: 'aviation',
+    modelName: { zh: '沙特阿拉伯航空 波音 787-9 绿洲梦想旗舰客机', en: 'Saudia Boeing 787-9 Dreamliner Flagship' },
+    code: 'B789-SVA',
+    manufacturer: { zh: '波音 (Boeing)', en: 'Boeing' },
+    status: 'active',
+    firstServiceYear: 2016,
+    country: { zh: '沙特阿拉伯', en: 'Saudi Arabia' },
+    countryCode: 'SA',
+    operatorIds: ['saudia'],
+    specs: {
+      maxSpeed: '913 km/h (Mach 0.85)',
+      capacity: '298 座 (商务舱 24 / 经济舱 274)',
+      rangeOrPower: '14,140 km (利雅得 / 吉达直飞纽约、伦敦、北京、巴黎)',
+      length: '62.81 m (翼展 Wingspan: 60.12 m 复合材料超临界机翼)',
+    },
+    overview: {
+      zh: '中东海湾重要大国沙特阿拉伯的载旗航空旗舰！沙特阿拉伯航空（Saudia）波音 787-9 梦想客机融合沙漠游牧与阿拉伯伊斯兰文化，机身身披高贵典雅的沙丘暖棕与翡翠绿线条，垂直尾翼印有沙特阿拉伯双刀椰枣树国徽。常年执飞利雅得和吉达至北京、伦敦、纽约等重要国际直飞航线。',
+      en: 'Flag carrier of Saudi Arabia operating Boeing 787-9 Dreamliners across intercontinental corridors. Features desert sand and green accents with the iconic Saudi palm and crossed swords emblem.',
+    },
+    heroImage: 'https://upload.wikimedia.org/wikipedia/commons/5/5e/Saudia%2C_Boeing_787-9_Dreamliner%2C_HZ-ARB_%2825651976424%29.jpg',
+    liveries: [
+      {
+        id: 'sv-b789-standard',
+        name: { zh: '沙特航空经典沙丘金棕与翡翠绿标准涂装 (HZ-ARB)', en: 'Saudia Desert Gold & Palm Green Livery (HZ-ARB)' },
+        type: 'standard',
+        yearsActive: '2016 - 至今 / Present',
+        operatorId: 'saudia',
+        isRetired: false,
+        description: {
+          zh: '珍珠白机身贯穿金沙棕色流线与绿洲翡翠细线，垂尾印制经典金色双弯刀与椰枣树徽标。',
+          en: 'Desert sand gold and oasis green cheatlines running along fuselage, crowned by the national crest.',
+        },
+        photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/5/5e/Saudia%2C_Boeing_787-9_Dreamliner%2C_HZ-ARB_%2825651976424%29.jpg',
+        scaleModels: [
+          {
+            id: 'ng-sv-b789-arb',
+            brand: 'NG Models',
+            itemCode: '55032',
+            scale: '1:400',
+            material: { zh: '锌合金 / 压铸全金属', en: 'Diecast Metal Alloy' },
+            releaseYear: 2021,
+            status: 'available',
+            imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/5/5e/Saudia%2C_Boeing_787-9_Dreamliner%2C_HZ-ARB_%2825651976424%29.jpg',
+            notes: { zh: 'NG Models 极客级 787 模具，驾驶舱风挡极度精准，GEnx 锯齿后缘发动机细节出众', en: 'NG Models 1:400 diecast featuring accurate GEnx chevrons and crisp livery printing.' },
+          },
+        ],
+      },
+    ],
+    detailPhotos: [
+      {
+        title: { zh: '马尼拉机场跑道降落接地特写 (HZ-AR13)', en: 'Saudia Boeing 787 Landing at Manila' },
+        caption: { zh: '沙特航空 787-9 降落接地瞬间机翼微微上扬，展现波音复合材料机翼优美的气动曲线。', en: 'Touchdown at Manila Airport showcasing flexible composite wings flex.' },
+        url: 'https://upload.wikimedia.org/wikipedia/commons/9/93/Saudia_Boeing_787_HZ-AR13_Manila_2025_%2801%29.jpg',
+        tag: { zh: '接地特写', en: 'Touchdown' },
+      },
+    ],
+  },
+
+  // 74. 阿联酋航空 空客 A380-800 双层超级巨无霸客机 (A6-EER / A6-EEC / 阿联酋航空)
+  {
+    id: 'emirates-a380-800',
+    category: 'aviation',
+    modelName: { zh: '阿联酋航空 空客 A380-800 双层超级巨无霸客机', en: 'Emirates Airbus A380-800 Superjumbo' },
+    code: 'A388-UAE',
+    manufacturer: { zh: '空中客车 (Airbus)', en: 'Airbus' },
+    status: 'active',
+    firstServiceYear: 2008,
+    country: { zh: '阿联酋', en: 'United Arab Emirates' },
+    countryCode: 'AE',
+    operatorIds: ['emirates'],
+    specs: {
+      maxSpeed: '945 km/h (Mach 0.85)',
+      capacity: '489 / 517 / 615 座 (三舱/两舱布局，带空中水疗淋浴间与头等商务酒吧)',
+      rangeOrPower: '15,700 km (迪拜全球中转枢纽至全球五大洲超过 50 个目的地)',
+      length: '72.72 m (翼展 Wingspan: 79.75 m / 全通双层巨型机身)',
+    },
+    overview: {
+      zh: '全球规模最大的空客 A380 超级巨无霸机队运营商！阿联酋航空独家拥有超过 120 架 A380，凭借奢华头等舱水疗淋浴（Onboard Shower Spa）、机上行政酒廊以及极致舒适的客舱设施重新定义了全球民航奢华出行。垂尾喷涂醒目的阿联酋红绿白黑四色流动国旗，曾先后推出迪拜世博会、博物馆等全球轰动的巨幅特别彩绘。',
+      en: 'The world\'s largest operator of the Airbus A380 with over 120 aircraft in service. Famous for onboard shower spas, bar lounge, and signature UAE national flag waving tailfin design.',
+    },
+    heroImage: 'https://upload.wikimedia.org/wikipedia/commons/5/57/Emirates_Airbus_A380-861_A6-EER_MUC_2015_01.jpg',
+    liveries: [
+      {
+        id: 'ek-a388-standard',
+        name: { zh: '阿联酋航空飘扬国旗金标标准涂装 (A6-EER)', en: 'Emirates Iconic UAE Flag & Gold Titles Livery (A6-EER)' },
+        type: 'standard',
+        yearsActive: '2008 - 至今 / Present',
+        operatorId: 'emirates',
+        isRetired: false,
+        description: {
+          zh: '垂尾印有迎风飘扬的阿联酋四色国旗立体波纹，机身前部饰以巨大阿拉伯文与英文烫金 EMIRATES 标志，翼梢小翼点缀国旗色彩。',
+          en: 'Flowing UAE national flag on the tail, large gold Emirates lettering across forward fuselage, and flag-themed wingtip fences.',
+        },
+        photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/5/57/Emirates_Airbus_A380-861_A6-EER_MUC_2015_01.jpg',
+        scaleModels: [
+          {
+            id: 'av400-ek-a388-eer',
+            brand: 'Aviation400',
+            itemCode: 'AV4055',
+            scale: '1:400',
+            material: { zh: '锌合金 / 压铸全金属', en: 'Diecast Metal Alloy' },
+            releaseYear: 2021,
+            status: 'available',
+            imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/5/57/Emirates_Airbus_A380-861_A6-EER_MUC_2015_01.jpg',
+            notes: { zh: 'Aviation400 旗舰 A380 模具，超精密四台 Engine Alliance GP7200 发动机叶片可转动，磁吸起落架', en: 'Aviation400 1:400 diecast with rotatable fan blades, magnetic gears, and 3D antennas.' },
+          },
+        ],
+      },
+      {
+        id: 'ek-a388-expo2020',
+        name: { zh: '2020迪拜世博会 "Expo 2020 Dubai" 亮橙活力特别彩绘 (A6-EEC)', en: 'Expo 2020 Dubai Opportunity Orange Livery (A6-EEC)' },
+        type: 'special',
+        yearsActive: '2017 - 2022 (典藏彩绘 / Special Livery)',
+        operatorId: 'emirates',
+        isRetired: true,
+        description: {
+          zh: '整架巨无霸机身披上充满活力的迪拜世博会亮橙色彩绘，融合未来科技圆形纹路与 Expo 2020 Dubai 官方徽标，向全球传递世博盛会精神。',
+          en: 'Vibrant orange themed special livery promoting Expo 2020 Dubai Opportunity theme with geometric motifs across fuselage.',
+        },
+        photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/b/bb/Emirates_Expo_2020_A380.jpg',
+        scaleModels: [
+          {
+            id: 'ph-ek-a388-expo',
+            brand: 'Phoenix',
+            itemCode: '11267',
+            scale: '1:400',
+            material: { zh: '锌合金 / 压铸全金属', en: 'Diecast Metal Alloy' },
+            releaseYear: 2018,
+            status: 'limited',
+            imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/b/bb/Emirates_Expo_2020_A380.jpg',
+            notes: { zh: 'Phoenix 经典限量彩绘机，全机身超复杂高饱和橙色圆环移印极度精细', en: 'Phoenix limited 1:400 diecast featuring the complex geometric Expo 2020 patterns.' },
+          },
+        ],
+      },
+    ],
+    detailPhotos: [
+      {
+        title: { zh: 'A6-EEC 迪拜世博会彩绘机巡航特写', en: 'Emirates A380 Expo 2020 In Flight' },
+        caption: { zh: '执飞长途洲际航线巡航中的 A6-EEC，亮橙色世博会拉花在万米高空格外醒目。', en: 'A6-EEC cruising at high altitude showcasing the spectacular orange Expo 2020 livery.' },
+        url: 'https://upload.wikimedia.org/wikipedia/commons/c/cc/A6-EEC_Airbus_A380_Emirates_With_%22Expo_2020_Dubai_UAE%22_Titles_%2812249370764%29.jpg',
+        tag: { zh: '空中巡航', en: 'Cruising' },
+      },
+    ],
+  },
+
+  // 75. 阿提哈德航空 波音 787-9 "阿布扎比之面" 梦幻客机 (A6-BLH / A6-XWB / 阿联酋)
+  {
+    id: 'etihad-787-9',
+    category: 'aviation',
+    modelName: { zh: '阿提哈德航空 波音 787-9 "阿布扎比之面" 梦幻客机', en: 'Etihad Airways Boeing 787-9 "Facets of Abu Dhabi"' },
+    code: 'B789-ETD',
+    manufacturer: { zh: '波音 (Boeing)', en: 'Boeing' },
+    status: 'active',
+    firstServiceYear: 2014,
+    country: { zh: '阿联酋', en: 'United Arab Emirates' },
+    countryCode: 'AE',
+    operatorIds: ['etihad_airways'],
+    specs: {
+      maxSpeed: '913 km/h (Mach 0.85)',
+      capacity: '299 座 (开创性新一代开间商务舱 28 / 灵动经济舱 271)',
+      rangeOrPower: '14,140 km (阿布扎比直飞欧洲、亚洲和北美核心枢纽)',
+      length: '62.81 m (翼展 Wingspan: 60.12 m)',
+    },
+    overview: {
+      zh: '阿联酋首都阿布扎比国家载旗航空公司的骨干梦想客机！阿提哈德航空以颠覆传统航空设计理念闻名，全机采用“阿布扎比之面 (Facets of Abu Dhabi)”前卫多面体几何图案，巧妙融合阿拉伯沙漠金沙、阿联酋传统织物以及阿布扎比当代前沿伊斯兰几何建筑美学。客舱配备奢华的大师级开间商务舱。',
+      en: 'Flag carrier of Abu Dhabi featuring the avant-garde "Facets of Abu Dhabi" geometric livery inspired by desert dunes and modern Islamic architecture.',
+    },
+    heroImage: 'https://upload.wikimedia.org/wikipedia/commons/8/8d/Etihad_Boeing_787-9_Dreamliner_A6-BLH.jpg',
+    liveries: [
+      {
+        id: 'ey-b789-facets',
+        name: { zh: '阿提哈德航空 "阿布扎比之面" 金棕几何多面体标准涂装 (A6-BLH)', en: 'Etihad Facets of Abu Dhabi Geometric Livery (A6-BLH)' },
+        type: 'standard',
+        yearsActive: '2014 - 至今 / Present',
+        operatorId: 'etihad_airways',
+        isRetired: false,
+        description: {
+          zh: '垂尾与后机身布满深浅交织的金棕色与沙色多面体三角形网格，机身标注典雅的金色阿提哈德英文与阿拉伯书法。',
+          en: 'Sophisticated geometric pattern of triangles across the tail and rear fuselage in desert gold, sand, and bronze tones.',
+        },
+        photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/8/8d/Etihad_Boeing_787-9_Dreamliner_A6-BLH.jpg',
+        scaleModels: [
+          {
+            id: 'ph-ey-b789-blh',
+            brand: 'Phoenix',
+            itemCode: '11096',
+            scale: '1:400',
+            material: { zh: '锌合金 / 压铸全金属', en: 'Diecast Metal Alloy' },
+            releaseYear: 2015,
+            status: 'available',
+            imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/8/8d/Etihad_Boeing_787-9_Dreamliner_A6-BLH.jpg',
+            notes: { zh: 'Phoenix 经典合金模型，超高精度印制尾翼复杂多面体几何渐变色块', en: 'Phoenix 1:400 diecast accurately reproducing the complex Facets of Abu Dhabi pattern.' },
+          },
+        ],
+      },
+      {
+        id: 'ey-a35k-50years',
+        name: { zh: '阿联酋建国50周年 "50 Years" 特别纪念彩绘 (A6-XWB)', en: 'Etihad 50 Years of the UAE Commemorative Livery (A6-XWB)' },
+        type: 'special',
+        yearsActive: '2021 - 至今 / Present',
+        operatorId: 'etihad_airways',
+        isRetired: false,
+        description: {
+          zh: '为庆祝阿联酋建国50周年金禧盛典，在旗舰机身上喷涂了流线型 "50 Years" 金色与黑色阿拉伯数字纪念拉花。',
+          en: 'Special "50 Years" celebratory gold and black ribbons marking the UAE golden jubilee.',
+        },
+        photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/b/b7/Etihad_Airways_%2850_Years_Livery%29%2C_A6-XWB%2C_Airbus_A350-1041.jpg',
+        scaleModels: [
+          {
+            id: 'av400-ey-a35k-50',
+            brand: 'Aviation400',
+            itemCode: 'AV4076',
+            scale: '1:400',
+            material: { zh: '锌合金 / 压铸全金属', en: 'Diecast Metal Alloy' },
+            releaseYear: 2022,
+            status: 'available',
+            imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/b/b7/Etihad_Airways_%2850_Years_Livery%29%2C_A6-XWB%2C_Airbus_A350-1041.jpg',
+            notes: { zh: 'Aviation400 旗舰合金 A350-1000 模具，超精密呈现建国 50 周年纪念徽章', en: 'Aviation400 1:400 metal diecast with commemorative 50 Years livery markings.' },
+          },
+        ],
+      },
+    ],
+    detailPhotos: [
+      {
+        title: { zh: '阿提哈德航空旗舰宽体进近降落俯冲姿态', en: 'Etihad Airways Widebody Final Approach' },
+        caption: { zh: '进近降落中的阿提哈德飞机，金色与沙色多面体在光线折射下呈现出独特的立体质感。', en: 'Landing approach showing the multi-faceted light reflections on the tail geometric tiles.' },
+        url: 'https://upload.wikimedia.org/wikipedia/commons/c/cc/Etihad_Airways%2C_A6-XWF%2C_Airbus_A350-1041.jpg',
+        tag: { zh: '进近姿态', en: 'Approach' },
+      },
+    ],
+  },
+
+  // 76. 卡塔尔航空 空客 A350-1000 羚羊旗舰客机 (A7-ANC / 卡塔尔航空)
+  {
+    id: 'qatar-airways-a350-1000',
+    category: 'aviation',
+    modelName: { zh: '卡塔尔航空 空客 A350-1000 卡塔尔羚羊旗舰客机', en: 'Qatar Airways Airbus A350-1000 Oryx Flagship' },
+    code: 'A35K-QTR',
+    manufacturer: { zh: '空中客车 (Airbus)', en: 'Airbus' },
+    status: 'active',
+    firstServiceYear: 2018,
+    country: { zh: '卡塔尔', en: 'Qatar' },
+    countryCode: 'QA',
+    operatorIds: ['qatar_airways'],
+    specs: {
+      maxSpeed: '945 km/h (Mach 0.85)',
+      capacity: '327 座 (革命性 Qsuite 空中私人套房 46 / 舒适经济舱 281)',
+      rangeOrPower: '16,100 km (多哈哈马德国际机场直飞北美西海岸及澳大利亚)',
+      length: '73.79 m (翼展 Wingspan: 64.75 m / 罗罗遄达 XWB-97 发动机)',
+    },
+    overview: {
+      zh: '空客 A350-1000 全球启动用户与全球最大的运营商！连续多次摘得全球航空界最高荣誉“Skytrax 年度最佳航空公司”桂冠的卡塔尔航空旗舰。机身喷涂标志性的卡塔尔国色深勃艮第酒红与阿拉伯大羚羊（Oryx）徽标，客舱率先搭载民航革命性的“Qsuite”空中套房（可拼接为四人社交或双人双人床套房），树立全球长途头等/商务旅行新标杆。',
+      en: 'Global launch customer of the Airbus A350-1000. Features signature Qatar burgundy and Arabian Oryx tail emblem, equipped with revolutionary Qsuite business suites.',
+    },
+    heroImage: 'https://upload.wikimedia.org/wikipedia/commons/8/84/Qatar_Airways_A350-1000_%28A7-ANC%29_%40_FRA%2C_Oct_2018.jpg',
+    liveries: [
+      {
+        id: 'qr-a35k-standard',
+        name: { zh: '卡塔尔航空经典勃艮第酒红阿拉伯羚羊标准涂装 (A7-ANC)', en: 'Qatar Airways Burgundy Oryx Standard Livery (A7-ANC)' },
+        type: 'standard',
+        yearsActive: '2018 - 至今 / Present',
+        operatorId: 'qatar_airways',
+        isRetired: false,
+        description: {
+          zh: '垂尾喷涂高贵的深栗勃艮第红底色与阿拉伯大羚羊头角徽标，珍珠浅灰机身衬以沉稳优雅的暗红 QATAR 英文大字。',
+          en: 'Deep maroon burgundy vertical fin with majestic Arabian Oryx head crest, matched with pearl-grey fuselage.',
+        },
+        photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/8/84/Qatar_Airways_A350-1000_%28A7-ANC%29_%40_FRA%2C_Oct_2018.jpg',
+        scaleModels: [
+          {
+            id: 'av400-qr-a35k-anc',
+            brand: 'Aviation400',
+            itemCode: 'AV4038',
+            scale: '1:400',
+            material: { zh: '锌合金 / 压铸全金属', en: 'Diecast Metal Alloy' },
+            releaseYear: 2020,
+            status: 'available',
+            imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/8/84/Qatar_Airways_A350-1000_%28A7-ANC%29_%40_FRA%2C_Oct_2018.jpg',
+            notes: { zh: 'Aviation400 旗舰级 A350-1000，纯正勃艮第酒红移印，六轮小车主起落架与罗罗遄达发动机超精细开模', en: 'Aviation400 1:400 diecast with authentic maroon shade, six-wheel bogies, and detailed Trent XWB-97 engines.' },
+          },
+        ],
+      },
+    ],
+    detailPhotos: [
+      {
+        title: { zh: '法兰克福机场跑道起飞墨镜侠风挡特写', en: 'Qatar Airways A350-1000 Takeoff Profile' },
+        caption: { zh: '卡航首架 A350-1000 拔地而起，黑色碳纤维墨镜侠风挡与气动翼梢在阳光下格外犀利。', en: 'A7-ANC climbing into the sky showing its iconic raccoon cockpit mask.' },
+        url: 'https://upload.wikimedia.org/wikipedia/commons/9/96/Qatar_Airways_Airbus_A350-1000.jpg',
+        tag: { zh: '起飞离地', en: 'Climbing' },
+      },
+    ],
+  },
+
+  // 77. 中老铁路 "澜沧号" CR200J-LCR 动力集中型动车组 (老挝 / 老中铁路)
+  {
+    id: 'laos-china-railway-cr200j',
+    category: 'railway',
+    modelName: { zh: '中老铁路 "澜沧号" CR200J-LCR 动力集中型动车组', en: 'Laos-China Railway CR200J "Lane Xang" High Speed Train' },
+    code: 'CR200J-LCR',
+    manufacturer: { zh: '中车大连 / 中车四方 (CRRC)', en: 'CRRC Dalian / Sifang' },
+    status: 'active',
+    firstServiceYear: 2021,
+    country: { zh: '老挝', en: 'Laos' },
+    countryCode: 'LA',
+    operatorIds: ['lao_china_railway'],
+    specs: {
+      maxSpeed: '160 km/h (最高试验速度 210 km/h)',
+      capacity: '720 座 (9节编组，一等座 56 / 二等座 662 / 商务包间)',
+      rangeOrPower: '5,600 kW (全线贯通昆明至万象 1,035公里泛亚铁路黄金通道)',
+      length: '232.5 m (9辆编组 / 适应热带雨林高温多雨定制防护)',
+    },
+    overview: {
+      zh: '“一带一路”标志性工程与中老友谊的时代丰碑！中老铁路“澜沧号”动车组由中国中车集团量身打造，以老挝古国澜沧王国命名。列车外观涂装融合老挝国旗的红、蓝、白三色元素，红色象征革命热血与生命力，蓝色象征富饶国土与湄公河，白色象征老挝人民纯洁善良，车头喷绘象征圣洁繁荣的占芭花金色纹饰，让老挝一步跨入电气化动车组现代化时代。',
+      en: 'Flagship EMU of the Laos-China Railway connecting Vientiane and Kunming. Named "Lane Xang" after the historic kingdom, adorned with red, blue, and white ribbons representing the Lao national flag.',
+    },
+    heroImage: 'https://upload.wikimedia.org/wikipedia/commons/4/4d/2021-12-03_China-Laos-Eisenbahn.jpg',
+    liveries: [
+      {
+        id: 'lcr-cr200j-lane-xang',
+        name: { zh: '中老铁路 "澜沧号" 老挝国旗三色飘带涂装', en: 'Lane Xang Lao National Flag Ribbon Livery' },
+        type: 'standard',
+        yearsActive: '2021 - 至今 / Present',
+        operatorId: 'lao_china_railway',
+        isRetired: false,
+        description: {
+          zh: '以老挝国旗红、蓝、白三色为基调，贯穿全列车身的动感红蓝飘带象征中老两国山水相连与澜沧江-湄公河友谊长存。',
+          en: 'Adorned with dynamic red, blue, and white flowing ribbons along the aerodynamic train body, representing Laos flag colors.',
+        },
+        photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/4/4d/2021-12-03_China-Laos-Eisenbahn.jpg',
+        scaleModels: [
+          {
+            id: 'crrc-lcr-cr200j',
+            brand: '中车文创',
+            itemCode: 'CRRC-LCR-200J',
+            scale: 'N (1:160)',
+            material: { zh: '合金及工程 ABS 树脂', en: 'Diecast Alloy & Engineering ABS' },
+            releaseYear: 2022,
+            status: 'available',
+            imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/4/4d/2021-12-03_China-Laos-Eisenbahn.jpg',
+            notes: { zh: '中车官方纪念文创出品，精工还原中老铁路“澜沧号”红蓝白车身涂装与金色占芭花车头徽标', en: 'Official CRRC scale model with precise pad-printed Lao flag ribbons and Champa flower emblem.' },
+          },
+        ],
+      },
+    ],
+    detailPhotos: [
+      {
+        title: { zh: '中老铁路开通首发列车停靠万象站', en: 'Lane Xang Train at Vientiane Station Inaugural Run' },
+        caption: { zh: '中老铁路全线通车运营首发仪式，流线型“澜沧号”静候在万象站站台，开启老挝铁路新篇章。', en: 'Lane Xang train resting on the platform of Vientiane Station during the historic opening ceremony.' },
+        url: 'https://upload.wikimedia.org/wikipedia/commons/6/67/Laos-China-Railway.jpg',
+        tag: { zh: '通车首发', en: 'Inaugural Run' },
+      },
+    ],
+  },
+
+  // 78. 乌兹别克斯坦铁路 "阿芙罗西阿卜号" (Afrosiyob) Talgo 250 高速动车组 (乌兹别克斯坦)
+  {
+    id: 'uzbekistan-afrosiyob-talgo250',
+    category: 'railway',
+    modelName: { zh: '乌兹别克斯坦铁路 "阿芙罗西阿卜号" (Afrosiyob) Talgo 250 高速动车组', en: 'Uzbekistan Railways "Afrosiyob" Talgo 250 High Speed Train' },
+    code: 'TALGO-250-AFR',
+    manufacturer: { zh: '西班牙塔尔高 (Patentes Talgo)', en: 'Patentes Talgo' },
+    status: 'active',
+    firstServiceYear: 2011,
+    country: { zh: '乌兹别克斯坦', en: 'Uzbekistan' },
+    countryCode: 'UZ',
+    operatorIds: ['uzbekistan_railways'],
+    specs: {
+      maxSpeed: '250 km/h',
+      capacity: '287 座 (贵宾舱 11 / 商务舱 26 / 经济舱 218 / 设餐车酒吧)',
+      rangeOrPower: '4,800 kW (塔什干至撒马尔罕仅需 2 小时)',
+      length: '185.3 m (9节编组 / 铰接式独立摆式车轮系统)',
+    },
+    overview: {
+      zh: '中亚地区历史上的第一列高速动车组！乌兹别克斯坦铁路运营的“阿芙罗西阿卜号”以古撒马尔罕国王阿芙罗西阿卜命名，由西班牙 Talgo 制造，采用先进的自然摆式车体与宽轨（1520 mm）无轴转向架。列车穿越千年丝绸之路绿洲与荒漠，将首都塔什干与世界文化名城撒马尔罕、布哈拉紧密相连，外观采用乌兹别克斯坦国旗白蓝青三色典雅涂装。',
+      en: 'Central Asia\'s premier high-speed train running on the historic Silk Road between Tashkent, Samarkand, and Bukhara. Spanish-built Talgo 250 tilting train tailored for broad gauge lines.',
+    },
+    heroImage: 'https://upload.wikimedia.org/wikipedia/commons/8/8b/Talgo_250_Afrosiyob_05-06%2C_Bukhara_station.jpg',
+    liveries: [
+      {
+        id: 'uz-talgo250-afrosiyob',
+        name: { zh: '乌兹别克斯坦蓝白青国旗色丝路飞驰标准涂装', en: 'Afrosiyob Silk Road Blue & White Flag Livery' },
+        type: 'standard',
+        yearsActive: '2011 - 至今 / Present',
+        operatorId: 'uzbekistan_railways',
+        isRetired: false,
+        description: {
+          zh: '洁白车体配以乌兹别克斯坦国旗天蓝与青绿色腰线，前脸带有鲜明的空气动力学流线，融合中亚古丝绸之路文明与现代欧洲铁路科技。',
+          en: 'Clean white body with sky blue and green stripes derived from Uzbekistan\'s national flag colors.',
+        },
+        photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/8/8b/Talgo_250_Afrosiyob_05-06%2C_Bukhara_station.jpg',
+        scaleModels: [
+          {
+            id: 'el-uz-talgo250',
+            brand: 'Electrotren',
+            itemCode: 'HE2015',
+            scale: 'HO (1:87)',
+            material: { zh: '精密压铸全金属底盘与工程 ABS', en: 'Diecast Metal Chassis & ABS' },
+            releaseYear: 2016,
+            status: 'available',
+            imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/8/8b/Talgo_250_Afrosiyob_05-06%2C_Bukhara_station.jpg',
+            notes: { zh: 'Electrotren 精工 Talgo 250 模型，精细还原特有的铰接式单轴转向架与乌兹别克斯坦铁路涂装', en: 'Electrotren HO scale train with realistic single-axle shared bogies and Afrosiyob livery.' },
+          },
+        ],
+      },
+    ],
+    detailPhotos: [
+      {
+        title: { zh: '布哈拉站台上的阿芙罗西阿卜号高速列车', en: 'Afrosiyob High Speed Train at Bukhara Station' },
+        caption: { zh: '列车停靠在古丝绸之路枢纽布哈拉车站，将古代驼铃商道缩短为现代高铁飞驰。', en: 'Talgo 250 Afrosiyob at Bukhara station, bridging ancient Silk Road heritage with modern rail speed.' },
+        url: 'https://upload.wikimedia.org/wikipedia/commons/8/8b/Talgo_250_Afrosiyob_05-06%2C_Bukhara_station.jpg',
+        tag: { zh: '车站停靠', en: 'Station Stop' },
+      },
+    ],
+  },
+
+  // 79. 沙特麦加-麦地那 "哈拉曼" 沙漠高铁 Talgo 350 SRO 动车组 (沙特阿拉伯 / SAR)
+  {
+    id: 'saudi-haramain-talgo350',
+    category: 'railway',
+    modelName: { zh: '沙特麦加-麦地那 "哈拉曼" 沙漠高铁 Talgo 350 SRO 动车组', en: 'Haramain High Speed Rail Talgo 350 SRO Desert Train' },
+    code: 'TALGO-350-HHR',
+    manufacturer: { zh: '西班牙塔尔高 / 庞巴迪 (Talgo / Bombardier)', en: 'Talgo / Bombardier' },
+    status: 'active',
+    firstServiceYear: 2018,
+    country: { zh: '沙特阿拉伯', en: 'Saudi Arabia' },
+    countryCode: 'SA',
+    operatorIds: ['saudi_railway_sar'],
+    specs: {
+      maxSpeed: '300 km/h (设计最高时速 350 km/h)',
+      capacity: '417 座 (商务舱 113 / 经济舱 304 / 设祈祷区域及无障碍设施)',
+      rangeOrPower: '8,000 kW (全长 453 公里，连接麦加、吉达与麦地那)',
+      length: '215 m (13辆编组，流线型鸭嘴状空气动力学两端动力车)',
+    },
+    overview: {
+      zh: '世界上第一条穿越极端热带沙漠气候的 300 公里/小时高标准现代化高速铁路！沙特麦加-麦地那高速铁路（哈拉曼高铁，Haramain HSR）配备专门研制的 Talgo 350 SRO “沙漠之鹰”动车组，具备顶级防风沙密封系统、双层隔热耐 55℃ 极端高温空调与特种涂层。两端流线型“鸭嘴兽 (Pato)”动力车头喷涂尊贵白金银三色条纹，是伊斯兰朝觐客与海湾现代化交通的工程奇迹。',
+      en: 'The world\'s first high-speed train designed to conquer extreme 55°C desert temperatures and sandstorms at 300 km/h. Connects holy cities Mecca and Medina via Jeddah with aerodynamic duckbill Talgo 350 EMUs.',
+    },
+    heroImage: 'https://upload.wikimedia.org/wikipedia/commons/3/31/Talgo_350_SRO.jpg',
+    liveries: [
+      {
+        id: 'sa-talgo350-haramain',
+        name: { zh: '哈拉曼沙漠高铁白金银流线型标准涂装 ("沙漠之鹰")', en: 'Haramain Desert Eagle White & Gold Livery' },
+        type: 'standard',
+        yearsActive: '2018 - 至今 / Present',
+        operatorId: 'saudi_railway_sar',
+        isRetired: false,
+        description: {
+          zh: '尊贵的珍珠纯白车身镶嵌香槟金与高贵银色流线腰带，两端标志性的 Talgo 350“鸭嘴兽”气动车头极具视觉冲击力。',
+          en: 'Opulent pearl white train with champagne gold and silver dynamic waistbands and duckbill nose cone.',
+        },
+        photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/3/31/Talgo_350_SRO.jpg',
+        scaleModels: [
+          {
+            id: 'el-sa-talgo350',
+            brand: 'Electrotren',
+            itemCode: 'HE350-SRO',
+            scale: 'HO (1:87)',
+            material: { zh: '精密合金底盘与工程复合塑料', en: 'Diecast Metal Chassis & Plastic' },
+            releaseYear: 2019,
+            status: 'available',
+            imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/3/31/Talgo_350_SRO.jpg',
+            notes: { zh: 'Electrotren 旗舰 Talgo 350 动车组模型，高仿真白金沙特涂装与鸭嘴形机车头', en: 'Electrotren HO scale featuring the distinctive Talgo 350 duckbill nose in Haramain colors.' },
+          },
+        ],
+      },
+    ],
+    detailPhotos: [
+      {
+        title: { zh: '沙特哈拉曼高铁鸭嘴动力机车侧面特写', en: 'Talgo 350 SRO Locomotive Nose Profile' },
+        caption: { zh: '专门针对热带沙漠强沙尘与超高温严苛工况设计的鸭嘴流线型车头，兼具极致气动与防砂防护。', en: 'Aerodynamic duckbill locomotive nose engineered specifically for extreme Arabian desert environments.' },
+        url: 'https://upload.wikimedia.org/wikipedia/commons/3/31/Talgo_350_SRO.jpg',
+        tag: { zh: '车头特写', en: 'Locomotive' },
       },
     ],
   },

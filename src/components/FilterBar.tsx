@@ -85,10 +85,15 @@ export const FilterBar: React.FC<FilterBarProps> = ({
               <option value="KR">🇰🇷 韩国 / South Korea</option>
               <option value="SG">🇸🇬 新加坡 / Singapore</option>
               <option value="MY">🇲🇾 马来西亚 / Malaysia</option>
-              <option value="ID">🇮🇩 印度尼西亚 / Indonesia</option>
               <option value="TH">🇹🇭 泰国 / Thailand</option>
+              <option value="VN">🇻🇳 越南 / Vietnam</option>
+              <option value="LA">🇱🇦 老挝 / Laos</option>
+              <option value="ID">🇮🇩 印度尼西亚 / Indonesia</option>
               <option value="IN">🇮🇳 印度 / India</option>
+              <option value="UZ">🇺🇿 乌兹别克斯坦 / Uzbekistan</option>
+              <option value="SA">🇸🇦 沙特阿拉伯 / Saudi Arabia</option>
               <option value="AE">🇦🇪 阿联酋 / UAE</option>
+              <option value="QA">🇶🇦 卡塔尔 / Qatar</option>
             </optgroup>
             <optgroup label="🌍 欧洲 / Europe">
               <option value="FR">🇫🇷 法国 / France</option>
@@ -129,7 +134,12 @@ export const FilterBar: React.FC<FilterBarProps> = ({
               <option value="airasia">🇲🇾 亚洲航空 (AirAsia)</option>
               <option value="malaysia_airlines">🇲🇾 马来西亚航空 (Malaysia Airlines)</option>
               <option value="thai_airways">🇹🇭 泰国国际航空 (Thai Airways)</option>
+              <option value="vietnam_airlines">🇻🇳 越南航空 (Vietnam Airlines)</option>
+              <option value="garuda_indonesia">🇮🇩 印度尼西亚鹰航 (Garuda Indonesia)</option>
+              <option value="saudia">🇸🇦 沙特阿拉伯航空 (Saudia)</option>
               <option value="emirates">🇦🇪 阿联酋航空 (Emirates)</option>
+              <option value="etihad_airways">🇦🇪 阿提哈德航空 (Etihad Airways)</option>
+              <option value="qatar_airways">🇶🇦 卡塔尔航空 (Qatar Airways)</option>
             </optgroup>
             <optgroup label="✈️ 欧美航空公司 / Western Airlines">
               <option value="air_france">🇫🇷 法国航空 (Air France)</option>
@@ -154,8 +164,11 @@ export const FilterBar: React.FC<FilterBarProps> = ({
               <option value="nankai_railway">🇯🇵 南海电气铁道 (南海电铁)</option>
               <option value="meitetsu">🇯🇵 名古屋铁道 (名铁)</option>
               <option value="korail">🇰🇷 韩国铁道公社 (Korail)</option>
+              <option value="lao_china_railway">🇱🇦 老中铁路 (LCR / 澜沧号)</option>
               <option value="kcic_whoosh">🇮🇩 印尼雅万高铁 (Whoosh)</option>
               <option value="indian_railways">🇮🇳 印度铁路 (Indian Railways)</option>
+              <option value="uzbekistan_railways">🇺🇿 乌兹别克斯坦铁路 (UTY / Afrosiyob)</option>
+              <option value="saudi_railway_sar">🇸🇦 沙特铁路公司 (SAR / 哈拉曼高铁)</option>
             </optgroup>
             <optgroup label="🚄 北美铁路机构 / North American Railroads">
               <option value="amtrak">🇺🇸 美铁 (Amtrak)</option>
@@ -173,11 +186,14 @@ export const FilterBar: React.FC<FilterBarProps> = ({
             <option value="all">模型品牌: 全部 / All Model Brands</option>
             <option value="Aviation400">✈️ Aviation400 (飞度)</option>
             <option value="JC Wings">✈️ JC Wings</option>
+            <option value="Phoenix">✈️ Phoenix (凤凰)</option>
+            <option value="NG Models">✈️ NG Models</option>
             <option value="GeminiJets">✈️ GeminiJets</option>
             <option value="KATO">🚄 KATO (关水金属)</option>
             <option value="TOMIX">🚄 TOMIX (TOMYTEC)</option>
             <option value="中车文创">🚄 中车文创 (CRRC)</option>
             <option value="长鸣火模">🚄 长鸣火模 (Changming)</option>
+            <option value="Electrotren">🚄 Electrotren (西班牙火模)</option>
           </select>
 
           {isFiltered && (
