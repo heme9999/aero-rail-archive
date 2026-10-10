@@ -13,6 +13,8 @@ export interface Operator {
   code?: string; // ICAO/IATA or UIC
   country: LocalizedString;
   countryCode: string; // ISO 2 letters for flag
+  continent: LocalizedString; // e.g. { zh: '亚洲', en: 'Asia' }
+  continentCode: string; // 'AS' | 'EU' | 'NA'
   type: Category;
   logoUrl?: string;
 }

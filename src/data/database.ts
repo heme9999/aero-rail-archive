@@ -1,12 +1,55 @@
 import type { Vehicle, Operator } from '../types';
 
+export const CONTINENT_ORDER: Record<string, number> = {
+  AS: 1, // 亚洲 / Asia
+  EU: 2, // 欧洲 / Europe
+  NA: 3, // 北美洲 / North America
+  SA: 4, // 南美洲 / South America
+  AF: 5, // 非洲 / Africa
+  OC: 6, // 大洋洲 / Oceania
+};
+
+export const COUNTRY_ORDER: Record<string, number> = {
+  // 亚洲 Asia
+  CN: 10, // 中国 China
+  HK: 11, // 中国香港 Hong Kong, China
+  TW: 12, // 中国台湾 Taiwan, China
+  JP: 13, // 日本 Japan
+  KR: 14, // 韩国 South Korea
+  SG: 15, // 新加坡 Singapore
+  ID: 16, // 印度尼西亚 Indonesia
+  TH: 17, // 泰国 Thailand
+  IN: 18, // 印度 India
+  AE: 19, // 阿联酋 United Arab Emirates
+  QA: 20, // 卡塔尔 Qatar
+
+  // 欧洲 Europe
+  FR: 30, // 法国 France
+  GB: 31, // 英国 United Kingdom
+  NL: 32, // 荷兰 Netherlands
+  DE: 33, // 德国 Germany
+  EU: 34, // 欧洲联合 Europe
+
+  // 北美洲 North America
+  US: 50, // 美国 United States
+  CA: 51, // 加拿大 Canada
+};
+
 export const OPERATORS: Record<string, Operator> = {
+  // ========================================================
+  // ✈️ 航空公司 (Aviation Operators) - 按大洲、国家排序
+  // ========================================================
+
+  // ----- 🌏 亚洲 / Asia -----
+  // 🇨🇳 中国 / China
   air_china: {
     id: 'air_china',
     name: { zh: '中国国际航空', en: 'Air China' },
     code: 'CCA / CA',
     country: { zh: '中国', en: 'China' },
     countryCode: 'CN',
+    continent: { zh: '亚洲', en: 'Asia' },
+    continentCode: 'AS',
     type: 'aviation',
   },
   china_eastern: {
@@ -15,6 +58,8 @@ export const OPERATORS: Record<string, Operator> = {
     code: 'CES / MU',
     country: { zh: '中国', en: 'China' },
     countryCode: 'CN',
+    continent: { zh: '亚洲', en: 'Asia' },
+    continentCode: 'AS',
     type: 'aviation',
   },
   china_southern: {
@@ -23,102 +68,8 @@ export const OPERATORS: Record<string, Operator> = {
     code: 'CSN / CZ',
     country: { zh: '中国', en: 'China' },
     countryCode: 'CN',
-    type: 'aviation',
-  },
-  sichuan_airlines: {
-    id: 'sichuan_airlines',
-    name: { zh: '四川航空', en: 'Sichuan Airlines' },
-    code: 'CSC / 3U',
-    country: { zh: '中国', en: 'China' },
-    countryCode: 'CN',
-    type: 'aviation',
-  },
-  cathay_pacific: {
-    id: 'cathay_pacific',
-    name: { zh: '国泰航空', en: 'Cathay Pacific' },
-    code: 'CPA / CX',
-    country: { zh: '中国香港', en: 'Hong Kong, China' },
-    countryCode: 'HK',
-    type: 'aviation',
-  },
-  emirates: {
-    id: 'emirates',
-    name: { zh: '阿联酋航空', en: 'Emirates' },
-    code: 'UAE / EK',
-    country: { zh: '阿联酋', en: 'United Arab Emirates' },
-    countryCode: 'AE',
-    type: 'aviation',
-  },
-  ana: {
-    id: 'ana',
-    name: { zh: '全日空航空', en: 'All Nippon Airways (ANA)' },
-    code: 'ANA / NH',
-    country: { zh: '日本', en: 'Japan' },
-    countryCode: 'JP',
-    type: 'aviation',
-  },
-  jal: {
-    id: 'jal',
-    name: { zh: '日本航空', en: 'Japan Airlines (JAL)' },
-    code: 'JAL / JL',
-    country: { zh: '日本', en: 'Japan' },
-    countryCode: 'JP',
-    type: 'aviation',
-  },
-  british_airways: {
-    id: 'british_airways',
-    name: { zh: '英国航空', en: 'British Airways' },
-    code: 'BAW / BA',
-    country: { zh: '英国', en: 'United Kingdom' },
-    countryCode: 'GB',
-    type: 'aviation',
-  },
-  air_france: {
-    id: 'air_france',
-    name: { zh: '法国航空', en: 'Air France' },
-    code: 'AFR / AF',
-    country: { zh: '法国', en: 'France' },
-    countryCode: 'FR',
-    type: 'aviation',
-  },
-  klm: {
-    id: 'klm',
-    name: { zh: '荷兰皇家航空', en: 'KLM Royal Dutch Airlines' },
-    code: 'KLM / KL',
-    country: { zh: '荷兰', en: 'Netherlands' },
-    countryCode: 'NL',
-    type: 'aviation',
-  },
-  united_airlines: {
-    id: 'united_airlines',
-    name: { zh: '美国联合航空', en: 'United Airlines' },
-    code: 'UAL / UA',
-    country: { zh: '美国', en: 'United States' },
-    countryCode: 'US',
-    type: 'aviation',
-  },
-  delta_air_lines: {
-    id: 'delta_air_lines',
-    name: { zh: '达美航空', en: 'Delta Air Lines' },
-    code: 'DAL / DL',
-    country: { zh: '美国', en: 'United States' },
-    countryCode: 'US',
-    type: 'aviation',
-  },
-  american_airlines: {
-    id: 'american_airlines',
-    name: { zh: '美国航空', en: 'American Airlines' },
-    code: 'AAL / AA',
-    country: { zh: '美国', en: 'United States' },
-    countryCode: 'US',
-    type: 'aviation',
-  },
-  southwest_airlines: {
-    id: 'southwest_airlines',
-    name: { zh: '西南航空', en: 'Southwest Airlines' },
-    code: 'SWA / WN',
-    country: { zh: '美国', en: 'United States' },
-    countryCode: 'US',
+    continent: { zh: '亚洲', en: 'Asia' },
+    continentCode: 'AS',
     type: 'aviation',
   },
   hainan_airlines: {
@@ -127,6 +78,18 @@ export const OPERATORS: Record<string, Operator> = {
     code: 'CHH / HU',
     country: { zh: '中国', en: 'China' },
     countryCode: 'CN',
+    continent: { zh: '亚洲', en: 'Asia' },
+    continentCode: 'AS',
+    type: 'aviation',
+  },
+  sichuan_airlines: {
+    id: 'sichuan_airlines',
+    name: { zh: '四川航空', en: 'Sichuan Airlines' },
+    code: 'CSC / 3U',
+    country: { zh: '中国', en: 'China' },
+    countryCode: 'CN',
+    continent: { zh: '亚洲', en: 'Asia' },
+    continentCode: 'AS',
     type: 'aviation',
   },
   xiamen_air: {
@@ -135,6 +98,8 @@ export const OPERATORS: Record<string, Operator> = {
     code: 'CXA / MF',
     country: { zh: '中国', en: 'China' },
     countryCode: 'CN',
+    continent: { zh: '亚洲', en: 'Asia' },
+    continentCode: 'AS',
     type: 'aviation',
   },
   juneyao_air: {
@@ -143,6 +108,8 @@ export const OPERATORS: Record<string, Operator> = {
     code: 'DKH / HO',
     country: { zh: '中国', en: 'China' },
     countryCode: 'CN',
+    continent: { zh: '亚洲', en: 'Asia' },
+    continentCode: 'AS',
     type: 'aviation',
   },
   spring_airlines: {
@@ -151,6 +118,8 @@ export const OPERATORS: Record<string, Operator> = {
     code: 'CQH / 9C',
     country: { zh: '中国', en: 'China' },
     countryCode: 'CN',
+    continent: { zh: '亚洲', en: 'Asia' },
+    continentCode: 'AS',
     type: 'aviation',
   },
   china_express: {
@@ -159,6 +128,8 @@ export const OPERATORS: Record<string, Operator> = {
     code: 'HXA / G5',
     country: { zh: '中国', en: 'China' },
     countryCode: 'CN',
+    continent: { zh: '亚洲', en: 'Asia' },
+    continentCode: 'AS',
     type: 'aviation',
   },
   air_nine: {
@@ -167,64 +138,199 @@ export const OPERATORS: Record<string, Operator> = {
     code: 'AQG / AQ',
     country: { zh: '中国', en: 'China' },
     countryCode: 'CN',
+    continent: { zh: '亚洲', en: 'Asia' },
+    continentCode: 'AS',
     type: 'aviation',
   },
 
-  // 铁路机构 Operators
+  // 🇭🇰 中国香港 / Hong Kong, China
+  cathay_pacific: {
+    id: 'cathay_pacific',
+    name: { zh: '国泰航空', en: 'Cathay Pacific' },
+    code: 'CPA / CX',
+    country: { zh: '中国香港', en: 'Hong Kong, China' },
+    countryCode: 'HK',
+    continent: { zh: '亚洲', en: 'Asia' },
+    continentCode: 'AS',
+    type: 'aviation',
+  },
+
+  // 🇹🇼 中国台湾 / Taiwan, China
+  eva_air: {
+    id: 'eva_air',
+    name: { zh: '长荣航空', en: 'EVA Air' },
+    code: 'EVA / BR',
+    country: { zh: '中国台湾', en: 'Taiwan, China' },
+    countryCode: 'TW',
+    continent: { zh: '亚洲', en: 'Asia' },
+    continentCode: 'AS',
+    type: 'aviation',
+  },
+
+  // 🇯🇵 日本 / Japan
+  ana: {
+    id: 'ana',
+    name: { zh: '全日空航空', en: 'All Nippon Airways (ANA)' },
+    code: 'ANA / NH',
+    country: { zh: '日本', en: 'Japan' },
+    countryCode: 'JP',
+    continent: { zh: '亚洲', en: 'Asia' },
+    continentCode: 'AS',
+    type: 'aviation',
+  },
+  jal: {
+    id: 'jal',
+    name: { zh: '日本航空', en: 'Japan Airlines (JAL)' },
+    code: 'JAL / JL',
+    country: { zh: '日本', en: 'Japan' },
+    countryCode: 'JP',
+    continent: { zh: '亚洲', en: 'Asia' },
+    continentCode: 'AS',
+    type: 'aviation',
+  },
+
+  // 🇰🇷 韩国 / South Korea
+  korean_air: {
+    id: 'korean_air',
+    name: { zh: '大韩航空', en: 'Korean Air' },
+    code: 'KAL / KE',
+    country: { zh: '韩国', en: 'South Korea' },
+    countryCode: 'KR',
+    continent: { zh: '亚洲', en: 'Asia' },
+    continentCode: 'AS',
+    type: 'aviation',
+  },
+
+  // 🇸🇬 新加坡 / Singapore
+  singapore_airlines: {
+    id: 'singapore_airlines',
+    name: { zh: '新加坡航空', en: 'Singapore Airlines' },
+    code: 'SIA / SQ',
+    country: { zh: '新加坡', en: 'Singapore' },
+    countryCode: 'SG',
+    continent: { zh: '亚洲', en: 'Asia' },
+    continentCode: 'AS',
+    type: 'aviation',
+  },
+
+  // 🇹🇭 泰国 / Thailand
+  thai_airways: {
+    id: 'thai_airways',
+    name: { zh: '泰国国际航空', en: 'Thai Airways' },
+    code: 'THA / TG',
+    country: { zh: '泰国', en: 'Thailand' },
+    countryCode: 'TH',
+    continent: { zh: '亚洲', en: 'Asia' },
+    continentCode: 'AS',
+    type: 'aviation',
+  },
+
+  // 🇦🇪 阿联酋 / United Arab Emirates
+  emirates: {
+    id: 'emirates',
+    name: { zh: '阿联酋航空', en: 'Emirates' },
+    code: 'UAE / EK',
+    country: { zh: '阿联酋', en: 'United Arab Emirates' },
+    countryCode: 'AE',
+    continent: { zh: '亚洲', en: 'Asia' },
+    continentCode: 'AS',
+    type: 'aviation',
+  },
+
+  // ----- 🌍 欧洲 / Europe -----
+  // 🇫🇷 法国 / France
+  air_france: {
+    id: 'air_france',
+    name: { zh: '法国航空', en: 'Air France' },
+    code: 'AFR / AF',
+    country: { zh: '法国', en: 'France' },
+    countryCode: 'FR',
+    continent: { zh: '欧洲', en: 'Europe' },
+    continentCode: 'EU',
+    type: 'aviation',
+  },
+
+  // 🇬🇧 英国 / United Kingdom
+  british_airways: {
+    id: 'british_airways',
+    name: { zh: '英国航空', en: 'British Airways' },
+    code: 'BAW / BA',
+    country: { zh: '英国', en: 'United Kingdom' },
+    countryCode: 'GB',
+    continent: { zh: '欧洲', en: 'Europe' },
+    continentCode: 'EU',
+    type: 'aviation',
+  },
+
+  // 🇳🇱 荷兰 / Netherlands
+  klm: {
+    id: 'klm',
+    name: { zh: '荷兰皇家航空', en: 'KLM Royal Dutch Airlines' },
+    code: 'KLM / KL',
+    country: { zh: '荷兰', en: 'Netherlands' },
+    countryCode: 'NL',
+    continent: { zh: '欧洲', en: 'Europe' },
+    continentCode: 'EU',
+    type: 'aviation',
+  },
+
+  // ----- 🌎 北美洲 / North America -----
+  // 🇺🇸 美国 / United States
+  united_airlines: {
+    id: 'united_airlines',
+    name: { zh: '美国联合航空', en: 'United Airlines' },
+    code: 'UAL / UA',
+    country: { zh: '美国', en: 'United States' },
+    countryCode: 'US',
+    continent: { zh: '北美洲', en: 'North America' },
+    continentCode: 'NA',
+    type: 'aviation',
+  },
+  delta_air_lines: {
+    id: 'delta_air_lines',
+    name: { zh: '达美航空', en: 'Delta Air Lines' },
+    code: 'DAL / DL',
+    country: { zh: '美国', en: 'United States' },
+    countryCode: 'US',
+    continent: { zh: '北美洲', en: 'North America' },
+    continentCode: 'NA',
+    type: 'aviation',
+  },
+  american_airlines: {
+    id: 'american_airlines',
+    name: { zh: '美国航空', en: 'American Airlines' },
+    code: 'AAL / AA',
+    country: { zh: '美国', en: 'United States' },
+    countryCode: 'US',
+    continent: { zh: '北美洲', en: 'North America' },
+    continentCode: 'NA',
+    type: 'aviation',
+  },
+  southwest_airlines: {
+    id: 'southwest_airlines',
+    name: { zh: '西南航空', en: 'Southwest Airlines' },
+    code: 'SWA / WN',
+    country: { zh: '美国', en: 'United States' },
+    countryCode: 'US',
+    continent: { zh: '北美洲', en: 'North America' },
+    continentCode: 'NA',
+    type: 'aviation',
+  },
+
+  // ========================================================
+  // 🚄 铁路机构 (Railway Operators) - 按大洲、国家排序
+  // ========================================================
+
+  // ----- 🌏 亚洲 / Asia -----
+  // 🇨🇳 中国 / China
   china_railway: {
     id: 'china_railway',
     name: { zh: '中国国家铁路集团 (中国铁路)', en: 'China Railway (CR)' },
     code: 'CR',
     country: { zh: '中国', en: 'China' },
     countryCode: 'CN',
-    type: 'railway',
-  },
-  jr_central: {
-    id: 'jr_central',
-    name: { zh: '东海旅客铁道 (JR东海)', en: 'Central Japan Railway (JR Central)' },
-    code: 'JR-C',
-    country: { zh: '日本', en: 'Japan' },
-    countryCode: 'JP',
-    type: 'railway',
-  },
-  jr_east: {
-    id: 'jr_east',
-    name: { zh: '东日本旅客铁道 (JR东日本)', en: 'East Japan Railway (JR East)' },
-    code: 'JR-E',
-    country: { zh: '日本', en: 'Japan' },
-    countryCode: 'JP',
-    type: 'railway',
-  },
-  jr_west: {
-    id: 'jr_west',
-    name: { zh: '西日本旅客铁道 (JR西日本)', en: 'West Japan Railway (JR West)' },
-    code: 'JR-W',
-    country: { zh: '日本', en: 'Japan' },
-    countryCode: 'JP',
-    type: 'railway',
-  },
-  jr_kyushu: {
-    id: 'jr_kyushu',
-    name: { zh: '九州旅客铁道 (JR九州)', en: 'Kyushu Railway Company (JR Kyushu)' },
-    code: 'JR-K',
-    country: { zh: '日本', en: 'Japan' },
-    countryCode: 'JP',
-    type: 'railway',
-  },
-  odakyu: {
-    id: 'odakyu',
-    name: { zh: '小田急电铁', en: 'Odakyu Electric Railway' },
-    code: 'OER',
-    country: { zh: '日本', en: 'Japan' },
-    countryCode: 'JP',
-    type: 'railway',
-  },
-  kintetsu: {
-    id: 'kintetsu',
-    name: { zh: '近畿日本铁道 (近铁)', en: 'Kintetsu Railway' },
-    code: 'Kintetsu',
-    country: { zh: '日本', en: 'Japan' },
-    countryCode: 'JP',
+    continent: { zh: '亚洲', en: 'Asia' },
+    continentCode: 'AS',
     type: 'railway',
   },
   shanghai_maglev: {
@@ -233,30 +339,82 @@ export const OPERATORS: Record<string, Operator> = {
     code: 'SMT',
     country: { zh: '中国', en: 'China' },
     countryCode: 'CN',
+    continent: { zh: '亚洲', en: 'Asia' },
+    continentCode: 'AS',
     type: 'railway',
   },
-  union_pacific: {
-    id: 'union_pacific',
-    name: { zh: '美国联合太平洋铁路', en: 'Union Pacific Railroad (UP)' },
-    code: 'UP',
-    country: { zh: '美国', en: 'United States' },
-    countryCode: 'US',
+
+  // 🇹🇼 中国台湾 / Taiwan, China
+  taiwan_high_speed_rail: {
+    id: 'taiwan_high_speed_rail',
+    name: { zh: '台湾高速铁路 (台湾高铁)', en: 'Taiwan High Speed Rail (THSR)' },
+    code: 'THSR',
+    country: { zh: '中国台湾', en: 'Taiwan, China' },
+    countryCode: 'TW',
+    continent: { zh: '亚洲', en: 'Asia' },
+    continentCode: 'AS',
     type: 'railway',
   },
-  amtrak: {
-    id: 'amtrak',
-    name: { zh: '美铁 (全美客运铁路公司)', en: 'Amtrak (National Railroad Passenger Corp)' },
-    code: 'AMTK',
-    country: { zh: '美国', en: 'United States' },
-    countryCode: 'US',
+
+  // 🇯🇵 日本 / Japan
+  jr_central: {
+    id: 'jr_central',
+    name: { zh: '东海旅客铁道 (JR东海)', en: 'Central Japan Railway (JR Central)' },
+    code: 'JR-C',
+    country: { zh: '日本', en: 'Japan' },
+    countryCode: 'JP',
+    continent: { zh: '亚洲', en: 'Asia' },
+    continentCode: 'AS',
     type: 'railway',
   },
-  bnsf_railway: {
-    id: 'bnsf_railway',
-    name: { zh: 'BNSF 铁路 (伯灵顿北方圣太菲铁路)', en: 'BNSF Railway' },
-    code: 'BNSF',
-    country: { zh: '美国', en: 'United States' },
-    countryCode: 'US',
+  jr_east: {
+    id: 'jr_east',
+    name: { zh: '东日本旅客铁道 (JR东日本)', en: 'East Japan Railway (JR East)' },
+    code: 'JR-E',
+    country: { zh: '日本', en: 'Japan' },
+    countryCode: 'JP',
+    continent: { zh: '亚洲', en: 'Asia' },
+    continentCode: 'AS',
+    type: 'railway',
+  },
+  jr_west: {
+    id: 'jr_west',
+    name: { zh: '西日本旅客铁道 (JR西日本)', en: 'West Japan Railway (JR West)' },
+    code: 'JR-W',
+    country: { zh: '日本', en: 'Japan' },
+    countryCode: 'JP',
+    continent: { zh: '亚洲', en: 'Asia' },
+    continentCode: 'AS',
+    type: 'railway',
+  },
+  jr_kyushu: {
+    id: 'jr_kyushu',
+    name: { zh: '九州旅客铁道 (JR九州)', en: 'Kyushu Railway Company (JR Kyushu)' },
+    code: 'JR-K',
+    country: { zh: '日本', en: 'Japan' },
+    countryCode: 'JP',
+    continent: { zh: '亚洲', en: 'Asia' },
+    continentCode: 'AS',
+    type: 'railway',
+  },
+  odakyu: {
+    id: 'odakyu',
+    name: { zh: '小田急电铁', en: 'Odakyu Electric Railway' },
+    code: 'OER',
+    country: { zh: '日本', en: 'Japan' },
+    countryCode: 'JP',
+    continent: { zh: '亚洲', en: 'Asia' },
+    continentCode: 'AS',
+    type: 'railway',
+  },
+  kintetsu: {
+    id: 'kintetsu',
+    name: { zh: '近畿日本铁道 (近铁)', en: 'Kintetsu Railway' },
+    code: 'Kintetsu',
+    country: { zh: '日本', en: 'Japan' },
+    countryCode: 'JP',
+    continent: { zh: '亚洲', en: 'Asia' },
+    continentCode: 'AS',
     type: 'railway',
   },
   tobu_railway: {
@@ -265,6 +423,8 @@ export const OPERATORS: Record<string, Operator> = {
     code: 'TOBU',
     country: { zh: '日本', en: 'Japan' },
     countryCode: 'JP',
+    continent: { zh: '亚洲', en: 'Asia' },
+    continentCode: 'AS',
     type: 'railway',
   },
   nankai_railway: {
@@ -273,6 +433,8 @@ export const OPERATORS: Record<string, Operator> = {
     code: 'NANKAI',
     country: { zh: '日本', en: 'Japan' },
     countryCode: 'JP',
+    continent: { zh: '亚洲', en: 'Asia' },
+    continentCode: 'AS',
     type: 'railway',
   },
   meitetsu: {
@@ -281,6 +443,77 @@ export const OPERATORS: Record<string, Operator> = {
     code: 'MEITETSU',
     country: { zh: '日本', en: 'Japan' },
     countryCode: 'JP',
+    continent: { zh: '亚洲', en: 'Asia' },
+    continentCode: 'AS',
+    type: 'railway',
+  },
+
+  // 🇰🇷 韩国 / South Korea
+  korail: {
+    id: 'korail',
+    name: { zh: '韩国铁道公社 (Korail / 韩国铁道)', en: 'Korea Railroad Corporation (Korail)' },
+    code: 'KORAIL',
+    country: { zh: '韩国', en: 'South Korea' },
+    countryCode: 'KR',
+    continent: { zh: '亚洲', en: 'Asia' },
+    continentCode: 'AS',
+    type: 'railway',
+  },
+
+  // 🇮🇩 印度尼西亚 / Indonesia
+  kcic_whoosh: {
+    id: 'kcic_whoosh',
+    name: { zh: '印尼中国高铁公司 (KCIC / 雅万高铁)', en: 'Kereta Cepat Indonesia China (KCIC / Whoosh)' },
+    code: 'KCIC',
+    country: { zh: '印度尼西亚', en: 'Indonesia' },
+    countryCode: 'ID',
+    continent: { zh: '亚洲', en: 'Asia' },
+    continentCode: 'AS',
+    type: 'railway',
+  },
+
+  // 🇮🇳 印度 / India
+  indian_railways: {
+    id: 'indian_railways',
+    name: { zh: '印度铁路', en: 'Indian Railways (IR)' },
+    code: 'IR',
+    country: { zh: '印度', en: 'India' },
+    countryCode: 'IN',
+    continent: { zh: '亚洲', en: 'Asia' },
+    continentCode: 'AS',
+    type: 'railway',
+  },
+
+  // ----- 🌎 北美洲 / North America -----
+  // 🇺🇸 美国 / United States
+  amtrak: {
+    id: 'amtrak',
+    name: { zh: '美铁 (全美客运铁路公司)', en: 'Amtrak (National Railroad Passenger Corp)' },
+    code: 'AMTK',
+    country: { zh: '美国', en: 'United States' },
+    countryCode: 'US',
+    continent: { zh: '北美洲', en: 'North America' },
+    continentCode: 'NA',
+    type: 'railway',
+  },
+  union_pacific: {
+    id: 'union_pacific',
+    name: { zh: '美国联合太平洋铁路', en: 'Union Pacific Railroad (UP)' },
+    code: 'UP',
+    country: { zh: '美国', en: 'United States' },
+    countryCode: 'US',
+    continent: { zh: '北美洲', en: 'North America' },
+    continentCode: 'NA',
+    type: 'railway',
+  },
+  bnsf_railway: {
+    id: 'bnsf_railway',
+    name: { zh: 'BNSF 铁路 (伯灵顿北方圣太菲铁路)', en: 'BNSF Railway' },
+    code: 'BNSF',
+    country: { zh: '美国', en: 'United States' },
+    countryCode: 'US',
+    continent: { zh: '北美洲', en: 'North America' },
+    continentCode: 'NA',
     type: 'railway',
   },
 };
@@ -4539,6 +4772,493 @@ export const VEHICLES: Vehicle[] = [
         caption: { zh: '相比 CRJ 系列狭窄的 2+2“铅笔筒”客舱，C909 机身外径达到 3.14 米，提供堪比窄体干线客机的头部与过道空间。', en: 'Generous 3.14 m fuselage width offering trunk-liner comfort compared to narrow 2+2 regional jets.' },
         url: 'https://upload.wikimedia.org/wikipedia/commons/b/b2/%E5%8D%97%E8%88%AAARJ21%E8%88%B1%E5%86%85.jpg',
         tag: { zh: '客舱内景', en: 'Cabin Interior' },
+      },
+    ],
+  },
+
+  // 57. 大韩航空 波音 747-8I "空中皇后" 经典浅蔚蓝涂装旗舰 (HL7630 / 韩国航空)
+  {
+    id: 'korean-air-b747-8i',
+    category: 'aviation',
+    modelName: { zh: '大韩航空 波音 747-8I "空中皇后" 经典浅蔚蓝旗舰', en: 'Korean Air Boeing 747-8I "Queen of the Skies" Flagship' },
+    code: 'B748-KAL',
+    manufacturer: { zh: '波音公司 (Boeing)', en: 'The Boeing Company' },
+    status: 'active',
+    firstServiceYear: 2015,
+    country: { zh: '韩国', en: 'South Korea' },
+    countryCode: 'KR',
+    operatorIds: ['korean_air'],
+    specs: {
+      maxSpeed: '988 km/h (Mach 0.855)',
+      capacity: '368 座 (头等舱 6 / 商务舱 48 / 经济舱 314)',
+      rangeOrPower: '14,310 km (7,730 nmi)',
+      length: '76.30 m (全长 76.3 米超长机身，翼展 68.4 m)',
+    },
+    overview: {
+      zh: '全球仅有三家运营波音 747-8 洲际客运版的顶级航空公司之一（大韩航空、汉莎航空、中国国际航空）。大韩航空也是亚洲唯一的 747-8I 旗舰机队大户。拥有标志性的天蓝色优雅涂装，下腹部银灰衬托，垂直尾翼喷涂代表韩国的红蓝阴阳太极图徽标，双层巨无霸搭载四台通用电气 GEnx-2B 发动机，锯齿形消音短舱格外优美。',
+      en: 'One of only three airlines globally operating the passenger Boeing 747-8 Intercontinental. Featuring Korean Air\'s serene signature sky-blue fuselage and Yin-Yang Taegeuk tail insignia powered by four GEnx-2B engines.',
+    },
+    heroImage: 'https://upload.wikimedia.org/wikipedia/commons/0/0f/Korean_Air%2C_HL7630%2C_Boeing_747-8B5_%2849588842278%29.jpg',
+    liveries: [
+      {
+        id: 'kal-b748-sky-blue',
+        name: { zh: '大韩航空浅蔚蓝太极标准涂装 (HL7630)', en: 'Korean Air Sky Blue Taegeuk Livery (HL7630)' },
+        type: 'standard',
+        yearsActive: '2015 - 至今 / Present',
+        operatorId: 'korean_air',
+        isRetired: false,
+        description: {
+          zh: '全机身采用静谧清爽的浅蔚蓝色，机腹为铂金银灰，垂尾印有红蓝太极旋转航徽。',
+          en: 'Iconic sky blue fuselage with silver belly and Taegeuk tail emblem.',
+        },
+        photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/0/0f/Korean_Air%2C_HL7630%2C_Boeing_747-8B5_%2849588842278%29.jpg',
+        scaleModels: [
+          {
+            id: 'av400-kal-b748-7630',
+            brand: 'Aviation400',
+            itemCode: 'AV4128',
+            scale: '1:400',
+            material: { zh: '锌合金 / 压铸全金属', en: 'Diecast Metal Alloy' },
+            releaseYear: 2021,
+            status: 'available',
+            imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/0/0f/Korean_Air%2C_HL7630%2C_Boeing_747-8B5_%2849588842278%29.jpg',
+            notes: { zh: 'Aviation400 旗舰合金模具，超临界机翼上反角、起落架磁吸替换及 GEnx 发动机镂空叶片可转', en: 'Aviation400 premium 1:400 diecast with magnetic gear and rotating GEnx engine fans.' },
+          },
+        ],
+      },
+    ],
+    detailPhotos: [
+      {
+        title: { zh: '法兰克福国际机场起飞大仰角爬升特写 (HL7630)', en: 'HL7630 Takeoff Climbout at Frankfurt FRA' },
+        caption: { zh: '76.3 米超长机身咆哮离地爬升，机翼锯齿状 GEnx 发动机短舱与天蓝色机背在阳光下璀璨夺目。', en: 'Climbing out gracefully with four GEnx engines, showcasing the extended upper deck.' },
+        url: 'https://upload.wikimedia.org/wikipedia/commons/9/9a/Boeing_747-8I_Korean_Air.jpg',
+        tag: { zh: '起飞爬升', en: 'Takeoff Climb' },
+      },
+    ],
+  },
+
+  // 58. 长荣航空 波音 777-300ER 墨绿罗盘经典客机 (B-16722 / 中国台湾航空)
+  {
+    id: 'eva-air-b777-300er',
+    category: 'aviation',
+    modelName: { zh: '长荣航空 波音 777-300ER 经典墨绿罗盘旗舰客机', en: 'EVA Air Boeing 777-300ER Compass Flagship' },
+    code: 'B77W-EVA',
+    manufacturer: { zh: '波音公司 (Boeing)', en: 'The Boeing Company' },
+    status: 'active',
+    firstServiceYear: 2005,
+    country: { zh: '中国台湾', en: 'Taiwan, China' },
+    countryCode: 'TW',
+    operatorIds: ['eva_air'],
+    specs: {
+      maxSpeed: '945 km/h (Mach 0.84)',
+      capacity: '353 座 (皇玺桂冠舱 39 / 豪华经济舱 56 / 经济舱 258)',
+      rangeOrPower: '14,594 km (7,880 nmi)',
+      length: '73.86 m (翼展 Wingspan: 64.80 m，双发 GE90-115B)',
+    },
+    overview: {
+      zh: '全球五星级航空公司长荣航空的长途跨洋骨干旗舰！以其标志性的墨绿色机腹与尾翼、贯穿机侧的亮橘色动感条带，以及垂直尾翼上象征全球航向的金色罗盘图腾闻名于世。配备全球推力最强的 GE90-115B 大涵道比涡扇发动机，常年执飞台北桃园至洛杉矶、旧金山、伦敦等全球顶级越洋航线。',
+      en: 'The transpacific flagship of 5-star carrier EVA Air. Featuring deep green livery, vibrant orange speedline, and the golden global compass rose tail insignia, powered by massive GE90-115B engines.',
+    },
+    heroImage: 'https://upload.wikimedia.org/wikipedia/commons/f/fa/EVA_Air_Boeing_777-300ER_Prasertwit-1.jpg',
+    liveries: [
+      {
+        id: 'eva-b77w-standard',
+        name: { zh: '长荣航空墨绿罗盘标准涂装 (B-16722)', en: 'EVA Air Dark Green Compass Standard Livery (B-16722)' },
+        type: 'standard',
+        yearsActive: '2005 - 至今 / Present',
+        operatorId: 'eva_air',
+        isRetired: false,
+        description: {
+          zh: '雪白机身配深墨绿色机腹与尾翼，亮橘色条带点缀，垂尾金光闪烁的罗盘航徽象征长荣海空运全球网络。',
+          en: 'Dark racing green belly and tail with orange striping and golden global navigation compass insignia.',
+        },
+        photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/f/fa/EVA_Air_Boeing_777-300ER_Prasertwit-1.jpg',
+        scaleModels: [
+          {
+            id: 'jcw-eva-b77w-standard',
+            brand: 'JC Wings',
+            itemCode: 'EW477W008',
+            scale: '1:400',
+            material: { zh: '锌合金 / 压铸全金属', en: 'Diecast Metal Alloy' },
+            releaseYear: 2020,
+            status: 'available',
+            imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/f/fa/EVA_Air_Boeing_777-300ER_Prasertwit-1.jpg',
+            notes: { zh: 'JC Wings 经典精细合金模型，罗盘移印边缘锐利，巨型 GE90 扇叶独立可转', en: 'JC Wings 1:400 diecast with sharp compass rose tail print and free-spinning GE90 engine fan blades.' },
+          },
+        ],
+      },
+    ],
+    detailPhotos: [
+      {
+        title: { zh: '旧金山国际机场滑行道 GE90 发动机与绿腹侧影特写', en: 'EVA Air 777-300ER Taxiing at San Francisco SFO' },
+        caption: { zh: '巨大的 GE90-115B 发动机短舱与墨绿色涂装在加州阳光下格外典雅厚重。', en: 'Taxiing at SFO showcasing the enormous engine nacelles and classic dark green livery.' },
+        url: 'https://upload.wikimedia.org/wikipedia/commons/6/68/Boeing_777-300ER_%28EVA_Air%29_091.jpg',
+        tag: { zh: '滑行出港', en: 'Taxiing' },
+      },
+    ],
+  },
+
+  // 59. 新加坡航空 空客 A350-900 经典金鸟涂装旗舰 (9V-SHD / 新加坡航空)
+  {
+    id: 'singapore-airlines-a350-900',
+    category: 'aviation',
+    modelName: { zh: '新加坡航空 空客 A350-900 经典金鸟涂装旗舰', en: 'Singapore Airlines Airbus A350-900 Kris Flagship' },
+    code: 'A359-SIA',
+    manufacturer: { zh: '空中客车 (Airbus)', en: 'Airbus' },
+    status: 'active',
+    firstServiceYear: 2016,
+    country: { zh: '新加坡', en: 'Singapore' },
+    countryCode: 'SG',
+    operatorIds: ['singapore_airlines'],
+    specs: {
+      maxSpeed: '945 km/h (Mach 0.85)',
+      capacity: '253 座 (商务舱 42 / 优选经济舱 24 / 经济舱 187)',
+      rangeOrPower: '16,120 km (ULR 型创下 19 小时世界最长直飞直达纽约记录)',
+      length: '66.80 m (翼展 Wingspan: 64.75 m 碳纤维弯曲翼梢)',
+    },
+    overview: {
+      zh: '全球领先的顶级五星级航空公司新加坡航空的超现代宽体主力机队！新航不仅是空客 A350-900 全球最大的运营航司之一，更是全球唯一的 A350-900ULR（Ultra Long Range 超远程型）商业运营商，常年执飞新加坡樟宜直飞纽约纽瓦克、肯尼迪全球最长商业客运航线。机身身披半个世纪未曾褪色的新航经典金蓝双色腰线与垂尾金色灵鸟（Kris），彰显东南亚航空至高水准。',
+      en: 'The pride of 5-star Singapore Airlines and operator of the world\'s longest commercial non-stop flights (Singapore to New York, over 18 hours). Featuring the timeless dark blue and gold cheatline with golden Kris bird tailfin.',
+    },
+    heroImage: 'https://upload.wikimedia.org/wikipedia/commons/0/0c/Singapore_Airlines_A350_9V-SHD.jpg',
+    liveries: [
+      {
+        id: 'sia-a359-standard',
+        name: { zh: '新加坡航空经典金蓝灵鸟标准涂装 (9V-SHD)', en: 'Singapore Airlines Iconic Kris Gold & Blue Livery (9V-SHD)' },
+        type: 'standard',
+        yearsActive: '2016 - 至今 / Present',
+        operatorId: 'singapore_airlines',
+        isRetired: false,
+        description: {
+          zh: '洁白机身贯穿深蓝与灿金双色细条纹腰线，垂直尾翼喷涂典雅的金色 Kris 飞鸟徽标。',
+          en: 'Signature dark blue and gold cheatline with golden Kris bird emblem on dark blue vertical fin.',
+        },
+        photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/0/0c/Singapore_Airlines_A350_9V-SHD.jpg',
+        scaleModels: [
+          {
+            id: 'av400-sia-a359-shd',
+            brand: 'Aviation400',
+            itemCode: 'AV4066',
+            scale: '1:400',
+            material: { zh: '锌合金 / 压铸全金属', en: 'Diecast Metal Alloy' },
+            releaseYear: 2022,
+            status: 'available',
+            imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/0/0c/Singapore_Airlines_A350_9V-SHD.jpg',
+            notes: { zh: 'Aviation400 殿堂级 A350 模具，天线镂空、驾驶舱墨镜侠碳纤维风挡及流线型翼梢小弯翼精确开模', en: 'Aviation400 flagship 1:400 diecast with cockpit raccoon mask and carbon blended winglets.' },
+          },
+        ],
+      },
+    ],
+    detailPhotos: [
+      {
+        title: { zh: '布里斯班国际机场降落进近机腹与金蓝线条特写', en: 'Singapore Airlines A350-900 on Final Approach at Brisbane' },
+        caption: { zh: '柔和晨光中 A350 碳纤维弯曲翼梢小翼优雅划过天际，展现极致空气动力学与低油耗宁静飞行品质。', en: 'Gracefully descending into Brisbane showing aerodynamic winglets and Rolls-Royce Trent XWB engines.' },
+        url: 'https://upload.wikimedia.org/wikipedia/commons/d/da/Airbus_A350-900_%289V-SHF%29_Singapore_airlines_in_Brisbane_%28BNE%29.jpg',
+        tag: { zh: '进近降落', en: 'Final Approach' },
+      },
+    ],
+  },
+
+  // 60. 泰国国际航空 空客 A350-900 皇家兰花紫金客机 (HS-THB / 泰国航空)
+  {
+    id: 'thai-airways-a350-900',
+    category: 'aviation',
+    modelName: { zh: '泰国国际航空 空客 A350-900 皇家兰花紫金旗舰客机', en: 'Thai Airways Airbus A350-900 Royal Orchid Livery' },
+    code: 'A359-THA',
+    manufacturer: { zh: '空中客车 (Airbus)', en: 'Airbus' },
+    status: 'active',
+    firstServiceYear: 2016,
+    country: { zh: '泰国', en: 'Thailand' },
+    countryCode: 'TH',
+    operatorIds: ['thai_airways'],
+    specs: {
+      maxSpeed: '945 km/h (Mach 0.85)',
+      capacity: '321 座 (皇家丝绸商务舱 32 / 经济舱 289)',
+      rangeOrPower: '15,000 km',
+      length: '66.80 m (翼展 Wingspan: 64.75 m)',
+    },
+    overview: {
+      zh: '东南亚最具浓郁东方皇家风韵的经典民航彩绘！泰国国际航空（泰航）以泰国国花兰花为灵感，机身后部至垂直尾翼融合了皇家紫、粉红与富贵金三色渐变飘带，垂直尾翼印有金色与紫色交织的立体兰花徽标。执飞曼谷素万那普至北京、伦敦、巴黎等骨干航线，被航空界誉为“飞行的皇家丝绸”。',
+      en: 'The most elegant Southeast Asian royal livery inspired by the Thai orchid. Featuring majestic royal purple, magenta, and gold ribbons with the iconic floral tail crest.',
+    },
+    heroImage: 'https://upload.wikimedia.org/wikipedia/commons/2/2e/Thai_Airways_A350-900_at_Beijing_Capital_International_Airport.jpg',
+    liveries: [
+      {
+        id: 'tha-a359-royal-orchid',
+        name: { zh: '泰航皇家兰花紫金标准涂装 (HS-THB)', en: 'Thai Airways Royal Orchid Purple & Gold Livery (HS-THB)' },
+        type: 'standard',
+        yearsActive: '2016 - 至今 / Present',
+        operatorId: 'thai_airways',
+        isRetired: false,
+        description: {
+          zh: '白底机身后侧延伸华贵的皇家紫与玫红波浪缎带，垂直尾翼矗立立体紫金兰花航徽。',
+          en: 'Royal purple and magenta satin ribbons with shimmering golden orchid emblem on the tail.' },
+        photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/2/2e/Thai_Airways_A350-900_at_Beijing_Capital_International_Airport.jpg',
+        scaleModels: [
+          {
+            id: 'jcw-tha-a359-royal',
+            brand: 'JC Wings',
+            itemCode: 'LH4THA198',
+            scale: '1:400',
+            material: { zh: '锌合金 / 压铸全金属', en: 'Diecast Metal Alloy' },
+            releaseYear: 2021,
+            status: 'available',
+            imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/2/2e/Thai_Airways_A350-900_at_Beijing_Capital_International_Airport.jpg',
+            notes: { zh: 'JC Wings 经典金属压铸，精准还原机尾三色渐变丝绸与紫金兰花移印', en: 'JC Wings 1:400 diecast with vibrant multi-tone purple orchid livery.' },
+          },
+        ],
+      },
+    ],
+    detailPhotos: [
+      {
+        title: { zh: '曼谷素万那普机场停机坪整备特写 (HS-THL)', en: 'Thai Airways A350 Ramp Turnaround at Bangkok BKK' },
+        caption: { zh: '泰航 A350 静止停靠素万那普机场机位，紫金色带与晨曦交织出极具异域风情的东方典雅。', en: 'Resting on the tarmac at Suvarnabhumi, showcasing the iconic royal purple silk paint scheme.' },
+        url: 'https://upload.wikimedia.org/wikipedia/commons/7/71/HS-THL_-_Thai_Airways_International_-_Airbus_A350-941_-_MSN_185_-_VGHS.jpg',
+        tag: { zh: '机坪整备', en: 'Ramp Stand' },
+      },
+    ],
+  },
+
+  // 61. 台湾高铁 700T 型电力动车组 (THSR 700T / 中国台湾铁道)
+  {
+    id: 'thsr-700t',
+    category: 'railway',
+    modelName: { zh: '台湾高铁 700T 型电力动车组 (新干线技术首次海外输出)', en: 'Taiwan High Speed Rail 700T Series EMU' },
+    code: 'THSR-700T',
+    manufacturer: { zh: '川崎重工 / 日本车辆 / 日立制作所', en: 'Kawasaki Heavy Industries / Nippon Sharyo / Hitachi' },
+    status: 'active',
+    firstServiceYear: 2007,
+    country: { zh: '中国台湾', en: 'Taiwan, China' },
+    countryCode: 'TW',
+    operatorIds: ['taiwan_high_speed_rail'],
+    specs: {
+      maxSpeed: '运营时速 300 km/h (试验最高速度 315 km/h)',
+      capacity: '989 座 (12 节编组: 商务车厢 66 / 标准车厢 923)',
+      rangeOrPower: '持续牵引功率: 10,260 kW (25 kV 60 Hz 交流电气化，交流三相异步电机)',
+      length: '304.0 m (先头车鼻锥 27.0 m，中间车 25.0 m)',
+    },
+    overview: {
+      zh: '日本新干线技术历史首次向海外出口的标志性划时代杰作！以 JR 东海与 JR 西日本联合开发的 700 系新干线动车组为技术原型，针对台湾亚热带气候、多隧道地形与欧洲安全标准进行了大幅优化。车头采用流线型破风设计，身披纯白底色、活力橙与低调铁灰双色腰线，全长 304 米 12 节编组，将台北至高雄的旅行时间缩短至 90 分钟以内，彻底重塑台湾西部走廊交通格局。',
+      en: 'The first export of Japanese Shinkansen technology in history. Based on the 700 Series bullet train and built by Kawasaki, Nippon Sharyo, and Hitachi. Sporting a sleek pure white body with signature vibrant orange and iron grey speedlines.',
+    },
+    heroImage: 'https://upload.wikimedia.org/wikipedia/commons/e/e5/Taiwan_High_Speed_Rail_train_854_at_Taichung_HSR_station_March_2026.jpg',
+    liveries: [
+      {
+        id: 'thsr-700t-standard',
+        name: { zh: '台湾高铁白底橙灰标准涂装', en: 'THSR 700T White, Vibrant Orange & Grey Livery' },
+        type: 'standard',
+        yearsActive: '2007 - 至今 / Present',
+        operatorId: 'taiwan_high_speed_rail',
+        isRetired: false,
+        description: {
+          zh: '车头锋利劈风线采用明亮橙色与铁灰双色彩带贯穿全列，车侧喷涂 THSR 动感飞翼标志。',
+          en: 'Crisp white trainset with vibrant orange and dark grey waistlines and aerodynamic nose.',
+        },
+        photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/e/e5/Taiwan_High_Speed_Rail_train_854_at_Taichung_HSR_station_March_2026.jpg',
+        scaleModels: [
+          {
+            id: 'kato-thsr-700t-n',
+            brand: 'KATO',
+            itemCode: '10-1476',
+            scale: 'N (1:150)',
+            material: { zh: '工程塑料 (ABS) + 金属压铸机芯', en: 'ABS Plastic with Diecast Chassis' },
+            releaseYear: 2018,
+            status: 'limited',
+            imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/e/e5/Taiwan_High_Speed_Rail_train_854_at_Taichung_HSR_station_March_2026.jpg',
+            notes: { zh: '关水金属 (KATO) 殿堂级典藏绝版限定，精准还原创新的 700T 鼻锥造型、可通电密连车钩与车顶低风阻单臂受电弓', en: 'Legendary limited KATO N-scale set reproducing the unique 700T streamlined nose and smooth mechanism.' },
+          },
+        ],
+      },
+    ],
+    detailPhotos: [
+      {
+        title: { zh: '台湾高铁 700T 宽适车厢内景与 2+3 人体工学座椅特写', en: 'THSR 700T Passenger Cabin Interior' },
+        caption: { zh: '列车内部采用通透明亮的人体工学宽距座椅与无障碍通道设计，提供极其平稳宁静的 300 公里时速乘坐体验。', en: 'Spacious interior cabin with 2+3 ergonomic seating, providing whisper-quiet 300 km/h ride quality.' },
+        url: 'https://upload.wikimedia.org/wikipedia/commons/1/10/In_a_THSR_700T_Train.jpg',
+        tag: { zh: '客舱内景', en: 'Cabin Interior' },
+      },
+    ],
+  },
+
+  // 62. 韩国铁道 KTX-山川 110000系 高速动车组 (韩国铁道)
+  {
+    id: 'korail-ktx-sancheon',
+    category: 'railway',
+    modelName: { zh: '韩国铁道 KTX-山川 110000系 高速动车组', en: 'Korail KTX-Sancheon 110000 Series High-Speed Train' },
+    code: 'KTX-Sancheon',
+    manufacturer: { zh: '现代 Rotem (Hyundai Rotem)', en: 'Hyundai Rotem' },
+    status: 'active',
+    firstServiceYear: 2010,
+    country: { zh: '韩国', en: 'South Korea' },
+    countryCode: 'KR',
+    operatorIds: ['korail'],
+    specs: {
+      maxSpeed: '运营时速 305 km/h (最高设计时速 330 km/h)',
+      capacity: '363 座 (10 节编组: 特室 30 / 普通室 333，全列座椅可 180 度调转方向)',
+      rangeOrPower: '持续牵引功率: 8,800 kW (25 kV 60 Hz 交流电气化，交流感应电机)',
+      length: '201.0 m (两端动力机车 + 8 节铰接式客车)',
+    },
+    overview: {
+      zh: '韩国完全自主研发制造的划时代主力高速动车组（原项目名 KTX-II）！列车外形灵感汲取自韩国本土特产名鱼“山川鱼（Sancheon / 樱鳟）”在清泉中游弋的流线身姿，车鼻圆润饱满且极具低风阻动感。车体身披银灰底色与深海军蓝搭配红色速度条纹，一改第一代 KTX-I（引进法国 TGV 技术）固定座椅无法掉头的痛点，实现全列座椅电动回转，是首尔至釜山京釜高铁与湖南高铁的核心主力。',
+      en: 'South Korea\'s indigenous next-generation bullet train built by Hyundai Rotem. Inspired by the sleek indigenous Korean fish "Sancheon" (cherry salmon), featuring a streamlined bulbous aerodynamic nose, silver and deep navy livery, and 180-degree rotating seats.',
+    },
+    heroImage: 'https://upload.wikimedia.org/wikipedia/commons/0/08/KTX-Sancheon.jpg',
+    liveries: [
+      {
+        id: 'ktx-sancheon-standard',
+        name: { zh: 'KTX-山川 银蓝速度经典涂装', en: 'KTX-Sancheon Silver & Navy Speed Livery' },
+        type: 'standard',
+        yearsActive: '2010 - 至今 / Present',
+        operatorId: 'korail',
+        isRetired: false,
+        description: {
+          zh: '银色流线型机鼻车体，搭配深邃海军蓝车顶带与动感朱红线条，尽显山川鱼灵动破风之美。',
+          en: 'Silver streamlined nose with midnight navy waist ribbon and crimson accents.',
+        },
+        photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/0/08/KTX-Sancheon.jpg',
+        scaleModels: [
+          {
+            id: 'rotem-ktx-sancheon-ho',
+            brand: '三弘社 / Samhongsa & Korail Official',
+            itemCode: 'KR-KTX-1100',
+            scale: 'HO (1:87)',
+            material: { zh: '高精黄铜 (Brass) + 合金工程塑料', en: 'Fine Brass & Diecast Mechanism' },
+            releaseYear: 2016,
+            status: 'limited',
+            imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/0/08/KTX-Sancheon.jpg',
+            notes: { zh: '韩国铁道官方监制限量纪念典藏模型，精巧还原山川鱼双机重联车钩开合机构与铰接转向架', en: 'Official Korail certified brass collector model with motorized opening nose coupler.' },
+          },
+        ],
+      },
+    ],
+    detailPhotos: [
+      {
+        title: { zh: 'KTX-山川 先头动力车车钩开闭罩自动对接特写', en: 'KTX-Sancheon Automatic Front Coupler Detail' },
+        caption: { zh: '两列 KTX-山川在行进站前打开机鼻自动车钩罩进行双重联编组运行，满足早晚高峰大客流需求。', en: 'Open nose cone revealing the automatic Scharfenberg coupler used for dual-trainset heavy peak operations.' },
+        url: 'https://upload.wikimedia.org/wikipedia/commons/8/84/KTX-II_coupler.jpg',
+        tag: { zh: '车钩联动', en: 'Coupler Mechanism' },
+      },
+    ],
+  },
+
+  // 63. 印尼雅万高铁 KCIC400AF "Whoosh" 高速动车组 (印度尼西亚铁道)
+  {
+    id: 'kcic-400af-whoosh',
+    category: 'railway',
+    modelName: { zh: '印尼雅万高铁 KCIC400AF "Whoosh" 高速动车组 (东南亚首条高速铁路)', en: 'Jakarta-Bandung High-Speed Railway KCIC400AF "Whoosh" Trainset' },
+    code: 'KCIC400AF',
+    manufacturer: { zh: '中国中车青岛四方机车车辆 (CRRC Sifang)', en: 'CRRC Qingdao Sifang' },
+    status: 'active',
+    firstServiceYear: 2023,
+    country: { zh: '印度尼西亚', en: 'Indonesia' },
+    countryCode: 'ID',
+    operatorIds: ['kcic_whoosh'],
+    specs: {
+      maxSpeed: '最高运营时速 350 km/h (试验最高速度 386 km/h)',
+      capacity: '601 座 (8 节编组: 头等特等舱 18 / 一等座 28 / 二等座 555)',
+      rangeOrPower: '持续牵引功率: 9,600 kW (25 kV 50 Hz 交流电气化)',
+      length: '208.95 m (热带海岛耐高湿高盐雾防护车体)',
+    },
+    overview: {
+      zh: '东南亚历史第一条最高运营时速 350 公里的现代化高速铁路——雅万高铁（Whoosh：印尼语意为节约时间、优化运营、可靠安全系统）主力动车组！由中国中车基于中国标准动车组“复兴号”CR400AF 平台量身打造，融合印尼本土文化与自然生态：车身线条汲取印尼国宝“科莫多巨蜥（Komodo Dragon）”红色鳞纹传统手绘蜡染图案，车身身披高贵纯银与印尼国旗红色，全车强化防盐雾、防紫外线与高湿度空调热带适应性设计，将雅加达至万隆的旅行时间由 3.5 小时骤减至 45 分钟。',
+      en: 'Southeast Asia\'s first high-speed trainset operating at 350 km/h on the Jakarta-Bandung HSR line. Built by CRRC Sifang based on the Fuxing CR400AF, wrapped in Komodo dragon red scales and batik patterns.',
+    },
+    heroImage: 'https://upload.wikimedia.org/wikipedia/commons/f/f1/KCIC400AF_Whoosh_Train.jpg',
+    liveries: [
+      {
+        id: 'whoosh-red-komodo',
+        name: { zh: '雅万高铁 Whoosh 印尼红与科莫多巨蜥纹理涂装', en: 'Whoosh Indonesian Red & Komodo Dragon Livery' },
+        type: 'standard',
+        yearsActive: '2023 - 至今 / Present',
+        operatorId: 'kcic_whoosh',
+        isRetired: false,
+        description: {
+          zh: '纯银色车身搭配印尼国旗红色腰带，车侧喷涂流动的科莫多红色多边形蜡染纹理与 Whoosh 动感字样。',
+          en: 'Pure silver body adorned with Indonesian red stripes, Komodo dragon batik pattern, and dynamic Whoosh insignia.',
+        },
+        photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/f/f1/KCIC400AF_Whoosh_Train.jpg',
+        scaleModels: [
+          {
+            id: 'crrc-whoosh-ho',
+            brand: '中车文创 / CRRC Official',
+            itemCode: 'CRRC-KCIC-87',
+            scale: 'HO (1:87)',
+            material: { zh: '高精工程塑料 (ABS) + 金属压铸机芯', en: 'ABS Plastic with Diecast Chassis' },
+            releaseYear: 2023,
+            status: 'available',
+            imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/f/f1/KCIC400AF_Whoosh_Train.jpg',
+            notes: { zh: '中车官方 1:87 高铁纪念模型，高精度移印科莫多巨蜥纹样，全车 LED 室内照明与金属受电弓', en: 'Official CRRC 1:87 scale model accurately rendering the Komodo scales and Whoosh red livery.' },
+          },
+        ],
+      },
+    ],
+    detailPhotos: [
+      {
+        title: { zh: '列车飞驰穿过万隆芒拉扬火山脚下壮丽全景', en: 'Whoosh Train Speeding Past Mount Manglayang' },
+        caption: { zh: '雅万高铁动车组在西爪哇郁郁葱葱的热带稻田与巍峨的火山背景前高速飞驰通过。', en: 'KCIC400AF bullet train cruising smoothly with scenic Mount Manglayang in the background.' },
+        url: 'https://upload.wikimedia.org/wikipedia/commons/1/1c/KCIC400AF_and_Mount_Manglayang.jpg',
+        tag: { zh: '高铁飞驰', en: 'High Speed Run' },
+      },
+    ],
+  },
+
+  // 64. 印度铁路 Vande Bharat Express (Train 18) 准高速电力动车组 (印度铁道)
+  {
+    id: 'indian-railways-vande-bharat',
+    category: 'railway',
+    modelName: { zh: '印度铁路 Vande Bharat Express (Train 18) 准高速电力动车组', en: 'Indian Railways Vande Bharat Express (Train 18) EMU' },
+    code: 'IR-VB-18',
+    manufacturer: { zh: '印度钦奈整体客车厂 (Integral Coach Factory / ICF)', en: 'Integral Coach Factory (ICF Chennai)' },
+    status: 'active',
+    firstServiceYear: 2019,
+    country: { zh: '印度', en: 'India' },
+    countryCode: 'IN',
+    operatorIds: ['indian_railways'],
+    specs: {
+      maxSpeed: '最高试验速度 180 km/h (最高运营时速 130-160 km/h)',
+      capacity: '1,128 座 (16 节分散动力编组，带行政座席 Executive Class)',
+      rangeOrPower: '持续牵引功率: 12,000 kW (25 kV 50 Hz 交流电气化，交流牵引电动机)',
+      length: '384.0 m (16 节编组带空气悬挂防滑防冲撞结构)',
+    },
+    overview: {
+      zh: '印度“印度制造（Make in India）”战略旗舰与全国铁路现代化的历史标志！由钦奈整体客车厂自主设计制造，是印度铁路第一款动力分散式准高速列车，彻底打破了印度传统由重载柴油机车牵引老旧挂斗客车的落后格局。车身采用低风阻流线车头，搭配清爽的纯白底色与深蓝双色飞翼条带，车内配备全密封自动车门、全列 Wi-Fi 与真空集便厕所，连接首都新德里至瓦拉纳西、卡特拉圣城及孟买等核心干线。',
+      en: 'The landmark semi-high-speed flagship of Indian Railways\' modernization ("Make in India"). Designed and manufactured by ICF Chennai as India\'s first self-propelled EMU trainset, sporting an aerodynamic blue-and-white livery with automatic plug doors.',
+    },
+    heroImage: 'https://upload.wikimedia.org/wikipedia/commons/5/5a/Vande_Bharat_Express_around_Mumbai.jpg',
+    liveries: [
+      {
+        id: 'ir-vb-blue-white',
+        name: { zh: '印度铁路梵德巴拉特蓝白现代涂装', en: 'Indian Railways Vande Bharat Blue & White Livery' },
+        type: 'standard',
+        yearsActive: '2019 - 至今 / Present',
+        operatorId: 'indian_railways',
+        isRetired: false,
+        description: {
+          zh: '纯白机身配大倾角流线车头，车窗与车侧点缀大面积深邃宝蓝条带，车侧喷涂 Vande Bharat 速度羽翼标。',
+          en: 'Aerodynamic pure white body accented by bold royal blue stripes and dynamic speed ribbons.',
+        },
+        photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/5/5a/Vande_Bharat_Express_around_Mumbai.jpg',
+        scaleModels: [
+          {
+            id: 'ir-vb-ho-collector',
+            brand: 'Precision Rails India',
+            itemCode: 'PRI-VB18-HO',
+            scale: 'HO (1:87)',
+            material: { zh: '高精工程塑料 (ABS) + 金属压铸机芯', en: 'ABS Plastic with Diecast Chassis' },
+            releaseYear: 2022,
+            status: 'available',
+            imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/5/5a/Vande_Bharat_Express_around_Mumbai.jpg',
+            notes: { zh: '印度当代铁模精工之作，精准还原 Train 18 低风阻流线鼻型与蓝白车窗移印', en: 'Detailed HO scale model capturing the iconic blue and white semi-high-speed trainset.' },
+          },
+        ],
+      },
+    ],
+    detailPhotos: [
+      {
+        title: { zh: '新德里铁路枢纽先头动力车流线劈风造型特写', en: 'Vande Bharat Express Aerodynamic Nose Profile' },
+        caption: { zh: '列车流线型破风车头采用大角度倾角与贯通式深蓝防眩光驾驶室风挡，展现印度铁路现代风貌。', en: 'Close-up of the aerodynamic front cab with angled windscreen and royal blue chevron markings.' },
+        url: 'https://upload.wikimedia.org/wikipedia/commons/4/43/Vande_Bharat_Express_train.jpg',
+        tag: { zh: '车头特写', en: 'Cab Detail' },
       },
     ],
   },

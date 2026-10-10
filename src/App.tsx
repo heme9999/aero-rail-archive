@@ -1,5 +1,5 @@
 import { useState, useMemo } from 'react';
-import { VEHICLES, OPERATORS } from './data/database';
+import { VEHICLES, OPERATORS, CONTINENT_ORDER, COUNTRY_ORDER } from './data/database';
 import type { Vehicle } from './types';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
@@ -17,6 +17,7 @@ export function App() {
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [selectedStatus, setSelectedStatus] = useState<string>('all');
   const [selectedCountry, setSelectedCountry] = useState<string>('all');
+  const [selectedOperator, setSelectedOperator] = useState<string>('all');
   const [selectedBrand, setSelectedBrand] = useState<string>('all');
 
   const [selectedVehicle, setSelectedVehicle] = useState<Vehicle | null>(null);
@@ -129,19 +130,58 @@ export function App() {
         if (!hasBrand) return false;
       }
 
+      // 6. Operator filter
+      if (selectedOperator !== 'all') {
+        if (!vehicle.operatorIds.includes(selectedOperator)) {
+          return false;
+        }
+      }
+
       return true;
     });
 
-    // 调整排序：先飞机 (aviation)，后火车 (railway)
+    // 调整排序：
+    // 1. 先飞机 (aviation)，后火车 (railway)
+    // 2. 按运营机构所在大洲排序 (亚洲 -> 欧洲 -> 北美洲)
+    // 3. 按国家/地区排序 (CN -> HK -> TW -> JP -> KR -> SG -> ID -> TH -> IN -> AE -> FR -> GB -> NL -> US)
     return [...filtered].sort((a, b) => {
-      if (a.category === b.category) return 0;
-      return a.category === 'aviation' ? -1 : 1;
+      // 1. 领域 (先飞机，后火车)
+      if (a.category !== b.category) {
+        return a.category === 'aviation' ? -1 : 1;
+      }
+
+      // 获取首选运营机构与大洲
+      const opA = a.operatorIds[0] ? OPERATORS[a.operatorIds[0]] : null;
+      const opB = b.operatorIds[0] ? OPERATORS[b.operatorIds[0]] : null;
+
+      const contA = opA?.continentCode || 'AS';
+      const contB = opB?.continentCode || 'AS';
+      const contRankA = CONTINENT_ORDER[contA] ?? 99;
+      const contRankB = CONTINENT_ORDER[contB] ?? 99;
+
+      // 2. 按大洲排序
+      if (contRankA !== contRankB) {
+        return contRankA - contRankB;
+      }
+
+      // 3. 按国家排序
+      const countryA = opA?.countryCode || a.countryCode;
+      const countryB = opB?.countryCode || b.countryCode;
+      const countryRankA = COUNTRY_ORDER[countryA] ?? 99;
+      const countryRankB = COUNTRY_ORDER[countryB] ?? 99;
+
+      if (countryRankA !== countryRankB) {
+        return countryRankA - countryRankB;
+      }
+
+      return 0;
     });
   }, [
     searchQuery,
     effectiveCategory,
     effectiveStatus,
     selectedCountry,
+    selectedOperator,
     selectedBrand,
   ]);
 
@@ -151,6 +191,7 @@ export function App() {
     setSelectedCategory('all');
     setSelectedStatus('all');
     setSelectedCountry('all');
+    setSelectedOperator('all');
     setSelectedBrand('all');
   };
 
@@ -196,6 +237,8 @@ export function App() {
             setSelectedStatus={setSelectedStatus}
             selectedCountry={selectedCountry}
             setSelectedCountry={setSelectedCountry}
+            selectedOperator={selectedOperator}
+            setSelectedOperator={setSelectedOperator}
             selectedBrand={selectedBrand}
             setSelectedBrand={setSelectedBrand}
             totalFiltered={filteredVehicles.length}
