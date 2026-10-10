@@ -130,57 +130,65 @@ export const ScaleModelView: React.FC<ScaleModelViewProps> = ({
         {filteredModels.map((item) => (
           <div
             key={item.model.id}
-            className="bg-slate-900/90 rounded-2xl border border-slate-800 p-5 flex flex-col justify-between hover:border-purple-600/60 transition-all hover:shadow-xl hover:shadow-purple-950/20 group"
+            className="bg-slate-900/90 rounded-2xl border border-slate-800 overflow-hidden flex flex-col justify-between hover:border-purple-600/60 transition-all hover:shadow-xl hover:shadow-purple-950/20 group"
           >
             <div>
-              {/* Top Row: Brand & Scale */}
-              <div className="flex items-center justify-between mb-3">
-                <span className="text-xs font-bold text-purple-300 font-mono bg-purple-950/80 border border-purple-800/60 px-2.5 py-1 rounded-lg">
-                  {item.model.brand}
-                </span>
-                <span className="text-xs font-mono font-bold px-2 py-0.5 rounded bg-slate-800 text-slate-200 border border-slate-700">
-                  {item.model.scale}
-                </span>
-              </div>
-
-              {/* SKU & Release Year */}
-              <div className="mb-3">
-                <div className="flex items-baseline space-x-2">
-                  <span className="text-xs text-slate-400 font-mono">货号 SKU:</span>
-                  <span className="text-sm font-mono font-bold text-white bg-slate-950 px-2 py-0.5 rounded border border-slate-800">
-                    {item.model.itemCode}
+              {/* Model Photo Banner */}
+              <div className="relative h-48 bg-slate-950 overflow-hidden border-b border-slate-800">
+                <img
+                  src={item.model.imageUrl || item.livery.photoUrl}
+                  alt={`${item.model.brand} ${item.model.itemCode}`}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent" />
+                <div className="absolute top-2.5 left-2.5 flex items-center space-x-1.5">
+                  <span className="text-xs font-bold text-purple-200 font-mono bg-purple-950/90 border border-purple-700 px-2.5 py-1 rounded-lg shadow-md backdrop-blur-sm">
+                    {item.model.brand}
                   </span>
-                  <span className="text-xs text-slate-400 font-mono">({item.model.releaseYear})</span>
+                  <span className="text-xs font-mono font-bold px-2 py-1 rounded-lg bg-slate-900/90 text-white border border-slate-700 shadow-md backdrop-blur-sm">
+                    {item.model.scale}
+                  </span>
+                </div>
+                <div className="absolute bottom-2.5 left-3 right-3 flex items-center justify-between text-xs font-mono">
+                  <span className="text-purple-300 font-bold bg-slate-950/80 px-2 py-0.5 rounded border border-purple-900/50 backdrop-blur-sm">
+                    SKU: {item.model.itemCode}
+                  </span>
+                  <span className="text-slate-300 bg-slate-950/80 px-2 py-0.5 rounded border border-slate-800 backdrop-blur-sm">
+                    {item.model.releaseYear} 年发售
+                  </span>
                 </div>
               </div>
 
-              {/* Real vehicle prototype mapped */}
-              <div className="bg-slate-950/70 p-3 rounded-xl border border-slate-850 mb-3 space-y-1">
-                <div className="text-[10px] text-sky-400 font-mono uppercase">复刻真实载具原型 Prototype:</div>
-                <div className="text-sm font-bold text-white group-hover:text-sky-300 transition-colors">
-                  {item.vehicle.modelName.zh}
+              <div className="p-4">
+                {/* Real vehicle prototype mapped */}
+                <div className="bg-slate-950/70 p-3 rounded-xl border border-slate-850 mb-3 space-y-1">
+                  <div className="text-[10px] text-sky-400 font-mono uppercase">复刻真实载具原型 Prototype:</div>
+                  <div className="text-sm font-bold text-white group-hover:text-sky-300 transition-colors">
+                    {item.vehicle.modelName.zh}
+                  </div>
+                  <div className="text-xs text-slate-400 font-mono">
+                    {item.vehicle.modelName.en}
+                  </div>
+                  <div className="text-xs text-slate-300 pt-1 border-t border-slate-900 mt-1">
+                    涂装: <span className="font-semibold text-slate-200">{item.livery.name.zh}</span>
+                  </div>
                 </div>
-                <div className="text-xs text-slate-400 font-mono">
-                  {item.vehicle.modelName.en}
-                </div>
-                <div className="text-xs text-slate-300 pt-1 border-t border-slate-900 mt-1">
-                  涂装: <span className="font-semibold text-slate-200">{item.livery.name.zh}</span>
-                </div>
-              </div>
 
-              {/* Material & Specs */}
-              <div className="text-xs text-slate-300 mb-2">
-                <span className="text-slate-400">材质工艺:</span>{' '}
-                <span className="text-slate-200 font-medium">
-                  {item.model.material.zh} / {item.model.material.en}
-                </span>
-              </div>
-
-              {item.model.notes && (
-                <div className="text-xs text-slate-400 bg-slate-950/40 p-2.5 rounded-lg border border-slate-850">
-                  <span className="text-purple-300 font-semibold">细节特点:</span> {item.model.notes.zh}
+                {/* Material & Specs */}
+                <div className="text-xs text-slate-300 mb-2">
+                  <span className="text-slate-400">材质工艺:</span>{' '}
+                  <span className="text-slate-200 font-medium">
+                    {item.model.material.zh} / {item.model.material.en}
+                  </span>
                 </div>
-              )}
+
+                {item.model.notes && (
+                  <div className="text-xs text-slate-400 bg-slate-950/40 p-2.5 rounded-lg border border-slate-850">
+                    <span className="text-purple-300 font-semibold">细节特点:</span> {item.model.notes.zh}
+                  </div>
+                )}
+              </div>
             </div>
 
             {/* Bottom Status & Jump to Real Prototype */}

@@ -319,43 +319,54 @@ export const VehicleModal: React.FC<VehicleModalProps> = ({ vehicle, onClose }) 
                       {activeLivery.scaleModels.map((m) => (
                         <div
                           key={m.id}
-                          className="bg-slate-900/90 rounded-xl p-3.5 border border-purple-900/40 hover:border-purple-600/70 transition-colors flex flex-col justify-between"
+                          className="bg-slate-900/90 rounded-xl overflow-hidden border border-purple-900/40 hover:border-purple-600/70 transition-colors flex flex-col justify-between"
                         >
                           <div>
-                            <div className="flex items-center justify-between mb-2">
-                              {/* Brand & Scale */}
-                              <span className="text-xs font-bold text-purple-300 font-mono">
-                                {m.brand}
-                              </span>
-                              <span className="text-xs font-mono px-2 py-0.5 rounded bg-purple-950 text-purple-300 border border-purple-800 font-semibold">
-                                {m.scale}
-                              </span>
+                            {/* Model photo preview */}
+                            <div className="relative h-32 bg-slate-950 overflow-hidden border-b border-slate-800">
+                              <img
+                                src={m.imageUrl || activeLivery.photoUrl}
+                                alt={`${m.brand} ${m.itemCode}`}
+                                className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                                loading="lazy"
+                              />
+                              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent" />
+                              <div className="absolute top-2 left-2 flex items-center space-x-1.5">
+                                <span className="text-[11px] font-bold text-purple-200 font-mono bg-purple-950/90 border border-purple-700 px-2 py-0.5 rounded backdrop-blur-sm">
+                                  {m.brand}
+                                </span>
+                                <span className="text-[11px] font-mono px-1.5 py-0.5 rounded bg-slate-900/90 text-white border border-slate-700 backdrop-blur-sm">
+                                  {m.scale}
+                                </span>
+                              </div>
                             </div>
 
-                            {/* SKU / Code */}
-                            <div className="flex items-center space-x-2 mb-2">
-                              <span className="text-[11px] text-slate-400 font-mono">货号 SKU:</span>
-                              <span className="text-xs font-mono font-bold text-white bg-slate-800 px-1.5 py-0.5 rounded">
-                                {m.itemCode}
-                              </span>
-                              <span className="text-[11px] text-slate-400 font-mono">发售: {m.releaseYear}</span>
-                            </div>
+                            <div className="p-3">
+                              {/* SKU / Code */}
+                              <div className="flex items-center space-x-2 mb-2">
+                                <span className="text-[11px] text-slate-400 font-mono">货号 SKU:</span>
+                                <span className="text-xs font-mono font-bold text-white bg-slate-800 px-1.5 py-0.5 rounded">
+                                  {m.itemCode}
+                                </span>
+                                <span className="text-[11px] text-slate-400 font-mono">发售: {m.releaseYear}</span>
+                              </div>
 
-                            {/* Material & Specs */}
-                            <div className="text-xs text-slate-300 mb-1">
-                              材质: <span className="text-slate-200 font-medium">{m.material.zh} / {m.material.en}</span>
-                            </div>
+                              {/* Material & Specs */}
+                              <div className="text-xs text-slate-300 mb-1">
+                                材质: <span className="text-slate-200 font-medium">{m.material.zh} / {m.material.en}</span>
+                              </div>
 
-                            {m.notes && (
-                              <p className="text-[11px] text-slate-400 leading-tight">
-                                特点: {m.notes.zh}
-                                <span className="block text-[10px] text-slate-500 font-mono mt-0.5">{m.notes.en}</span>
-                              </p>
-                            )}
+                              {m.notes && (
+                                <p className="text-[11px] text-slate-400 leading-tight">
+                                  特点: {m.notes.zh}
+                                  <span className="block text-[10px] text-slate-500 font-mono mt-0.5">{m.notes.en}</span>
+                                </p>
+                              )}
+                            </div>
                           </div>
 
                           {/* Status Badge */}
-                          <div className="mt-3 pt-2 border-t border-slate-800 flex items-center justify-between text-[11px]">
+                          <div className="p-3 pt-0 border-t border-slate-800/80 flex items-center justify-between text-[11px] mt-2">
                             <span className="text-slate-500 font-mono">收藏状态:</span>
                             {m.status === 'limited' && (
                               <span className="text-amber-400 font-mono font-semibold">★ 限量典藏 Limited Edition</span>
