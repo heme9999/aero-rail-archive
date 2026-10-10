@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import type { Vehicle, DetailPhoto } from '../types';
+import React, { useState, useEffect, useCallback } from 'react';
+import type { Vehicle } from '../types';
 import { OPERATORS } from '../data/database';
 import {
   X,
@@ -9,6 +9,9 @@ import {
   Building,
   Camera,
   Maximize2,
+  ArrowLeft,
+  ChevronLeft,
+  ChevronRight,
 } from 'lucide-react';
 
 interface VehicleModalProps {
@@ -22,13 +25,74 @@ export const VehicleModal: React.FC<VehicleModalProps> = ({ vehicle, onClose }) 
   const [activeLiveryId, setActiveLiveryId] = useState<string>(
     vehicle.liveries[0]?.id || ''
   );
-  const [activeDetailPhoto, setActiveDetailPhoto] = useState<DetailPhoto | null>(null);
+  const [activeDetailPhotoIndex, setActiveDetailPhotoIndex] = useState<number | null>(null);
+
+  // Sync active livery if vehicle changes
+  useEffect(() => {
+    if (vehicle) {
+      setActiveLiveryId(vehicle.liveries[0]?.id || '');
+      setActiveDetailPhotoIndex(null);
+    }
+  }, [vehicle?.id]);
 
   const activeLivery =
     vehicle.liveries.find((l) => l.id === activeLiveryId) || vehicle.liveries[0];
 
   const isAviation = vehicle.category === 'aviation';
   const isRetired = vehicle.status === 'retired';
+
+  const activeDetailPhoto =
+    activeDetailPhotoIndex !== null && vehicle.detailPhotos
+      ? vehicle.detailPhotos[activeDetailPhotoIndex]
+      : null;
+
+  const handlePrevPhoto = useCallback(() => {
+    if (vehicle.detailPhotos && vehicle.detailPhotos.length > 0) {
+      setActiveDetailPhotoIndex((prev) => {
+        if (prev === null) return 0;
+        return prev > 0 ? prev - 1 : vehicle.detailPhotos.length - 1;
+      });
+    }
+  }, [vehicle]);
+
+  const handleNextPhoto = useCallback(() => {
+    if (vehicle.detailPhotos && vehicle.detailPhotos.length > 0) {
+      setActiveDetailPhotoIndex((prev) => {
+        if (prev === null) return 0;
+        return prev < vehicle.detailPhotos.length - 1 ? prev + 1 : 0;
+      });
+    }
+  }, [vehicle]);
+
+  const handleClosePhoto = useCallback(() => {
+    setActiveDetailPhotoIndex(null);
+  }, []);
+
+  // Keyboard navigation: Escape closes photo or modal; Arrow keys navigate photos
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (activeDetailPhotoIndex !== null) {
+        if (e.key === 'Escape') {
+          e.preventDefault();
+          e.stopPropagation();
+          handleClosePhoto();
+        } else if (e.key === 'ArrowLeft') {
+          e.preventDefault();
+          handlePrevPhoto();
+        } else if (e.key === 'ArrowRight') {
+          e.preventDefault();
+          handleNextPhoto();
+        }
+      } else {
+        if (e.key === 'Escape') {
+          onClose();
+        }
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [activeDetailPhotoIndex, handleClosePhoto, handlePrevPhoto, handleNextPhoto, onClose]);
 
   return (
     <div className="fixed inset-0 z-50 overflow-y-auto bg-slate-950/80 backdrop-blur-md flex items-center justify-center p-3 sm:p-6">
@@ -203,7 +267,7 @@ export const VehicleModal: React.FC<VehicleModalProps> = ({ vehicle, onClose }) 
                 {vehicle.detailPhotos.map((photo, idx) => (
                   <div
                     key={idx}
-                    onClick={() => setActiveDetailPhoto(photo)}
+                    onClick={() => setActiveDetailPhotoIndex(idx)}
                     className="group relative bg-slate-900 rounded-xl overflow-hidden border border-slate-800 hover:border-sky-500/70 transition-all cursor-pointer flex flex-col justify-between"
                   >
                     <div className="relative h-44 overflow-hidden bg-slate-950">
@@ -394,38 +458,133 @@ export const VehicleModal: React.FC<VehicleModalProps> = ({ vehicle, onClose }) 
       </div>
 
       {/* Lightbox Modal for Fullscreen Close-up Image */}
-      {activeDetailPhoto && (
-        <div className="fixed inset-0 z-60 bg-black/95 backdrop-blur-lg flex items-center justify-center p-4">
-          <div className="relative max-w-4xl w-full flex flex-col items-center">
+      {activeDetailPhoto && activeDetailPhotoIndex !== null && (
+        <div
+          className="fixed inset-0 z-[100] bg-slate-950/95 backdrop-blur-xl flex flex-col justify-between select-none animate-fadeIn"
+          onClick={handleClosePhoto}
+        >
+          {/* Top Navigation Bar */}
+          <div
+            className="w-full bg-slate-900/90 border-b border-slate-800 px-4 sm:px-6 py-3 flex items-center justify-between z-10 backdrop-blur-md shrink-0 shadow-lg"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Left: Prominent Back to Vehicle Details Button */}
             <button
-              onClick={() => setActiveDetailPhoto(null)}
-              className="absolute -top-12 right-0 p-2 text-slate-400 hover:text-white rounded-lg bg-slate-850"
+              onClick={handleClosePhoto}
+              className="flex items-center space-x-2 px-3 sm:px-4 py-2 rounded-xl bg-slate-800 hover:bg-sky-500 hover:text-slate-950 text-slate-200 transition-all text-xs sm:text-sm font-semibold group shadow-sm border border-slate-700 hover:border-sky-400"
+              title="返回车型详情 (Esc) / Back to Vehicle Details"
             >
-              <X className="w-5 h-5" />
+              <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform text-sky-400 group-hover:text-slate-950" />
+              <span>← 返回车型详情 / Back to Details</span>
+              <kbd className="hidden sm:inline-block ml-1.5 px-1.5 py-0.5 text-[10px] font-mono bg-slate-900 text-slate-400 group-hover:bg-sky-600 group-hover:text-white rounded border border-slate-700">
+                ESC
+              </kbd>
             </button>
 
-            <img
-              src={activeDetailPhoto.url}
-              alt={activeDetailPhoto.title.en}
-              className="max-h-[75vh] w-auto max-w-full rounded-2xl object-contain border border-slate-800 shadow-2xl"
-            />
-
-            <div className="mt-4 text-center max-w-2xl px-4">
-              <span className="text-xs font-mono px-2.5 py-0.5 rounded bg-sky-950 text-sky-400 border border-sky-800 mb-2 inline-block">
-                {activeDetailPhoto.tag.zh} / {activeDetailPhoto.tag.en}
+            {/* Center: Vehicle Name & Photo Index Indicator */}
+            <div className="flex items-center space-x-2 text-center">
+              <span className="hidden md:inline-block text-xs font-semibold text-slate-300 max-w-[260px] truncate">
+                {vehicle.modelName.zh}
               </span>
-              <h3 className="text-base font-bold text-white">
-                {activeDetailPhoto.title.zh}
-              </h3>
-              <p className="text-xs text-slate-400 font-mono">
-                {activeDetailPhoto.title.en}
-              </p>
-              <p className="text-xs text-slate-300 mt-2 leading-relaxed">
-                {activeDetailPhoto.caption.zh}
-              </p>
-              <p className="text-[11px] text-slate-500 font-mono mt-0.5">
-                {activeDetailPhoto.caption.en}
-              </p>
+              <span className="hidden md:inline-block text-slate-600">/</span>
+              <span className="text-xs font-mono font-bold text-sky-400 bg-sky-950/80 px-2.5 py-1 rounded-full border border-sky-800">
+                特写 {activeDetailPhotoIndex + 1} / {vehicle.detailPhotos.length}
+              </span>
+            </div>
+
+            {/* Right: Close Viewer Button (returns to Vehicle Details) */}
+            <button
+              onClick={handleClosePhoto}
+              className="flex items-center space-x-1.5 px-3 py-2 rounded-xl bg-slate-800 hover:bg-rose-500 hover:text-white text-slate-300 transition-colors text-xs font-medium border border-slate-700"
+              title="关闭特写返回车型详情 (Esc) / Close photo viewer"
+            >
+              <span className="hidden sm:inline">关闭特写</span>
+              <X className="w-4 h-4" />
+            </button>
+          </div>
+
+          {/* Main Photo Area with Navigation Arrows */}
+          <div
+            className="relative flex-1 flex items-center justify-center p-3 sm:p-6 overflow-hidden min-h-0"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Previous button */}
+            {vehicle.detailPhotos.length > 1 && (
+              <button
+                onClick={handlePrevPhoto}
+                className="absolute left-3 sm:left-6 z-20 p-2.5 sm:p-3 rounded-full bg-slate-900/80 hover:bg-sky-500 hover:text-slate-950 text-white border border-slate-700 transition-all backdrop-blur-md shadow-xl hover:scale-105"
+                title="上一张 (←) / Previous photo"
+              >
+                <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
+              </button>
+            )}
+
+            {/* Photo */}
+            <div className="relative max-h-full max-w-full flex items-center justify-center">
+              <img
+                src={activeDetailPhoto.url}
+                alt={activeDetailPhoto.title.en}
+                className="max-h-[58vh] sm:max-h-[66vh] w-auto max-w-full rounded-2xl object-contain border border-slate-800 shadow-2xl"
+              />
+            </div>
+
+            {/* Next button */}
+            {vehicle.detailPhotos.length > 1 && (
+              <button
+                onClick={handleNextPhoto}
+                className="absolute right-3 sm:right-6 z-20 p-2.5 sm:p-3 rounded-full bg-slate-900/80 hover:bg-sky-500 hover:text-slate-950 text-white border border-slate-700 transition-all backdrop-blur-md shadow-xl hover:scale-105"
+                title="下一张 (→) / Next photo"
+              >
+                <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />
+              </button>
+            )}
+          </div>
+
+          {/* Bottom Info Bar with Metadata and Thumbnails */}
+          <div
+            className="w-full bg-slate-900/95 border-t border-slate-800 px-4 sm:px-6 py-3.5 z-10 backdrop-blur-md shrink-0 shadow-2xl"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="max-w-5xl mx-auto flex flex-col md:flex-row md:items-center justify-between gap-3">
+              <div className="space-y-1">
+                <div className="flex items-center space-x-2 flex-wrap gap-y-1">
+                  <span className="text-xs font-mono px-2 py-0.5 rounded bg-sky-950 text-sky-400 border border-sky-800">
+                    {activeDetailPhoto.tag.zh} / {activeDetailPhoto.tag.en}
+                  </span>
+                  <h3 className="text-sm sm:text-base font-bold text-white">
+                    {activeDetailPhoto.title.zh}
+                  </h3>
+                  <span className="text-xs text-slate-400 font-mono hidden lg:inline">
+                    ({activeDetailPhoto.title.en})
+                  </span>
+                </div>
+                <p className="text-xs text-slate-300 leading-relaxed max-w-3xl">
+                  {activeDetailPhoto.caption.zh}
+                </p>
+                <p className="text-[11px] text-slate-400 font-mono leading-tight max-w-3xl">
+                  {activeDetailPhoto.caption.en}
+                </p>
+              </div>
+
+              {/* Thumbnails quick selector */}
+              {vehicle.detailPhotos.length > 1 && (
+                <div className="flex items-center space-x-2 overflow-x-auto pb-1 md:pb-0 shrink-0">
+                  {vehicle.detailPhotos.map((p, idx) => (
+                    <button
+                      key={idx}
+                      onClick={() => setActiveDetailPhotoIndex(idx)}
+                      className={`relative w-12 h-10 sm:w-14 sm:h-11 rounded-lg overflow-hidden border-2 transition-all shrink-0 ${
+                        idx === activeDetailPhotoIndex
+                          ? 'border-sky-400 ring-2 ring-sky-500/40 scale-105'
+                          : 'border-slate-700 opacity-60 hover:opacity-100 hover:border-slate-500'
+                      }`}
+                      title={p.title.zh}
+                    >
+                      <img src={p.url} alt="" className="w-full h-full object-cover" />
+                    </button>
+                  ))}
+                </div>
+              )}
             </div>
           </div>
         </div>
