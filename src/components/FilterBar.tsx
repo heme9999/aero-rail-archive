@@ -12,6 +12,7 @@ interface FilterBarProps {
   setSelectedOperator: (op: string) => void;
   selectedBrand: string;
   setSelectedBrand: (brand: string) => void;
+  searchQuery?: string;
   totalFiltered: number;
   onReset: () => void;
 }
@@ -27,6 +28,7 @@ export const FilterBar: React.FC<FilterBarProps> = ({
   setSelectedOperator,
   selectedBrand,
   setSelectedBrand,
+  searchQuery,
   totalFiltered,
   onReset,
 }) => {
@@ -35,7 +37,8 @@ export const FilterBar: React.FC<FilterBarProps> = ({
     selectedStatus !== 'all' ||
     selectedCountry !== 'all' ||
     selectedOperator !== 'all' ||
-    selectedBrand !== 'all';
+    selectedBrand !== 'all' ||
+    Boolean(searchQuery?.trim());
 
   return (
     <div className="bg-slate-900/70 border-b border-slate-800 py-3.5 px-4 sm:px-6 lg:px-8">
@@ -131,9 +134,11 @@ export const FilterBar: React.FC<FilterBarProps> = ({
               <option value="spring_airlines">🇨🇳 春秋航空 (Spring Airlines)</option>
               <option value="china_express">🇨🇳 华夏航空 (China Express)</option>
               <option value="air_nine">🇨🇳 九元航空 (9 Air)</option>
+              <option value="joy_air">🇨🇳 幸福航空 (Joy Air)</option>
               <option value="cathay_pacific">🇭🇰 国泰航空 (Cathay Pacific)</option>
               <option value="china_airlines">🇹🇼 中华航空 (China Airlines)</option>
               <option value="eva_air">🇹🇼 长荣航空 (EVA Air)</option>
+              <option value="uni_air">🇹🇼 立荣航空 (UNI Air)</option>
               <option value="ana">🇯🇵 全日空航空 (ANA)</option>
               <option value="jal">🇯🇵 日本航空 (JAL)</option>
               <option value="starflyer">🇯🇵 星悦航空 (StarFlyer)</option>

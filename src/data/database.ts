@@ -154,6 +154,16 @@ export const OPERATORS: Record<string, Operator> = {
     continentCode: 'AS',
     type: 'aviation',
   },
+  joy_air: {
+    id: 'joy_air',
+    name: { zh: '幸福航空', en: 'Joy Air' },
+    code: 'JOY / JR',
+    country: { zh: '中国', en: 'China' },
+    countryCode: 'CN',
+    continent: { zh: '亚洲', en: 'Asia' },
+    continentCode: 'AS',
+    type: 'aviation',
+  },
 
   // 🇭🇰 中国香港 / Hong Kong, China
   cathay_pacific: {
@@ -182,6 +192,16 @@ export const OPERATORS: Record<string, Operator> = {
     id: 'eva_air',
     name: { zh: '长荣航空', en: 'EVA Air' },
     code: 'EVA / BR',
+    country: { zh: '中国台湾', en: 'Taiwan, China' },
+    countryCode: 'TW',
+    continent: { zh: '亚洲', en: 'Asia' },
+    continentCode: 'AS',
+    type: 'aviation',
+  },
+  uni_air: {
+    id: 'uni_air',
+    name: { zh: '立荣航空', en: 'UNI Air' },
+    code: 'UIA / B7',
     country: { zh: '中国台湾', en: 'Taiwan, China' },
     countryCode: 'TW',
     continent: { zh: '亚洲', en: 'Asia' },
@@ -5582,6 +5602,17 @@ export const VEHICLES: Vehicle[] = [
             imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/5/5a/Vande_Bharat_Express_around_Mumbai.jpg',
             notes: { zh: '印度当代铁模精工之作，精准还原 Train 18 低风阻流线鼻型与蓝白车窗移印', en: 'Detailed HO scale model capturing the iconic blue and white semi-high-speed trainset.' },
           },
+          {
+            id: 'ir-vb-ho-crrc',
+            brand: '中车文创',
+            itemCode: 'IR-VB-18',
+            scale: 'HO (1:87)',
+            material: { zh: '合金底盘与工程 ABS', en: 'Diecast Metal & Engineering ABS' },
+            releaseYear: 2022,
+            status: 'available',
+            imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/4/43/Vande_Bharat_Express_train.jpg',
+            notes: { zh: '高仿真白蓝双色 Train 18 动车组模型，带独立 LED 头尾透光车灯与密连挂钩', en: 'HO scale model capturing the modern aerodynamic bullet nose of India\'s Train 18.' },
+          },
         ],
       },
     ],
@@ -5591,6 +5622,12 @@ export const VEHICLES: Vehicle[] = [
         caption: { zh: '列车流线型破风车头采用大角度倾角与贯通式深蓝防眩光驾驶室风挡，展现印度铁路现代风貌。', en: 'Close-up of the aerodynamic front cab with angled windscreen and royal blue chevron markings.' },
         url: 'https://upload.wikimedia.org/wikipedia/commons/4/43/Vande_Bharat_Express_train.jpg',
         tag: { zh: '车头特写', en: 'Cab Detail' },
+      },
+      {
+        title: { zh: '孟买郊区干线飞驰中的范德巴拉特动车组', en: 'Vande Bharat Express Running near Mumbai' },
+        caption: { zh: '在南亚艳阳下疾驰的“印度制造”高速动车组，象征着古老印度铁路网的脱胎换骨。', en: 'Vande Bharat Express train gliding smoothly along the mainline near Mumbai.' },
+        url: 'https://upload.wikimedia.org/wikipedia/commons/5/5a/Vande_Bharat_Express_around_Mumbai.jpg',
+        tag: { zh: '高速飞驰', en: 'High Speed' },
       },
     ],
   },
@@ -7436,68 +7473,7 @@ export const VEHICLES: Vehicle[] = [
     ],
   },
 
-  // 92. 印度铁路 "范德巴拉特号" (Train 18) 高速动车组 (印度)
-  {
-    id: 'indian-railways-vande-bharat',
-    category: 'railway',
-    modelName: { zh: '印度铁路 "范德巴拉特号" (Train 18) 高速动车组', en: 'Indian Railways Vande Bharat Express (Train 18)' },
-    code: 'TRAIN-18-VB',
-    manufacturer: { zh: '金奈联合客车厂 (Integral Coach Factory, ICF)', en: 'Integral Coach Factory (ICF)' },
-    status: 'active',
-    firstServiceYear: 2019,
-    country: { zh: '印度', en: 'India' },
-    countryCode: 'IN',
-    operatorIds: ['indian_railways'],
-    specs: {
-      maxSpeed: '160 km/h (设计试验最高时速 180 km/h)',
-      capacity: '1,128 座 (16节编组，配行政商务包厢及旋转舒适软座)',
-      rangeOrPower: '8,000 kW (印度制造 Make in India 首列自主集成高速动车组)',
-      length: '384 m (16辆编组 / 空气动力学流线车头与全通密封风挡)',
-    },
-    overview: {
-      zh: '印度铁路迈向现代化的时代象征！“范德巴拉特号（Vande Bharat Express，意为向印度致敬）”，代号 Train 18，是由印度金奈客车厂完全自主设计集成的半高速动力分散型动车组。列车摒弃了传统笨重的机车牵引模式，采用流线型空气动力学白色车头与深蓝防晒玻璃腰线，极大地提升了新德里至瓦拉纳西、孟买至艾哈迈达巴德等干线的运行速度。',
-      en: 'India\'s pride and first semi-high speed EMU under "Make in India". Features aerodynamic blue and white streamline nose and modern passenger amenities.',
-    },
-    heroImage: 'https://upload.wikimedia.org/wikipedia/commons/4/43/Vande_Bharat_Express_train.jpg',
-    liveries: [
-      {
-        id: 'ir-vande-bharat-blue-white',
-        name: { zh: '范德巴拉特号经典白蓝流线型标准涂装', en: 'Vande Bharat Aerodynamic White & Blue Livery' },
-        type: 'standard',
-        yearsActive: '2019 - 至今 / Present',
-        operatorId: 'indian_railways',
-        isRetired: false,
-        description: {
-          zh: '前沿空气动力学流线型纯白车头，机车侧面贯穿沉稳优雅的深海蓝色宽幅腰线，车头嵌有闪亮镀铬车灯。',
-          en: 'Sleek white aerodynamic bullet nose with royal blue wide waistband running smoothly across passenger cars.',
-        },
-        photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/4/43/Vande_Bharat_Express_train.jpg',
-        scaleModels: [
-          {
-            id: 'ir-vb-ho',
-            brand: '中车文创',
-            itemCode: 'IR-VB-18',
-            scale: 'HO (1:87)',
-            material: { zh: '合金底盘与工程 ABS', en: 'Diecast Metal & Engineering ABS' },
-            releaseYear: 2022,
-            status: 'available',
-            imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/4/43/Vande_Bharat_Express_train.jpg',
-            notes: { zh: '高仿真白蓝双色 Train 18 动车组模型，带独立 LED 头尾透光车灯与密连挂钩', en: 'HO scale model capturing the modern aerodynamic bullet nose of India\'s Train 18.' },
-          },
-        ],
-      },
-    ],
-    detailPhotos: [
-      {
-        title: { zh: '孟买郊区干线飞驰中的范德巴拉特动车组', en: 'Vande Bharat Express Running near Mumbai' },
-        caption: { zh: '在南亚艳阳下疾驰的“印度制造”高速动车组，象征着古老印度铁路网的脱胎换骨。', en: 'Vande Bharat Express train gliding smoothly along the mainline near Mumbai.' },
-        url: 'https://upload.wikimedia.org/wikipedia/commons/4/43/Vande_Bharat_Express_train.jpg',
-        tag: { zh: '高速飞驰', en: 'High Speed' },
-      },
-    ],
-  },
-
-  // 93. 斯里兰卡高山茶园与海上铁道 Class S12 蓝色动车组 (斯里兰卡 / SLR)
+  // 92. 斯里兰卡高山茶园与海上铁道 Class S12 蓝色动车组 (斯里兰卡 / SLR)
   {
     id: 'sri-lanka-class-s12',
     category: 'railway',
@@ -7558,7 +7534,7 @@ export const VEHICLES: Vehicle[] = [
     ],
   },
 
-  // 94. 哈萨克斯坦铁路 "图尔根号" (Tulpar-Talgo) 宽轨草原高速列车 (哈萨克斯坦 / KTZ)
+  // 93. 哈萨克斯坦铁路 "图尔根号" (Tulpar-Talgo) 宽轨草原高速列车 (哈萨克斯坦 / KTZ)
   {
     id: 'kazakhstan-tulpar-talgo',
     category: 'railway',
@@ -7615,6 +7591,799 @@ export const VEHICLES: Vehicle[] = [
         caption: { zh: '停靠在阿拉木图车站站台的 Tulpar-Talgo 列车，低矮的流线型车厢在中亚宽轨铁道线上格外突出。', en: 'Tulpar-Talgo resting at Almaty terminal after traversing the vast Kazakh steppe.' },
         url: 'https://upload.wikimedia.org/wikipedia/commons/f/f7/Talgo_200_Tulpar%2C_Almaty_%28P1180169%29.jpg',
         tag: { zh: '车站月台', en: 'Platform' },
+      },
+    ],
+  },
+
+  // 94. 幸福航空 新舟60 (MA60) 涡轮螺旋桨支线客机 (中国民航 / 幸福航空)
+  {
+    id: 'joy-air-ma60',
+    category: 'aviation',
+    modelName: { zh: '幸福航空 新舟60 (MA60) 涡轮螺旋桨支线客机', en: 'Joy Air Xian MA60 Regional Turboprop Airliner' },
+    code: 'MA60-JOY',
+    manufacturer: { zh: '中航工业西安飞机工业 (西飞 / AVIC XAC)', en: 'Xi\'an Aircraft Industrial Corporation (AVIC)' },
+    status: 'active',
+    firstServiceYear: 2008,
+    country: { zh: '中国', en: 'China' },
+    countryCode: 'CN',
+    operatorIds: ['joy_air'],
+    specs: {
+      maxSpeed: '514 km/h (巡航时速 430 km/h)',
+      capacity: '48 - 60 座 (单通道四并列客舱布局)',
+      rangeOrPower: '1,430 km (搭载普惠加拿大 PW127J 涡桨发动机与汉胜四叶复合材料螺旋桨)',
+      length: '24.71 m (翼展 Wingspan: 29.20 m / 高度 8.85 m)',
+    },
+    overview: {
+      zh: '国产双发涡轮螺旋桨支线客机的开路先锋与商用骄傲！由西飞集团在运-7基础上深度研制，搭载加拿大普惠 PW127J 涡桨发动机与美国汉胜四叶全复合材料螺旋桨。幸福航空作为中国首家以运营国产民机为特色的航空公司，长年以新舟60为主力机队穿梭于中国西北与华北支线机场，为构建中国“基本航空服务计划”支线空中走廊发挥了里程碑作用。',
+      en: 'The pioneering indigenous twin-engine turboprop regional airliner developed by Xi\'an Aircraft Corporation (AVIC). Powered by Pratt & Whitney Canada PW127J engines with Hamilton Sundstrand 4-blade propellers, serving as Joy Air\'s regional backbone.',
+    },
+    heroImage: 'https://upload.wikimedia.org/wikipedia/commons/b/b3/MA60_from_Joy_Air.jpg',
+    liveries: [
+      {
+        id: 'joy-air-ma60-standard',
+        name: { zh: '幸福航空经典红黄双色喜庆飘带涂装', en: 'Joy Air Red & Golden Ribbon Standard Livery' },
+        type: 'standard',
+        yearsActive: '2008 - 至今 / Present',
+        operatorId: 'joy_air',
+        isRetired: false,
+        description: {
+          zh: '纯白机身搭配象征吉祥如意的红黄双色流线型飘带，垂直尾翼喷涂祥云彩带幸福航空红白航徽。',
+          en: 'Pure white fuselage adorned with festive red and yellow flowing ribbon waves and auspicious cloud tail fin.',
+        },
+        photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/b/b3/MA60_from_Joy_Air.jpg',
+        scaleModels: [
+          {
+            id: 'joy-air-ma60-144',
+            brand: '中车文创',
+            itemCode: 'JOY-MA60-100',
+            scale: '1:100',
+            material: { zh: '高精树脂实心机身与金属起落架', en: 'Solid Resin with Diecast Metal Gears' },
+            releaseYear: 2016,
+            status: 'available',
+            imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/b/b3/MA60_from_Joy_Air.jpg',
+            notes: { zh: '西飞官方特许国产民机典藏模型，带独立可旋转四叶螺旋桨与展示木座', en: 'Official Xi\'an Aircraft model featuring spinning four-blade propellers and wood stand.' },
+          },
+        ],
+      },
+    ],
+    detailPhotos: [
+      {
+        title: { zh: '天水麦积山机场停机坪上的幸福航空新舟60', en: 'Joy Air MA60 at Tianshui Maijishan Airport' },
+        caption: { zh: '幸福航空新舟60停靠在甘肃天水麦积山支线机场，展现高抗风与高原短跑道起降硬核实力。', en: 'Joy Air MA-60 parked at Tianshui Maijishan Airport, showcasing its rugged short-runway capability.' },
+        url: 'https://upload.wikimedia.org/wikipedia/commons/6/66/Xian_MA-60_at_Tianshui Maijishan_Airport.JPG',
+        tag: { zh: '停机坪整装', en: 'Apron' },
+      },
+    ],
+  },
+
+  // 95. 立荣航空 ATR 72-600 双发涡桨支线客机 (中国台湾 / 离岛通勤主力)
+  {
+    id: 'uni-air-atr72-600',
+    category: 'aviation',
+    modelName: { zh: '立荣航空 ATR 72-600 双发涡桨支线客机', en: 'UNI Air ATR 72-600 Regional Turboprop' },
+    code: 'ATR72-UIA',
+    manufacturer: { zh: '法国/意大利 ATR飞机制造公司', en: 'ATR (Avions de Transport Régional)' },
+    status: 'active',
+    firstServiceYear: 2012,
+    country: { zh: '中国台湾', en: 'Taiwan, China' },
+    countryCode: 'TW',
+    operatorIds: ['uni_air', 'eva_air'],
+    specs: {
+      maxSpeed: '510 km/h (275 knots)',
+      capacity: '70 座 (全经济舱单通道舒适客舱)',
+      rangeOrPower: '1,528 km (普惠 PW127M 涡桨发动机搭配 6 叶复合材料螺旋桨)',
+      length: '27.17 m (翼展 Wingspan: 27.05 m / 高度 7.65 m)',
+    },
+    overview: {
+      zh: '台湾海峡与离岛通勤航线的绝对中流砥柱！立荣航空隶属于长荣集团，拥有台湾规模最大的 ATR 72-600 涡桨机队。身披长荣集团标志性的墨绿与亮橙双色飘带涂装，每日高频穿梭于台北松山、台中、高雄与澎湖马公、金门、马祖南竿/北竿之间，以极其优异的短距起降性能与超低油耗保障着岛际生命线。',
+      en: 'The lifeline turboprop connecting Taiwan and its outer islands (Kinmen, Penghu, Matsu). Operated by UNI Air (EVA Group), featuring modern glass cockpit and quiet six-blade propellers in green-and-orange livery.',
+    },
+    heroImage: 'https://upload.wikimedia.org/wikipedia/commons/2/20/UNI_Air_ATR_72-600_B-17003_landing_at_Taipei_Songshan_April_2026.jpg',
+    liveries: [
+      {
+        id: 'uni-air-atr72-green-orange',
+        name: { zh: '立荣航空长荣墨绿与活力橙经典涂装 (B-17003)', en: 'UNI Air Evergreen Green & Orange Livery (B-17003)' },
+        type: 'standard',
+        yearsActive: '2012 - 至今 / Present',
+        operatorId: 'uni_air',
+        isRetired: false,
+        description: {
+          zh: '经典长荣墨绿底色，机侧贯穿跃动的亮橙色飞扬线条，垂直尾翼印有立荣航空绿橙罗盘航徽。',
+          en: 'Signature evergreen green fuselage with dynamic orange swoosh line and UNI Air compass tail logo.',
+        },
+        photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/2/20/UNI_Air_ATR_72-600_B-17003_landing_at_Taipei_Songshan_April_2026.jpg',
+        scaleModels: [
+          {
+            id: 'jc-uni-atr72-200',
+            brand: 'JC Wings',
+            itemCode: 'LH2026',
+            scale: '1:200',
+            material: { zh: '锌合金压铸机身与独立可动螺旋桨', en: 'Diecast Metal with Rotating Propellers' },
+            releaseYear: 2021,
+            status: 'available',
+            imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/2/20/UNI_Air_ATR_72-600_B-17003_landing_at_Taipei_Songshan_April_2026.jpg',
+            notes: { zh: 'JC Wings 限量精工之作，带高仿真六叶螺旋桨与磁吸起落架', en: 'Highly accurate 1:200 diecast ATR 72 in UNI Air livery with spinning 6-blade props.' },
+          },
+        ],
+      },
+    ],
+    detailPhotos: [
+      {
+        title: { zh: '台北松山机场 10 跑道进近降落特写 (B-17003)', en: 'UNI Air ATR 72-600 on Final Approach at Taipei Songshan' },
+        caption: { zh: '立荣航空 ATR 72-600 客机对准台北松山机场跑道平稳接地，六叶螺旋桨与墨绿机腹线条分明。', en: 'B-17003 touching down smoothly at Taipei Songshan Airport, showing its six-blade propeller blades and green livery.' },
+        url: 'https://upload.wikimedia.org/wikipedia/commons/2/20/UNI_Air_ATR_72-600_B-17003_landing_at_Taipei_Songshan_April_2026.jpg',
+        tag: { zh: '跑道接地', en: 'Touchdown' },
+      },
+    ],
+  },
+
+  // 96. 全日空之翼 庞巴迪 Dash 8 Q400 (DHC-8-402) 高速涡桨客机 (日本 / ANA Wings)
+  {
+    id: 'ana-wings-dash8-q400',
+    category: 'aviation',
+    modelName: { zh: '全日空之翼 庞巴迪 Dash 8 Q400 (DHC-8-402) 高速涡桨客机', en: 'ANA Wings Bombardier Dash 8 Q400 High-Speed Turboprop' },
+    code: 'DH8D-ANA',
+    manufacturer: { zh: '加拿大德哈维兰 / 庞巴迪宇航', en: 'De Havilland Canada / Bombardier Aerospace' },
+    status: 'active',
+    firstServiceYear: 2003,
+    country: { zh: '日本', en: 'Japan' },
+    countryCode: 'JP',
+    operatorIds: ['ana'],
+    specs: {
+      maxSpeed: '667 km/h (360 knots 喷气式同级高速巡航)',
+      capacity: '74 座 (全经济舱 2+2 舒适真皮座椅)',
+      rangeOrPower: '2,040 km (普惠 PW150A 涡桨发动机，配 ANVS 主动降噪系统)',
+      length: '32.81 m (翼展 Wingspan: 28.40 m / 高度 8.30 m)',
+    },
+    overview: {
+      zh: '全球航速最快、静音表现极佳的商用双发高速涡桨客机！Q400 中的“Q”代表“Quiet（安静）”，配备先进的 ANVS（主动噪声与振动抑制）系统。ANA 旗下全日空之翼（ANA Wings）将其用于连接东京羽田、大阪伊丹与福冈、札幌新千岁、高知、松山等日本全境支线与海岛空港，航速逼近喷气客机，是日本支线民航最经典的流动风景。',
+      en: 'The world\'s fastest commercial turboprop ("Q" stands for Quiet, featuring Active Noise and Vibration Suppression). Operated by ANA Wings across regional routes connecting Tokyo Haneda, Osaka Itami, and coastal destinations.',
+    },
+    heroImage: 'https://upload.wikimedia.org/wikipedia/commons/6/62/All_Nippon_Airways_-_ANA_%28Air_Nippon_Network%29_Bombardier_DHC-8-402_Q400_JA846A.jpg',
+    liveries: [
+      {
+        id: 'ana-wings-q400-triton-blue',
+        name: { zh: '全日空三色海神蓝经典标准涂装 (JA846A)', en: 'All Nippon Airways Triton Blue Standard Livery (JA846A)' },
+        type: 'standard',
+        yearsActive: '2003 - 至今 / Present',
+        operatorId: 'ana',
+        isRetired: false,
+        description: {
+          zh: '雪白细长机身点缀深蓝与天蓝双色海神蓝（Triton Blue）飘带，垂直尾翼喷涂白色加粗 ANA 字母航徽。',
+          en: 'Iconic ANA Triton Blue dual-stripe scheme flowing along the fuselage, with bold white ANA typography on the tail.',
+        },
+        photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/6/62/All_Nippon_Airways_-_ANA_%28Air_Nippon_Network%29_Bombardier_DHC-8-402_Q400_JA846A.jpg',
+        scaleModels: [
+          {
+            id: 'gemini-ana-q400-200',
+            brand: 'GeminiJets',
+            itemCode: 'G2ANA846',
+            scale: '1:200',
+            material: { zh: '锌合金压铸机身与精致胶质螺旋桨', en: 'Diecast Metal with Delicate Propellers' },
+            releaseYear: 2019,
+            status: 'available',
+            imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/6/62/All_Nippon_Airways_-_ANA_%28Air_Nippon_Network%29_Bombardier_DHC-8-402_Q400_JA846A.jpg',
+            notes: { zh: 'GeminiJets 经典 1:200 模具，精细呈现高单翼下悬 PW150A 引擎与六叶螺旋桨桨叶细节', en: 'Gemini200 collector diecast model of JA846A with realistic PW150A engine pods.' },
+          },
+        ],
+      },
+    ],
+    detailPhotos: [
+      {
+        title: { zh: '全日空 Dash 8 Q400 地面滑行姿态特写', en: 'ANA Wings Dash 8 Q400 Taxiing on Apron' },
+        caption: { zh: '细长优雅的机身搭配高单翼布局与两具巨大复合材料六叶螺旋桨引擎，身披 ANA 蓝白经典涂装。', en: 'JA846A taxiing smoothly, showing its high-wing architecture and six-bladed composite props.' },
+        url: 'https://upload.wikimedia.org/wikipedia/commons/6/62/All_Nippon_Airways_-_ANA_%28Air_Nippon_Network%29_Bombardier_DHC-8-402_Q400_JA846A.jpg',
+        tag: { zh: '机身侧视', en: 'Side View' },
+      },
+    ],
+  },
+
+  // 97. 荷兰皇家航空 波音 777-300ER "橙色荣耀 (Orange Pride)" 特别涂装 (荷航 / PH-BVA)
+  {
+    id: 'klm-b777-300er-orange-pride',
+    category: 'aviation',
+    modelName: { zh: '荷兰皇家航空 波音 777-300ER "橙色荣耀 (Orange Pride)" 特别涂装', en: 'KLM Boeing 777-300ER "Orange Pride" Special Livery' },
+    code: 'B77W-KLM-OP',
+    manufacturer: { zh: '波音公司 (Boeing)', en: 'Boeing' },
+    status: 'active',
+    firstServiceYear: 2016,
+    country: { zh: '荷兰', en: 'Netherlands' },
+    countryCode: 'NL',
+    operatorIds: ['klm'],
+    specs: {
+      maxSpeed: '945 km/h (Mach 0.84)',
+      capacity: '408 座 (环球商务舱 34 / 超级舒适经济舱 40 / 经济舱 334)',
+      rangeOrPower: '13,650 km (双发 GE90-115B 商业航空世界推力之王引擎)',
+      length: '73.90 m (翼展 Wingspan: 64.80 m / 倾角后掠斜削小翼)',
+    },
+    overview: {
+      zh: '荷兰国色“奥兰治橙”与皇家蓝的惊艳碰撞！荷航为向荷兰国家队征战里约奥运会致敬，于 2016 年将旗舰 777-300ER（机号 PH-BVA）喷涂为全球瞩目的“Orange Pride”涂装：机头前半段由纯正的荷兰象征色彩烈焰橙色渐变过渡为后半段标志性的 KLM 皇家天蓝色，中间嵌以荷兰三色国旗流动飘带，是世界民航史上知名度最高、视觉张力最强的宽体客机彩绘之一。',
+      en: 'A striking fusion of Dutch national color "Oranje" and iconic KLM Royal Blue! Created in 2016 to honor the Netherlands Olympic team, Boeing 777-300ER (PH-BVA) features a dramatic orange-to-blue gradient fuselage.',
+    },
+    heroImage: 'https://upload.wikimedia.org/wikipedia/commons/d/db/PH-BVA_KLM_Royal_Dutch_Airlines_%22Orange_Pride%22_%2829069382963%29_%282%29.jpg',
+    liveries: [
+      {
+        id: 'klm-77w-orange-pride',
+        name: { zh: '荷兰国家队与奥运荣耀橙蓝渐变涂装 (PH-BVA)', en: 'Orange Pride Gradient National Flag Livery (PH-BVA)' },
+        type: 'special',
+        yearsActive: '2016 - 至今 / Present',
+        operatorId: 'klm',
+        isRetired: false,
+        description: {
+          zh: '前机身喷涂烈焰亮橙色，向后渐变晕染过渡为 KLM 经典皇家天蓝，腰线嵌入红白蓝荷兰三色国旗旗带。',
+          en: 'Fiery national orange at the nose smoothly fading into KLM sky blue, accented by the Dutch tricolor ribbon.',
+        },
+        photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/d/db/PH-BVA_KLM_Royal_Dutch_Airlines_%22Orange_Pride%22_%2829069382963%29_%282%29.jpg',
+        scaleModels: [
+          {
+            id: 'ph-klm-77w-op-400',
+            brand: 'Phoenix',
+            itemCode: 'PH11328',
+            scale: '1:400',
+            material: { zh: '锌合金压铸机身与高光移印', en: 'Diecast Metal with High-Gloss Tampo' },
+            releaseYear: 2017,
+            status: 'available',
+            imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/d/db/PH-BVA_KLM_Royal_Dutch_Airlines_%22Orange_Pride%22_%2829069382963%29_%282%29.jpg',
+            notes: { zh: 'Phoenix 经典开模，完美还原橙色与天蓝色精细过渡网点渐变工艺', en: 'Phoenix 1:400 diecast scale model accurately rendering the subtle orange-blue gradient.' },
+          },
+        ],
+      },
+    ],
+    detailPhotos: [
+      {
+        title: { zh: '橙色荣耀在阿姆斯特丹史基浦机场起飞爬升', en: 'Orange Pride Climbing Out of Amsterdam Schiphol' },
+        caption: { zh: 'PH-BVA 昂首升空，由橙至蓝渐变机腹与巨型 GE90 引擎在天空中极具视觉冲击力。', en: 'PH-BVA banking into the sky after takeoff, showcasing its orange nose and colossal GE90 engines.' },
+        url: 'https://upload.wikimedia.org/wikipedia/commons/f/f8/PH-BVA_%2836213764603%29.jpg',
+        tag: { zh: '昂首爬升', en: 'Climbing' },
+      },
+    ],
+  },
+
+  // 98. 名古屋铁道 2000系 "μ-SKY" 中部国际空港特急电力动车组 (日本 / 名铁)
+  {
+    id: 'meitetsu-series-2000-musky',
+    category: 'railway',
+    modelName: { zh: '名古屋铁道 2000系 "μ-SKY" 中部国际空港特急电力动车组', en: 'Meitetsu Series 2000 "μ-SKY" Airport Express' },
+    code: 'MEITETSU-2000',
+    manufacturer: { zh: '日本车辆制造 (Nippon Sharyo)', en: 'Nippon Sharyo' },
+    status: 'active',
+    firstServiceYear: 2005,
+    country: { zh: '日本', en: 'Japan' },
+    countryCode: 'JP',
+    operatorIds: ['meitetsu'],
+    specs: {
+      maxSpeed: '120 km/h (配备车体倾斜装置空气弹簧摆式控制)',
+      capacity: '184 座 (4节编组全车特别车，配置宽敞行李架与舒适旋转座椅)',
+      rangeOrPower: '1,500 V 直流架空接触网 / 变频 VVVF 交流牵引控制',
+      length: '80.0 m (4 节编组 / 窄轨 1067mm 准高速城际特急)',
+    },
+    overview: {
+      zh: '通往海上伊势湾人工岛的蔚蓝之翼！名铁 2000系专为 2005 年爱知世博会及中部国际机场（Centrair）开港量身打造，曾荣获日本铁道友之会“桂冠奖”与 Good Design 优秀设计大奖。通体身披象征清澈天空与伊势湾蔚蓝海洋的纯白配宝蓝涂装，先头车采用贯通门隐藏式优雅圆润鼻型，连接名铁名古屋站至机场最快仅需 28 分钟。',
+      en: 'The prestigious airport express connecting Nagoya with Chubu Centrair International Airport. Winner of the Laurel Prize and Good Design Award, featuring pure white and ocean blue livery with tilting body technology.',
+    },
+    heroImage: 'https://upload.wikimedia.org/wikipedia/commons/f/f3/Nagoya_Railway_2000.jpg',
+    liveries: [
+      {
+        id: 'meitetsu-2000-blue-white',
+        name: { zh: '名铁μ-SKY蓝白伊势湾蔚蓝之翼标准涂装', en: 'Meitetsu μ-SKY Blue & White Wings Livery' },
+        type: 'standard',
+        yearsActive: '2005 - 至今 / Present',
+        operatorId: 'meitetsu',
+        isRetired: false,
+        description: {
+          zh: '前脸与车身采用纯白高光漆底，驾驶室风挡与侧面车窗饰以深邃宝蓝与天蓝双色条带，车侧喷涂 μ-SKY 银色标识。',
+          en: 'Pure white body accented by deep ocean blue and sky blue ribbons, with sleek silver μ-SKY logos.',
+        },
+        photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/f/f3/Nagoya_Railway_2000.jpg',
+        scaleModels: [
+          {
+            id: 'greenmax-meitetsu-2000',
+            brand: 'TOMIX',
+            itemCode: 'GM-4051',
+            scale: 'N (1:150)',
+            material: { zh: '工程塑料与高精度微型飞轮动力底盘', en: 'High Precision Plastic & Flywheel Motor Chassis' },
+            releaseYear: 2012,
+            status: 'available',
+            imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/f/f3/Nagoya_Railway_2000.jpg',
+            notes: { zh: '日本名铁模玩权威 Greenmax / TOMIX 经典，精准复刻 μ-SKY 专属先头车贯通门与车顶天线', en: 'Detailed N scale 4-car set featuring smooth flywheel running and illuminated headlights.' },
+          },
+        ],
+      },
+    ],
+    detailPhotos: [
+      {
+        title: { zh: '名铁 2000系（2003F）干线快速飞驰特写', en: 'Meitetsu Series 2000 (2003F) Running on Mainline' },
+        caption: { zh: '纯白低风阻车头点缀宝蓝窗带，两组 4 节重联穿行于爱知县平原铁道。', en: 'Series 2000 EMU gliding across Aichi prefecture on its express run to Centrair.' },
+        url: 'https://upload.wikimedia.org/wikipedia/commons/4/44/%E5%90%8D%E9%89%842000%E7%B3%BB%E9%9B%BB%E8%BB%8A%EF%BC%882003F%EF%BC%89_%E3%83%96%E3%83%AB%E3%83%BC%E3%83%9F%E3%83%A5%E3%83%BC%E3%82%B9%E3%82%AB%E3%82%A4.jpg',
+        tag: { zh: '快速飞驰', en: 'Running' },
+      },
+    ],
+  },
+
+  // 99. 中国国际航空 波音 747-8I "国宾专机机队旗舰" 洲际客机 (中国民航 / B-2479)
+  {
+    id: 'air-china-b747-8i',
+    category: 'aviation',
+    modelName: { zh: '中国国际航空 波音 747-8I "国宾专机机队旗舰" 洲际客机', en: 'Air China Boeing 747-8 Intercontinental Flagship' },
+    code: 'B748-CCA',
+    manufacturer: { zh: '波音公司 (Boeing)', en: 'Boeing' },
+    status: 'active',
+    firstServiceYear: 2014,
+    country: { zh: '中国', en: 'China' },
+    countryCode: 'CN',
+    operatorIds: ['air_china'],
+    specs: {
+      maxSpeed: '988 km/h (Mach 0.86)',
+      capacity: '365 座 (头等舱 12 / 商务舱 54 / 超经 66 / 经济 233)',
+      rangeOrPower: '14,310 km (四发 GEnx-2B67 先进锯齿消音高涵道比涡扇发动机)',
+      length: '76.30 m (人类历史上最长的客运客机之一 / 翼展 Wingspan: 68.40 m)',
+    },
+    overview: {
+      zh: '中国民航头号空中旗舰与国家尊严的最高象征！国航共拥有 7 架波音 747-8I 宽体客机，继承了“空中女王”经典的双层鹅头流线造型。其中机号 B-2479 作为国家元首与高级代表团出访的国宾专机，机身披着由邓小平同志亲笔题写的中国国际航空公司经典红蓝腰线与五星红旗国旗徽标，是世界民航史上知名度最高的洲际专机之一。',
+      en: 'The crown jewel flagship of Air China and the official aircraft for state VIP visits. Featuring four quiet GEnx-2B engines, upper deck stretched bubble profile, and the historic livery with Deng Xiaoping calligraphy.',
+    },
+    heroImage: 'https://upload.wikimedia.org/wikipedia/commons/d/d6/Boeing_747-89L_-_B-2479_from_Chinese_government_during_take_off_at_LFBT_airport.jpg',
+    liveries: [
+      {
+        id: 'air-china-748-flag-livery',
+        name: { zh: '国航经典红蓝双腰线与国旗金凤凰旗舰涂装 (B-2479)', en: 'Air China Classic Red-Blue Waistband & National Flag Livery (B-2479)' },
+        type: 'standard',
+        yearsActive: '2014 - 至今 / Present',
+        operatorId: 'air_china',
+        isRetired: false,
+        description: {
+          zh: '白色机身贯穿经典蓝红双色双腰线，驾驶舱舷窗下喷涂五星红旗，尾翼为吉祥如意红底金凤凰祥瑞航徽。',
+          en: 'Timeless white fuselage with classic blue and red pinstripes, PRC national flag, and the golden VIP Phoenix tail.',
+        },
+        photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/d/d6/Boeing_747-89L_-_B-2479_from_Chinese_government_during_take_off_at_LFBT_airport.jpg',
+        scaleModels: [
+          {
+            id: 'jc-cca-748-400',
+            brand: 'JC Wings',
+            itemCode: 'XX4802',
+            scale: '1:400',
+            material: { zh: '合金压铸实心机身与金属起落架', en: 'Diecast Metal with Rolling Rubber Gears' },
+            releaseYear: 2018,
+            status: 'available',
+            imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/d/d6/Boeing_747-89L_-_B-2479_from_Chinese_government_during_take_off_at_LFBT_airport.jpg',
+            notes: { zh: 'JC Wings 经典 1:400 旗舰合金模型，精细复刻 747-8 超长上层甲板与斜削小翼', en: 'Collector grade diecast model reproducing B-2479 with raked wingtips and detailed GEnx engines.' },
+          },
+        ],
+      },
+    ],
+    detailPhotos: [
+      {
+        title: { zh: '国航 747-8I (B-2479) 喀山机场停机坪停靠特写', en: 'Air China B-2479 Parked at Kazan Airport' },
+        caption: { zh: '身披凤凰金标与国旗的国宾机队旗舰优雅停泊于国际空港站坪，四台巨型 GEnx 引擎气势磅礴。', en: 'B-2479 resting majestically on the tarmac in Kazan, showcasing its stretched upper deck.' },
+        url: 'https://upload.wikimedia.org/wikipedia/commons/c/cb/Air_China_Boeing_747-8_%28B-2479%29_in_Kazan.jpg',
+        tag: { zh: '停机坪站坪', en: 'Tarmac' },
+      },
+    ],
+  },
+
+  // 100. 中国东方航空 空客 A350-900 "墨镜侠" 新世代宽体客机 (中国民航 / B-304D)
+  {
+    id: 'china-eastern-a350-900',
+    category: 'aviation',
+    modelName: { zh: '中国东方航空 空客 A350-900 "墨镜侠" 新世代宽体客机', en: 'China Eastern Airlines Airbus A350-900 Widebody' },
+    code: 'A359-CES',
+    manufacturer: { zh: '空中客车 (Airbus)', en: 'Airbus' },
+    status: 'active',
+    firstServiceYear: 2018,
+    country: { zh: '中国', en: 'China' },
+    countryCode: 'CN',
+    operatorIds: ['china_eastern'],
+    specs: {
+      maxSpeed: '945 km/h (Mach 0.85)',
+      capacity: '288 座 (包括 4 个豪华包厢 Airspace 尊崇客舱)',
+      rangeOrPower: '15,000 km (劳斯莱斯 Trent XWB-84 高涵道比涡扇引擎)',
+      length: '66.80 m (翼展 Wingspan: 64.75 m 碳纤维鲨鳍小翼)',
+    },
+    overview: {
+      zh: '东航越洋机队最具科技感与现代感的旗舰主力！东航首架 A350-900 于 2018 年底交付（注册号 B-304D），全面搭载东航全球首发的独家 Airspace 包厢式豪华商务舱与超大娱乐触屏。流线型驾驶舱外圈标志性的黑色“墨镜侠”风挡，与东航简约素雅的纯白底色、燕子金红飞翼航徽相得益彰，常年执飞京沪超级快线及上海始发欧洲与北美洲际远程航线。',
+      en: 'The cutting-edge flagship of China Eastern\'s long-haul international fleet. Featuring the world-first Airspace premium suite cabin and trademark black carbon sunglasses cockpit windshield frame.',
+    },
+    heroImage: 'https://upload.wikimedia.org/wikipedia/commons/8/84/B-304D%40PEK_%2820181217131157%29.jpg',
+    liveries: [
+      {
+        id: 'ces-a359-white-swallow',
+        name: { zh: '中国东方航空新版素雅纯白燕子飞翼涂装 (B-304D)', en: 'China Eastern Minimalist Pure White & Swallow Livery (B-304D)' },
+        type: 'standard',
+        yearsActive: '2018 - 至今 / Present',
+        operatorId: 'china_eastern',
+        isRetired: false,
+        description: {
+          zh: '极简主义纯白机身搭配黑框“墨镜侠”挡风玻璃，机尾为红蓝色燕子展翅高飞圆标航徽。',
+          en: 'Clean minimalist white livery with iconic carbon sunglasses cockpit and the red-and-blue swallow tail fin.',
+        },
+        photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/8/84/B-304D%40PEK_%2820181217131157%29.jpg',
+        scaleModels: [
+          {
+            id: 'av400-ces-a359',
+            brand: 'Aviation400',
+            itemCode: 'AV4088',
+            scale: '1:400',
+            material: { zh: '合金压铸机身配磁吸可转动合金起落架', en: 'Diecast Metal with Magnetic Landing Gears' },
+            releaseYear: 2019,
+            status: 'available',
+            imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/8/84/B-304D%40PEK_%2820181217131157%29.jpg',
+            notes: { zh: 'Aviation400 旗舰级开模之作，精细刻画 A350 弯曲碳纤维鲨鳍小翼与天线细节', en: 'Premium 1:400 diecast collectible featuring detailed Trent XWB engines and sharklets.' },
+          },
+        ],
+      },
+    ],
+    detailPhotos: [
+      {
+        title: { zh: '北京首都国际机场 (PEK) 滑行中的 B-304D 首架机', en: 'B-304D Taxiing at Beijing Capital International Airport' },
+        caption: { zh: '全新交付初期的东航 A350-900 在首都机场滑行道平稳滑行，墨镜侠驾驶舱与 Trent XWB 引擎细节纤毫毕现。', en: 'China Eastern\'s first A350-900 B-304D captured during taxiing at PEK with immaculate white finish.' },
+        url: 'https://upload.wikimedia.org/wikipedia/commons/8/84/B-304D%40PEK_%2820181217131157%29.jpg',
+        tag: { zh: '地面滑行', en: 'Taxiing' },
+      },
+    ],
+  },
+
+  // 101. 中国东方航空 空客 A330-300 "上海迪士尼度假区 · 米奇米妮" 彩绘客机 (中国民航 / B-6507)
+  {
+    id: 'china-eastern-a330-300-disney',
+    category: 'aviation',
+    modelName: { zh: '中国东方航空 空客 A330-300 "上海迪士尼度假区 · 米奇米妮" 彩绘客机', en: 'China Eastern Airbus A330-300 "Shanghai Disney Resort Mickey & Minnie" Livery' },
+    code: 'A333-CES-DISNEY',
+    manufacturer: { zh: '空中客车 (Airbus)', en: 'Airbus' },
+    status: 'active',
+    firstServiceYear: 2016,
+    country: { zh: '中国', en: 'China' },
+    countryCode: 'CN',
+    operatorIds: ['china_eastern'],
+    specs: {
+      maxSpeed: '871 km/h (Mach 0.82)',
+      capacity: '300 座 (公务舱 38 / 经济舱 262)',
+      rangeOrPower: '11,750 km (双发罗尔斯·罗伊斯 Trent 700 涡轮风扇发动机)',
+      length: '63.69 m (翼展 Wingspan: 60.30 m)',
+    },
+    overview: {
+      zh: '中国民航史上最受全球旅客喜爱的梦幻卡通彩绘客机之一！为庆祝 2016 年上海迪士尼乐园盛大开园，中国东方航空作为官方全球合作伙伴，在 A330-300 宽体客机（机号 B-6507）两侧机身喷涂了巨幅米奇（Mickey）与米妮（Minnie）张开双臂欢迎世界的欢乐造型。机尾环绕璀璨的奇幻童话城堡与金色魔法星尘，客舱内部亦定制了迪士尼主题行李架与头垫巾。',
+      en: 'One of the most beloved special liveries in Chinese civil aviation, celebrating the grand opening of Shanghai Disney Resort in 2016. Features giant Mickey and Minnie Mouse welcoming passengers with Cinderella Castle motifs.',
+    },
+    heroImage: 'https://upload.wikimedia.org/wikipedia/commons/a/ad/China_Eastern_Airlines_%28Shanghai_Disney_Resort_livery%29%2C_B-6507%2C_Airbus_A330-343_%2847637319401%29.jpg',
+    liveries: [
+      {
+        id: 'ces-a333-disney-mickey',
+        name: { zh: '上海迪士尼度假区米奇米妮奇幻城堡彩绘 (B-6507)', en: 'Shanghai Disney Resort Mickey & Minnie Livery (B-6507)' },
+        type: 'special',
+        yearsActive: '2016 - 至今 / Present',
+        operatorId: 'china_eastern',
+        isRetired: false,
+        description: {
+          zh: '整机喷绘迪士尼经典角色米奇与米妮，机尾耸立梦幻童话城堡剪影，并伴有点点金色星光魔粉。',
+          en: 'Full fuselage wrap featuring cheerful Mickey and Minnie Mouse, glowing fairy dust, and the Enchanted Storybook Castle.',
+        },
+        photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/a/ad/China_Eastern_Airlines_%28Shanghai_Disney_Resort_livery%29%2C_B-6507%2C_Airbus_A330-343_%2847637319401%29.jpg',
+        scaleModels: [
+          {
+            id: 'ph-ces-disney-400',
+            brand: 'Phoenix',
+            itemCode: 'PH11280',
+            scale: '1:400',
+            material: { zh: '锌合金压铸机身配迪士尼官方授权精美移印', en: 'Diecast Metal with Official Disney Tampo Print' },
+            releaseYear: 2017,
+            status: 'available',
+            imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/a/ad/China_Eastern_Airlines_%28Shanghai_Disney_Resort_livery%29%2C_B-6507%2C_Airbus_A330-343_%2847637319401%29.jpg',
+            notes: { zh: '民航圈热门绝版珍藏，精准还原米奇米妮衣褶纹理与迪士尼标志字样', en: 'Highly sought-after Phoenix 1:400 diecast model in vibrant Disney theme.' },
+          },
+        ],
+      },
+    ],
+    detailPhotos: [
+      {
+        title: { zh: '上海迪士尼米奇米妮彩绘客机在停机坪整装待发', en: 'China Eastern Disney A330 on the Tarmac' },
+        caption: { zh: '机身彩绘上可爱的米奇与米妮笑容灿烂，底色由东航白自然晕染入迪士尼蔚蓝天际。', en: 'B-6507 shining on the tarmac, showcasing its vivid Disney illustrations.' },
+        url: 'https://upload.wikimedia.org/wikipedia/commons/a/ad/China_Eastern_Airlines_%28Shanghai_Disney_Resort_livery%29%2C_B-6507%2C_Airbus_A330-343_%2847637319401%29.jpg',
+        tag: { zh: '彩绘特写', en: 'Livery Detail' },
+      },
+    ],
+  },
+
+  // 102. 长荣航空 波音 777-300ER "Hello Kitty 牵手机 (Sanrio)" 宽体客机 (中国台湾 / B-16701)
+  {
+    id: 'eva-air-b777-300er-hello-kitty',
+    category: 'aviation',
+    modelName: { zh: '长荣航空 波音 777-300ER "Hello Kitty 牵手机 (Sanrio)" 宽体客机', en: 'EVA Air Boeing 777-300ER "Hello Kitty Hand-in-Hand" Livery' },
+    code: 'B77W-EVA-KITTY',
+    manufacturer: { zh: '波音公司 (Boeing)', en: 'Boeing' },
+    status: 'active',
+    firstServiceYear: 2013,
+    country: { zh: '中国台湾', en: 'Taiwan, China' },
+    countryCode: 'TW',
+    operatorIds: ['eva_air'],
+    specs: {
+      maxSpeed: '945 km/h (Mach 0.84)',
+      capacity: '333 座 (皇玺桂冠舱 39 / 豪华经济舱 56 / 经济舱 238)',
+      rangeOrPower: '14,685 km (双发 GE90-115B 发动机)',
+      length: '73.90 m (翼展 Wingspan: 64.80 m)',
+    },
+    overview: {
+      zh: '全球航空业最具号召力的跨界联名文化传奇！长荣航空自 2005 年起与日本三丽鸥（Sanrio）联名打造 Hello Kitty 系列彩绘机。其中波音 777-300ER（B-16701）喷涂的“牵手机（Hand-in-Hand）”号，整机两侧长达数十米的机身上绘制了 Hello Kitty、美乐蒂、布丁狗、酷企鹅等 19 位三丽鸥全明星角色手拉手跨越地球的温馨画面，传达世界友谊无国界的美好理念。',
+      en: 'The world-famous EVA Air & Sanrio crossover masterpiece ("Hand-in-Hand"). Featuring Hello Kitty, My Melody, Pompompurin, Badtz-Maru, and 19 Sanrio characters holding hands around the world.',
+    },
+    heroImage: 'https://upload.wikimedia.org/wikipedia/commons/b/ba/Eva_Air_Boeing_777-300ER_B-16701_%2850859896286%29.jpg',
+    liveries: [
+      {
+        id: 'eva-77w-hand-in-hand',
+        name: { zh: '三丽鸥全明星牵手跨越地球特别彩绘 (B-16701)', en: 'Sanrio Family Hand-in-Hand Special Livery (B-16701)' },
+        type: 'special',
+        yearsActive: '2013 - 至今 / Present',
+        operatorId: 'eva_air',
+        isRetired: false,
+        description: {
+          zh: '白色机身铺陈 19 位三丽鸥明星角色手拉手欢聚图案，机尾融合长荣墨绿罗盘标与彩绘星辰。',
+          en: 'Whimsical depiction of 19 Sanrio characters holding hands along the 73-meter fuselage, paired with EVA Air green tail.',
+        },
+        photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/b/ba/Eva_Air_Boeing_777-300ER_B-16701_%2850859896286%29.jpg',
+        scaleModels: [
+          {
+            id: 'ph-eva-kitty-400',
+            brand: 'Phoenix',
+            itemCode: 'PH10892',
+            scale: '1:400',
+            material: { zh: '合金压铸机身与官方授权细腻彩绘', en: 'Diecast Metal with Licensed Multi-Color Tampo' },
+            releaseYear: 2014,
+            status: 'available',
+            imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/b/ba/Eva_Air_Boeing_777-300ER_B-16701_%2850859896286%29.jpg',
+            notes: { zh: '模玩界极具纪念价值的 Kitty 系列经典收藏，精细呈现每个三丽鸥角色的表情与细节', en: 'Famous 1:400 diecast model replicating EVA Air\'s flagship Sanrio jet.' },
+          },
+        ],
+      },
+    ],
+    detailPhotos: [
+      {
+        title: { zh: 'Hello Kitty 牵手机在桃园国际机场滑行特写', en: 'Hello Kitty Hand-in-Hand Taxiing at Taoyuan' },
+        caption: { zh: '巨型双发 777-300ER 机身两舷栩栩如生的三丽鸥全明星牵手彩绘，与长荣墨绿机尾交相辉映。', en: 'B-16701 gleaming under the sunlight, showcasing the beloved characters holding hands.' },
+        url: 'https://upload.wikimedia.org/wikipedia/commons/b/ba/Eva_Air_Boeing_777-300ER_B-16701_%2850859896286%29.jpg',
+        tag: { zh: '机身彩绘', en: 'Livery Detail' },
+      },
+    ],
+  },
+
+  // 103. JR东日本 秋田新干线 E6系 "小町号 (Komachi)" 茜红流线型高速动车组 (日本)
+  {
+    id: 'jr-east-series-e6-komachi',
+    category: 'railway',
+    modelName: { zh: 'JR东日本 秋田新干线 E6系 "小町号 (Komachi)" 茜红流线型高速动车组', en: 'JR East Series E6 "Komachi" Akita Shinkansen EMU' },
+    code: 'E6-KOMACHI',
+    manufacturer: { zh: '川崎重工 / 日立制作所 (Hitachi / Kawasaki)', en: 'Kawasaki Heavy Industries / Hitachi' },
+    status: 'active',
+    firstServiceYear: 2013,
+    country: { zh: '日本', en: 'Japan' },
+    countryCode: 'JP',
+    operatorIds: ['jr_east'],
+    specs: {
+      maxSpeed: '新干线区间 320 km/h (在来线区间 130 km/h)',
+      capacity: '338 座 (7 节迷你新干线编组，配 1 节特等 Green 车)',
+      rangeOrPower: '持续功率: 6,000 kW (交直两用 25kV 50Hz / 20kV 50Hz 电气化制式自动切换)',
+      length: '148.65 m (先头车鼻长 13 米极具视觉张力)',
+    },
+    overview: {
+      zh: '新干线“红色超跑”！由前法拉利设计总监奥山清行（Ken Okuyama）领衔设计，曾荣获日本铁道蓝丝带奖（Blue Ribbon Award）。车顶与车头喷涂艳丽浓烈的秋田传统生鬼“茜红色（Akane Red）”，车身侧面为飞云白配阿仁银灰，13 米超长破风先头鼻型大幅削减微气压波。在东北新干线区间常年与“隼号（Hayabusa）”E5系以 320 km/h 极速重联飞驰，至盛冈站自动解编驶入在来线，是日本高铁的绝美代表。',
+      en: 'The "Red Supercar" of Shinkansen! Designed by legendary automotive designer Ken Okuyama. Features stunning Akane Red roof/nose, 13-meter long aerodynamic beak, running coupled with Series E5 Hayabusa at 320 km/h.',
+    },
+    heroImage: 'https://upload.wikimedia.org/wikipedia/commons/8/87/Series-E6_Z14_Komachi.jpg',
+    liveries: [
+      {
+        id: 'e6-komachi-akane-red',
+        name: { zh: '秋田生鬼茜红与飞云白飞羽流线涂装', en: 'Akita Akane Red & Flying Cloud White Livery' },
+        type: 'standard',
+        yearsActive: '2013 - 至今 / Present',
+        operatorId: 'jr_east',
+        isRetired: false,
+        description: {
+          zh: '车顶与犀利长鼻喷涂艳丽的茜红色，车身侧面为飞云白，腰线贯穿秋田小町箭羽线条，先头车带有 Komachi 速度标识。',
+          en: 'Vibrant Akane Red on the roof and nose, cloud white sides accented by silver and pink arrow pinstripes.',
+        },
+        photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/8/87/Series-E6_Z14_Komachi.jpg',
+        scaleModels: [
+          {
+            id: 'kato-e6-komachi-n',
+            brand: 'KATO',
+            itemCode: '10-1566',
+            scale: 'N (1:150)',
+            material: { zh: '工程塑料精密外壳配飞轮马达与车体倾斜连挂机构', en: 'Precision ABS with Flywheel Motor and Working Coupler' },
+            releaseYear: 2014,
+            status: 'available',
+            imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/8/87/Series-E6_Z14_Komachi.jpg',
+            notes: { zh: '关水金属 (KATO) 殿堂之作，先头车内置可伸缩磁吸密连挂钩，可与 E5 系列车真实 17 节重联行驶', en: 'KATO N-scale 7-car set with realistic open-nose coupling mechanism to connect with E5.' },
+          },
+        ],
+      },
+    ],
+    detailPhotos: [
+      {
+        title: { zh: 'E6系 Z14 编组在东北本线高速飞驰特写', en: 'Series E6 Z14 Running on Tohoku Shinkansen' },
+        caption: { zh: '鲜红车顶与犀利车头划过绿野，展现日本迷你新干线顶级工业美学与空气动力学成果。', en: 'Series E6 Z14 speeding along the tracks with vibrant red canopy slicing through the air.' },
+        url: 'https://upload.wikimedia.org/wikipedia/commons/8/87/Series-E6_Z14_Komachi.jpg',
+        tag: { zh: '高速飞驰', en: 'High Speed' },
+      },
+    ],
+  },
+
+  // 104. JR西日本 / JR东海 285系 "日出出云 / 日出濑户" 豪华双层寝台特急电车 (日本)
+  {
+    id: 'jr-series-285-sunrise-express',
+    category: 'railway',
+    modelName: { zh: 'JR西日本 / JR东海 285系 "日出出云 / 日出濑户" 豪华双层寝台特急', en: 'JR West / JR Central Series 285 "Sunrise Express" Sleeping Car EMU' },
+    code: 'SERIES-285-SUNRISE',
+    manufacturer: { zh: '川崎重工 / 近畿车辆 / 日本车辆', en: 'Kawasaki / Kinki Sharyo / Nippon Sharyo' },
+    status: 'active',
+    firstServiceYear: 1998,
+    country: { zh: '日本', en: 'Japan' },
+    countryCode: 'JP',
+    operatorIds: ['jr_west', 'jr_central'],
+    specs: {
+      maxSpeed: '130 km/h (在来线最高限速)',
+      capacity: '158 铺位 (7节编组，包含单人间 Single Deluxe、双人间日出 Sunrise Twin 及通铺 Nobinobi)',
+      rangeOrPower: '1,500 V 直流电气化，总输出 1,760 kW (配备抑速电制动与动车轮盘制动)',
+      length: '142.1 m (7 节双层全钢高刚性车体 / 14节重联运行 284.2 米)',
+    },
+    overview: {
+      zh: '日本仅存的每日正班定期运营的夜行豪华卧铺列车传奇！由 JR 西日本与 JR 东海共同研制，车体涂装采用温暖的晨曦橙红色与金黄晨光朝霞线条。列车每天深夜从东京站出发，以 14 节重联运行至冈山站解编，前 7 节“日出濑户号”穿过濑户大桥开往四国高松与琴平，后 7 节“日出出云号”开往山阴出云市。车内采用三泽木业（MISAWA）实木质感装潢，是铁道迷心中的圣殿之车。',
+      en: 'The legendary and only daily overnight sleeper train remaining in Japan! Features warm sunrise dawn livery, double-decker coaches with Misawa wood interior styling, operating between Tokyo and Takamatsu/Izumoshi.',
+    },
+    heroImage: 'https://upload.wikimedia.org/wikipedia/commons/3/39/JRW_Series_285_Sunrise_Seto.jpg',
+    liveries: [
+      {
+        id: 'series-285-sunrise-dawn',
+        name: { zh: '晨曦红与朝霞金日出双层流线涂装', en: 'Sunrise Dawn Red & Golden Morning Glow Livery' },
+        type: 'standard',
+        yearsActive: '1998 - 至今 / Present',
+        operatorId: 'jr_west',
+        isRetired: false,
+        description: {
+          zh: '车体上半部为朝霞金红，下半部为米黄白，贯穿金黄晨曦腰线，车头嵌有闪耀的圆形 Sunrise Express 徽章。',
+          en: 'Warm sunrise red upper body with warm beige lower tone, golden dawn stripe, and signature circular Sunrise badge.',
+        },
+        photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/3/39/JRW_Series_285_Sunrise_Seto.jpg',
+        scaleModels: [
+          {
+            id: 'kato-series-285-n',
+            brand: 'KATO',
+            itemCode: '10-1564',
+            scale: 'N (1:150)',
+            material: { zh: '工程塑料精工外壳配内饰照明透光', en: 'Precision ABS with Optional Interior Lighting' },
+            releaseYear: 2019,
+            status: 'available',
+            imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/3/39/JRW_Series_285_Sunrise_Seto.jpg',
+            notes: { zh: 'KATO 经典 7 节全编组寝台模型，忠实还原车厢双层圆拱百叶窗与独立包厢结构', en: 'KATO N-scale 7-car sleeper train reproducing the double-decker windows and detailed cab ends.' },
+          },
+        ],
+      },
+    ],
+    detailPhotos: [
+      {
+        title: { zh: '285系日出特急双层车体破晓清晨疾驰', en: 'Series 285 Sunrise Express Gliding at Dawn' },
+        caption: { zh: '红黄暖色涂装与双层圆拱车窗在晨光中穿行，车头标志性的金光日出圆形徽章格外醒目。', en: 'Series 285 running smoothly along the coastline at dawn, glowing with sunrise colors.' },
+        url: 'https://upload.wikimedia.org/wikipedia/commons/3/39/JRW_Series_285_Sunrise_Seto.jpg',
+        tag: { zh: '清晨飞驰', en: 'At Dawn' },
+      },
+    ],
+  },
+
+  // 105. 中国铁路 韶山 9G 型 (SS9G) 准高速干线客运电力机车 ("大红枣") (中国铁路 / CR)
+  {
+    id: 'china-railway-ss9g',
+    category: 'railway',
+    modelName: { zh: '中国铁路 韶山 9G 型 (SS9G) 准高速干线客运电力机车 ("大红枣")', en: 'China Railway SS9G Quasi-High-Speed Passenger Electric Locomotive' },
+    code: 'SS9G-CR',
+    manufacturer: { zh: '中车株洲电力机车 (CRRC Zhuzhou Locomotive)', en: 'CRRC Zhuzhou Locomotive' },
+    status: 'active',
+    firstServiceYear: 2002,
+    country: { zh: '中国', en: 'China' },
+    countryCode: 'CN',
+    operatorIds: ['china_railway'],
+    specs: {
+      maxSpeed: '170 km/h (准高速客运最高试验时速超 190 km/h)',
+      capacity: '单机牵引 18-20 节全列客车编组 (重载特快旅客列车)',
+      rangeOrPower: '持续功率: 4,800 kW (Bo-Bo-Bo 轴式，微机控制三段相控整流调压)',
+      length: '21.0 m (整备重量 126 吨 / 单机轴重 21 吨)',
+    },
+    overview: {
+      zh: '中国铁路第五次大提速的绝对功勋王牌与无数火车迷心目中的“大红枣”！由株洲厂在 SS9 早期型基础上全新改良，车头采用全包覆式大流线型低风阻气动造型，通体身披热烈明快的中国红（枣红）涂装搭配白色飘带。在高铁大贯通前，SS9G 几乎包揽了京广、京沪、京九、陇海等所有主干线特快列车（T字头）的牵引主力，被誉为中国客运电力机车的颜值巅峰。',
+      en: 'The legendary "Jujube Red" (大红枣) locomotive of China Railway\'s 5th Speed-Up campaign. Designed by Zhuzhou Locomotive with aerodynamic bullet nose and 4,800 kW power, formerly heading flagship "T-series" express trains.',
+    },
+    heroImage: 'https://upload.wikimedia.org/wikipedia/commons/5/57/China_Railways_SS9G_0158.jpg',
+    liveries: [
+      {
+        id: 'ss9g-jujube-red',
+        name: { zh: '中国铁路大红枣经典枣红白带准高速涂装', en: 'China Railway Jujube Red & White Speed Stripe Livery' },
+        type: 'standard',
+        yearsActive: '2002 - 至今 / Present',
+        operatorId: 'china_railway',
+        isRetired: false,
+        description: {
+          zh: '整车身披热烈的深红色（枣红色），车身两侧点缀两道纯白反光提速飘带，车头悬挂金黄色金属中国铁路路徽。',
+          en: 'Vibrant jujube red body with pure white speed lines, golden CR emblem on the aerodynamic sloped cab.',
+        },
+        photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/5/57/China_Railways_SS9G_0158.jpg',
+        scaleModels: [
+          {
+            id: 'changming-ss9g-ho',
+            brand: '长鸣火模',
+            itemCode: 'CM-SS9G-0158',
+            scale: 'HO (1:87)',
+            material: { zh: '锌合金压铸底盘配高精度工程 ABS 细节', en: 'Diecast Metal Chassis with Fine Engineering ABS' },
+            releaseYear: 2020,
+            status: 'available',
+            imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/5/57/China_Railways_SS9G_0158.jpg',
+            notes: { zh: '长鸣经典神作，金属受电弓可真实升降，车头独立 LED 暖白大灯与转向架减震弹簧精细还原', en: 'Changming flagship HO scale locomotive model with working metal pantographs and directional lights.' },
+          },
+        ],
+      },
+    ],
+    detailPhotos: [
+      {
+        title: { zh: 'SS9G 0158 号机车牵引特快客车编组出站', en: 'SS9G 0158 Departing Station with Express Train' },
+        caption: { zh: '标志性大红枣车头在干线上平稳进路，圆润流线倾角与车头中国铁路路徽彰显准高速时代风采。', en: 'SS9G 0158 cruising along the mainline with passenger cars, showcasing its rounded aerodynamic nose.' },
+        url: 'https://upload.wikimedia.org/wikipedia/commons/5/57/China_Railways_SS9G_0158.jpg',
+        tag: { zh: '机车出站', en: 'Departure' },
+      },
+    ],
+  },
+
+  // 106. 中国铁路 东风 11G 型 (DF11G) 准高速干线客运内燃机车 ("大猪头") (中国铁路 / CR)
+  {
+    id: 'china-railway-df11g',
+    category: 'railway',
+    modelName: { zh: '中国铁路 东风 11G 型 (DF11G) 准高速干线客运内燃机车 ("大猪头")', en: 'China Railway DF11G Double-Unit Quasi-High-Speed Passenger Diesel Locomotive' },
+    code: 'DF11G-CR',
+    manufacturer: { zh: '中车戚墅堰机车 (CRRC Qishuyan Locomotive)', en: 'CRRC Qishuyan' },
+    status: 'active',
+    firstServiceYear: 2003,
+    country: { zh: '中国', en: 'China' },
+    countryCode: 'CN',
+    operatorIds: ['china_railway'],
+    specs: {
+      maxSpeed: '170 km/h (最高试验速度可达 180 km/h 以上)',
+      capacity: '单端双机重联牵引 18~20 节 25T 型直通特快客车',
+      rangeOrPower: '双机装车功率: 2 × 3,610 kW (总功率 7,220 kW / 自带静液压发电机直接向客车供电)',
+      length: '44.0 m (A+B 双节重联编组总长 / 整备总重 276 吨)',
+    },
+    overview: {
+      zh: '跨越非电气化干线夕发朝至“直达特快（Z字头）”的开天辟地功勋机车！车迷亲切称其为“大猪头”或“红太阳”。由戚墅堰厂专为中国铁路第五次大提速量身研制，采用 A+B 双机固定重联结构，机车自带客车供电逆变系统，实现机车直接向 25T 全列供电。其独创的圆润大倾角红色风阻车头，曾牵引 Z1/2、Z13/14、Z21/22 等多趟国家级直特列车一路绿灯飞驰。',
+      en: 'The historic double-unit passenger diesel locomotive nicknamed "Big Pig Head" (大猪头). Built by Qishuyan with 7,220 kW combined power and onboard hotel power supply for 25T coaches, pioneering overnight non-stop "Z-series" expresses.',
+    },
+    heroImage: 'https://upload.wikimedia.org/wikipedia/commons/6/66/DF11G_0029%40NXH_%2820180518095705%29.jpg',
+    liveries: [
+      {
+        id: 'df11g-crimson-red',
+        name: { zh: '中国铁路直达特快跨世纪大红双机重联涂装', en: 'China Railway Z-Express Crimson Red Double-Unit Livery' },
+        type: 'standard',
+        yearsActive: '2003 - 至今 / Present',
+        operatorId: 'china_railway',
+        isRetired: false,
+        description: {
+          zh: '整车通体喷涂深邃热烈的高光大红色，车侧点缀白色条带，流线圆润的驾驶室车头宛如灵动的大猪头造型。',
+          en: 'High-gloss crimson red body with dynamic white stripes, featuring the signature rounded aerodynamic cab.',
+        },
+        photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/6/66/DF11G_0029%40NXH_%2820180518095705%29.jpg',
+        scaleModels: [
+          {
+            id: 'changming-df11g-ho',
+            brand: '长鸣火模',
+            itemCode: 'CM-DF11G-0029',
+            scale: 'HO (1:87)',
+            material: { zh: '双机联动全合金压铸底盘配双马达驱动', en: 'Dual Diecast Chassis with Twin Motor Drive' },
+            releaseYear: 2021,
+            status: 'available',
+            imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/6/66/DF11G_0029%40NXH_%2820180518095705%29.jpg',
+            notes: { zh: '长鸣双节 A+B 重联高保真模型，带 DCC 音效芯片与真实柴油机轰鸣怠速声', en: 'Changming twin-unit A+B set with synchronized DCC sound capturing 16V280ZJA diesel rumble.' },
+          },
+        ],
+      },
+    ],
+    detailPhotos: [
+      {
+        title: { zh: 'DF11G 0029 号双机重联机车南星桥车站运转特写', en: 'DF11G 0029 Double-Unit at Nanxingqiao Station' },
+        caption: { zh: '圆弧饱满的先头驾驶室与红色车身搭配双侧白条带，双机联挂牵引尽显重载准高速风范。', en: 'DF11G 0029 resting at Nanxingqiao depot, displaying its streamlined red snout and heavy haul presence.' },
+        url: 'https://upload.wikimedia.org/wikipedia/commons/6/66/DF11G_0029%40NXH_%2820180518095705%29.jpg',
+        tag: { zh: '双机重联', en: 'Double-Unit' },
       },
     ],
   },

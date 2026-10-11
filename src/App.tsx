@@ -196,7 +196,14 @@ export function App() {
   };
 
   const handleSelectTag = (tag: string) => {
-    setSearchQuery(tag);
+    if (searchQuery.trim().toLowerCase() === tag.trim().toLowerCase()) {
+      setSearchQuery('');
+    } else {
+      setSearchQuery(tag);
+      if (activeTab === 'models') {
+        setActiveTab('all');
+      }
+    }
   };
 
   return (
@@ -216,6 +223,7 @@ export function App() {
         totalLiveries={totalLiveries}
         totalModels={totalModels}
         totalRetired={totalRetired}
+        searchQuery={searchQuery}
         onSelectTag={handleSelectTag}
       />
 
@@ -241,6 +249,7 @@ export function App() {
             setSelectedOperator={setSelectedOperator}
             selectedBrand={selectedBrand}
             setSelectedBrand={setSelectedBrand}
+            searchQuery={searchQuery}
             totalFiltered={filteredVehicles.length}
             onReset={handleResetFilters}
           />

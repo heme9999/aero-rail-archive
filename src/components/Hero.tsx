@@ -6,6 +6,7 @@ interface HeroProps {
   totalLiveries: number;
   totalModels: number;
   totalRetired: number;
+  searchQuery: string;
   onSelectTag: (tag: string) => void;
 }
 
@@ -14,6 +15,7 @@ export const Hero: React.FC<HeroProps> = ({
   totalLiveries,
   totalModels,
   totalRetired,
+  searchQuery,
   onSelectTag,
 }) => {
   const quickTags = [
@@ -36,7 +38,10 @@ export const Hero: React.FC<HeroProps> = ({
     { label: '长荣 777 / EVA Air', query: '长荣航空' },
     { label: '华航 A350 / 碳纤维红梅', query: '中华航空' },
     { label: 'C919 国产大飞机', query: 'C919' },
-    { label: '复兴号 / CR400', query: '复兴号' },
+    { label: '新舟60 / 涡桨客机', query: '新舟60' },
+    { label: '荷航 777 / Orange Pride', query: 'Orange Pride' },
+    { label: '秋田新干线 / E6小町号', query: 'E6' },
+    { label: '日出特急 / Sunrise', query: 'Sunrise' },
     { label: 'KATO (关水金属)', query: 'KATO' },
     { label: 'Aviation400', query: 'Aviation400' },
   ];
@@ -74,15 +79,23 @@ export const Hero: React.FC<HeroProps> = ({
             {/* Quick Filter Tags */}
             <div className="mt-4 flex flex-wrap items-center gap-2">
               <span className="text-xs text-slate-500 font-mono">热搜索引 Quick Index:</span>
-              {quickTags.map((t, idx) => (
-                <button
-                  key={idx}
-                  onClick={() => onSelectTag(t.query)}
-                  className="px-2.5 py-1 text-xs rounded-md bg-slate-800/80 hover:bg-slate-700 text-slate-300 hover:text-white border border-slate-700 transition-colors"
-                >
-                  {t.label}
-                </button>
-              ))}
+              {quickTags.map((t, idx) => {
+                const isActive = searchQuery.trim().toLowerCase() === t.query.toLowerCase();
+                return (
+                  <button
+                    key={idx}
+                    onClick={() => onSelectTag(t.query)}
+                    className={`px-2.5 py-1 text-xs rounded-md border transition-all flex items-center space-x-1 ${
+                      isActive
+                        ? 'bg-sky-500 text-slate-950 font-bold border-sky-400 shadow-sm shadow-sky-500/25 ring-1 ring-sky-400'
+                        : 'bg-slate-800/80 hover:bg-slate-700 text-slate-300 hover:text-white border-slate-700'
+                    }`}
+                  >
+                    <span>{t.label}</span>
+                    {isActive && <span className="ml-1 text-[10px] opacity-75">✕</span>}
+                  </button>
+                );
+              })}
             </div>
           </div>
 

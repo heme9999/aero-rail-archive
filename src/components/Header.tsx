@@ -87,8 +87,16 @@ export const Header: React.FC<HeaderProps> = ({
               placeholder="搜索机型/车型/涂装/模型货号..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full bg-slate-900 text-sm text-slate-200 pl-9 pr-4 py-1.5 rounded-lg border border-slate-700 focus:outline-none focus:border-sky-500"
+              className="w-full bg-slate-900 text-sm text-slate-200 pl-9 pr-8 py-1.5 rounded-lg border border-slate-700 focus:outline-none focus:border-sky-500"
             />
+            {searchQuery && (
+              <button
+                onClick={() => setSearchQuery('')}
+                className="absolute right-2.5 top-1/2 -translate-y-1/2 text-xs text-slate-400 hover:text-white px-1.5 py-0.5 rounded bg-slate-800"
+              >
+                ✕
+              </button>
+            )}
           </div>
         </div>
 
