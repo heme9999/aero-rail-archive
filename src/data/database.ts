@@ -7617,7 +7617,7 @@ export const VEHICLES: Vehicle[] = [
       zh: '国产双发涡轮螺旋桨支线客机的开路先锋与商用骄傲！由西飞集团在运-7基础上深度研制，搭载加拿大普惠 PW127J 涡桨发动机与美国汉胜四叶全复合材料螺旋桨。幸福航空作为中国首家以运营国产民机为特色的航空公司，长年以新舟60为主力机队穿梭于中国西北与华北支线机场，为构建中国“基本航空服务计划”支线空中走廊发挥了里程碑作用。',
       en: 'The pioneering indigenous twin-engine turboprop regional airliner developed by Xi\'an Aircraft Corporation (AVIC). Powered by Pratt & Whitney Canada PW127J engines with Hamilton Sundstrand 4-blade propellers, serving as Joy Air\'s regional backbone.',
     },
-    heroImage: 'https://upload.wikimedia.org/wikipedia/commons/b/b3/MA60_from_Joy_Air.jpg',
+    heroImage: 'https://upload.wikimedia.org/wikipedia/commons/4/44/Joy_Air_Xian_MA-60_at_Hefei_Airport.jpg',
     liveries: [
       {
         id: 'joy-air-ma60-standard',
@@ -7630,7 +7630,7 @@ export const VEHICLES: Vehicle[] = [
           zh: '纯白机身搭配象征吉祥如意的红黄双色流线型飘带，垂直尾翼喷涂祥云彩带幸福航空红白航徽。',
           en: 'Pure white fuselage adorned with festive red and yellow flowing ribbon waves and auspicious cloud tail fin.',
         },
-        photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/b/b3/MA60_from_Joy_Air.jpg',
+        photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/4/44/Joy_Air_Xian_MA-60_at_Hefei_Airport.jpg',
         scaleModels: [
           {
             id: 'joy-air-ma60-144',
@@ -7641,17 +7641,29 @@ export const VEHICLES: Vehicle[] = [
             releaseYear: 2016,
             status: 'available',
             imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/b/b3/MA60_from_Joy_Air.jpg',
-            notes: { zh: '西飞官方特许国产民机典藏模型，带独立可旋转四叶螺旋桨与展示木座', en: 'Official Xi\'an Aircraft model featuring spinning four-blade propellers and wood stand.' },
+            notes: { zh: '西飞官方特许展台典藏模型，带独立可旋转四叶螺旋桨与展示金属支架', en: 'Official Xi\'an Aircraft exhibition display model with spinning four-blade propellers and stand.' },
           },
         ],
       },
     ],
     detailPhotos: [
       {
-        title: { zh: '天水麦积山机场停机坪上的幸福航空新舟60', en: 'Joy Air MA60 at Tianshui Maijishan Airport' },
-        caption: { zh: '幸福航空新舟60停靠在甘肃天水麦积山支线机场，展现高抗风与高原短跑道起降硬核实力。', en: 'Joy Air MA-60 parked at Tianshui Maijishan Airport, showcasing its rugged short-runway capability.' },
-        url: 'https://upload.wikimedia.org/wikipedia/commons/6/66/Xian_MA-60_at_Tianshui Maijishan_Airport.JPG',
-        tag: { zh: '停机坪整装', en: 'Apron' },
+        title: { zh: '合肥新桥国际机场停机坪上的幸福航空新舟60真机', en: 'Joy Air MA-60 at Hefei Xinqiao International Airport' },
+        caption: { zh: '幸福航空新舟60真机停靠于合肥机场停机坪准备迎接旅客，高单翼与两具普惠PW127J涡桨发动机结构清晰。', en: 'Joy Air MA-60 airliner in real active service at Hefei Airport, showing high-wing turboprop structure.' },
+        url: 'https://upload.wikimedia.org/wikipedia/commons/4/44/Joy_Air_Xian_MA-60_at_Hefei_Airport.jpg',
+        tag: { zh: '停机坪实拍', en: 'Apron' },
+      },
+      {
+        title: { zh: '西安咸阳国际机场停机坪上的 B-3452 号真机', en: 'Joy Air MA-60 B-3452 at Xi\'an Xianyang Airport' },
+        caption: { zh: '幸福航空新舟60（注册号 B-3452）在西安咸阳国际机场站坪进行过站维护与旅客登机，真实展现国产涡桨客机硬朗机身。', en: 'B-3452 serviced on the tarmac at Xi\'an Xianyang Airport, displaying red and yellow ribbon livery.' },
+        url: 'https://upload.wikimedia.org/wikipedia/commons/b/bb/B-3452_Yunshuji_Y7_-_MA60_Joy_Air_%287338337180%29.jpg',
+        tag: { zh: '过站维护', en: 'Maintenance' },
+      },
+      {
+        title: { zh: '郑州新郑国际机场滑行中的 B-3476 号真机', en: 'Joy Air MA-60 B-3476 Taxiing at Zhengzhou' },
+        caption: { zh: '幸福航空新舟60（注册号 B-3476）执行支线航班任务，在跑道联络道平稳滑行。', en: 'Joy Air MA-60 B-3476 taxiing smoothly at Zhengzhou Xinzheng Airport during scheduled passenger service.' },
+        url: 'https://upload.wikimedia.org/wikipedia/commons/b/b1/B-3476_at_CGO_20190426.jpg',
+        tag: { zh: '地面滑行', en: 'Taxiing' },
       },
     ],
   },
