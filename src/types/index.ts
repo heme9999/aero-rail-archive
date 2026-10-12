@@ -51,6 +51,17 @@ export interface DetailPhoto {
   tag: LocalizedString;
 }
 
+export interface PrototypeInfo {
+  name: LocalizedString;
+  codeNumber: string; // e.g. "B-001A", "CR400AF-0207", "MSN 001 (F-WXWB)"
+  firstDate: LocalizedString; // e.g. "2017年5月5日 (上海浦东首飞)"
+  testLocation: LocalizedString; // e.g. "上海浦东国际机场 / 陕西阎良国家试飞院"
+  significance: LocalizedString; // 关键验证使命与工程历史
+  photoUrl: string; // 高清真机实拍直链
+  liveryName: LocalizedString; // 原厂测试/首飞涂装
+  currentStatus: LocalizedString; // 现存状态 (科研试飞中、博物馆典藏等)
+}
+
 export interface Vehicle {
   id: string;
   category: Category;
@@ -74,4 +85,5 @@ export interface Vehicle {
   heroImage: string;
   liveries: Livery[];
   detailPhotos: DetailPhoto[];
+  prototype?: PrototypeInfo;
 }

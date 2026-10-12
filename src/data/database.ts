@@ -1,4 +1,5 @@
 import type { Vehicle, Operator } from '../types';
+import { getVehiclePrototype } from './prototypes';
 
 export const CONTINENT_ORDER: Record<string, number> = {
   AS: 1, // 亚洲 / Asia
@@ -838,7 +839,7 @@ export const OPERATORS: Record<string, Operator> = {
   },
 };
 
-export const VEHICLES: Vehicle[] = [
+const RAW_VEHICLES: Vehicle[] = [
   // ==================== 航空系列 / AVIATION ====================
 
   // 1. 全日空 ANA 波音 747-400D "宝可梦 / 皮卡丘彩绘机" (日本经典彩绘 / 已退役)
@@ -8400,3 +8401,8 @@ export const VEHICLES: Vehicle[] = [
     ],
   },
 ];
+
+export const VEHICLES: Vehicle[] = RAW_VEHICLES.map((v) => ({
+  ...v,
+  prototype: v.prototype || getVehiclePrototype(v),
+}));

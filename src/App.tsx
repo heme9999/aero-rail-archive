@@ -85,6 +85,19 @@ export function App() {
           )
         );
 
+        // Search in prototypes
+        const matchPrototype = vehicle.prototype ? (
+          vehicle.prototype.name.zh.toLowerCase().includes(query) ||
+          vehicle.prototype.name.en.toLowerCase().includes(query) ||
+          vehicle.prototype.codeNumber.toLowerCase().includes(query) ||
+          vehicle.prototype.significance.zh.toLowerCase().includes(query) ||
+          vehicle.prototype.significance.en.toLowerCase().includes(query) ||
+          vehicle.prototype.testLocation.zh.toLowerCase().includes(query) ||
+          vehicle.prototype.testLocation.en.toLowerCase().includes(query) ||
+          vehicle.prototype.liveryName.zh.toLowerCase().includes(query) ||
+          vehicle.prototype.liveryName.en.toLowerCase().includes(query)
+        ) : false;
+
         if (
           !matchNameZh &&
           !matchNameEn &&
@@ -93,7 +106,8 @@ export function App() {
           !matchMfgEn &&
           !matchCountry &&
           !matchLivery &&
-          !matchModel
+          !matchModel &&
+          !matchPrototype
         ) {
           return false;
         }

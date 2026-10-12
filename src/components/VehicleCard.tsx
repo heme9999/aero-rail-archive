@@ -67,9 +67,17 @@ export const VehicleCard: React.FC<VehicleCardProps> = ({ vehicle, onSelect }) =
         </div>
 
         {/* Badges on bottom */}
-        <div className="absolute bottom-3 left-3 flex items-center space-x-1.5 font-mono text-[11px] px-2 py-0.5 rounded bg-slate-950/80 text-sky-300 border border-slate-700/80 backdrop-blur-sm">
-          <Camera className="w-3 h-3 text-sky-400" />
-          <span>{vehicle.detailPhotos.length} 张特写 / Photos</span>
+        <div className="absolute bottom-3 left-3 flex items-center space-x-1.5">
+          <div className="flex items-center space-x-1 font-mono text-[11px] px-2 py-0.5 rounded bg-slate-950/80 text-sky-300 border border-slate-700/80 backdrop-blur-sm">
+            <Camera className="w-3 h-3 text-sky-400" />
+            <span>{vehicle.detailPhotos.length} 张特写</span>
+          </div>
+          {vehicle.prototype && (
+            <div className="flex items-center space-x-1 font-mono text-[11px] px-2 py-0.5 rounded bg-sky-950/85 text-sky-200 border border-sky-600/70 backdrop-blur-sm" title={vehicle.prototype.name.zh}>
+              <span>🔬</span>
+              <span>{isAviation ? '原型机' : '原型车'}</span>
+            </div>
+          )}
         </div>
 
         {/* Code badge bottom right */}

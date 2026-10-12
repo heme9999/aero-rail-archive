@@ -12,6 +12,7 @@ import {
   ArrowLeft,
   ChevronLeft,
   ChevronRight,
+  FlaskConical,
 } from 'lucide-react';
 
 interface VehicleModalProps {
@@ -26,12 +27,14 @@ export const VehicleModal: React.FC<VehicleModalProps> = ({ vehicle, onClose }) 
     vehicle.liveries[0]?.id || ''
   );
   const [activeDetailPhotoIndex, setActiveDetailPhotoIndex] = useState<number | null>(null);
+  const [isPrototypePhotoOpen, setIsPrototypePhotoOpen] = useState<boolean>(false);
 
   // Sync active livery if vehicle changes
   useEffect(() => {
     if (vehicle) {
       setActiveLiveryId(vehicle.liveries[0]?.id || '');
       setActiveDetailPhotoIndex(null);
+      setIsPrototypePhotoOpen(false);
     }
   }, [vehicle?.id]);
 
@@ -71,7 +74,13 @@ export const VehicleModal: React.FC<VehicleModalProps> = ({ vehicle, onClose }) 
   // Keyboard navigation: Escape closes photo or modal; Arrow keys navigate photos
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (activeDetailPhotoIndex !== null) {
+      if (isPrototypePhotoOpen) {
+        if (e.key === 'Escape') {
+          e.preventDefault();
+          e.stopPropagation();
+          setIsPrototypePhotoOpen(false);
+        }
+      } else if (activeDetailPhotoIndex !== null) {
         if (e.key === 'Escape') {
           e.preventDefault();
           e.stopPropagation();
@@ -92,7 +101,7 @@ export const VehicleModal: React.FC<VehicleModalProps> = ({ vehicle, onClose }) 
 
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [activeDetailPhotoIndex, handleClosePhoto, handlePrevPhoto, handleNextPhoto, onClose]);
+  }, [isPrototypePhotoOpen, activeDetailPhotoIndex, handleClosePhoto, handlePrevPhoto, handleNextPhoto, onClose]);
 
   return (
     <div className="fixed inset-0 z-50 overflow-y-auto bg-slate-950/80 backdrop-blur-md flex items-center justify-center p-3 sm:p-6">
@@ -244,6 +253,133 @@ export const VehicleModal: React.FC<VehicleModalProps> = ({ vehicle, onClose }) 
                 <p className="text-xs text-slate-400 font-mono mt-0.5">
                   {vehicle.museumLocation.en}
                 </p>
+              </div>
+            </div>
+          )}
+
+          {/* SECTION: Prototype Aircraft / Train Testbed Archive (原型机/试验样车专属技术档案) */}
+          {vehicle.prototype && (
+            <div className="bg-slate-950/95 rounded-2xl p-5 border border-sky-500/40 shadow-xl relative overflow-hidden">
+              {/* Blueprint tech grid background pattern */}
+              <div className="absolute inset-0 bg-[radial-gradient(#0284c7_1px,transparent_1px)] [background-size:16px_16px] opacity-15 pointer-events-none" />
+
+              <div className="relative z-10 space-y-4">
+                {/* Header */}
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-sky-900/50 pb-3">
+                  <div className="flex items-center space-x-2.5">
+                    <span className="p-2 rounded-xl bg-sky-950 text-sky-400 border border-sky-800 shrink-0">
+                      <FlaskConical className="w-5 h-5" />
+                    </span>
+                    <div>
+                      <div className="flex items-center space-x-2 flex-wrap">
+                        <h3 className="text-base sm:text-lg font-bold text-white">
+                          {isAviation ? '首飞原型机技术档案' : '先行试验样车技术档案'} / Prototype & Testbed Archive
+                        </h3>
+                        <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-sky-900/80 text-sky-200 border border-sky-700">
+                          PROTOTYPE #01
+                        </span>
+                      </div>
+                      <p className="text-xs text-sky-400/80 font-mono mt-0.5">
+                        型号先导验证机 / 工程技术极限验证与首航档案
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center space-x-2">
+                    <span className="text-xs font-mono font-bold px-3 py-1 rounded bg-sky-950/90 text-sky-300 border border-sky-700">
+                      试验代号: {vehicle.prototype.codeNumber}
+                    </span>
+                  </div>
+                </div>
+
+                {/* Main Content Grid: Photo + Specs & Significance */}
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-5">
+                  {/* Prototype Image with zoom trigger */}
+                  <div className="lg:col-span-5 flex flex-col justify-between">
+                    <div
+                      onClick={() => setIsPrototypePhotoOpen(true)}
+                      className="group relative rounded-xl overflow-hidden border border-sky-800/60 bg-slate-900 shadow-md cursor-pointer"
+                    >
+                      <div className="h-48 sm:h-56 overflow-hidden">
+                        <img
+                          src={vehicle.prototype.photoUrl}
+                          alt={vehicle.prototype.name.zh}
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                          loading="lazy"
+                        />
+                      </div>
+                      <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-transparent to-transparent pointer-events-none" />
+                      <div className="absolute top-2.5 right-2.5 px-2 py-0.5 rounded bg-slate-950/80 text-[10px] font-mono font-semibold text-sky-300 border border-sky-800 backdrop-blur-sm">
+                        {isAviation ? '原型真机实拍' : '原型样车实拍'}
+                      </div>
+                      <div className="absolute bottom-2.5 left-2.5 right-2.5 flex items-center justify-between pointer-events-none">
+                        <span className="text-[11px] font-mono font-semibold px-2 py-0.5 rounded bg-slate-950/90 text-sky-300 border border-sky-800 backdrop-blur-sm truncate max-w-[200px]">
+                          {vehicle.prototype.liveryName.zh}
+                        </span>
+                        <div className="p-1 rounded-lg bg-sky-500 text-slate-950 opacity-90 group-hover:scale-110 transition-transform">
+                          <Maximize2 className="w-3.5 h-3.5" />
+                        </div>
+                      </div>
+                    </div>
+                    <div className="mt-2 text-center text-[11px] text-slate-400 font-mono">
+                      {vehicle.prototype.name.zh} ({vehicle.prototype.codeNumber})
+                    </div>
+                  </div>
+
+                  {/* Right: Technical milestones & specifications */}
+                  <div className="lg:col-span-7 space-y-3">
+                    <div className="bg-slate-900/90 rounded-xl p-3.5 border border-sky-900/40 space-y-2">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs">
+                        <div>
+                          <span className="text-slate-400 block font-mono text-[11px]">
+                            {isAviation ? '首飞时间 / 节点:' : '下线 / 首次试车:'}
+                          </span>
+                          <span className="font-semibold text-white">
+                            {vehicle.prototype.firstDate.zh}
+                          </span>
+                        </div>
+                        <div>
+                          <span className="text-slate-400 block font-mono text-[11px]">
+                            {isAviation ? '试飞基地 / 机场:' : '试验线路 / 基地:'}
+                          </span>
+                          <span className="font-semibold text-sky-300">
+                            {vehicle.prototype.testLocation.zh}
+                          </span>
+                        </div>
+                        <div>
+                          <span className="text-slate-400 block font-mono text-[11px]">
+                            原型机涂装 / 涂装特征:
+                          </span>
+                          <span className="text-slate-300">
+                            {vehicle.prototype.liveryName.zh}
+                          </span>
+                        </div>
+                        <div>
+                          <span className="text-slate-400 block font-mono text-[11px]">
+                            当前保存状态:
+                          </span>
+                          <span className="text-emerald-400 font-medium">
+                            {vehicle.prototype.currentStatus.zh}
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Engineering Milestones Box */}
+                    <div className="bg-sky-950/40 rounded-xl p-3.5 border border-sky-800/40">
+                      <div className="flex items-center space-x-1.5 text-xs font-bold text-sky-300 mb-1.5">
+                        <span>🔬</span>
+                        <span>关键工程验证使命与历史意义 / Engineering Milestones</span>
+                      </div>
+                      <p className="text-xs sm:text-[13px] text-slate-200 leading-relaxed mb-1">
+                        {vehicle.prototype.significance.zh}
+                      </p>
+                      <p className="text-[11px] text-slate-400 font-mono leading-normal">
+                        {vehicle.prototype.significance.en}
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           )}
@@ -590,6 +726,88 @@ export const VehicleModal: React.FC<VehicleModalProps> = ({ vehicle, onClose }) 
                   ))}
                 </div>
               )}
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Lightbox Modal for Prototype Image */}
+      {isPrototypePhotoOpen && vehicle.prototype && (
+        <div
+          className="fixed inset-0 z-[100] bg-slate-950/95 backdrop-blur-xl flex flex-col justify-between select-none animate-fadeIn"
+          onClick={() => setIsPrototypePhotoOpen(false)}
+        >
+          {/* Top Bar */}
+          <div
+            className="w-full bg-slate-900/90 border-b border-slate-800 px-4 sm:px-6 py-3 flex items-center justify-between z-10 backdrop-blur-md shrink-0 shadow-lg"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              onClick={() => setIsPrototypePhotoOpen(false)}
+              className="flex items-center space-x-2 px-3 sm:px-4 py-2 rounded-xl bg-slate-800 hover:bg-sky-500 hover:text-slate-950 text-slate-200 transition-all text-xs sm:text-sm font-semibold group shadow-sm border border-slate-700 hover:border-sky-400"
+              title="返回车型详情 (Esc)"
+            >
+              <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform text-sky-400 group-hover:text-slate-950" />
+              <span>← 返回车型详情 / Back to Details</span>
+              <kbd className="hidden sm:inline-block ml-1.5 px-1.5 py-0.5 text-[10px] font-mono bg-slate-900 text-slate-400 group-hover:bg-sky-600 group-hover:text-white rounded border border-slate-700">
+                ESC
+              </kbd>
+            </button>
+
+            <div className="flex items-center space-x-2 text-center">
+              <span className="text-xs font-mono font-bold text-sky-400 bg-sky-950/80 px-2.5 py-1 rounded-full border border-sky-800">
+                🔬 原型机实拍全屏大图 / Prototype Fullscreen
+              </span>
+            </div>
+
+            <button
+              onClick={() => setIsPrototypePhotoOpen(false)}
+              className="flex items-center space-x-1.5 px-3 py-2 rounded-xl bg-slate-800 hover:bg-rose-500 hover:text-white text-slate-300 transition-colors text-xs font-medium border border-slate-700"
+            >
+              <span className="hidden sm:inline">关闭</span>
+              <X className="w-4 h-4" />
+            </button>
+          </div>
+
+          {/* Main Photo */}
+          <div
+            className="relative flex-1 flex items-center justify-center p-3 sm:p-6 overflow-hidden min-h-0"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <img
+              src={vehicle.prototype.photoUrl}
+              alt={vehicle.prototype.name.zh}
+              className="max-w-full max-h-full object-contain rounded-lg shadow-2xl transition-all duration-300 select-none pointer-events-auto"
+            />
+          </div>
+
+          {/* Bottom Bar Info */}
+          <div
+            className="w-full bg-slate-900/95 border-t border-slate-800 px-4 sm:px-6 py-3.5 z-10 backdrop-blur-md shrink-0 shadow-lg"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="max-w-4xl mx-auto flex flex-col md:flex-row md:items-center justify-between gap-3">
+              <div>
+                <div className="flex items-center space-x-2 flex-wrap">
+                  <span className="text-sm sm:text-base font-bold text-white">
+                    {vehicle.prototype.name.zh} ({vehicle.prototype.codeNumber})
+                  </span>
+                  <span className="text-xs font-mono px-2 py-0.5 rounded bg-sky-950 text-sky-300 border border-sky-800">
+                    {vehicle.prototype.liveryName.zh}
+                  </span>
+                </div>
+                <p className="text-xs text-slate-300 mt-1 max-w-3xl">
+                  {vehicle.prototype.significance.zh}
+                </p>
+              </div>
+              <div className="text-right shrink-0">
+                <span className="text-xs font-mono text-emerald-400 block">
+                  状态: {vehicle.prototype.currentStatus.zh}
+                </span>
+                <span className="text-[11px] font-mono text-slate-400 block mt-0.5">
+                  节点: {vehicle.prototype.firstDate.zh}
+                </span>
+              </div>
             </div>
           </div>
         </div>

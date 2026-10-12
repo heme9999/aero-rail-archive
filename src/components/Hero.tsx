@@ -37,6 +37,7 @@ export const Hero: React.FC<HeroProps> = ({
     { label: '雅万高铁 / Whoosh', query: '雅万高铁' },
     { label: '长荣 777 / EVA Air', query: '长荣航空' },
     { label: '华航 A350 / 碳纤维红梅', query: '中华航空' },
+    { label: '🔬 首飞原型机/样车', query: '原型' },
     { label: 'C919 国产大飞机', query: 'C919' },
     { label: '新舟60 / 涡桨客机', query: '新舟60' },
     { label: '荷航 777 / Orange Pride', query: 'Orange Pride' },
@@ -59,21 +60,22 @@ export const Hero: React.FC<HeroProps> = ({
           <div className="max-w-3xl">
             <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-slate-900 border border-slate-700 text-xs text-sky-400 font-mono mb-3">
               <span className="w-2 h-2 rounded-full bg-sky-400 animate-pulse"></span>
-              <span>ENGINEERING ENCYCLOPEDIA & DIECAST ARCHIVE</span>
+              <span>ENGINEERING ENCYCLOPEDIA & PROTOTYPE ARCHIVE</span>
             </div>
             
             <h1 className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight leading-tight">
-              航空与铁道图鉴 · 涂装档案与微缩模型库
+              航空与铁道图鉴 · 原型档案与微缩模型库
               <span className="block text-lg sm:text-2xl text-slate-400 font-medium mt-1 font-mono">
-                Aero & Rail Archive: Liveries, Classic Retires & Scale Models
+                Aero & Rail Archive: Prototypes, Liveries & Scale Models
               </span>
             </h1>
 
             <p className="mt-3 text-sm sm:text-base text-slate-300 leading-relaxed">
               全面收录各个国家、航空公司与铁路局的经典客机、高速动车组、干线机车与特别彩绘涂装；
-              深度索引已退役经典传奇车型，并无缝贯通 <span className="text-sky-300 font-semibold">Aviation400</span>、
-              <span className="text-amber-300 font-semibold">日本 KATO / TOMIX</span>、
-              <span className="text-purple-300 font-semibold">中国中车文创 / 长鸣</span> 等各大主流实体模玩典藏档案。
+              专属收录每个机型的<span className="text-sky-300 font-semibold">首飞原型机 (Prototype)</span> 与车型的<span className="text-amber-300 font-semibold">试验验证样车 (Testbed)</span> 档案；
+              无缝贯通 <span className="text-purple-300 font-semibold">Aviation400</span>、
+              <span className="text-emerald-300 font-semibold">KATO / TOMIX</span>、
+              <span className="text-indigo-300 font-semibold">中车文创 / 长鸣火模</span> 等各大主流实体模玩典藏数据。
             </p>
 
             {/* Quick Filter Tags */}
