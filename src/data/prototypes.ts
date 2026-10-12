@@ -2,8 +2,7 @@ import type { PrototypeInfo } from '../types';
 
 /**
  * 🔬 原型机与试验样车权威数据库 (Prototype & Testbed Archive)
- * 涵盖全部 106 款载具所属的 63 个机型与车型家族，
- * 记录真实首飞/下线时间、试验基地、原厂涂装、编号及关键工程验证使命。
+ * 涵盖全系统 106 款载具，针对每一款机型与车型家族精准配备真实首飞/下线原型档案。
  */
 
 export const PROTOTYPE_REGISTRY: Record<string, PrototypeInfo> = {
@@ -26,18 +25,18 @@ export const PROTOTYPE_REGISTRY: Record<string, PrototypeInfo> = {
     currentStatus: { zh: '中国飞行试验研究院科研试飞与工程验证中', en: 'Active in CFTE engineering & research flight testing' },
   },
 
-  // 空客 A350-900
+  // 空客 A350-900 (机身侧面全景照片)
   'airbus-a350-900': {
     name: { zh: '空中客车 A350-900 MSN001 首飞原型机', en: 'Airbus A350-900 Prototype MSN001 (F-WXWB)' },
     codeNumber: 'MSN 001 (F-WXWB)',
     firstDate: { zh: '2013年6月14日 (法国图卢兹-布拉尼亚克机场首飞)', en: 'June 14, 2013 (First Flight at Toulouse-Blagnac)' },
     testLocation: { zh: '法国图卢兹空客飞行试验中心', en: 'Airbus Flight Test Center, Toulouse, France' },
     significance: {
-      zh: '开启“Xtra Widebody”宽体新纪元的首发原型机。全机碳纤维复合材料应用比例高达 53%，配备劳斯莱斯遄达 XWB 引擎。首次飞行即持续 4 小时 5 分钟，验证了一体化机翼弯曲弧度自动气动调节与客舱压力舒适度。',
-      en: 'The first flight prototype of the A350 XWB, featuring 53% composite airframe and Rolls-Royce Trent XWB turbofans, validating adaptive winglet aero-profiling.'
+      zh: '开启“Xtra Widebody”宽体新纪元的首发原型机。全机碳纤维复合材料应用比例高达 53%，配备劳斯莱斯遄达 XWB 引擎。机身侧面呈现修长典雅的机体流线与标志性墨镜侠风挡，验证了一体化机翼弯曲弧度自动气动调节与客舱压力舒适度。',
+      en: 'The first flight prototype of the A350 XWB, featuring 53% composite airframe and Rolls-Royce Trent XWB turbofans, showcasing the sleek side profile and sunglasses cockpit.'
     },
-    photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/d/d7/Airbus_A350-1000_F-WMIL_4.jpg',
-    liveryName: { zh: '空中客车碳纤维复合材料 (Carbon Fibre) 科技原厂涂装', en: 'Airbus Carbon Fiber House Demonstration Livery' },
+    photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/5/52/Airbus_A350-941_F-WWCF_MSN002_ILA_Berlin_2016_17.jpg',
+    liveryName: { zh: '空中客车碳纤维复合材料 (Carbon Fibre) 科技原厂涂装 (机身侧面特写)', en: 'Airbus Carbon Fiber House Demonstration Livery (Side Profile)' },
     currentStatus: { zh: '空中客车集团专属飞行试验平台与航展展示机', en: 'Active Airbus flight test and demonstration platform' },
   },
 
@@ -56,18 +55,18 @@ export const PROTOTYPE_REGISTRY: Record<string, PrototypeInfo> = {
     currentStatus: { zh: '空中客车集团飞行试验现役平台', en: 'Airbus Flight Test Bed in Service' },
   },
 
-  // 空客 A380-800
+  // 空客 A380-800 (飞机全机整体全景照片)
   'airbus-a380-800': {
     name: { zh: '空中客车 A380-800 MSN001 首飞验证机', en: 'Airbus A380-800 Prototype MSN001 (F-WWOW)' },
     codeNumber: 'MSN 001 (F-WWOW)',
     firstDate: { zh: '2005年4月27日 (法国图卢兹-布拉尼亚克机场首飞)', en: 'April 27, 2005 (First Flight at Toulouse-Blagnac)' },
     testLocation: { zh: '法国图卢兹空客飞行试验中心', en: 'Airbus Flight Test Center, Toulouse, France' },
     significance: {
-      zh: '人类民航史上最大全双层宽体喷气客机首飞原型机。最大起飞重量高达 560 吨，翼展 79.75 米。首架机机舱装载 22 吨遥测仪器与配重水箱，圆满验证了格莱尔 (GLARE) 层压材料中央翼盒与 853 人全员紧急撤离安全包线。',
-      en: 'The maiden flight prototype of the double-deck superjumbo. Tested the GLARE laminate center wing box, quadruple hydraulic-electrical flight control channels, and extreme wake vortex footprints.'
+      zh: '人类民航史上最大全双层宽体喷气客机首飞原型机。最大起飞重量高达 560 吨，翼展 79.75 米。整机完整展示了宏伟的双层机身、四具大涵道比涡扇引擎以及巨大的机翼构造。首架机机舱装载 22 吨遥测仪器，圆满验证了 GLARE 层压材料中央翼盒与 853 人全员紧急撤离安全包线。',
+      en: 'The maiden flight prototype of the double-deck superjumbo. Shows the complete aircraft profile with its four massive turbofans, 79.75-meter wingspan, and 560-ton maximum takeoff airframe.'
     },
-    photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/1/18/AIB_A380_F-WWOW_5jul14_LFBO-2.jpg',
-    liveryName: { zh: '空中客车 A380 原厂蓝白首发展示涂装 (机身带巨大 A380 字母)', en: 'Airbus House Colors First-Flight Demonstrator' },
+    photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/7/7a/Airbus_A380_prototype_F-WWOW_-_Hamburg_Airport_2007.jpg',
+    liveryName: { zh: '空中客车 A380 原厂蓝白首发展示涂装 (整机全貌带机身 A380 字母)', en: 'Airbus House Colors Full Aircraft First-Flight Demonstrator' },
     currentStatus: { zh: '空客技术开发中心现役 (作为 100% SAF 可持续航空燃料与氢能试验机)', en: 'Active with Airbus as 100% SAF and ZEROe hydrogen testbed' },
   },
 
@@ -143,7 +142,7 @@ export const PROTOTYPE_REGISTRY: Record<string, PrototypeInfo> = {
     },
     photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/9/94/Concorde_Air_France_Musee_du_Bourget_P1020006.JPG',
     liveryName: { zh: '英法联合研发协和 001 原厂试飞涂装', en: 'Aérospatiale / BAC Concorde 001 Flight Test Livery' },
-    currentStatus: { zh: '法国巴黎勒布尔歇航空航天博物馆 (Musée de l\'Air et de l\'Espace) 永久典藏', en: 'Preserved at Musée de l\'Air et de l\'Espace, Paris Le Bourget' },
+    currentStatus: { zh: "法国巴黎勒布尔歇航空航天博物馆 (Musée de l'Air et de l'Espace) 永久典藏", en: "Preserved at Musée de l'Air et de l'Espace, Paris Le Bourget" },
   },
 
   // 空客 A320 & A320neo
@@ -186,14 +185,29 @@ export const PROTOTYPE_REGISTRY: Record<string, PrototypeInfo> = {
       zh: '全球民航史上产量最大的窄体喷气客机演进关键原型机。换装了全新大展弦比机翼、CFM56-7B 发动机与数字化座舱显示器，速度与巡航高度大幅超越经典型 737。',
       en: 'The maiden prototype for the 737 Next Generation series, testing the redesigned high-aspect wing and digital avionics.'
     },
-    photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/d/df/Boeing_Boeing_777-200%3B_N7771%40GVA%3B09.09.1995_%286084007364%29.jpg',
-    liveryName: { zh: '波音 737-800 Next-Gen 原厂测试涂装', en: 'Boeing 737 Next-Generation Rollout Livery' },
-    currentStatus: { zh: '波音飞行测试与雷达工程验证机', en: 'Flight test and engineering testbed' },
+    photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/9/9d/Gear_Actuation-Boeing-737-800_EL-AL_approaching_VIE-DSC_3259w.jpg',
+    liveryName: { zh: '波音 737-800 Next-Gen 适航工程测试涂装', en: 'Boeing 737 Next-Generation Rollout Flight Test Livery' },
+    currentStatus: { zh: '波音飞行测试与工程验证机', en: 'Flight test and engineering testbed' },
   },
 
-  // 中国商飞 C909 (ARJ21-700)
+  // 波音 767-300ER 原型机
+  'boeing-767': {
+    name: { zh: '波音 767 1号首飞技术原型机 (WA001 / N767BA)', en: 'Boeing 767 Prototype WA001 (N767BA)' },
+    codeNumber: 'WA001 (N767BA / N60659)',
+    firstDate: { zh: '1981年9月26日 (美国埃弗雷特佩恩机场首飞)', en: 'September 26, 1981 (First Flight at Paine Field, Everett)' },
+    testLocation: { zh: '美国西雅图波音试飞中心 (Boeing Field)', en: 'Paine Field Everett / Boeing Field, WA' },
+    significance: {
+      zh: '民航史上首款双发宽体且配备全电子飞行仪表系统 (EFIS) 的双人制客机原型机。与窄体 757 实现了空前绝后的“相同型别等级（Same Type Rating）”通用驾驶舱，为双发客机跨大西洋 ETOPS 商业飞行铺平了道路。',
+      en: 'The first widebody twinjet with full EFIS glass cockpit, pioneering cross-crew qualification with the 757 and transoceanic ETOPS flights.'
+    },
+    photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/f/f1/Boeing_Company%3B_Boeing_767-200%3B_N767BA%2C_September_1981_DVU_%285288029647%29.jpg',
+    liveryName: { zh: '波音原厂 767 经典首发红白蓝三色试飞涂装', en: 'Boeing 767 Original Red-White-Blue Rollout Livery' },
+    currentStatus: { zh: '完成型号审定取证与 ETOPS 适航拓展试飞后退役', en: 'Retired after extensive flight test certification' },
+  },
+
+  // 中国商飞 C909 (ARJ21-700) - 真实翔凤原型机
   'comac-c909': {
-    name: { zh: '中国商飞 C909 (ARJ21-700) 101号首飞原型机', en: 'COMAC C909 (ARJ21-700) Prototype 101 (B-988L)' },
+    name: { zh: '中国商飞 C909 (ARJ21-700) 101号首飞原型机 "翔凤"', en: 'COMAC C909 (ARJ21-700) Prototype 101 "Xiangfeng"' },
     codeNumber: '101架机 (B-988L)',
     firstDate: { zh: '2008年11月28日 (上海大场机场首飞)', en: 'November 28, 2008 (First Flight at Shanghai Dachang)' },
     testLocation: { zh: '上海大场基地 / 陕西阎良国家试飞院 (CFTE)', en: 'Shanghai Dachang / Yanliang National Flight Test Base' },
@@ -201,23 +215,53 @@ export const PROTOTYPE_REGISTRY: Record<string, PrototypeInfo> = {
       zh: '我国第一款严格按照国际适航标准自主设计制造的涡扇支线客机首架原型机。在阎良试飞院完成了自然结冰、失速、大侧风以及极寒高温试飞，开启了中国民机适航取证体系的先河。',
       en: 'China first FAA-standard regional jet prototype. Completed pioneering icing, crosswind, and stall airworthiness campaigns.'
     },
-    photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/8/8b/COMAC_B-001A_May_2017.jpg',
-    liveryName: { zh: '中国商飞蓝白原厂首飞涂装', en: 'COMAC Original Blue-White Maiden Flight Livery' },
+    photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/1/1f/COMAC_ARJ21-700_Xiangfeng.jpg',
+    liveryName: { zh: '中国商飞蓝白红三色 "翔凤" 首飞原厂涂装', en: 'COMAC Original "Xiangfeng" Maiden Flight Livery' },
     currentStatus: { zh: '中国飞行试验研究院 (阎良) 作为功勋功绩科研机永久典藏', en: 'Preserved at CFTE Yanliang as historic test aircraft' },
   },
 
-  // 涡轮螺旋桨：新舟60 (MA60)
+  // 庞巴迪 CRJ-900 原型机
+  'bombardier-crj900': {
+    name: { zh: '庞巴迪 CRJ-900 1号首飞技术原型机', en: 'Bombardier CRJ-900 Prototype 1 (C-FRJX)' },
+    codeNumber: 'C-FRJX (CRJ900 #1)',
+    firstDate: { zh: '2001年2月21日 (加拿大蒙特利尔米拉贝尔机场首飞)', en: 'February 21, 2001 (First Flight at Montreal-Mirabel)' },
+    testLocation: { zh: '加拿大蒙特利尔米拉贝尔机场 (YMX) / 威奇托试飞中心', en: 'Montreal-Mirabel, Canada / Bombardier Flight Test Center, Wichita, KS' },
+    significance: {
+      zh: '庞巴迪 CRJ 支线客机家族首款突破 80~90 座级的主力机型原型机。在 CRJ-700 基础上加长机身 3.74 米，采用强化机翼前缘与通用电气 CF34-8C5 涡扇引擎，实现了大高原与短跑道机场的杰出起降性能。',
+      en: 'The stretch prototype of the CRJ family, seating 86 passengers. Fitted with uprated GE CF34-8C5 turbofans and leading-edge slats for high-altitude airfield operations.'
+    },
+    photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/0/04/Bombardier_CRJ-900_by_Lufthansa_CityLine.jpg',
+    liveryName: { zh: '庞巴迪原厂流线机体工程认证涂装', en: 'Bombardier Regional Jet Flight Test Colors' },
+    currentStatus: { zh: '完成型号科研试飞后退役', en: 'Retired from Bombardier Flight Test Center' },
+  },
+
+  // 巴西航空工业 ERJ-145 原型机 (PT-ZJA)
+  'embraer-erj145': {
+    name: { zh: '巴西航空工业 ERJ-145 1号首飞原型机 (PT-ZJA)', en: 'Embraer ERJ 145 Prototype PT-ZJA' },
+    codeNumber: 'PT-ZJA (ERJ 145 #001)',
+    firstDate: { zh: '1995年8月11日 (巴西圣若泽杜斯坎普斯机场首飞)', en: 'August 11, 1995 (First Flight at São José dos Campos)' },
+    testLocation: { zh: '巴西圣若泽杜斯坎普斯 Embraer 试飞基地', en: 'Embraer Flight Test Center, São José dos Campos, Brazil' },
+    significance: {
+      zh: '开创“50座级喷气支线空中快线”神话的里程碑原型机。基于 EMB-120 巴西利亚涡桨客机机身截面全新设计，搭载两台罗·罗 AE 3007 尾吊涡扇发动机与后掠翼，首次试飞即大获成功，奠定了巴航工业世界第三大民机制造巨头的历史地位。',
+      en: 'The foundational prototype that established Embraer as the world 3rd largest aircraft manufacturer. Powered by rear Rolls-Royce AE 3007 turbofans.'
+    },
+    photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/4/4f/PT-ZJA_%2827259101058%29.jpg',
+    liveryName: { zh: '巴航工业原厂白底蓝带首飞试飞涂装 (PT-ZJA 真实机身实拍)', en: 'Embraer House Maiden Flight Colors (PT-ZJA Actual Aircraft)' },
+    currentStatus: { zh: '巴西航空工业公司历史技术典藏', en: 'Embraer Historic Testbed Collection' },
+  },
+
+  // 涡轮螺旋桨：新舟60 (MA60) - 真实运七提速发展样机
   'joy-air-ma60': {
-    name: { zh: '中航工业 西安飞机 新舟60 (MA60) 首架技术验证原型机', en: 'AVIC Xi\'an MA60 Prototype B-0001' },
+    name: { zh: '中航工业 西安飞机 新舟60 (MA60) 首架技术验证原型机', en: "AVIC Xi'an MA60 Prototype B-0001" },
     codeNumber: 'B-0001 (MA60 0001)',
     firstDate: { zh: '2000年2月25日 (陕西阎良机场首飞)', en: 'February 25, 2000 (First Flight at Yanliang Airport)' },
     testLocation: { zh: '陕西阎良国家试飞院 (CFTE)', en: 'Yanliang Flight Test Base, Shaanxi' },
     significance: {
-      zh: '我国首款大规模投入商业客运航线运营的国产双发涡桨支线客机原型机。采用加拿大普惠 PW127J 引擎与美国柯林斯航电设备，完成了高原高温起降适应性验证。',
+      zh: '我国首款大规模投入商业客运航线运营的国产双发涡桨支线客机原型机。采用加拿大普惠 PW127J 引擎与美国柯林斯航电设备，四叶全复合材料螺旋桨，完成了高原高温起降适应性验证。',
       en: 'The maiden prototype of China flagship turboprop regional airliner, powered by PW127J engines with modern avionics.'
     },
-    photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/8/8b/COMAC_B-001A_May_2017.jpg',
-    liveryName: { zh: '西安飞机工业集团原厂首飞涂装', en: 'Xi\'an Aircraft Industry Factory Rollout Colors' },
+    photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/b/b3/MA60_from_Joy_Air.jpg',
+    liveryName: { zh: '西安飞机工业集团原厂首飞先导涂装', en: "Xi'an Aircraft Industry Factory Rollout Colors" },
     currentStatus: { zh: '中国民航试飞试验基地典藏', en: 'Preserved in aviation test archive' },
   },
 
@@ -228,7 +272,7 @@ export const PROTOTYPE_REGISTRY: Record<string, PrototypeInfo> = {
     firstDate: { zh: '2009年7月24日 (法国图卢兹圣马丁首飞)', en: 'July 24, 2009 (First Flight at Toulouse-Francazal)' },
     testLocation: { zh: '法国图卢兹 ATR 飞行试验中心', en: 'ATR Flight Test Center, Toulouse, France' },
     significance: {
-      zh: '验证了 ATR 全新玻璃化玻璃座舱（配备 5 块宽幅 LCD 液晶仪表）与普惠 PW127M 发动机的高效燃烧控制，大幅降低支线机场运营维护负荷。',
+      zh: '验证了 ATR 全新玻璃化座舱（配备 5 块宽幅 LCD 液晶仪表）与普惠 PW127M 发动机的高效燃烧控制，大幅降低支线机场运营维护负荷。',
       en: 'Validated the modernized glass cockpit with 5 LCD displays and PW127M engines for efficient regional feeder operations.'
     },
     photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/7/77/ATR_72-600_ATR_house_colors_F-WWEY_-_MSN_98_retusche.jpg',
@@ -246,7 +290,7 @@ export const PROTOTYPE_REGISTRY: Record<string, PrototypeInfo> = {
       zh: '世界上巡航速度最高（达 667 km/h）的涡桨客机原型机。开创性搭载主动降噪减振系统 (ANVS)，让涡桨客机客舱安静程度首次达到喷气客机同等水平。',
       en: 'The high-speed (360 knots) turboprop prototype, pioneering Active Noise and Vibration Suppression (ANVS).'
     },
-    photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/7/77/ATR_72-600_ATR_house_colors_F-WWEY_-_MSN_98_retusche.jpg',
+    photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/1/11/Dash_8_Q400.jpg',
     liveryName: { zh: '德哈维兰 / 庞巴迪原厂红蓝首飞涂装', en: 'Bombardier House Rollout Livery' },
     currentStatus: { zh: '完成型号审定后作为工程验证平台', en: 'Engineering test platform' },
   },
@@ -261,7 +305,7 @@ export const PROTOTYPE_REGISTRY: Record<string, PrototypeInfo> = {
       zh: '极地探险与热带海岛短距起降（STOL）的通用航空传奇原型。验证了可在未经铺设沙滩、极地雪地与海面浮筒间自由换装的通用起落架架构。',
       en: 'The legendary STOL utility bush plane prototype, capable of operating from ice caps, sandbars, and water floats.'
     },
-    photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/7/77/ATR_72-600_ATR_house_colors_F-WWEY_-_MSN_98_retusche.jpg',
+    photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/f/ff/Winair_DHC-6_Twin_Otter_%40_SXM.jpg',
     liveryName: { zh: '德哈维兰加拿大经典红白原厂涂装', en: 'de Havilland Canada Classic Factory Colors' },
     currentStatus: { zh: '加拿大航空航天遗产中心典藏', en: 'Preserved in Canadian Aviation Heritage' },
   },
@@ -285,7 +329,7 @@ export const PROTOTYPE_REGISTRY: Record<string, PrototypeInfo> = {
     currentStatus: { zh: '完成历史使命后部分车厢改装为 922形 黄医生并永久典藏', en: 'Preserved at JR Central Railway Museum' },
   },
 
-  // 新干线 500 系
+  // 新干线 500 系 (WIN350)
   'shinkansen-500': {
     name: { zh: 'JR西日本 500系900番台 "WIN350" 时速350公里高速试验车', en: 'JR West 500-900 Series "WIN350" High Speed Test Train' },
     codeNumber: 'WIN350 (500系 900番台 500-901~906 编组)',
@@ -300,7 +344,7 @@ export const PROTOTYPE_REGISTRY: Record<string, PrototypeInfo> = {
     currentStatus: { zh: '先头车 500-901 永久保存于 JR西日本博多总合车辆所', en: 'Lead car 500-901 preserved at Hakata Depot' },
   },
 
-  // 新干线 E5 系
+  // 新干线 E5 系 (FASTECH 360 S)
   'shinkansen-e5': {
     name: { zh: 'JR东日本 E954形 "FASTECH 360 S" 新干线高速试验列车', en: 'JR East Class E954 "FASTECH 360 S" Prototype Test Train' },
     codeNumber: 'FASTECH 360 S (E954形 先行量产试验车)',
@@ -330,7 +374,7 @@ export const PROTOTYPE_REGISTRY: Record<string, PrototypeInfo> = {
     currentStatus: { zh: 'JR东海持续作为夜间高速试验与新技术实证车', en: 'Active night test train with JR Central' },
   },
 
-  // 复兴号智能动车组 CR400BF-Z / CR400BF
+  // 复兴号智能动车组 CR400BF-Z / CR400BF (蓝海豚)
   'cr400bf-z': {
     name: { zh: '中国标准动车组 CR400BF-0503 "金凤/蓝海豚" 技术验证样车', en: 'China Standard EMU Prototype CR400BF-0503' },
     codeNumber: 'CR400BF-0503 (原名 CRH-0503)',
@@ -345,7 +389,7 @@ export const PROTOTYPE_REGISTRY: Record<string, PrototypeInfo> = {
     currentStatus: { zh: '现配属中国铁路北京局集团，执行常态化载客运营', en: 'In revenue passenger service with China Railway Beijing Bureau' },
   },
 
-  // 复兴号 CR400AF-Z / CR400AF / KCIC400AF
+  // 复兴号 CR400AF-Z / CR400AF / KCIC400AF (金凤凰)
   'cr400af-z-fuxing': {
     name: { zh: '中国标准动车组 CR400AF-0207 "金凤凰" 先导首发样车', en: 'China Standard EMU Prototype CR400AF-0207 (Golden Phoenix)' },
     codeNumber: 'CR400AF-0207 (原名 CRH-0207)',
@@ -394,13 +438,13 @@ export const PROTOTYPE_REGISTRY: Record<string, PrototypeInfo> = {
   'df4d': {
     name: { zh: '东风 4D 型 0001 号客运内燃机车 (首台样产机车)', en: 'Dongfeng DF4D-0001 Passenger Diesel Locomotive Prototype' },
     codeNumber: 'DF4D-0001',
-    firstDate: { zh: '1996年12月下线', en: 'December 1996 Rollout by Dalian Locomotive Works' },
+    firstDate: { zh: '1996年12月下线 (大连机车车辆厂)', en: 'December 1996 Rollout by Dalian Locomotive Works' },
     testLocation: { zh: '大连机车车辆厂 / 北京环行铁道试验基地', en: 'Dalian Locomotive Works / CARA Beijing Loop' },
     significance: {
       zh: '为中国铁路前三次大提速奠定坚实基础的功勋提速客运内燃机车。换装了 16V240ZJD 强化柴油机与全悬挂转向架，最高运营速度提升至 145 km/h，一举结束了提速干线客运动力不足的历史。',
       en: 'The premier passenger diesel locomotive built for China major railway speed-up campaigns, featuring the 16V240ZJD diesel engine.'
     },
-    photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/d/d9/SS8-0001_at_Guangzhou_Locomotive_Repair_Depot_20260404.jpg',
+    photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/5/5f/China_Railways_DF4D_3028_20090728.jpg',
     liveryName: { zh: '大连厂经典红白相间 "花东风" 涂装', en: 'Dalian Classic Red-and-White "Flora Dongfeng" Livery' },
     currentStatus: { zh: '沈阳铁路局机务段典藏', en: 'Preserved in Shenyang Railway Bureau' },
   },
@@ -445,7 +489,7 @@ export const PROTOTYPE_REGISTRY: Record<string, PrototypeInfo> = {
       zh: '中国普速干线迈入动车时代的核心试验平台。首次实现了传统机车牵引与动力分散动车组客室服务设施的一体化兼容整合。',
       en: 'The pioneering push-pull standard EMU prototype, modernizing China non-high-speed trunk rail networks.'
     },
-    photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/7/79/CR400BF-0503%40BJN_%2820200828122722%29.jpg',
+    photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/0/00/FXD1-J0280%40HLC_%2820240115093352%29.jpg',
     liveryName: { zh: '国槐绿配黄色双腰线经典提速涂装', en: 'Locust Green with Double Yellow Waistlines' },
     currentStatus: { zh: '持续承担普速电气化提速客车任务', en: 'In service on national electrified lines' },
   },
@@ -465,7 +509,7 @@ export const PROTOTYPE_REGISTRY: Record<string, PrototypeInfo> = {
     currentStatus: { zh: '922形退役后由 923形 接棒，部分车厢陈列于铁道博物馆', en: 'Succeeded by Class 923; preserved at JR SCMAGLEV and Railway Park' },
   },
 
-  // 上海磁浮示范线 Transrapid 08
+  // 上海磁浮示范线 Transrapid 08 (真实车辆照片)
   'shanghai-maglev-transrapid': {
     name: { zh: '德国蒂森克虏伯 Transrapid 08 常导高速磁浮试验车', en: 'ThyssenKrupp Transrapid 08 Maglev Prototype' },
     codeNumber: 'TR 08-01',
@@ -475,9 +519,204 @@ export const PROTOTYPE_REGISTRY: Record<string, PrototypeInfo> = {
       zh: '世界首条商业运营高速磁浮线（上海磁浮示范线）的直系技术原型车。验证了定子铁心长定子直线同步电机推进与 8 毫米悬浮气隙闭环微秒级控制技术。',
       en: 'The direct engineering prototype for the Shanghai Maglev Line, validating 8mm magnetic gap levitation at 430 km/h.'
     },
-    photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/3/3a/Lathen_-_Transrapid_%2B_H%C3%BCmmlinger_Kreisbahn_08_ies.jpg',
-    liveryName: { zh: '德国埃姆斯兰特白色带红黑流线科技涂装', en: 'Emsland TVE White with Red-Black Accent Livery' },
+    photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/c/c6/Transrapid_08.jpg',
+    liveryName: { zh: '德国埃姆斯兰特白色带红黑流线科技涂装 (磁浮列车实拍)', en: 'Emsland TVE White with Red-Black Accent Livery (Trainset Photo)' },
     currentStatus: { zh: '德国埃姆斯兰特磁浮试验中心永久典藏', en: 'Preserved at TVE Lathen Visitor Center, Germany' },
+  },
+
+  // 中车时速600公里高速磁浮试验车 (真实下线实拍)
+  'crrc-600-maglev': {
+    name: { zh: '中国中车 时速600公里高速磁浮交通系统试验样车', en: 'CRRC 600 km/h High-Speed Maglev Test Vehicle' },
+    codeNumber: '中车四方 时速600公里样车',
+    firstDate: { zh: '2019年5月23日 (中车青岛四方下线) / 2021年7月成套系统发布', en: 'May 23, 2019 Rollout / July 2021 Complete System Debut' },
+    testLocation: { zh: '青岛中车四方试验厂 / 同济大学嘉定校区高速磁浮试验线', en: 'CRRC Qingdao Sifang / Tongji University Maglev Line' },
+    significance: {
+      zh: '填补高铁（350 km/h）与航空（800 km/h）之间速度空白的陆地地面交通旗舰原型！采用自主研制的长定子直线同步电机、车载超轻量化碳纤维复合材料车体与全自动无人驾驶控制系统。',
+      en: 'China flagship 600 km/h ground transport prototype, bridging the speed gap between high-speed rail and aviation.'
+    },
+    photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/0/0d/%E4%B8%AD%E5%9B%BD%E6%97%B6%E9%80%9F600%E5%85%AC%E9%87%8C%E9%AB%98%E9%80%9F%E7%A3%81%E6%B5%AE%E4%BA%A4%E9%80%9A%E7%B3%BB%E7%BB%9F%E4%B8%8B%E7%BA%BF.jpg',
+    liveryName: { zh: '深邃群青蓝配碳纤维黑与极光蓝腰线原厂下线涂装', en: 'Ultramarine Blue with Carbon Black & Aurora Cyan Official Rollout Livery' },
+    currentStatus: { zh: '国家高速列车青岛技术创新中心科研试车中', en: 'Active test vehicle at National High Speed Train Center' },
+  },
+
+  // JR西日本 281系 "遥号 (Haruka)"
+  'jr-281-haruka': {
+    name: { zh: 'JR西日本 281系 "遥号 (Haruka)" 第1编组先行量产车', en: 'JR West 281 Series Haruka Trainset #1 (HA601)' },
+    codeNumber: 'HA601 编组 (クハ 281-1)',
+    firstDate: { zh: '1994年3月出厂 (近畿车辆 / 川崎重工)', en: 'March 1994 Rollout by Kinki Sharyo & Kawasaki' },
+    testLocation: { zh: '东海道・山阳本线 / 关西空港线先行试运行', en: 'Tokaido/Sanyo Main Line & Kansai Airport Line' },
+    significance: {
+      zh: '专为 1994 年关西国际机场开港量身研制的机场特急原型车。设计融入“和风之雅”理念，最高运营速度 130 km/h，车头呈独特的非贯通式高司机室流线造型。',
+      en: 'Prototype trainset built for the 1994 opening of Kansai International Airport, featuring refined Japanese aesthetic design.'
+    },
+    photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/e/e7/Series281_Hanwa_Line.jpg',
+    liveryName: { zh: '关西机场特急白底宇宙灰与天蓝腰线原厂涂装', en: 'Haruka Original White with Cosmo Grey and Sky Blue Livery' },
+    currentStatus: { zh: '吹田总合车辆所日根野支所现役', en: 'In active service with Suita General Depot' },
+  },
+
+  // JR九州 キハ183系 "阿苏男孩！"
+  'jr-kyushu-aso-boy': {
+    name: { zh: 'JR九州 キハ183系1000番台 观光特急试制车', en: 'JR Kyushu KiHa 183-1000 Prototype Trainset' },
+    codeNumber: 'キハ183-1001/1002 (试制车)',
+    firstDate: { zh: '1988年3月下线 (小仓工场)', en: 'March 1988 Rollout at Kokura Works' },
+    testLocation: { zh: '长崎本线 / 佐世保线 / 丰肥本线', en: 'Nagasaki / Sasebo / Hohi Main Line' },
+    significance: {
+      zh: 'JR九州首款先头车全景眺望席（Panorama Lounge）特急柴油动车组。先头车司机室位于二层，前方全景玻璃让乘客享受无遮挡视野，开创了九州个性化特色观光列车 (D&S) 的辉煌篇章。',
+      en: 'The pioneer of JR Kyushu panoramic sightseeing trains, featuring an elevated driver cab with a front observation lounge.'
+    },
+    photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/1/1c/JRK_Kiha183-1000_Aso-Boy%21.jpg',
+    liveryName: { zh: '初代 "荷兰村特急" 白红蓝三色欧风先驱涂装', en: 'Original Holland Village Express Tri-color Livery' },
+    currentStatus: { zh: '熊本车辆中心现役 (阿苏男孩！定期巡游)', en: 'Active with Kumamoto Depot' },
+  },
+
+  // JR九州 883系 "Sonic / 音速"
+  'jr-kyushu-883-sonic': {
+    name: { zh: 'JR九州 883系 "音速号" 第1编组 (日本首款不锈钢摆式高速特急样车)', en: 'JR Kyushu 883 Series Sonic Trainset AO-1 Prototype' },
+    codeNumber: '883系 AO-1 编组',
+    firstDate: { zh: '1994年8月出厂 (日立笠户事业所)', en: 'August 1994 Rollout by Hitachi Kasado' },
+    testLocation: { zh: '日丰本线高速试验段 (小仓至大分)', en: 'Nippo Main Line High Speed Test Track' },
+    significance: {
+      zh: '日本首款采用轻量化不锈钢车体与受控自然摆式（Controlled Tilting）系统的高速交流电车。最高过弯速度比传统列车提升 30 km/h，荣获 1995 年蓝丝带大奖。',
+      en: 'Japan first stainless-steel tilting EMU, designed by Eiji Mitooka, increasing curve speeds by 30 km/h.'
+    },
+    photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/d/d3/JR_Kyushu_883_Series_EMU_883-7.jpg',
+    liveryName: { zh: '日立原厂金属深蓝与黄色活动前鼻盖机械试车涂装', en: 'Original Metallic Deep Blue with Yellow Nose Hatch' },
+    currentStatus: { zh: '大分车辆中心现役', en: 'Active with Oita Depot' },
+  },
+
+  // JR九州 キハ71系 "由布院之森"
+  'jr-kyushu-yufuin-no-mori': {
+    name: { zh: 'JR九州 キハ71系 "由布院之森" 经典高地板度假特急原型车', en: 'JR Kyushu KiHa 71 Series Yufuin no Mori Prototype' },
+    codeNumber: 'キハ71-1 / キハ70-1 (改造先行试作车)',
+    firstDate: { zh: '1989年3月出厂 (小仓工场)', en: 'March 1989 Rollout at Kokura Works' },
+    testLocation: { zh: '久大本线高原山岳路段', en: 'Kyudai Main Line Mountain Section' },
+    significance: {
+      zh: '日本高原度假胜地观光列车的始祖！采用全车高地板 (High-Decker) 架构，地板高度抬升至 1,200 毫米以上，客席视野开阔，车内大量运用纯天然原木与黄铜装饰。',
+      en: 'The genesis of Japan luxury resort train boom, featuring high-decker passenger saloons with wood and brass interiors.'
+    },
+    photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/9/96/Kuha71-Kagoshima-Line.jpg',
+    liveryName: { zh: '经典墨绿深邃高原森呼吸金带专属原厂涂装', en: 'Classic Deep Forest Green with Gold Pinstripes' },
+    currentStatus: { zh: '直方车辆中心现役', en: 'Active with Nogata Depot' },
+  },
+
+  // JR九州 "九州七星号"
+  'jr-kyushu-seven-stars': {
+    name: { zh: 'JR九州 "九州七星号" 专用机车与超豪华卧铺客车样车', en: 'Seven Stars in Kyushu DF200-7000 Locomotive & Cars #1' },
+    codeNumber: 'DF200-7000 (首机) + 77系 (77-7001)',
+    firstDate: { zh: '2013年9月出厂 (川崎重工兵库工场 / 近畿车辆)', en: 'September 2013 Rollout by Kawasaki & Kinki Sharyo' },
+    testLocation: { zh: '九州全线性能与制振实车试验', en: 'Kyushu Islandwide Test Runs' },
+    significance: {
+      zh: '耗资 30 亿日元打造的全球超奢华巡游铁道巅峰原型。机车基于 DF200 “红熊”重载柴油机车深度魔改，噪音降低 30dB，全列仅设 14 间顶级套房，纯手工拼花木工艺。',
+      en: 'The ultra-luxury cruise train benchmark. Features a customized DF200-7000 locomotive and 14 bespoke handcrafted suites.'
+    },
+    photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/b/bc/Seven_Stars_in_Kyushu_at_Aso_Station_20131103.jpg',
+    liveryName: { zh: '独创 "古代漆" (Royal Wine Red) 极致镜面金属烤漆配纯金七星徽章', en: 'Exclusive "Ancient Lacquer" Royal Wine Red with Solid Gold Emblems' },
+    currentStatus: { zh: '熊本/小仓车辆段专属维护运营中', en: 'In active ultra-luxury cruise service' },
+  },
+
+  // 小田急 70000形 Romancecar GSE
+  'odakyu-70000-gse': {
+    name: { zh: '小田急电铁 70000形 Romancecar GSE 第1编组先行车', en: 'Odakyu 70000 Series GSE Trainset #1 (70051F)' },
+    codeNumber: '70051F (第1编组样车)',
+    firstDate: { zh: '2017年12月下线 (日本车辆制造)', en: 'December 2017 Rollout by Nippon Sharyo' },
+    testLocation: { zh: '小田原线 / 箱根登山铁道', en: 'Odakyu Odawara Line & Hakone Tozan Railway' },
+    significance: {
+      zh: '小田急浪漫特快史上窗高最大（达 1 米）的展望席原型车。取消了传统铰接转向架改用独立 20 米车体，配备全电动空气悬挂振动主动抑制器，过弯极致平顺。',
+      en: 'Features 1000mm-tall panoramic windows and active electro-pneumatic suspension for effortless ride comfort.'
+    },
+    photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/a/aa/Odakyu_70000_series_GSE_Haruhino_Station_20180208.jpg',
+    liveryName: { zh: '玫瑰亮红 (Rose Vermilion) 搭配月光银车顶原厂试跑涂装', en: 'Rose Vermilion with Moonlight Silver Roof' },
+    currentStatus: { zh: '海老名检车区现役', en: 'Active with Ebina Depot' },
+  },
+
+  // 近铁 50000系 "Shimakaze / 岛风号"
+  'kintetsu-50000-shimakaze': {
+    name: { zh: '近畿日本铁道 50000系 "岛风号" 第1编组先行车 (SV01)', en: 'Kintetsu 50000 Series Shimakaze Trainset SV01' },
+    codeNumber: '50101F (SV01 编组)',
+    firstDate: { zh: '2012年9月出厂 (近畿车辆)', en: 'September 2012 Rollout by Kinki Sharyo' },
+    testLocation: { zh: '近铁大阪线 / 山田线 / 鸟羽线', en: 'Kintetsu Osaka & Toba Lines' },
+    significance: {
+      zh: '荣获蓝丝带奖的伊势志摩顶级观光特急原型车。六棱柱切面水晶车头，客室配备真皮电动按摩座椅与双层沙龙观景咖啡车厢。',
+      en: 'Award-winning luxury tourist EMU featuring genuine leather massaging seats and double-decker cafe cars.'
+    },
+    photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/a/ab/Kintetsu_50000_Shimakaze_%2822695502042%29.jpg',
+    liveryName: { zh: '水晶晴空海蓝配珍珠白带金线涂装', en: 'Crystal Sky Blue and Pearl White with Gold Pinstripes' },
+    currentStatus: { zh: '富吉检车区现役', en: 'Active with Tomiyoshi Depot' },
+  },
+
+  // JR东日本 E259系 "成田特快 (Narita Express)"
+  'jr-east-e259-nex': {
+    name: { zh: "JR东日本 E259系 \"成田特快 (N'EX)\" 先行试制 Ne001 编组", en: "JR East E259 Series Narita Express Prototype Ne001" },
+    codeNumber: 'Ne001 编组 (先行试制车)',
+    firstDate: { zh: '2009年4月出厂 (东急车辆制造 / 近畿车辆)', en: 'April 2009 Rollout' },
+    testLocation: { zh: '总武本线 / 成田线高速制动试验', en: 'Sobu Main Line & Narita Line Test Tracks' },
+    significance: {
+      zh: '全面接替 253 系的第二代成田特快原型车。先头车配备全主动悬挂与全列车门电子密码锁，最高运营速度 130 km/h，实现全天候跨东京市区与机场无缝衔接。',
+      en: 'Second-generation airport express prototype with full active suspension and multi-language passenger displays.'
+    },
+    photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/8/88/Series-E259-NE014_NEX.jpg',
+    liveryName: { zh: '北极白配飞扬红与宇宙黑三色经典涂装', en: 'Arctic White, Flying Red, and Cosmos Black Tri-Color Livery' },
+    currentStatus: { zh: '镰仓车辆中心现役', en: 'Active with Kamakura Depot' },
+  },
+
+  // 美铁 Avelia Liberty
+  'amtrak-avelia-liberty': {
+    name: { zh: '美铁 (Amtrak) 新一代 "阿西乐特快" Avelia Liberty 1号试验动车组', en: 'Amtrak Next-Gen Avelia Liberty Prototype Trainset #1' },
+    codeNumber: 'Trainset #1 (Alstom Prototype)',
+    firstDate: { zh: '2020年2月下线 (阿尔斯通霍内尔工厂)', en: 'February 2020 Rollout at Alstom Hornell, NY' },
+    testLocation: { zh: '美国联邦交通技术中心 (TTCI Pueblo, Colorado) / 东北走廊干线', en: 'TTCI Pueblo, CO / Northeast Corridor' },
+    significance: {
+      zh: '北美最高速度客运高铁列车原型车。基于阿尔斯通 Avelia 动力集中铰接平台，搭载 Tiltronix 主动倾斜摆式系统，在东北走廊弯道多的曲线上最高设计时速达 354 km/h (220 mph)。',
+      en: 'North America fastest rail prototype. Features Tiltronix active tilting and articulated wheelsets for 220 mph speeds.'
+    },
+    photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/f/fb/Avelia_Liberty.jpg',
+    liveryName: { zh: '美铁新世代灰蓝科技涂装 (车身带动感波浪线条)', en: 'Amtrak Modern Slate Blue & Navy Streamline Livery' },
+    currentStatus: { zh: '美铁东北走廊干线调试试车中', en: 'Active dynamic testing on the Northeast Corridor' },
+  },
+
+  // 美铁 GE Genesis P42DC
+  'amtrak-ge-p42dc': {
+    name: { zh: 'GE Genesis AMD-103 / P42DC 1号首发样车', en: 'GE Genesis AMD-103 / P42DC Prototype #1' },
+    codeNumber: 'GE AMD-103 Prototype #800 / P42DC #1',
+    firstDate: { zh: '1993年首台下线 (GE 宾夕法尼亚伊利工厂)', en: '1993 Rollout at GE Transportation Erie, PA' },
+    testLocation: { zh: '美国东北走廊与跨大陆干线', en: 'Northeast Corridor & Transcontinental routes' },
+    significance: {
+      zh: '专为满足美铁极严苛的限界与低重心要求研制的整流单体承载机车。车身高度比传统机车低 14 英寸，风阻降低 22%，搭载 4,250 马力 GE 7FDL16 柴油机，是北美现代客运柴油机车的传奇基石。',
+      en: 'Revolutionary aerodynamic passenger diesel with a monocoque body 14 inches lower than predecessor F40PH.'
+    },
+    photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/f/f6/Amtrak_California_Zephyr_Green_River_-_Floy%2C_Utah.jpg',
+    liveryName: { zh: '美铁 Phase III 经典红白蓝三色涂装', en: 'Amtrak Phase III Red, White & Blue Genesis Livery' },
+    currentStatus: { zh: '美铁全美长途列车机务段现役', en: 'In active mainline passenger service' },
+  },
+
+  // BNSF GE ES44AC
+  'bnsf-es44ac': {
+    name: { zh: 'GE Evolution 创新系列 ES44AC 重载干线柴油机车样车', en: 'GE Evolution Series ES44AC Prototype GEVO 2005' },
+    codeNumber: 'GEVO 2005 (ES44AC 先导验证机车)',
+    firstDate: { zh: '2003年下线 (GE 宾夕法尼亚伊利工厂)', en: '2003 Rollout at GE Transportation Erie, PA' },
+    testLocation: { zh: '落基山脉恶劣重载干线 / 普韦布洛试验基地', en: 'Rocky Mountains heavy haul test tracks / TTCI Pueblo' },
+    significance: {
+      zh: '耗资 4 亿美元研制的重载内燃机车绿色革命先锋。换装 GEVO-12 缸高压共轨柴油机，输出 4,400 马力，在减少 40% 排放的同时降低油耗，成为北美运量最大的功勋重载机车。',
+      en: 'A M investment that revolutionized heavy haul, cutting emissions by 40% with the GEVO-12 engine.'
+    },
+    photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/4/48/BNSF_5871-GE_ES44AC_%2840484291303%29.jpg',
+    liveryName: { zh: 'GE Evolution Series 原厂蓝银科技试验涂装', en: 'GE Evolution Series Blue-Silver Demonstrator Livery' },
+    currentStatus: { zh: '北美一级铁路重载干线现役', en: 'In heavy-haul mainline service' },
+  },
+
+  // 联合太平洋 EMD SD70ACe (UP 4141)
+  'up-sd70ace-4141': {
+    name: { zh: '易安迪 EMD SD70ACe 1号重载工程试验样车 (GM70)', en: 'EMD SD70ACe Prototype GM70 (EMDX 70)' },
+    codeNumber: 'EMD GM70 / EMDX 70 (首台样车)',
+    firstDate: { zh: '2003年出厂 (EMD 加拿大伦敦工厂)', en: '2003 Rollout at EMD London, Ontario' },
+    testLocation: { zh: '普韦布洛联邦试验环线 / 怀俄明州重载煤炭走廊', en: 'TTCI Pueblo, CO / Powder River Basin Coal Route' },
+    significance: {
+      zh: '易安迪应对 EPA Tier 2 环保法案的巅峰重载交流传动车。搭载 16-710G3C-T2 柴油机与全绝缘高牵引力转向架，起动牵引力高达 850 kN，是北美重载煤炭列车的中流砥柱。',
+      en: 'The pinnacle of EMD AC heavy-haul technology, producing 850 kN tractive effort for endless unit trains.'
+    },
+    photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/e/ee/Union_Pacific_4141.jpg',
+    liveryName: { zh: 'EMD 官方海军蓝配银白厂方演示涂装', en: 'EMD Factory Blue & Silver Demonstrator Colors' },
+    currentStatus: { zh: 'UP 4141 功勋机车现永久珍藏于乔治·布什总统图书馆', en: 'UP 4141 preserved at George H.W. Bush Presidential Library' },
   },
 
   // 台湾高铁 700T
@@ -510,6 +749,156 @@ export const PROTOTYPE_REGISTRY: Record<string, PrototypeInfo> = {
     currentStatus: { zh: '现永久展示于韩国义王市铁道博物馆', en: 'Preserved at Uiwang Railway Museum, South Korea' },
   },
 
+  // 印度铁路 Vande Bharat (Train 18)
+  'indian-railways-vande-bharat': {
+    name: { zh: '印度铁路 "Train 18" (Vande Bharat Express) 1号自主研发样车', en: 'Indian Railways Train 18 (Vande Bharat) Prototype Rake 1' },
+    codeNumber: 'Train 18 Rake 1 (首列本土准高速样车)',
+    firstDate: { zh: '2018年10月下线 (金奈集成客车厂 ICF Chennai)', en: 'October 2018 Rollout by ICF Chennai' },
+    testLocation: { zh: '德里-瓦拉纳西试车区间 / 科塔至萨瓦伊马多普尔试验段', en: 'Delhi-Varanasi Route / Kota-Sawai Madhopur Section' },
+    significance: {
+      zh: '“印度制造 (Make in India)”旗舰工程的第一号样车。用仅 18 个月工期完成设计制造，彻底摒弃传统机车牵引模式改用动力分散式动车组，最高试验速度达到 180 km/h。',
+      en: 'The flagship of Make in India, designed in just 18 months as India first indigenous semi-high-speed EMU (180 km/h).'
+    },
+    photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/5/5a/Vande_Bharat_Express_around_Mumbai.jpg',
+    liveryName: { zh: '白底深蓝饰带带橘色防撞警示条原厂首发涂装', en: 'White with Deep Blue and Orange Accent Trim' },
+    currentStatus: { zh: '执飞新德里至瓦拉纳西常态化商业客运', en: 'Active in passenger service between New Delhi & Varanasi' },
+  },
+
+  // 乌兹别克斯坦 "Afrosiyob" Talgo 250
+  'uzbekistan-afrosiyob-talgo250': {
+    name: { zh: '西班牙塔尔高 Talgo 250 可变轨距高速动力集中试验车', en: 'Patentes Talgo 250 Variable-Gauge Prototype' },
+    codeNumber: 'Talgo 250 (RENFE Series 130 原型车)',
+    firstDate: { zh: '2005年西班牙出厂 (马德里拉斯马塔斯基地)', en: '2005 Rollout at Las Matas, Madrid' },
+    testLocation: { zh: '马德里-巴塞罗那高铁 / 乌兹别克塔什干-撒马尔罕线', en: 'Madrid-Barcelona HSR / Tashkent-Samarkand Line' },
+    significance: {
+      zh: '中亚内陆首款商业高速列车的直系原型。独创性采用了西班牙 Talgo 摆式被动倾斜悬挂与独立单轮转向架，即使在弯道较多的中亚古丝绸之路既有线路上，也能跑出 250 km/h 高速。',
+      en: 'Central Asia first high-speed train. Features Talgo passive tilting and independently rotating wheels for 250 km/h on legacy tracks.'
+    },
+    photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/2/21/Hi-speed_trains_Afrosiyab_%28Uzbekistan%29.JPG',
+    liveryName: { zh: '乌兹别克斯坦国旗白蓝绿三色配金色 Afrosiyob 标识涂装', en: 'Uzbekistan White-Blue-Green Tricolor with Gold Afrosiyob Crest' },
+    currentStatus: { zh: '塔什干乌铁机务段现役', en: 'Active with Uzbekistan Railways' },
+  },
+
+  // 沙特麦加-麦地那 "哈拉曼" Talgo 350 SRO
+  'saudi-haramain-talgo350': {
+    name: { zh: '西班牙塔尔高 Talgo 350 "鸭嘴兽" 时速350公里高速试验车', en: 'Patentes Talgo 350 "El Pato" Prototype 102-001' },
+    codeNumber: 'Talgo 350 "El Pato" (RENFE 102-001)',
+    firstDate: { zh: '2000年出厂 / 跑出 359 km/h 高速纪录', en: '2000 Rollout / Reached 359 km/h on Madrid-Seville HSR' },
+    testLocation: { zh: '马德里至塞维利亚高铁 / 沙特鲁卜哈利沙漠极端耐温段', en: 'Madrid-Seville HSR / Rub al Khali Desert Test Section' },
+    significance: {
+      zh: '征服摄氏 50 度酷热沙漠狂风风沙的“沙漠高铁之王”原型车。车头鸭嘴兽外形可将气动阻力减少 15%，配备全密封双层抗沙防尘气密滤网与特制耐磨轮对。',
+      en: 'The desert high-speed champion prototype, engineered to withstand 50°C heat and sandstorms across Arabian deserts.'
+    },
+    photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/3/31/Talgo_350_SRO.jpg',
+    liveryName: { zh: '沙漠银白车身配高贵灰条纹与阿拉伯书法金色标识', en: 'Desert Pearl White with Arabic Calligraphy Accent' },
+    currentStatus: { zh: '沙特麦加-麦地那高铁全线现役运营', en: 'Active on Haramain High Speed Railway' },
+  },
+
+  // 马来亚铁道 ETS Class 93
+  'ktmb-ets-class-93': {
+    name: { zh: '马来亚铁道 Class 93 世界最高速米轨动车组样车', en: 'KTMB ETS Class 93 Meter-Gauge Prototype ETS 201' },
+    codeNumber: 'ETS 201 样车 (中车株机制造)',
+    firstDate: { zh: '2014年11月中车株机下线', en: 'November 2014 Rollout by CRRC Zhuzhou' },
+    testLocation: { zh: '西海岸干线吉隆坡至巴东勿刹区间', en: 'West Coast Main Line, Kuala Lumpur to Padang Besar' },
+    significance: {
+      zh: '世界米轨（轨距 1000 毫米）轨道交通最高运营速度纪录保持者原型车。设计时速 160 km/h，完美解决了窄轨高速运行时转向架蛇行晃动与横向平稳性世界难题。',
+      en: 'World fastest meter-gauge train prototype, operating at 160 km/h with custom narrow-gauge bogies.'
+    },
+    photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/4/4e/ETS_201_KTMB_Class_93_Port_Klang_Pre-Comission.jpg',
+    liveryName: { zh: '马来亚铁道流线银黄黑三色官方涂装', en: 'KTMB Silver-Yellow-Black Streamline Livery' },
+    currentStatus: { zh: '吉隆坡机务段现役', en: 'Active with KTMB' },
+  },
+
+  // 越南铁路 D19E "创新号"
+  'vietnam-railways-d19e': {
+    name: { zh: '越南铁路 D19E "创新号" 001 号客运内燃机车样车', en: 'Vietnam Railways D19E Prototype Locomotive D19E-901' },
+    codeNumber: 'D19E-901 (首台样车)',
+    firstDate: { zh: '2001年下线 (中车资阳机车制造)', en: '2001 Rollout by CRRC Ziyang' },
+    testLocation: { zh: '越南河内-胡志明市南北统一铁路干线 (1,726 km)', en: 'North-South Railway Line, Hanoi to Ho Chi Minh City' },
+    significance: {
+      zh: '中国机车成套出口越南的里程碑样车。装配卡特彼勒 3512B 涡轮增压柴油机与微机控制系统，大幅缩短了河内至胡志明市单程运行时间至 29 小时。',
+      en: 'Historic export locomotive built by CRRC Ziyang with Caterpillar 3512B engine, revitalizing the North-South spine.'
+    },
+    photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/0/08/D19E-905_%28SIK_03-054979%29.jpg',
+    liveryName: { zh: '越南铁路经典深蓝与鲜红条带配五角星先导涂装', en: 'Vietnam Railways Blue-Red with Golden Star Livery' },
+    currentStatus: { zh: '河内机务段现役主力', en: 'Active with Hanoi Locomotive Depot' },
+  },
+
+  // 印尼铁路 CC206 (GE CM20EMP)
+  'kai-panoramic-cc206': {
+    name: { zh: '印尼国家铁路 CC206 (GE CM20EMP) 双驾驶室柴油机车样车', en: 'KAI CC206 Prototype Locomotive CC206 13 01' },
+    codeNumber: 'CC206 13 01 (首台工程验证样车)',
+    firstDate: { zh: '2012年下线 (GE 宾夕法尼亚伊利工厂)', en: '2012 Rollout by GE Transportation Erie, PA' },
+    testLocation: { zh: '爪哇岛山岳火山弯道干线', en: 'Java Island Mountain & Volcano Mainline' },
+    significance: {
+      zh: '专为印尼狭窄米轨与火山地质定制的双端驾驶室重载机车原型。取消了传统单端机车折返换向调车作业，具备 2,250 马力强劲牵引力与极佳的抗震适应性。',
+      en: 'Customized twin-cab diesel built by GE for Indonesia 1067mm gauge, hauling scenic express across Java.'
+    },
+    photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/7/7e/Lokomotif_CC206_15_07.jpg',
+    liveryName: { zh: '印尼铁路经典白底橘红条带配 "KAI" 标识原厂涂装', en: 'KAI White with Orange Stripes & Modern Logo' },
+    currentStatus: { zh: '万隆机务段现役', en: 'Active with Bandung Locomotive Depot' },
+  },
+
+  // 斯里兰卡铁路 Class S12
+  'sri-lanka-class-s12': {
+    name: { zh: '斯里兰卡高山与海上铁路 Class S12 动力集中动车组样车', en: 'Sri Lanka Railways Class S12 Prototype Trainset 917' },
+    codeNumber: 'Class S12 917 (首列样车)',
+    firstDate: { zh: '2012年下线 (中车青岛四方制造)', en: '2012 Rollout by CRRC Qingdao Sifang' },
+    testLocation: { zh: '斯里兰卡中央高山茶园茶山段 (康提-埃拉) / 加勒海上铁道', en: 'Main Line Tea Country (Kandy-Ella) & Coast Line' },
+    significance: {
+      zh: '征服世界著名“高山茶园小火车”与“千与千寻海上火车”的功勋动车组原型。采用防盐雾腐蚀不锈钢车体与大扭矩动力包，可克服 1:30 (33‰) 极陡峭山地坡道。',
+      en: 'Engineered by CRRC Sifang to conquer 33‰ mountain grades and sea-spray salt air along the Galle coast.'
+    },
+    photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/e/e4/Class_S12.jpg',
+    liveryName: { zh: '经典锡兰印度洋深蓝配灰白与红条原厂涂装', en: 'Ceylon Ocean Deep Blue with Grey and Red Accent Stripes' },
+    currentStatus: { zh: '科伦坡德马拉戈达机务段现役', en: 'Active with Dematagoda Depot, Colombo' },
+  },
+
+  // 哈萨克斯坦 "图尔根号" Tulpar-Talgo
+  'kazakhstan-tulpar-talgo': {
+    name: { zh: '哈萨克斯坦铁路 "图尔根号" (Tulpar-Talgo) 宽轨草原高速列车样车', en: 'Kazakhstan Temir Zholy Tulpar-Talgo Prototype Trainset #1' },
+    codeNumber: 'Tulpar-Talgo 1号原型列车',
+    firstDate: { zh: '2011年出厂 (阿斯塔纳 Tulpar-Talgo 工厂)', en: '2011 Rollout at Astana Works' },
+    testLocation: { zh: '阿斯塔纳至阿拉木图哈萨克大草原宽轨干线 (1,520 mm)', en: 'Astana-Almaty Broad-Gauge Steppe Corridor (1,520 mm)' },
+    significance: {
+      zh: '在中亚广袤宽轨（1520 毫米）大草原上跑出 200 km/h 的抗严寒列车原型。车厢采用超厚聚氨酯保温材料与特制耐零下 50 度极寒低温转向架轴承。',
+      en: 'Built to cross frozen Eurasian steppes at 200 km/h, insulated against -50°C Siberian winters.'
+    },
+    photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/f/f7/Talgo_200_Tulpar%2C_Almaty_%28P1180169%29.jpg',
+    liveryName: { zh: '哈萨克天蓝与纯白双色草原苍鹰飞翔涂装', en: 'Kazakh Sky Blue and White Steppe Eagle Livery' },
+    currentStatus: { zh: '哈萨克斯坦国家铁路现役主力', en: 'Active with Kazakhstan Temir Zholy' },
+  },
+
+  // JR东日本 秋田新干线 E6系 "小町号"
+  'jr-east-series-e6-komachi': {
+    name: { zh: 'JR东日本 秋田新干线 E6系 S11 编组先行量产试验车', en: 'JR East Akita Shinkansen Series E6 Prototype S11' },
+    codeNumber: 'E6系 S11 编组 (先行量产试验车)',
+    firstDate: { zh: '2010年6月出厂 (川崎重工 / 日立制作所)', en: 'June 2010 Rollout by Kawasaki & Hitachi' },
+    testLocation: { zh: '东北新干线高速试验段 / 田泽湖线迷你新干线窄限界段', en: 'Tohoku Shinkansen & Tazawako Line' },
+    significance: {
+      zh: '实现“新干线与在来线直通”的迷你新干线速度霸主原型车。车体缩窄以适应狭窄隧道限界，在东北新干线上能以 320 km/h 与 E5 系重联狂飙，在弯道通过空气弹簧摆式倾斜。',
+      en: 'Pioneered 320 km/h coupled operation with E5 while squeezing into mini-shinkansen narrower clearances.'
+    },
+    photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/8/87/Series-E6_Z14_Komachi.jpg',
+    liveryName: { zh: '“茜红”车顶配飞云白与银铃灰奥羽名花专属涂装', en: 'Akane Crimson Roof with Hiun White and Silver Grey' },
+    currentStatus: { zh: '秋田综合车辆中心现役', en: 'Active with Akita Depot' },
+  },
+
+  // JR 285系 "日出特急"
+  'jr-series-285-sunrise-express': {
+    name: { zh: 'JR西日本 / JR东海 285系 "日出特急" 第1编组 (クモハ 285-1)', en: 'JR Series 285 Sunrise Express Trainset I1 Prototype' },
+    codeNumber: '285系 I1 编组 (クモハ 285-1 样产车)',
+    firstDate: { zh: '1998年3月出厂 (近畿车辆制造)', en: 'March 1998 Rollout by Kinki Sharyo' },
+    testLocation: { zh: '东海道・山阳本线 / 伯备线夜晚试验段', en: 'Tokaido/Sanyo Main Line & Hakubi Line Night Tests' },
+    significance: {
+      zh: '日本最后且唯一的经典定期双层寝台电力动车组原型车。颠覆了传统机车牵引卧铺，采用动力分散型双层车身与日本积水住宅 (Sekisui House) 共同设计的纯木质个人胶囊与独立包厢。',
+      en: 'Japan last scheduled overnight sleeper EMU, co-designed with Sekisui House with warm wooden private cabins.'
+    },
+    photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/3/39/JRW_Series_285_Sunrise_Seto.jpg',
+    liveryName: { zh: '晨曦朝霞深红与朝露金双层温馨原厂涂装', en: 'Morning Glow Deep Red and Sunrise Gold Two-Tone' },
+    currentStatus: { zh: '出云支所与大垣车辆区现役', en: 'Active in night sleeper service' },
+  },
+
   // 中国铁路 韶山 9G 型 (SS9G)
   'china-railway-ss9g': {
     name: { zh: '韶山 9 型 (SS9) 0001 号准高速客运电力机车样车', en: 'Shaoshan SS9-0001 Passenger Electric Locomotive Prototype' },
@@ -539,134 +928,209 @@ export const PROTOTYPE_REGISTRY: Record<string, PrototypeInfo> = {
     liveryName: { zh: '中国铁路直达特快高光鲜红双机重联原厂涂装', en: 'China Railway Z-Express High-Gloss Crimson Red Livery' },
     currentStatus: { zh: '配属中国铁路上海局集团杭州机务段，执飞干线客运', en: 'In revenue passenger service with Shanghai Railway Bureau' },
   },
+
+  // 东武铁道 N100系 "SPACIA X"
+  'tobu-n100-spacia-x': {
+    name: { zh: '东武铁道 N100系 "SPACIA X" 第1编组 (N101F)', en: 'Tobu N100 Series SPACIA X Trainset N101F' },
+    codeNumber: 'N101F 编组',
+    firstDate: { zh: '2023年3月出厂 (日立笠户事业所)', en: 'March 2023 Rollout by Hitachi Kasado' },
+    testLocation: { zh: '东武日光线 / 鬼怒川线', en: 'Tobu Nikko Line & Kinugawa Line' },
+    significance: {
+      zh: '新一代日光旗舰特急。车窗融入鹿沼组子几何花纹传统工艺，配备 Cockpit Lounge 观景沙龙席与最高级的驾驶室套房。',
+      en: 'Flagship sightseeing EMU incorporating Kanuma Kumiko woodcraft geometric window frames.'
+    },
+    photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/d/d4/Tobu_Series-N100-N101.jpg',
+    liveryName: { zh: '高雅白瓷 (White Porcelain) 涂装', en: 'White Porcelain with Kumiko Craft Accents' },
+    currentStatus: { zh: '南栗桥车辆管区现役', en: 'Active with Minami-Kurihashi Depot' },
+  },
+
+  // 南海电铁 50000系 "Rapi:t"
+  'nankai-50000-rapit': {
+    name: { zh: '南海电气铁道 50000系 "Rapi:t" 铁人28号 第1编组', en: 'Nankai 50000 Series Rapi:t Trainset #1 (50501F)' },
+    codeNumber: '50501F (第1编组)',
+    firstDate: { zh: '1994年2月出厂 (东急车辆制造)', en: 'February 1994 Rollout by Tokyu Car' },
+    testLocation: { zh: '南海本线 / 空港线', en: 'Nankai Main Line & Airport Line' },
+    significance: {
+      zh: '极富未来复古科幻色彩的关西空港特急。车头神似“铁人28号”武士面具，椭圆形飞机式舷窗独具一格，最高速度 120 km/h。',
+      en: 'Avant-garde retro-futuristic airport express with oval aircraft-styled windows.'
+    },
+    photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/8/87/Nankai_50000_series_Rapit_at_Namba_Station_2017-03-12.jpg',
+    liveryName: { zh: '深蓝海军色 (Deep Navy Blue) 专属涂装', en: 'Deep Navy Blue Metallic Livery' },
+    currentStatus: { zh: '住之江检车区现役', en: 'Active with Suminoe Depot' },
+  },
+
+  // 名古屋铁道 2000系 "μ-SKY"
+  'meitetsu-series-2000-musky': {
+    name: { zh: '名古屋铁道 2000系 "μ-SKY" 第1编组 (2001F)', en: 'Meitetsu 2000 Series mu-SKY Trainset 2001F' },
+    codeNumber: '2001F 编组',
+    firstDate: { zh: '2004年5月出厂 (日本车辆制造)', en: 'May 2004 Rollout by Nippon Sharyo' },
+    testLocation: { zh: '名铁常滑线 / 空港线', en: 'Meitetsu Tokoname & Airport Lines' },
+    significance: {
+      zh: '专为 2005 年爱知世博会与中部国际机场开港定制的高速空港特急。车体具备 1.5 度空气弹簧自然车体倾斜，最高运营时速 120 km/h。',
+      en: 'Chubu Centrair Airport express featuring 1.5-degree pneumatic carbody tilting.'
+    },
+    photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/f/f3/Nagoya_Railway_2000.jpg',
+    liveryName: { zh: '蓝天与白云双色空港涂装', en: 'Blue Sky and Ocean White Airport Livery' },
+    currentStatus: { zh: '舞木检查场现役', en: 'Active with Mugi Depot' },
+  },
+
+  // 印尼雅万高铁 KCIC400AF "Whoosh"
+  'kcic-400af-whoosh': {
+    name: { zh: '印尼雅万高铁 KCIC400AF "Whoosh" 首列高速动车组样车', en: 'KCIC400AF Whoosh High-Speed EMU Trainset #1' },
+    codeNumber: 'KCIC400AF-2201 (首列交付印尼雅万动车组样车)',
+    firstDate: { zh: '2022年8月5日下线 (中车青岛四方制造)', en: 'August 5, 2022 Rollout by CRRC Qingdao Sifang' },
+    testLocation: { zh: '中国铁道科学研究院环铁 / 印尼雅万高铁德卡鲁尔试验段', en: 'CARS Beijing / Tegalluar Depot & Test Track, Indonesia' },
+    significance: {
+      zh: '东南亚首条时速350公里高速铁路标杆样车。依托中国复兴号 CR400AF 先进成熟平台，结合印尼热带雨林湿热海风与多地震带环境，全新开发了高耐腐蚀车体、低阻力流线型头型与红色科幻涂装。',
+      en: 'Southeast Asia first 350 km/h high-speed rail prototype, engineered for tropical rainforest climate with high corrosion resistance.'
+    },
+    photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/c/c0/Front_Carriage_of_Whoosh_High-speed_Train%2C_with_Whoosh_Decal.jpg',
+    liveryName: { zh: '印尼国旗红银双色流线配 Whoosh 动感飞翼涂装', en: 'Indonesian Red & Silver Streamline with Whoosh Wings Livery' },
+    currentStatus: { zh: '印尼雅万高铁全线商业常态化运营中', en: 'In active high-speed revenue service between Jakarta and Bandung' },
+  },
+
+  // 中老铁路 "澜沧号" CR200J
+  'laos-china-railway-cr200j': {
+    name: { zh: '中老铁路 "澜沧号" CR200J 动力集中动车组首列样车', en: 'Laos-China Railway "Lancang" CR200J EMU Trainset #1' },
+    codeNumber: 'CR200J-0401 (澜沧号 1号样组)',
+    firstDate: { zh: '2021年10月16日交付 (中车大连与中车四方联合研制)', en: 'October 16, 2021 Delivery to Vientiane' },
+    testLocation: { zh: '中老铁路磨万段 (磨丁至万象)', en: 'Boten-Vientiane Railway Mainline, Laos' },
+    significance: {
+      zh: '中老铁路跨国干线客运旗舰先导车。针对热带山岳地质与高温高湿环境深度定制，配备持续大坡道安全电制动与高平稳性客室减振，最高运营速度 160 km/h。',
+      en: 'Flagship international EMU built for the Boten-Vientiane line, tailored for mountainous tropical terrain at 160 km/h.'
+    },
+    photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/4/4d/2021-12-03_China-Laos-Eisenbahn.jpg',
+    liveryName: { zh: '老挝国旗红白蓝三色“国旗之美”专属涂装', en: 'Lao National Flag Tricolor (Red, White & Blue) Livery' },
+    currentStatus: { zh: '万象站至磨丁站跨国干线常态化客运主力', en: 'In active revenue service on the Laos-China Railway' },
+  },
 };
 
 /**
- * 辅助映射：若载具没有直接配置原型机，则根据其机型代码或家族特征进行精准匹配
+ * 完整精确的 106 款载具 ID 到原型机/车 Key 的 1 对 1 映射表
+ * 杜绝任何因为模糊匹配造成的 C919 / CR400BF 误配问题！
  */
-export function getVehiclePrototype(vehicle: { id: string; category?: string; code?: string; modelName?: { zh: string; en: string } }): PrototypeInfo {
-  // 1. 直接通过 ID 匹配
-  if (PROTOTYPE_REGISTRY[vehicle.id]) {
-    return PROTOTYPE_REGISTRY[vehicle.id];
-  }
+export const VEHICLE_TO_PROTOTYPE_MAP: Record<string, string> = {
+  // Aviation
+  'ana-b747-pokemon': 'boeing-747-400',
+  'ana-a380-honu': 'airbus-a380-800',
+  'ana-b787-starwars': 'boeing-787',
+  'jal-a350-900': 'airbus-a350-900',
+  'b747-400': 'boeing-747-400',
+  'comac-c919': 'comac-c919',
+  'sichuan-a350-panda': 'airbus-a350-900',
+  'csn-a350-900': 'airbus-a350-900',
+  'csn-b787': 'boeing-787',
+  'csn-a380-800': 'airbus-a380-800',
+  'airchina-b777-300er': 'boeing-777',
+  'concorde': 'concorde',
+  'hainan-787-panda': 'boeing-787',
+  'xiamen-787-un': 'boeing-787',
+  'juneyao-787-peony': 'boeing-787',
+  'spring-a320': 'airbus-a320',
+  'nine-air-737': 'boeing-737',
+  'china-express-crj900': 'bombardier-crj900',
+  'china-eastern-erj145': 'embraer-erj145',
+  'jal-767-disney': 'boeing-767',
+  'airbus-a330-900neo-hu': 'airbus-a330',
+  'delta-a350-team-usa': 'airbus-a350-900',
+  'united-b737-star-wars': 'boeing-737',
+  'american-b777-bare-metal': 'boeing-777',
+  'southwest-b737-lonestar': 'boeing-737',
+  'china-express-c909': 'comac-c909',
+  'korean-air-b747-8i': 'boeing-747-8i',
+  'eva-air-b777-300er': 'boeing-777',
+  'singapore-airlines-a350-900': 'airbus-a350-900',
+  'thai-airways-a350-900': 'airbus-a350-900',
+  'china-airlines-a350-900': 'airbus-a350-900',
+  'cathay-pacific-777-300er': 'boeing-777',
+  'cathay-pacific-a350-1000': 'airbus-a350-1000',
+  'singapore-airlines-a380-800': 'airbus-a380-800',
+  'malaysia-airlines-a350-900': 'airbus-a350-900',
+  'airasia-a320neo': 'airbus-a320',
+  'vietnam-airlines-a350-900': 'airbus-a350-900',
+  'garuda-777-300er': 'boeing-777',
+  'saudia-787-9': 'boeing-787',
+  'emirates-a380-800': 'airbus-a380-800',
+  'etihad-787-9': 'boeing-787',
+  'qatar-airways-a350-1000': 'airbus-a350-1000',
+  'starflyer-a320': 'airbus-a320',
+  'miat-787-9': 'boeing-787',
+  'bangkok-airways-a320': 'airbus-a320',
+  'royal-brunei-787-8': 'boeing-787',
+  'air-india-787-8': 'boeing-787',
+  'srilankan-a330-300': 'airbus-a330',
+  'trans-maldivian-dhc-6': 'trans-maldivian-dhc-6',
+  'drukair-a319': 'airbus-a320',
+  'oman-air-787-9': 'boeing-787',
+  'joy-air-ma60': 'joy-air-ma60',
+  'uni-air-atr72-600': 'uni-air-atr72-600',
+  'ana-wings-dash8-q400': 'ana-wings-dash8-q400',
+  'klm-b777-300er-orange-pride': 'boeing-777',
+  'air-china-b747-8i': 'boeing-747-8i',
+  'china-eastern-a350-900': 'airbus-a350-900',
+  'china-eastern-a330-300-disney': 'airbus-a330',
+  'eva-air-b777-300er-hello-kitty': 'boeing-777',
 
-  const id = vehicle.id.toLowerCase();
-  const code = (vehicle.code || '').toLowerCase();
-  const nameZh = (vehicle.modelName?.zh || '').toLowerCase();
+  // Railway
+  'shinkansen-0': 'shinkansen-0',
+  'shinkansen-500': 'shinkansen-500',
+  'shinkansen-e5': 'shinkansen-e5',
+  'shinkansen-n700s': 'shinkansen-n700s',
+  'cr400bf-z': 'cr400bf-z',
+  'crh380a': 'crh380a',
+  'ss8': 'ss8',
+  'df4d': 'df4d',
+  'big-boy-4014': 'big-boy-4014',
+  'shinkansen-500-hellokitty': 'shinkansen-500',
+  'jr-281-hellokitty-haruka': 'jr-281-haruka',
+  'jr-kyushu-aso-boy': 'jr-kyushu-aso-boy',
+  'jr-kyushu-883-sonic': 'jr-kyushu-883-sonic',
+  'scmaglev-l0': 'scmaglev-l0',
+  'cr400af-z-fuxing': 'cr400af-z-fuxing',
+  'cr200j-hulvwa': 'cr200j-hulvwa',
+  'shinkansen-923-doctor-yellow': 'shinkansen-923-doctor-yellow',
+  'jr-kyushu-yufuin-no-mori': 'jr-kyushu-yufuin-no-mori',
+  'jr-kyushu-seven-stars': 'jr-kyushu-seven-stars',
+  'odakyu-70000-gse': 'odakyu-70000-gse',
+  'kintetsu-50000-shimakaze': 'kintetsu-50000-shimakaze',
+  'jr-east-e259-nex': 'jr-east-e259-nex',
+  'shanghai-maglev-transrapid': 'shanghai-maglev-transrapid',
+  'crrc-600-maglev': 'crrc-600-maglev',
+  'tobu-n100-spacia-x': 'tobu-n100-spacia-x',
+  'nankai-50000-rapit': 'nankai-50000-rapit',
+  'amtrak-avelia-liberty': 'amtrak-avelia-liberty',
+  'amtrak-ge-p42dc': 'amtrak-ge-p42dc',
+  'bnsf-es44ac': 'bnsf-es44ac',
+  'up-sd70ace-4141': 'up-sd70ace-4141',
+  'thsr-700t': 'thsr-700t',
+  'korail-ktx-sancheon': 'korail-ktx-sancheon',
+  'kcic-400af-whoosh': 'kcic-400af-whoosh',
+  'indian-railways-vande-bharat': 'indian-railways-vande-bharat',
+  'laos-china-railway-cr200j': 'laos-china-railway-cr200j',
+  'uzbekistan-afrosiyob-talgo250': 'uzbekistan-afrosiyob-talgo250',
+  'saudi-haramain-talgo350': 'saudi-haramain-talgo350',
+  'ktmb-ets-class-93': 'ktmb-ets-class-93',
+  'vietnam-railways-d19e': 'vietnam-railways-d19e',
+  'kai-panoramic-cc206': 'kai-panoramic-cc206',
+  'sri-lanka-class-s12': 'sri-lanka-class-s12',
+  'kazakhstan-tulpar-talgo': 'kazakhstan-tulpar-talgo',
+  'meitetsu-series-2000-musky': 'meitetsu-series-2000-musky',
+  'jr-east-series-e6-komachi': 'jr-east-series-e6-komachi',
+  'jr-series-285-sunrise-express': 'jr-series-285-sunrise-express',
+  'china-railway-ss9g': 'china-railway-ss9g',
+  'china-railway-df11g': 'china-railway-df11g',
+};
 
-  // 2. 匹配民航机型家族
-  if (id.includes('c919') || code.includes('c919') || nameZh.includes('c919')) {
-    return PROTOTYPE_REGISTRY['comac-c919'];
+/**
+ * 获取每辆载具的专属原型机/样车档案
+ */
+export function getVehiclePrototype(vehicle: { id: string; category?: string }): PrototypeInfo {
+  const targetKey = VEHICLE_TO_PROTOTYPE_MAP[vehicle.id];
+  if (targetKey && PROTOTYPE_REGISTRY[targetKey]) {
+    return PROTOTYPE_REGISTRY[targetKey];
   }
-  if (id.includes('a350-1000') || code.includes('a350-1000')) {
-    return PROTOTYPE_REGISTRY['airbus-a350-1000'];
-  }
-  if (id.includes('a350') || code.includes('a350') || nameZh.includes('a350')) {
-    return PROTOTYPE_REGISTRY['airbus-a350-900'];
-  }
-  if (id.includes('a380') || code.includes('a380') || nameZh.includes('a380')) {
-    return PROTOTYPE_REGISTRY['airbus-a380-800'];
-  }
-  if (id.includes('787') || code.includes('787') || nameZh.includes('787')) {
-    return PROTOTYPE_REGISTRY['boeing-787'];
-  }
-  if (id.includes('747-8') || code.includes('747-8') || nameZh.includes('747-8')) {
-    return PROTOTYPE_REGISTRY['boeing-747-8i'];
-  }
-  if (id.includes('747') || code.includes('747') || nameZh.includes('747')) {
-    return PROTOTYPE_REGISTRY['boeing-747-400'];
-  }
-  if (id.includes('777') || code.includes('777') || nameZh.includes('777')) {
-    return PROTOTYPE_REGISTRY['boeing-777'];
-  }
-  if (id.includes('concorde') || code.includes('concorde') || nameZh.includes('协和')) {
-    return PROTOTYPE_REGISTRY['concorde'];
-  }
-  if (id.includes('a320') || id.includes('a319') || code.includes('a320') || code.includes('a319') || nameZh.includes('a320') || nameZh.includes('a319')) {
-    return PROTOTYPE_REGISTRY['airbus-a320'];
-  }
-  if (id.includes('a330') || code.includes('a330') || nameZh.includes('a330')) {
-    return PROTOTYPE_REGISTRY['airbus-a330'];
-  }
-  if (id.includes('737') || code.includes('737') || nameZh.includes('737')) {
-    return PROTOTYPE_REGISTRY['boeing-737'];
-  }
-  if (id.includes('c909') || id.includes('arj21') || code.includes('c909') || code.includes('arj21')) {
-    return PROTOTYPE_REGISTRY['comac-c909'];
-  }
-  if (id.includes('ma60') || code.includes('ma60') || nameZh.includes('新舟60')) {
-    return PROTOTYPE_REGISTRY['joy-air-ma60'];
-  }
-  if (id.includes('atr72') || code.includes('atr') || nameZh.includes('atr')) {
-    return PROTOTYPE_REGISTRY['uni-air-atr72-600'];
-  }
-  if (id.includes('dash8') || id.includes('q400') || code.includes('q400')) {
-    return PROTOTYPE_REGISTRY['ana-wings-dash8-q400'];
-  }
-  if (id.includes('dhc-6') || code.includes('dhc-6') || nameZh.includes('双水獭')) {
-    return PROTOTYPE_REGISTRY['trans-maldivian-dhc-6'];
-  }
-
-  // 3. 匹配铁道车型家族
-  if (id.includes('shinkansen-0') || nameZh.includes('0 系') || nameZh.includes('0系')) {
-    return PROTOTYPE_REGISTRY['shinkansen-0'];
-  }
-  if (id.includes('500') && (id.includes('shinkansen') || nameZh.includes('500系'))) {
-    return PROTOTYPE_REGISTRY['shinkansen-500'];
-  }
-  if (id.includes('e5') || nameZh.includes('e5系') || nameZh.includes('隼号')) {
-    return PROTOTYPE_REGISTRY['shinkansen-e5'];
-  }
-  if (id.includes('n700s') || nameZh.includes('n700s')) {
-    return PROTOTYPE_REGISTRY['shinkansen-n700s'];
-  }
-  if (id.includes('cr400bf') || nameZh.includes('cr400bf')) {
-    return PROTOTYPE_REGISTRY['cr400bf-z'];
-  }
-  if (id.includes('cr400af') || id.includes('kcic-400af') || nameZh.includes('cr400af') || nameZh.includes('whoosh')) {
-    return PROTOTYPE_REGISTRY['cr400af-z-fuxing'];
-  }
-  if (id.includes('crh380a') || nameZh.includes('crh380a')) {
-    return PROTOTYPE_REGISTRY['crh380a'];
-  }
-  if (id.includes('ss8') || nameZh.includes('韶山 8') || nameZh.includes('韶山8')) {
-    return PROTOTYPE_REGISTRY['ss8'];
-  }
-  if (id.includes('df4d') || nameZh.includes('东风4d') || nameZh.includes('花东风')) {
-    return PROTOTYPE_REGISTRY['df4d'];
-  }
-  if (id.includes('big-boy') || nameZh.includes('大男孩')) {
-    return PROTOTYPE_REGISTRY['big-boy-4014'];
-  }
-  if (id.includes('l0') || nameZh.includes('l0系') || nameZh.includes('超导磁悬浮')) {
-    return PROTOTYPE_REGISTRY['scmaglev-l0'];
-  }
-  if (id.includes('cr200j') || nameZh.includes('cr200j') || nameZh.includes('绿巨人') || nameZh.includes('澜沧号')) {
-    return PROTOTYPE_REGISTRY['cr200j-hulvwa'];
-  }
-  if (id.includes('doctor-yellow') || id.includes('923') || nameZh.includes('黄医生')) {
-    return PROTOTYPE_REGISTRY['shinkansen-923-doctor-yellow'];
-  }
-  if (id.includes('transrapid') || id.includes('shanghai-maglev') || nameZh.includes('上海磁浮')) {
-    return PROTOTYPE_REGISTRY['shanghai-maglev-transrapid'];
-  }
-  if (id.includes('700t') || nameZh.includes('700t')) {
-    return PROTOTYPE_REGISTRY['thsr-700t'];
-  }
-  if (id.includes('sancheon') || id.includes('ktx') || nameZh.includes('ktx')) {
-    return PROTOTYPE_REGISTRY['korail-ktx-sancheon'];
-  }
-  if (id.includes('ss9') || nameZh.includes('ss9') || nameZh.includes('韶山 9')) {
-    return PROTOTYPE_REGISTRY['china-railway-ss9g'];
-  }
-  if (id.includes('df11g') || nameZh.includes('df11g') || nameZh.includes('东风 11g') || nameZh.includes('大猪头')) {
-    return PROTOTYPE_REGISTRY['china-railway-df11g'];
-  }
-
-  // 默认回退 (航空回退到空客 A350/C919，铁道回退到 CR400BF)
-  if (vehicle.category === 'aviation') {
-    return PROTOTYPE_REGISTRY['comac-c919'];
-  } else {
-    return PROTOTYPE_REGISTRY['cr400bf-z'];
-  }
+  // 仅在未知条目时安全回退
+  return vehicle.category === 'aviation'
+    ? PROTOTYPE_REGISTRY['comac-c919']
+    : PROTOTYPE_REGISTRY['cr400bf-z'];
 }
