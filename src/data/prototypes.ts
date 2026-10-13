@@ -252,17 +252,17 @@ export const PROTOTYPE_REGISTRY: Record<string, PrototypeInfo> = {
 
   // 涡轮螺旋桨：新舟60 (MA60) - 真实运七提速发展样机
   'joy-air-ma60': {
-    name: { zh: '中航工业 西安飞机 新舟60 (MA60) 首架技术验证原型机', en: "AVIC Xi'an MA60 Prototype B-0001" },
-    codeNumber: 'B-0001 (MA60 0001)',
-    firstDate: { zh: '2000年2月25日 (陕西阎良机场首飞)', en: 'February 25, 2000 (First Flight at Yanliang Airport)' },
-    testLocation: { zh: '陕西阎良国家试飞院 (CFTE)', en: 'Yanliang Flight Test Base, Shaanxi' },
+    name: { zh: '中航工业 西安飞机 新舟60 (MA60) 双发涡桨支线客机', en: "AVIC Xi'an MA60 Regional Turboprop Airliner" },
+    codeNumber: 'B-3476 (幸福航空实机)',
+    firstDate: { zh: '2000年2月25日 (首飞) / 2008年投入运营', en: 'February 25, 2000 (First Flight) / 2008 Revenue Service' },
+    testLocation: { zh: '陕西阎良国家试飞院 (CFTE) / 幸福航空干支线', en: 'Yanliang Flight Test Base / Joy Air Route Network' },
     significance: {
-      zh: '我国首款大规模投入商业客运航线运营的国产双发涡桨支线客机原型机。采用加拿大普惠 PW127J 引擎与美国柯林斯航电设备，四叶全复合材料螺旋桨，完成了高原高温起降适应性验证。',
+      zh: '我国首款大规模投入商业客运航线运营的国产双发涡桨支线客机。采用加拿大普惠 PW127J 引擎与美国柯林斯航电设备，四叶全复合材料螺旋桨，全面验证了国产支线客机高原高温适应性与常态化商业运营能力。',
       en: 'The maiden prototype of China flagship turboprop regional airliner, powered by PW127J engines with modern avionics.'
     },
-    photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/b/b3/MA60_from_Joy_Air.jpg',
-    liveryName: { zh: '西安飞机工业集团原厂首飞先导涂装', en: "Xi'an Aircraft Industry Factory Rollout Colors" },
-    currentStatus: { zh: '中国民航试飞试验基地典藏', en: 'Preserved in aviation test archive' },
+    photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/b/b1/B-3476_at_CGO_20190426.jpg',
+    liveryName: { zh: '幸福航空经典蓝白祥云客运涂装 (真机实拍)', en: 'Joy Air Blue-White Lotus Regional Livery' },
+    currentStatus: { zh: '幸福航空公司现役主力支线机队', en: 'Active in regional commercial service with Joy Air' },
   },
 
   // 涡轮螺旋桨：ATR 72-600
