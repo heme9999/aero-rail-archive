@@ -48,29 +48,29 @@ export const Hero: React.FC<HeroProps> = ({
   ];
 
   return (
-    <div className="relative border-b border-slate-800 bg-gradient-to-b from-slate-900/80 via-slate-950 to-slate-950 bg-grid-pattern py-8 sm:py-12 px-4 sm:px-6 lg:px-8 overflow-hidden">
+    <div className="relative border-b border-white/[0.08] bg-gradient-to-b from-slate-900/60 via-slate-950 to-slate-950 bg-grid-pattern py-8 sm:py-12 px-4 sm:px-6 lg:px-8 overflow-hidden">
       {/* Decorative Blueprint Glow */}
       <div className="absolute top-0 left-1/4 w-96 h-96 bg-sky-500/10 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute top-1/2 right-1/4 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto relative z-10">
-        <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
+        <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
           
           {/* Main Title & Bilingual Description */}
           <div className="max-w-3xl">
-            <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-slate-900 border border-slate-700 text-xs text-sky-400 font-mono mb-3">
+            <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-slate-900/90 border border-white/[0.08] text-[11px] text-sky-400 font-mono mb-3.5 shadow-sm">
               <span className="w-2 h-2 rounded-full bg-sky-400 animate-pulse"></span>
-              <span>ENGINEERING ENCYCLOPEDIA & PROTOTYPE ARCHIVE</span>
+              <span className="tracking-wider">ENGINEERING ENCYCLOPEDIA & PROTOTYPE ARCHIVE</span>
             </div>
             
             <h1 className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight leading-tight">
               航空与铁道图鉴 · 原型档案与微缩模型库
-              <span className="block text-lg sm:text-2xl text-slate-400 font-medium mt-1 font-mono">
+              <span className="block text-lg sm:text-2xl text-slate-400 font-normal mt-1.5 font-mono tracking-tight">
                 Aero & Rail Archive: Prototypes, Liveries & Scale Models
               </span>
             </h1>
 
-            <p className="mt-3 text-sm sm:text-base text-slate-300 leading-relaxed">
+            <p className="mt-3.5 text-sm sm:text-base text-slate-300 leading-relaxed font-normal">
               全面收录各个国家、航空公司与铁路局的经典客机、高速动车组、干线机车与特别彩绘涂装；
               专属收录每个机型的<span className="text-sky-300 font-semibold">首飞原型机 (Prototype)</span> 与车型的<span className="text-amber-300 font-semibold">试验验证样车 (Testbed)</span> 档案；
               无缝贯通 <span className="text-purple-300 font-semibold">Aviation400</span>、
@@ -78,19 +78,19 @@ export const Hero: React.FC<HeroProps> = ({
               <span className="text-indigo-300 font-semibold">中车文创 / 长鸣火模</span> 等各大主流实体模玩典藏数据。
             </p>
 
-            {/* Quick Filter Tags */}
-            <div className="mt-4 flex flex-wrap items-center gap-2">
-              <span className="text-xs text-slate-500 font-mono">热搜索引 Quick Index:</span>
+            {/* Quick Filter Tags (Tactile Chips) */}
+            <div className="mt-5 flex flex-wrap items-center gap-1.5 sm:gap-2">
+              <span className="text-xs text-slate-500 font-mono mr-1">热搜索引 Index:</span>
               {quickTags.map((t, idx) => {
                 const isActive = searchQuery.trim().toLowerCase() === t.query.toLowerCase();
                 return (
                   <button
                     key={idx}
                     onClick={() => onSelectTag(t.query)}
-                    className={`px-2.5 py-1 text-xs rounded-md border transition-all flex items-center space-x-1 ${
+                    className={`btn-press px-2.5 py-1 text-xs rounded-lg border flex items-center space-x-1 ${
                       isActive
-                        ? 'bg-sky-500 text-slate-950 font-bold border-sky-400 shadow-sm shadow-sky-500/25 ring-1 ring-sky-400'
-                        : 'bg-slate-800/80 hover:bg-slate-700 text-slate-300 hover:text-white border-slate-700'
+                        ? 'bg-sky-500 text-slate-950 font-bold border-sky-400 shadow-md shadow-sky-500/20 ring-1 ring-white/20'
+                        : 'bg-slate-900/80 hover:bg-slate-800 text-slate-300 hover:text-white border-white/[0.08]'
                     }`}
                   >
                     <span>{t.label}</span>
@@ -101,42 +101,42 @@ export const Hero: React.FC<HeroProps> = ({
             </div>
           </div>
 
-          {/* Stats Badges Grid */}
+          {/* Stats Badges Grid (Craft Multi-Layer Cards) */}
           <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-2 gap-3 lg:w-80 shrink-0">
-            <div className="bg-slate-900/90 border border-sky-900/40 rounded-xl p-3 shadow-inner">
+            <div className="bg-slate-900/60 backdrop-blur-md craft-border craft-border-hover rounded-2xl p-3.5 transition-all">
               <div className="flex items-center justify-between text-sky-400 mb-1">
                 <Plane className="w-4 h-4" />
-                <span className="text-xs font-mono">MODELS</span>
+                <span className="text-[10px] font-mono tracking-wider">VEHICLES</span>
               </div>
-              <div className="text-xl font-bold font-mono text-white">{totalVehicles} 款</div>
-              <div className="text-[11px] text-slate-400">收录机型/车型 / Vehicles</div>
+              <div className="text-2xl font-bold font-mono text-white tabular-nums">{totalVehicles} 款</div>
+              <div className="text-[11px] text-slate-400 font-medium mt-0.5">收录机型/车型 / Vehicles</div>
             </div>
 
-            <div className="bg-slate-900/90 border border-amber-900/40 rounded-xl p-3 shadow-inner">
+            <div className="bg-slate-900/60 backdrop-blur-md craft-border craft-border-hover rounded-2xl p-3.5 transition-all">
               <div className="flex items-center justify-between text-amber-400 mb-1">
                 <Train className="w-4 h-4" />
-                <span className="text-xs font-mono">LIVERIES</span>
+                <span className="text-[10px] font-mono tracking-wider">LIVERIES</span>
               </div>
-              <div className="text-xl font-bold font-mono text-white">{totalLiveries} 款</div>
-              <div className="text-[11px] text-slate-400">官方与彩绘涂装 / Liveries</div>
+              <div className="text-2xl font-bold font-mono text-white tabular-nums">{totalLiveries} 款</div>
+              <div className="text-[11px] text-slate-400 font-medium mt-0.5">官方与彩绘涂装 / Liveries</div>
             </div>
 
-            <div className="bg-slate-900/90 border border-purple-900/40 rounded-xl p-3 shadow-inner">
+            <div className="bg-slate-900/60 backdrop-blur-md craft-border craft-border-hover rounded-2xl p-3.5 transition-all">
               <div className="flex items-center justify-between text-purple-400 mb-1">
                 <Box className="w-4 h-4" />
-                <span className="text-xs font-mono">DIECAST</span>
+                <span className="text-[10px] font-mono tracking-wider">MODELS</span>
               </div>
-              <div className="text-xl font-bold font-mono text-white">{totalModels} 款</div>
-              <div className="text-[11px] text-slate-400">实体比例模型 / Scale Models</div>
+              <div className="text-2xl font-bold font-mono text-white tabular-nums">{totalModels} 款</div>
+              <div className="text-[11px] text-slate-400 font-medium mt-0.5">实体比例模型 / Scale Models</div>
             </div>
 
-            <div className="bg-slate-900/90 border border-rose-900/40 rounded-xl p-3 shadow-inner">
+            <div className="bg-slate-900/60 backdrop-blur-md craft-border craft-border-hover rounded-2xl p-3.5 transition-all">
               <div className="flex items-center justify-between text-rose-400 mb-1">
                 <History className="w-4 h-4" />
-                <span className="text-xs font-mono">RETRO</span>
+                <span className="text-[10px] font-mono tracking-wider">CLASSICS</span>
               </div>
-              <div className="text-xl font-bold font-mono text-white">{totalRetired} 款</div>
-              <div className="text-[11px] text-slate-400">已退役经典传奇 / Retired</div>
+              <div className="text-2xl font-bold font-mono text-white tabular-nums">{totalRetired} 款</div>
+              <div className="text-[11px] text-slate-400 font-medium mt-0.5">已退役经典传奇 / Retired</div>
             </div>
           </div>
 

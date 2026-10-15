@@ -32,11 +32,12 @@ export const SubmitModal: React.FC<SubmitModalProps> = ({ isOpen, onClose }) => 
   };
 
   return (
-    <div className="fixed inset-0 z-50 overflow-y-auto bg-slate-950/80 backdrop-blur-md flex items-center justify-center p-4">
-      <div className="relative w-full max-w-lg bg-slate-900 border border-slate-700/80 rounded-2xl shadow-2xl p-6 sm:p-7">
+    <div className="fixed inset-0 z-50 overflow-y-auto bg-slate-950/80 backdrop-blur-md flex items-center justify-center p-4 animate-backdrop-enter">
+      <div className="relative w-full max-w-lg bg-slate-900 craft-border rounded-2xl shadow-2xl p-6 sm:p-7 animate-modal-enter">
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 p-2 text-slate-400 hover:text-white rounded-lg bg-slate-800"
+          className="btn-press absolute top-4 right-4 p-2 text-slate-400 hover:text-white rounded-xl bg-slate-800/80 hover:bg-slate-700/80 border border-white/[0.08] active:scale-95 cursor-pointer"
+          aria-label="关闭"
         >
           <X className="w-4 h-4" />
         </button>
@@ -72,10 +73,10 @@ export const SubmitModal: React.FC<SubmitModalProps> = ({ isOpen, onClose }) => 
                 <button
                   type="button"
                   onClick={() => setFormData({ ...formData, type: 'vehicle_photo' })}
-                  className={`py-2 px-3 rounded-xl border text-center font-medium transition-colors ${
+                  className={`btn-press py-2 px-3 rounded-xl border text-center font-medium transition-colors select-none active:scale-95 cursor-pointer ${
                     formData.type === 'vehicle_photo'
-                      ? 'bg-sky-950 text-sky-300 border-sky-600 font-bold'
-                      : 'bg-slate-800 text-slate-300 border-slate-700'
+                      ? 'bg-sky-950 text-sky-300 border-sky-500/50 font-bold shadow-md shadow-sky-950/40'
+                      : 'bg-slate-800/80 text-slate-300 border-white/[0.08] hover:border-white/[0.2]'
                   }`}
                 >
                   📸 真实涂装实拍 / Livery Photo
@@ -83,10 +84,10 @@ export const SubmitModal: React.FC<SubmitModalProps> = ({ isOpen, onClose }) => 
                 <button
                   type="button"
                   onClick={() => setFormData({ ...formData, type: 'model_record' })}
-                  className={`py-2 px-3 rounded-xl border text-center font-medium transition-colors ${
+                  className={`btn-press py-2 px-3 rounded-xl border text-center font-medium transition-colors select-none active:scale-95 cursor-pointer ${
                     formData.type === 'model_record'
-                      ? 'bg-purple-950 text-purple-300 border-purple-600 font-bold'
-                      : 'bg-slate-800 text-slate-300 border-slate-700'
+                      ? 'bg-purple-950 text-purple-300 border-purple-500/50 font-bold shadow-md shadow-purple-950/40'
+                      : 'bg-slate-800/80 text-slate-300 border-white/[0.08] hover:border-white/[0.2]'
                   }`}
                 >
                   📦 实体模型资料 / Scale Model
@@ -102,7 +103,7 @@ export const SubmitModal: React.FC<SubmitModalProps> = ({ isOpen, onClose }) => 
               <select
                 value={formData.category}
                 onChange={(e) => setFormData({ ...formData, category: e.target.value })}
-                className="w-full bg-slate-800 text-slate-200 border border-slate-700 rounded-lg p-2.5"
+                className="w-full bg-slate-900/80 text-slate-200 border border-white/[0.08] hover:border-white/[0.2] focus:border-sky-500 focus:ring-1 focus:ring-sky-500/30 rounded-xl p-2.5 transition-colors cursor-pointer"
               >
                 <option value="aviation">✈️ 航空民航 / Aviation</option>
                 <option value="railway">🚄 铁道机车车辆 / Railway</option>
@@ -120,7 +121,7 @@ export const SubmitModal: React.FC<SubmitModalProps> = ({ isOpen, onClose }) => 
                 placeholder="例如：波音 787-9 / CR400AF-Z / 新干线 N700S"
                 value={formData.title}
                 onChange={(e) => setFormData({ ...formData, title: e.target.value })}
-                className="w-full bg-slate-800 text-slate-200 border border-slate-700 rounded-lg p-2.5 focus:outline-none focus:border-sky-500"
+                className="w-full bg-slate-900/80 text-slate-200 border border-white/[0.08] hover:border-white/[0.2] focus:border-sky-500/80 focus:ring-1 focus:ring-sky-500/30 rounded-xl p-2.5 transition-colors"
               />
             </div>
 
@@ -136,7 +137,7 @@ export const SubmitModal: React.FC<SubmitModalProps> = ({ isOpen, onClose }) => 
                     placeholder="如: Aviation400, TOMIX"
                     value={formData.scaleModelBrand}
                     onChange={(e) => setFormData({ ...formData, scaleModelBrand: e.target.value })}
-                    className="w-full bg-slate-800 text-slate-200 border border-slate-700 rounded-lg p-2"
+                    className="w-full bg-slate-900/80 text-slate-200 border border-white/[0.08] hover:border-white/[0.2] focus:border-sky-500/80 focus:ring-1 focus:ring-sky-500/30 rounded-xl p-2 transition-colors"
                   />
                 </div>
                 <div>
@@ -149,7 +150,7 @@ export const SubmitModal: React.FC<SubmitModalProps> = ({ isOpen, onClose }) => 
                     placeholder="如: AV4018 / 10-1784"
                     value={formData.scaleModelSku}
                     onChange={(e) => setFormData({ ...formData, scaleModelSku: e.target.value })}
-                    className="w-full bg-slate-800 text-slate-200 border border-slate-700 rounded-lg p-2"
+                    className="w-full bg-slate-900/80 text-slate-200 border border-white/[0.08] hover:border-white/[0.2] focus:border-sky-500/80 focus:ring-1 focus:ring-sky-500/30 rounded-xl p-2 transition-colors font-mono"
                   />
                 </div>
               </div>
@@ -164,7 +165,7 @@ export const SubmitModal: React.FC<SubmitModalProps> = ({ isOpen, onClose }) => 
                     placeholder="如: B-2047, CR400BF-0503"
                     value={formData.registrationOrCode}
                     onChange={(e) => setFormData({ ...formData, registrationOrCode: e.target.value })}
-                    className="w-full bg-slate-800 text-slate-200 border border-slate-700 rounded-lg p-2"
+                    className="w-full bg-slate-900/80 text-slate-200 border border-white/[0.08] hover:border-white/[0.2] focus:border-sky-500/80 focus:ring-1 focus:ring-sky-500/30 rounded-xl p-2 transition-colors font-mono"
                   />
                 </div>
                 <div>
@@ -176,7 +177,7 @@ export const SubmitModal: React.FC<SubmitModalProps> = ({ isOpen, onClose }) => 
                     placeholder="如: 北京首都 PEK / 东京站"
                     value={formData.location}
                     onChange={(e) => setFormData({ ...formData, location: e.target.value })}
-                    className="w-full bg-slate-800 text-slate-200 border border-slate-700 rounded-lg p-2"
+                    className="w-full bg-slate-900/80 text-slate-200 border border-white/[0.08] hover:border-white/[0.2] focus:border-sky-500/80 focus:ring-1 focus:ring-sky-500/30 rounded-xl p-2 transition-colors"
                   />
                 </div>
               </div>
@@ -192,14 +193,14 @@ export const SubmitModal: React.FC<SubmitModalProps> = ({ isOpen, onClose }) => 
                 placeholder="您的飞友/铁友签名"
                 value={formData.author}
                 onChange={(e) => setFormData({ ...formData, author: e.target.value })}
-                className="w-full bg-slate-800 text-slate-200 border border-slate-700 rounded-lg p-2.5"
+                className="w-full bg-slate-900/80 text-slate-200 border border-white/[0.08] hover:border-white/[0.2] focus:border-sky-500/80 focus:ring-1 focus:ring-sky-500/30 rounded-xl p-2.5 transition-colors"
               />
             </div>
 
             <div className="pt-2">
               <button
                 type="submit"
-                className="w-full py-2.5 rounded-xl font-bold bg-gradient-to-r from-sky-500 to-indigo-500 hover:from-sky-400 hover:to-indigo-400 text-slate-950 transition-all shadow-md"
+                className="btn-press w-full py-3 rounded-xl font-bold bg-gradient-to-r from-sky-500 to-indigo-500 hover:from-sky-400 hover:to-indigo-400 text-slate-950 shadow-lg shadow-sky-500/20 active:scale-[0.98] transition-transform cursor-pointer"
               >
                 确认提交审核 / Submit for Review
               </button>

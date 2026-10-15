@@ -2,19 +2,65 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  /* Emil Kowalski custom motion tokens */
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+  --ease-spring: cubic-bezier(0.175, 0.885, 0.32, 1.15);
+  --ease-drawer: cubic-bezier(0.32, 0.72, 0, 1);
+}
+
 @layer base {
+  html {
+    -webkit-tap-highlight-color: transparent;
+    scroll-behavior: smooth;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
   body {
-    @apply bg-slate-950 text-slate-100 antialiased selection:bg-sky-500 selection:text-white min-h-screen font-sans;
+    @apply bg-slate-950 text-slate-100 min-h-screen font-sans;
     background-color: #0b0f19;
+  }
+
+  /* Mobile-native: Prevent iOS Safari auto-zoom on inputs */
+  input, textarea, select {
+    font-size: 16px;
+  }
+  @media (min-width: 640px) {
+    input, textarea, select {
+      font-size: 0.875rem; /* 14px on desktop */
+    }
+  }
+
+  /* Mobile-native: eliminate tap delay & disable text selection on interactive elements */
+  button, a, [role="button"], select {
+    touch-action: manipulation;
+    user-select: none;
+  }
+
+  /* Tabular numbers for all stats, codes and counts */
+  .tabular-nums {
+    font-variant-numeric: tabular-nums;
   }
 }
 
-/* Blueprint / Engineering Grid Pattern */
+/* Tactile press feedback (Emil design engineering principle) */
+.btn-press {
+  transition: transform 140ms var(--ease-out), background-color 140ms, border-color 140ms, opacity 140ms;
+  will-change: transform;
+}
+.btn-press:active {
+  transform: scale(0.97);
+}
+
+/* Blueprint & Ambient Engineering Patterns */
 .bg-grid-pattern {
   background-size: 32px 32px;
   background-image: 
-    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    linear-gradient(to right, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
 }
 
 .bg-dot-pattern {
@@ -22,18 +68,84 @@
   background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
 }
 
+/* Semi-transparent layered border & ambient glow (Emil: avoid harsh solid borders) */
+.craft-border {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.05);
+}
+
+.craft-border-hover:hover {
+  border-color: rgba(255, 255, 255, 0.16);
+  box-shadow: 0 12px 30px -10px rgba(0, 0, 0, 0.5), inset 0 1px 0 0 rgba(255, 255, 255, 0.1);
+}
+
+/* Emil: Asymmetric enter animation (never start from scale(0)) */
+@keyframes modalEnter {
+  from {
+    opacity: 0;
+    transform: scale(0.96) translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes backdropEnter {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes cardCascade {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-modal-enter {
+  animation: modalEnter 260ms var(--ease-out) forwards;
+  will-change: transform, opacity;
+}
+
+.animate-backdrop-enter {
+  animation: backdropEnter 200ms ease-out forwards;
+}
+
+.animate-card-cascade {
+  animation: cardCascade 280ms var(--ease-out) both;
+}
+
+/* Respect user's accessibility reduced-motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .btn-press:active {
+    transform: none !important;
+  }
+}
+
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  width: 6px;
+  height: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #0f172a;
+  background: #090d16;
 }
 ::-webkit-scrollbar-thumb {
-  background: #334155;
-  border-radius: 4px;
+  background: #1e293b;
+  border-radius: 9999px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #475569;
+  background: #334155;
 }
+

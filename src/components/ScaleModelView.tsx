@@ -90,10 +90,10 @@ export const ScaleModelView: React.FC<ScaleModelViewProps> = ({
             <button
               key={b.id}
               onClick={() => setSelectedBrandFilter(b.id)}
-              className={`px-3 py-1.5 text-xs rounded-xl font-mono transition-all border ${
+              className={`btn-press px-3.5 py-1.5 text-xs rounded-xl font-mono transition-colors border select-none active:scale-95 cursor-pointer ${
                 selectedBrandFilter === b.id
                   ? 'bg-purple-600 text-white border-purple-500 font-bold shadow-lg shadow-purple-900/40'
-                  : 'bg-slate-900/80 text-slate-300 border-slate-700 hover:bg-slate-800'
+                  : 'bg-slate-900/80 text-slate-300 border-white/[0.08] hover:border-white/[0.2]'
               }`}
             >
               {b.name}
@@ -103,14 +103,14 @@ export const ScaleModelView: React.FC<ScaleModelViewProps> = ({
       </div>
 
       {/* Filter and count bar */}
-      <div className="flex flex-wrap items-center justify-between gap-3 text-xs bg-slate-900/50 p-3 rounded-xl border border-slate-800">
+      <div className="flex flex-wrap items-center justify-between gap-3 text-xs bg-slate-900/50 p-3 rounded-xl border border-white/[0.08]">
         <div className="flex items-center space-x-2">
           <Filter className="w-3.5 h-3.5 text-purple-400" />
           <span className="text-slate-400 font-mono">比例筛选 Scale:</span>
           <select
             value={selectedScaleFilter}
             onChange={(e) => setSelectedScaleFilter(e.target.value)}
-            className="bg-slate-800 text-slate-200 border border-slate-700 rounded-lg px-2.5 py-1 focus:outline-none focus:border-purple-500"
+            className="bg-slate-900/80 text-slate-200 border border-white/[0.08] hover:border-white/[0.2] rounded-xl px-3 py-1.5 focus:outline-none focus:border-purple-500 font-medium cursor-pointer transition-colors shadow-sm"
           >
             {scales.map((s) => (
               <option key={s.id} value={s.id}>
@@ -120,8 +120,10 @@ export const ScaleModelView: React.FC<ScaleModelViewProps> = ({
           </select>
         </div>
 
-        <div className="text-slate-400 font-mono">
-          收录模型: <strong className="text-purple-300">{filteredModels.length}</strong> 款
+        <div className="text-slate-400 font-mono flex items-center gap-1.5 select-none">
+          <span>收录模型:</span>
+          <strong className="text-purple-300 tabular-nums px-1.5 py-0.5 rounded bg-purple-500/10 border border-purple-500/20">{filteredModels.length}</strong>
+          <span>款</span>
         </div>
       </div>
 
@@ -130,7 +132,7 @@ export const ScaleModelView: React.FC<ScaleModelViewProps> = ({
         {filteredModels.map((item) => (
           <div
             key={item.model.id}
-            className="bg-slate-900/90 rounded-2xl border border-slate-800 overflow-hidden flex flex-col justify-between hover:border-purple-600/60 transition-all hover:shadow-xl hover:shadow-purple-950/20 group"
+            className="bg-slate-900/90 rounded-2xl craft-border craft-border-hover overflow-hidden flex flex-col justify-between transition-[transform,border-color,box-shadow] duration-200 ease-out group"
           >
             <div>
               {/* Model Photo Banner with Showroom Styling */}
@@ -221,7 +223,7 @@ export const ScaleModelView: React.FC<ScaleModelViewProps> = ({
 
               <button
                 onClick={() => onSelectVehicle(item.vehicle)}
-                className="inline-flex items-center space-x-1 text-xs text-sky-400 hover:text-sky-300 font-medium group-hover:translate-x-0.5 transition-transform"
+                className="btn-press inline-flex items-center space-x-1.5 px-3 py-1.5 rounded-xl bg-sky-500/10 text-sky-300 border border-sky-500/20 hover:bg-sky-500/20 active:scale-95 transition-colors text-xs font-medium cursor-pointer"
               >
                 <span>真机/真车全貌</span>
                 <ExternalLink className="w-3.5 h-3.5" />

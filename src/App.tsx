@@ -299,8 +299,10 @@ export function App() {
                 </p>
               </div>
 
-              <div className="text-xs text-slate-400 font-mono">
-                当前收录: <span className="text-sky-400 font-bold">{filteredVehicles.length}</span> / {totalVehicles} 款
+              <div className="text-xs text-slate-400 font-mono flex items-center gap-1 select-none">
+                <span>当前收录:</span>
+                <span className="text-sky-400 font-bold tabular-nums px-1.5 py-0.5 rounded bg-sky-500/10 border border-sky-500/20">{filteredVehicles.length}</span>
+                <span>/ {totalVehicles} 款</span>
               </div>
             </div>
 
@@ -317,7 +319,7 @@ export function App() {
               </div>
             ) : (
               /* Empty state */
-              <div className="bg-slate-900/60 border border-slate-800 rounded-2xl p-12 text-center max-w-md mx-auto my-12 space-y-4">
+              <div className="bg-slate-900/60 craft-border rounded-2xl p-12 text-center max-w-md mx-auto my-12 space-y-4">
                 <SearchX className="w-12 h-12 text-slate-500 mx-auto" />
                 <h3 className="text-base font-bold text-white">
                   未找到匹配档案 / No Records Found
@@ -327,7 +329,7 @@ export function App() {
                 </p>
                 <button
                   onClick={handleResetFilters}
-                  className="px-4 py-2 rounded-xl text-xs font-semibold bg-sky-500 text-slate-950 hover:bg-sky-400 transition-colors"
+                  className="btn-press px-4 py-2 rounded-xl text-xs font-semibold bg-sky-500 text-slate-950 hover:bg-sky-400 active:scale-95 transition-all shadow-md shadow-sky-500/20 cursor-pointer"
                 >
                   重置筛选条件 / Reset All Filters
                 </button>

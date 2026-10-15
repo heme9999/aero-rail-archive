@@ -104,15 +104,15 @@ export const VehicleModal: React.FC<VehicleModalProps> = ({ vehicle, onClose }) 
   }, [isPrototypePhotoOpen, activeDetailPhotoIndex, handleClosePhoto, handlePrevPhoto, handleNextPhoto, onClose]);
 
   return (
-    <div className="fixed inset-0 z-50 overflow-y-auto bg-slate-950/80 backdrop-blur-md flex items-center justify-center p-3 sm:p-6">
-      <div className="relative w-full max-w-5xl bg-slate-900 border border-slate-700/80 rounded-2xl shadow-2xl overflow-hidden flex flex-col max-h-[92vh]">
+    <div className="fixed inset-0 z-50 overflow-y-auto bg-slate-950/80 backdrop-blur-md flex items-center justify-center p-3 sm:p-6 animate-backdrop-enter">
+      <div className="relative w-full max-w-5xl bg-slate-900 craft-border rounded-2xl shadow-2xl overflow-hidden flex flex-col max-h-[92vh] animate-modal-enter">
         
         {/* Header Bar */}
-        <div className="sticky top-0 z-20 bg-slate-950/95 border-b border-slate-800 px-5 py-4 flex items-center justify-between">
+        <div className="sticky top-0 z-20 bg-slate-950/95 border-b border-white/[0.08] px-5 py-4 flex items-center justify-between backdrop-blur-sm">
           <div className="flex items-center space-x-3">
             <span
               className={`p-2 rounded-xl ${
-                isAviation ? 'bg-sky-950 text-sky-400 border border-sky-800' : 'bg-amber-950 text-amber-400 border border-amber-800'
+                isAviation ? 'bg-sky-950 text-sky-400 border border-sky-500/30' : 'bg-amber-950 text-amber-400 border border-amber-500/30'
               }`}
             >
               {isAviation ? <Plane className="w-5 h-5" /> : <Train className="w-5 h-5" />}
@@ -122,16 +122,16 @@ export const VehicleModal: React.FC<VehicleModalProps> = ({ vehicle, onClose }) 
                 <h2 className="text-lg sm:text-xl font-bold text-white">
                   {vehicle.modelName.zh}
                 </h2>
-                <span className="font-mono text-xs px-2 py-0.5 rounded bg-slate-800 text-sky-400 border border-slate-700">
+                <span className="font-mono text-xs px-2 py-0.5 rounded-md bg-slate-800 text-sky-400 border border-white/[0.08]">
                   {vehicle.code}
                 </span>
                 {isRetired ? (
-                  <span className="text-[11px] font-semibold px-2 py-0.5 rounded-full bg-rose-950 text-rose-300 border border-rose-800">
-                    已退役 / Retired ({vehicle.retiredYear})
+                  <span className="text-[11px] font-semibold px-2.5 py-0.5 rounded-full bg-rose-950/80 text-rose-300 border border-rose-500/30">
+                    已退役 ({vehicle.retiredYear})
                   </span>
                 ) : (
-                  <span className="text-[11px] font-semibold px-2 py-0.5 rounded-full bg-emerald-950 text-emerald-300 border border-emerald-800">
-                    现役服役 / Active
+                  <span className="text-[11px] font-semibold px-2.5 py-0.5 rounded-full bg-emerald-950/80 text-emerald-300 border border-emerald-500/30">
+                    现役服役
                   </span>
                 )}
               </div>
@@ -143,7 +143,8 @@ export const VehicleModal: React.FC<VehicleModalProps> = ({ vehicle, onClose }) 
 
           <button
             onClick={onClose}
-            className="p-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-400 hover:text-white transition-colors"
+            className="btn-press p-2 rounded-xl bg-slate-800/80 hover:bg-slate-700 text-slate-400 hover:text-white transition-colors border border-white/[0.08] active:scale-95 cursor-pointer"
+            aria-label="关闭弹窗"
           >
             <X className="w-5 h-5" />
           </button>
@@ -459,14 +460,14 @@ export const VehicleModal: React.FC<VehicleModalProps> = ({ vehicle, onClose }) 
                   <button
                     key={liv.id}
                     onClick={() => setActiveLiveryId(liv.id)}
-                    className={`px-3 py-2 rounded-xl text-xs font-medium whitespace-nowrap transition-all border ${
+                    className={`btn-press px-3.5 py-2 rounded-xl text-xs font-medium whitespace-nowrap transition-colors border select-none active:scale-95 cursor-pointer ${
                       isSelected
-                        ? 'bg-sky-500 text-slate-950 border-sky-400 font-bold shadow-md'
-                        : 'bg-slate-800/80 hover:bg-slate-800 text-slate-300 border-slate-700'
+                        ? 'bg-sky-500 text-slate-950 border-sky-400 font-bold shadow-md shadow-sky-500/20'
+                        : 'bg-slate-800/80 hover:bg-slate-800 text-slate-300 border-white/[0.08] hover:border-white/[0.2]'
                     }`}
                   >
                     <span>{liv.name.zh}</span>
-                    <span className="text-[11px] block opacity-80 font-mono font-normal">
+                    <span className="text-[11px] block opacity-80 font-mono font-normal tabular-nums">
                       {liv.yearsActive}
                     </span>
                   </button>
@@ -601,23 +602,23 @@ export const VehicleModal: React.FC<VehicleModalProps> = ({ vehicle, onClose }) 
       {/* Lightbox Modal for Fullscreen Close-up Image */}
       {activeDetailPhoto && activeDetailPhotoIndex !== null && (
         <div
-          className="fixed inset-0 z-[100] bg-slate-950/95 backdrop-blur-xl flex flex-col justify-between select-none animate-fadeIn"
+          className="fixed inset-0 z-[100] bg-slate-950/95 backdrop-blur-xl flex flex-col justify-between select-none animate-backdrop-enter"
           onClick={handleClosePhoto}
         >
           {/* Top Navigation Bar */}
           <div
-            className="w-full bg-slate-900/90 border-b border-slate-800 px-4 sm:px-6 py-3 flex items-center justify-between z-10 backdrop-blur-md shrink-0 shadow-lg"
+            className="w-full bg-slate-900/90 border-b border-white/[0.08] px-4 sm:px-6 py-3 flex items-center justify-between z-10 backdrop-blur-md shrink-0 shadow-lg"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Left: Prominent Back to Vehicle Details Button */}
             <button
               onClick={handleClosePhoto}
-              className="flex items-center space-x-2 px-3 sm:px-4 py-2 rounded-xl bg-slate-800 hover:bg-sky-500 hover:text-slate-950 text-slate-200 transition-all text-xs sm:text-sm font-semibold group shadow-sm border border-slate-700 hover:border-sky-400"
+              className="btn-press flex items-center space-x-2 px-3 sm:px-4 py-2 rounded-xl bg-slate-800 hover:bg-sky-500 hover:text-slate-950 text-slate-200 transition-colors text-xs sm:text-sm font-semibold group shadow-sm border border-white/[0.08] hover:border-sky-400 active:scale-95 cursor-pointer"
               title="返回车型详情 (Esc) / Back to Vehicle Details"
             >
               <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform text-sky-400 group-hover:text-slate-950" />
               <span>← 返回车型详情 / Back to Details</span>
-              <kbd className="hidden sm:inline-block ml-1.5 px-1.5 py-0.5 text-[10px] font-mono bg-slate-900 text-slate-400 group-hover:bg-sky-600 group-hover:text-white rounded border border-slate-700">
+              <kbd className="hidden sm:inline-block ml-1.5 px-1.5 py-0.5 text-[10px] font-mono bg-slate-900 text-slate-400 group-hover:bg-sky-600 group-hover:text-white rounded border border-white/[0.1]">
                 ESC
               </kbd>
             </button>
@@ -628,15 +629,15 @@ export const VehicleModal: React.FC<VehicleModalProps> = ({ vehicle, onClose }) 
                 {vehicle.modelName.zh}
               </span>
               <span className="hidden md:inline-block text-slate-600">/</span>
-              <span className="text-xs font-mono font-bold text-sky-400 bg-sky-950/80 px-2.5 py-1 rounded-full border border-sky-800">
-                特写 {activeDetailPhotoIndex + 1} / {vehicle.detailPhotos.length}
+              <span className="text-xs font-mono font-bold text-sky-400 bg-sky-950/80 px-2.5 py-1 rounded-full border border-sky-500/30">
+                特写 <span className="tabular-nums">{activeDetailPhotoIndex + 1}</span> / <span className="tabular-nums">{vehicle.detailPhotos.length}</span>
               </span>
             </div>
 
             {/* Right: Close Viewer Button (returns to Vehicle Details) */}
             <button
               onClick={handleClosePhoto}
-              className="flex items-center space-x-1.5 px-3 py-2 rounded-xl bg-slate-800 hover:bg-rose-500 hover:text-white text-slate-300 transition-colors text-xs font-medium border border-slate-700"
+              className="btn-press flex items-center space-x-1.5 px-3 py-2 rounded-xl bg-slate-800 hover:bg-rose-500 hover:text-white text-slate-300 transition-colors text-xs font-medium border border-white/[0.08] active:scale-95 cursor-pointer"
               title="关闭特写返回车型详情 (Esc) / Close photo viewer"
             >
               <span className="hidden sm:inline">关闭特写</span>
@@ -734,35 +735,35 @@ export const VehicleModal: React.FC<VehicleModalProps> = ({ vehicle, onClose }) 
       {/* Lightbox Modal for Prototype Image */}
       {isPrototypePhotoOpen && vehicle.prototype && (
         <div
-          className="fixed inset-0 z-[100] bg-slate-950/95 backdrop-blur-xl flex flex-col justify-between select-none animate-fadeIn"
+          className="fixed inset-0 z-[100] bg-slate-950/95 backdrop-blur-xl flex flex-col justify-between select-none animate-backdrop-enter"
           onClick={() => setIsPrototypePhotoOpen(false)}
         >
           {/* Top Bar */}
           <div
-            className="w-full bg-slate-900/90 border-b border-slate-800 px-4 sm:px-6 py-3 flex items-center justify-between z-10 backdrop-blur-md shrink-0 shadow-lg"
+            className="w-full bg-slate-900/90 border-b border-white/[0.08] px-4 sm:px-6 py-3 flex items-center justify-between z-10 backdrop-blur-md shrink-0 shadow-lg"
             onClick={(e) => e.stopPropagation()}
           >
             <button
               onClick={() => setIsPrototypePhotoOpen(false)}
-              className="flex items-center space-x-2 px-3 sm:px-4 py-2 rounded-xl bg-slate-800 hover:bg-sky-500 hover:text-slate-950 text-slate-200 transition-all text-xs sm:text-sm font-semibold group shadow-sm border border-slate-700 hover:border-sky-400"
+              className="btn-press flex items-center space-x-2 px-3 sm:px-4 py-2 rounded-xl bg-slate-800 hover:bg-sky-500 hover:text-slate-950 text-slate-200 transition-colors text-xs sm:text-sm font-semibold group shadow-sm border border-white/[0.08] hover:border-sky-400 active:scale-95 cursor-pointer"
               title="返回车型详情 (Esc)"
             >
               <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform text-sky-400 group-hover:text-slate-950" />
               <span>← 返回车型详情 / Back to Details</span>
-              <kbd className="hidden sm:inline-block ml-1.5 px-1.5 py-0.5 text-[10px] font-mono bg-slate-900 text-slate-400 group-hover:bg-sky-600 group-hover:text-white rounded border border-slate-700">
+              <kbd className="hidden sm:inline-block ml-1.5 px-1.5 py-0.5 text-[10px] font-mono bg-slate-900 text-slate-400 group-hover:bg-sky-600 group-hover:text-white rounded border border-white/[0.1]">
                 ESC
               </kbd>
             </button>
 
             <div className="flex items-center space-x-2 text-center">
-              <span className="text-xs font-mono font-bold text-sky-400 bg-sky-950/80 px-2.5 py-1 rounded-full border border-sky-800">
+              <span className="text-xs font-mono font-bold text-sky-400 bg-sky-950/80 px-2.5 py-1 rounded-full border border-sky-500/30">
                 🔬 原型机实拍全屏大图 / Prototype Fullscreen
               </span>
             </div>
 
             <button
               onClick={() => setIsPrototypePhotoOpen(false)}
-              className="flex items-center space-x-1.5 px-3 py-2 rounded-xl bg-slate-800 hover:bg-rose-500 hover:text-white text-slate-300 transition-colors text-xs font-medium border border-slate-700"
+              className="btn-press flex items-center space-x-1.5 px-3 py-2 rounded-xl bg-slate-800 hover:bg-rose-500 hover:text-white text-slate-300 transition-colors text-xs font-medium border border-white/[0.08] active:scale-95 cursor-pointer"
             >
               <span className="hidden sm:inline">关闭</span>
               <X className="w-4 h-4" />

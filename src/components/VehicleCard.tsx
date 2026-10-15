@@ -27,39 +27,40 @@ export const VehicleCard: React.FC<VehicleCardProps> = ({ vehicle, onSelect }) =
   return (
     <div
       onClick={() => onSelect(vehicle)}
-      className="group relative bg-slate-900/90 rounded-2xl border border-slate-800 hover:border-slate-700 hover:shadow-2xl hover:shadow-sky-500/10 transition-all duration-300 flex flex-col overflow-hidden cursor-pointer"
+      className="btn-press group relative bg-slate-900/90 rounded-2xl craft-border craft-border-hover transition-[transform,border-color,box-shadow] duration-200 ease-out flex flex-col overflow-hidden cursor-pointer active:scale-[0.985] select-none"
     >
       {/* Image & Overlay Header */}
       <div className="relative h-48 sm:h-52 w-full overflow-hidden bg-slate-950">
         <img
           src={vehicle.heroImage}
           alt={vehicle.modelName.en}
-          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+          className="w-full h-full object-cover group-hover:scale-[1.04] transition-transform duration-500 ease-out"
+          loading="lazy"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent pointer-events-none" />
 
         {/* Top Badges */}
-        <div className="absolute top-3 left-3 right-3 flex items-center justify-between gap-2">
+        <div className="absolute top-3 left-3 right-3 flex items-center justify-between gap-2 pointer-events-none">
           {/* Category Tag */}
           <span
-            className={`inline-flex items-center space-x-1 px-2.5 py-1 rounded-full text-xs font-semibold backdrop-blur-md shadow-sm ${
+            className={`inline-flex items-center space-x-1.5 px-2.5 py-1 rounded-full text-xs font-semibold backdrop-blur-md shadow-sm ${
               isAviation
-                ? 'bg-sky-950/80 text-sky-300 border border-sky-800'
-                : 'bg-amber-950/80 text-amber-300 border border-amber-800'
+                ? 'bg-sky-950/80 text-sky-300 border border-sky-500/30 ring-1 ring-sky-500/10'
+                : 'bg-amber-950/80 text-amber-300 border border-amber-500/30 ring-1 ring-amber-500/10'
             }`}
           >
-            {isAviation ? <Plane className="w-3 h-3 text-sky-400" /> : <Train className="w-3 h-3 text-amber-400" />}
+            {isAviation ? <Plane className="w-3.5 h-3.5 text-sky-400" /> : <Train className="w-3.5 h-3.5 text-amber-400" />}
             <span>{isAviation ? '航空民航 / Aviation' : '高速铁道 / Railway'}</span>
           </span>
 
           {/* Status Tag */}
           {isRetired ? (
-            <span className="inline-flex items-center space-x-1 px-2.5 py-1 rounded-full text-xs font-semibold bg-rose-950/80 text-rose-300 border border-rose-800 backdrop-blur-md">
+            <span className="inline-flex items-center space-x-1 px-2.5 py-1 rounded-full text-xs font-semibold bg-rose-950/80 text-rose-300 border border-rose-500/30 backdrop-blur-md">
               <History className="w-3 h-3 text-rose-400" />
-              <span>已退役 / Retired ({vehicle.retiredYear})</span>
+              <span>已退役 ({vehicle.retiredYear})</span>
             </span>
           ) : (
-            <span className="inline-flex items-center space-x-1 px-2.5 py-1 rounded-full text-xs font-semibold bg-emerald-950/80 text-emerald-300 border border-emerald-800 backdrop-blur-md">
+            <span className="inline-flex items-center space-x-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-emerald-950/80 text-emerald-300 border border-emerald-500/30 backdrop-blur-md">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
               <span>现役运营 / In Service</span>
             </span>
@@ -67,13 +68,13 @@ export const VehicleCard: React.FC<VehicleCardProps> = ({ vehicle, onSelect }) =
         </div>
 
         {/* Badges on bottom */}
-        <div className="absolute bottom-3 left-3 flex items-center space-x-1.5">
-          <div className="flex items-center space-x-1 font-mono text-[11px] px-2 py-0.5 rounded bg-slate-950/80 text-sky-300 border border-slate-700/80 backdrop-blur-sm">
+        <div className="absolute bottom-3 left-3 flex items-center space-x-1.5 pointer-events-none">
+          <div className="flex items-center space-x-1 font-mono text-[11px] px-2 py-0.5 rounded-md bg-slate-950/80 text-sky-300 border border-white/[0.08] backdrop-blur-sm">
             <Camera className="w-3 h-3 text-sky-400" />
-            <span>{vehicle.detailPhotos.length} 张特写</span>
+            <span className="tabular-nums">{vehicle.detailPhotos.length} 张特写</span>
           </div>
           {vehicle.prototype && (
-            <div className="flex items-center space-x-1 font-mono text-[11px] px-2 py-0.5 rounded bg-sky-950/85 text-sky-200 border border-sky-600/70 backdrop-blur-sm" title={vehicle.prototype.name.zh}>
+            <div className="flex items-center space-x-1 font-mono text-[11px] px-2 py-0.5 rounded-md bg-sky-950/90 text-sky-200 border border-sky-400/30 backdrop-blur-sm" title={vehicle.prototype.name.zh}>
               <span>🔬</span>
               <span>{isAviation ? '原型机' : '原型车'}</span>
             </div>
@@ -81,7 +82,7 @@ export const VehicleCard: React.FC<VehicleCardProps> = ({ vehicle, onSelect }) =
         </div>
 
         {/* Code badge bottom right */}
-        <div className="absolute bottom-3 right-3 font-mono text-xs px-2 py-0.5 rounded bg-slate-900/90 text-slate-300 border border-slate-700">
+        <div className="absolute bottom-3 right-3 font-mono text-xs px-2 py-0.5 rounded-md bg-slate-900/90 text-slate-300 border border-white/[0.08] backdrop-blur-sm pointer-events-none">
           {vehicle.code}
         </div>
       </div>
@@ -91,7 +92,7 @@ export const VehicleCard: React.FC<VehicleCardProps> = ({ vehicle, onSelect }) =
         <div>
           {/* Bilingual Title */}
           <div className="mb-2">
-            <h3 className="text-base sm:text-lg font-bold text-white group-hover:text-sky-400 transition-colors">
+            <h3 className="text-base sm:text-lg font-bold text-white group-hover:text-sky-400 transition-colors duration-150">
               {vehicle.modelName.zh}
             </h3>
             <p className="text-xs text-slate-400 font-mono tracking-tight">
@@ -101,24 +102,24 @@ export const VehicleCard: React.FC<VehicleCardProps> = ({ vehicle, onSelect }) =
 
           {/* Manufacturer & Country */}
           <div className="flex items-center space-x-2 text-xs text-slate-400 mb-3">
-            <span className="text-slate-300 font-medium">
+            <span className="text-slate-300 font-medium truncate">
               {vehicle.manufacturer.zh} / {vehicle.manufacturer.en}
             </span>
             <span>•</span>
-            <span className="px-1.5 py-0.5 rounded bg-slate-800 text-[11px] text-slate-300">
+            <span className="px-1.5 py-0.5 rounded bg-slate-800/80 border border-white/[0.06] text-[11px] text-slate-300 font-mono shrink-0">
               {vehicle.country.zh} ({vehicle.countryCode})
             </span>
           </div>
 
           {/* Brief specs pill row */}
-          <div className="grid grid-cols-2 gap-2 text-xs bg-slate-950/60 p-2.5 rounded-xl border border-slate-800/80 mb-3 font-mono">
+          <div className="grid grid-cols-2 gap-2 text-xs bg-slate-950/60 p-2.5 rounded-xl border border-white/[0.06] mb-3 font-mono">
             <div className="flex items-center space-x-1.5 text-slate-300">
               <Gauge className="w-3.5 h-3.5 text-sky-400 shrink-0" />
-              <span className="truncate">{vehicle.specs.maxSpeed}</span>
+              <span className="truncate tabular-nums">{vehicle.specs.maxSpeed}</span>
             </div>
             <div className="flex items-center space-x-1.5 text-slate-300">
               <Users className="w-3.5 h-3.5 text-amber-400 shrink-0" />
-              <span className="truncate">{vehicle.specs.capacity}</span>
+              <span className="truncate tabular-nums">{vehicle.specs.capacity}</span>
             </div>
           </div>
 
@@ -130,7 +131,7 @@ export const VehicleCard: React.FC<VehicleCardProps> = ({ vehicle, onSelect }) =
               return (
                 <span
                   key={opId}
-                  className="px-2 py-0.5 text-[11px] rounded bg-slate-800 text-slate-300 border border-slate-700/60"
+                  className="px-2 py-0.5 text-[11px] rounded-md bg-slate-800/80 text-slate-300 border border-white/[0.06]"
                 >
                   {op?.name.zh || opId}
                 </span>
@@ -140,19 +141,19 @@ export const VehicleCard: React.FC<VehicleCardProps> = ({ vehicle, onSelect }) =
         </div>
 
         {/* Footer: Liveries & Scale Models Count */}
-        <div className="pt-3 border-t border-slate-800 flex items-center justify-between text-xs">
+        <div className="pt-3 border-t border-white/[0.06] flex items-center justify-between text-xs font-mono">
           <div className="flex items-center space-x-3">
             <span className="text-slate-400">
-              涂装: <strong className="text-sky-300">{vehicle.liveries.length}</strong> 款
+              涂装: <strong className="text-sky-300 tabular-nums">{vehicle.liveries.length}</strong> 款
             </span>
-            <span className="text-slate-500">•</span>
+            <span className="text-slate-600">•</span>
             <span className="inline-flex items-center space-x-1 text-purple-300">
               <Box className="w-3 h-3 text-purple-400" />
-              <span>模型: <strong>{totalModelsCount}</strong> 款</span>
+              <span>模型: <strong className="tabular-nums">{totalModelsCount}</strong> 款</span>
             </span>
           </div>
 
-          <div className="inline-flex items-center space-x-1 text-xs text-sky-400 group-hover:translate-x-1 transition-transform font-medium">
+          <div className="inline-flex items-center space-x-1 text-xs text-sky-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-150 ease-out font-medium">
             <span>档案详情</span>
             <ArrowUpRight className="w-3.5 h-3.5" />
           </div>
@@ -160,13 +161,13 @@ export const VehicleCard: React.FC<VehicleCardProps> = ({ vehicle, onSelect }) =
 
         {/* Linked Model Brand Tags */}
         {modelBrands.length > 0 && (
-          <div className="mt-2.5 pt-2 border-t border-slate-850 flex items-center gap-1.5 overflow-hidden">
+          <div className="mt-2.5 pt-2 border-t border-white/[0.04] flex items-center gap-1.5 overflow-hidden">
             <span className="text-[10px] text-purple-400/90 font-mono shrink-0">厂牌 Brands:</span>
             <div className="flex flex-wrap gap-1">
               {modelBrands.map((brand, i) => (
                 <span
                   key={i}
-                  className="text-[10px] px-1.5 py-0.2 rounded bg-purple-950/60 text-purple-200 border border-purple-800/50 font-mono"
+                  className="text-[10px] px-1.5 py-0.5 rounded bg-purple-950/60 text-purple-200 border border-purple-500/20 font-mono"
                 >
                   {brand}
                 </span>

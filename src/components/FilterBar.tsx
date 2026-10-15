@@ -41,13 +41,13 @@ export const FilterBar: React.FC<FilterBarProps> = ({
     Boolean(searchQuery?.trim());
 
   return (
-    <div className="bg-slate-900/70 border-b border-slate-800 py-3.5 px-4 sm:px-6 lg:px-8">
+    <div className="bg-slate-900/50 backdrop-blur-xl border-b border-white/[0.06] py-3 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3 text-xs">
         
         {/* Left Filter Selectors */}
-        <div className="flex flex-wrap items-center gap-2 sm:gap-3">
-          <div className="flex items-center text-slate-400 font-mono pr-1">
-            <Filter className="w-3.5 h-3.5 mr-1 text-sky-400" />
+        <div className="flex flex-wrap items-center gap-2 sm:gap-2.5">
+          <div className="flex items-center text-slate-400 font-mono pr-1 font-medium">
+            <Filter className="w-3.5 h-3.5 mr-1.5 text-sky-400" />
             <span>筛选 Filters:</span>
           </div>
 
@@ -55,7 +55,7 @@ export const FilterBar: React.FC<FilterBarProps> = ({
           <select
             value={selectedCategory}
             onChange={(e) => setSelectedCategory(e.target.value)}
-            className="bg-slate-800 text-slate-200 border border-slate-700 rounded-lg px-2.5 py-1.5 focus:outline-none focus:border-sky-500 font-medium cursor-pointer"
+            className="bg-slate-900/80 text-slate-200 border border-white/[0.08] hover:border-white/[0.2] rounded-xl px-3 py-1.5 focus:outline-none focus:border-sky-500/80 focus:ring-1 focus:ring-sky-500/30 font-medium cursor-pointer transition-colors shadow-sm"
           >
             <option value="all">领域: 全部 / All Domains</option>
             <option value="aviation">✈️ 航空民航 / Aviation</option>
@@ -66,7 +66,7 @@ export const FilterBar: React.FC<FilterBarProps> = ({
           <select
             value={selectedStatus}
             onChange={(e) => setSelectedStatus(e.target.value)}
-            className="bg-slate-800 text-slate-200 border border-slate-700 rounded-lg px-2.5 py-1.5 focus:outline-none focus:border-sky-500 font-medium cursor-pointer"
+            className="bg-slate-900/80 text-slate-200 border border-white/[0.08] hover:border-white/[0.2] rounded-xl px-3 py-1.5 focus:outline-none focus:border-sky-500/80 focus:ring-1 focus:ring-sky-500/30 font-medium cursor-pointer transition-colors shadow-sm"
           >
             <option value="all">状态: 全部 / All Status</option>
             <option value="active">🟢 现役运营 / In Service</option>
@@ -77,7 +77,7 @@ export const FilterBar: React.FC<FilterBarProps> = ({
           <select
             value={selectedCountry}
             onChange={(e) => setSelectedCountry(e.target.value)}
-            className="bg-slate-800 text-slate-200 border border-slate-700 rounded-lg px-2.5 py-1.5 focus:outline-none focus:border-sky-500 font-medium cursor-pointer"
+            className="bg-slate-900/80 text-slate-200 border border-white/[0.08] hover:border-white/[0.2] rounded-xl px-3 py-1.5 focus:outline-none focus:border-sky-500/80 focus:ring-1 focus:ring-sky-500/30 font-medium cursor-pointer transition-colors shadow-sm"
           >
             <option value="all">国家/地区: 全部 / All Countries</option>
             <optgroup label="🌏 亚洲 / Asia">
@@ -120,7 +120,7 @@ export const FilterBar: React.FC<FilterBarProps> = ({
           <select
             value={selectedOperator}
             onChange={(e) => setSelectedOperator(e.target.value)}
-            className="bg-slate-800 text-slate-200 border border-slate-700 rounded-lg px-2.5 py-1.5 focus:outline-none focus:border-sky-500 font-medium cursor-pointer"
+            className="bg-slate-900/80 text-slate-200 border border-white/[0.08] hover:border-white/[0.2] rounded-xl px-3 py-1.5 focus:outline-none focus:border-sky-500/80 focus:ring-1 focus:ring-sky-500/30 font-medium cursor-pointer transition-colors shadow-sm"
           >
             <option value="all">运营机构: 全部 / All Operators</option>
             <optgroup label="✈️ 亚洲航空公司 / Asian Airlines">
@@ -207,7 +207,7 @@ export const FilterBar: React.FC<FilterBarProps> = ({
           <select
             value={selectedBrand}
             onChange={(e) => setSelectedBrand(e.target.value)}
-            className="bg-slate-800 text-slate-200 border border-slate-700 rounded-lg px-2.5 py-1.5 focus:outline-none focus:border-sky-500 font-medium cursor-pointer"
+            className="bg-slate-900/80 text-slate-200 border border-white/[0.08] hover:border-white/[0.2] rounded-xl px-3 py-1.5 focus:outline-none focus:border-sky-500/80 focus:ring-1 focus:ring-sky-500/30 font-medium cursor-pointer transition-colors shadow-sm"
           >
             <option value="all">模型品牌: 全部 / All Model Brands</option>
             <option value="Aviation400">✈️ Aviation400 (飞度)</option>
@@ -225,17 +225,19 @@ export const FilterBar: React.FC<FilterBarProps> = ({
           {isFiltered && (
             <button
               onClick={onReset}
-              className="inline-flex items-center space-x-1 px-2.5 py-1.5 rounded-lg bg-rose-950/80 text-rose-300 border border-rose-800 hover:bg-rose-900 transition-colors"
+              className="btn-press inline-flex items-center space-x-1.5 px-3 py-1.5 rounded-xl bg-rose-500/10 text-rose-300 border border-rose-500/30 hover:bg-rose-500/20 active:scale-95 transition-colors text-xs font-medium cursor-pointer"
             >
-              <RotateCcw className="w-3 h-3" />
+              <RotateCcw className="w-3.5 h-3.5" />
               <span>重置 / Reset</span>
             </button>
           )}
         </div>
 
         {/* Right Counter */}
-        <div className="text-slate-400 font-mono text-xs ml-auto">
-          匹配结果 Matched: <span className="font-bold text-sky-400">{totalFiltered}</span> 款档案
+        <div className="text-slate-400 font-mono text-xs ml-auto flex items-center gap-1.5 select-none">
+          <span>匹配结果:</span>
+          <span className="font-bold text-sky-400 tabular-nums px-1.5 py-0.5 rounded bg-sky-500/10 border border-sky-500/20">{totalFiltered}</span>
+          <span>款档案</span>
         </div>
 
       </div>
